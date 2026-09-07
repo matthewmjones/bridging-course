@@ -1,0 +1,22 @@
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Bookdown build cache and intermediates
+_book/
+_bookdown_files/
+*.utf8.md
+*.knit.md
+*_files/
+
+# LaTeX build artifacts (keep_tex output is the merged .tex bookdown generates)
+mathematics-a-level-to-university*.tex
+*.log
+*.aux
+*.toc
+
+# IDE / tool config
+.posit/
+.claude/

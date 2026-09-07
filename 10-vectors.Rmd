@@ -1,0 +1,463 @@
+# Vectors (and a First Look at Matrices) {#vectors}
+
+A single number describes one thing: a price, a quantity, a temperature. But business objects usually have *many* components at once — a production plan has quantities of several products; a customer has spending in several categories; a location has coordinates. A **vector** is the mathematical object for exactly this: an ordered list of numbers treated as a single quantity. This closing chapter builds fluency with 2D and 3D vectors, then looks ahead in two directions: vectors as *data* (the language of analytics) and a gentle first meeting with **matrices**, which act on vectors and will dominate your quantitative modules.
+
+**Why this matters:** University Management Science is multivariable from week one. Functions of several variables, gradients, linear programming, input–output models, Markov chains, regression, machine learning — every one of them is vectors and matrices at heart. The mechanics in this chapter are simple; the payoff is that nothing in first year will look alien.
+
+## Two-dimensional vectors {#vectors-2d}
+
+### Key idea
+
+A 2D vector is a pair of components, written as a column $\mathbf{v} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ or inline as $(3, 4)$. Geometrically it is an *arrow*: 3 across, 4 up — and any arrow with the same length and direction is the same vector, wherever it starts.
+
+- **Magnitude** (length), by Pythagoras: $|\mathbf{v}| = \sqrt{x^2 + y^2}$.
+- **Direction:** the angle the arrow makes, found from $\tan\theta = \tfrac{y}{x}$ — with a sketch to pick the right quadrant.
+
+Vectors and scalars are different species: a scalar is one number; a vector is a package of numbers with a direction. Keep the notation distinct ($\mathbf{v}$ or $\underline{v}$ for vectors).
+
+### Worked examples
+
+**Example (simple).** Find the magnitude and direction of $\mathbf{v} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$.
+
+$|\mathbf{v}| = \sqrt{9 + 16} = 5$; direction $\theta = \tan^{-1}\!\big(\tfrac{4}{3}\big) \approx 53.1°$ above the positive $x$-direction.
+
+**Example (moderate).** Find the magnitude and direction of $\mathbf{a} = \begin{pmatrix} -2 \\ 5 \end{pmatrix}$.
+
+$|\mathbf{a}| = \sqrt{4 + 25} = \sqrt{29} \approx 5.39$. A sketch shows the arrow points up-and-left (second quadrant): the acute reference angle is $\tan^{-1}\!\big(\tfrac{5}{2}\big) \approx 68.2°$, so the direction is $180° - 68.2° = 111.8°$ from the positive $x$-direction. Never skip the sketch — the calculator's $\tan^{-1}$ alone can't tell the second quadrant from the fourth.
+
+**Example (challenging — resultant vs distance travelled).** A delivery drone flies displacement $\begin{pmatrix} 3 \\ 4 \end{pmatrix}$ km, then $\begin{pmatrix} 5 \\ -2 \end{pmatrix}$ km. Find (a) its final displacement from base, (b) how far it is from base, and (c) the total distance it has flown — and explain why (b) and (c) differ.
+
+(a) Add components: $\begin{pmatrix} 3 \\ 4 \end{pmatrix} + \begin{pmatrix} 5 \\ -2 \end{pmatrix} = \begin{pmatrix} 8 \\ 2 \end{pmatrix}$ km.
+
+(b) $\left|\begin{pmatrix} 8 \\ 2 \end{pmatrix}\right| = \sqrt{68} \approx 8.25$ km from base.
+
+(c) Distance flown is the sum of the two legs' *lengths*: $5 + \sqrt{29} \approx 10.39$ km.
+
+The drone flew 10.39 km but ends only 8.25 km from home — magnitudes don't add unless the legs point the same way. In symbols: $|\mathbf{a} + \mathbf{b}| \le |\mathbf{a}| + |\mathbf{b}|$, the *triangle inequality*, and the battery pays for (c) while the crow flies (b).
+
+### Practice exercises
+
+1. Find the magnitude and direction of $\begin{pmatrix} 5 \\ 12 \end{pmatrix}$.
+2. Find the magnitude and direction of $\begin{pmatrix} -6 \\ -8 \end{pmatrix}$ (sketch first!).
+3. A courier cycles $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ km then $\begin{pmatrix} 4 \\ -1 \end{pmatrix}$ km. Find the resultant displacement, its magnitude, and the total distance cycled.
+
+**Common mistakes:**
+
+- Adding magnitudes instead of components: $|\mathbf{a} + \mathbf{b}| \ne |\mathbf{a}| + |\mathbf{b}|$ in general.
+- Quadrant errors in direction — the calculator's $\tan^{-1}$ only returns angles between $-90°$ and $90°$; the sketch supplies the correction.
+- Writing vectors as scalars: $\mathbf{v} = 5$ is meaningless if $\mathbf{v}$ has components; its *magnitude* is 5.
+
+```{r, echo=FALSE}
+embed_desmos("1xrx1btbzr", geometry = TRUE)
+```
+
+## Three-dimensional vectors {#vectors-3d}
+
+### Key idea
+
+Nothing new except a third component: $\mathbf{v} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$, with magnitude by "Pythagoras twice":
+
+$$|\mathbf{v}| = \sqrt{x^2 + y^2 + z^2}.$$
+
+Addition and scaling work componentwise exactly as in 2D — and, importantly, so they do in 4, 5, or 500 dimensions. Once the picture runs out at three, the *algebra keeps going*; that observation carries the whole of Section \@ref(data-vectors).
+
+### Worked examples
+
+**Example (simple).** Find $\left|\begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}\right|$.
+
+$\sqrt{1 + 4 + 4} = 3$.
+
+**Example (moderate).** Find $\left|\begin{pmatrix} 2 \\ -3 \\ 6 \end{pmatrix}\right|$, and write down a vector in the same direction with magnitude 1.
+
+$\sqrt{4 + 9 + 36} = 7$. Dividing by the magnitude gives the **unit vector** $\tfrac{1}{7}\begin{pmatrix} 2 \\ -3 \\ 6 \end{pmatrix} = \begin{pmatrix} 2/7 \\ -3/7 \\ 6/7 \end{pmatrix}$ — same direction, length 1.
+
+**Example (challenging — a product as a point in three dimensions).** A laptop model is summarised by three standardised scores: (performance, battery, portability) $= (4, 2, 5)$. A rival scores $(3, 4, 4)$. Which is "bigger" overall is ambiguous — but which is *closer to the ideal spec* $(5, 5, 5)$?
+
+Distances to the ideal (subtract, then take magnitude — formalised in Section \@ref(position-vectors)):
+
+$$\left|\begin{pmatrix} 4 \\ 2 \\ 5 \end{pmatrix} - \begin{pmatrix} 5 \\ 5 \\ 5 \end{pmatrix}\right| = \sqrt{1 + 9 + 0} = \sqrt{10} \approx 3.16, \qquad \left|\begin{pmatrix} 3 \\ 4 \\ 4 \end{pmatrix} - \begin{pmatrix} 5 \\ 5 \\ 5 \end{pmatrix}\right| = \sqrt{4 + 1 + 1} = \sqrt{6} \approx 2.45.$$
+
+The rival sits closer to the ideal. Products as points, comparisons as distances — you've just done multi-attribute product analysis with A-level vectors.
+
+### Practice exercises
+
+1. Find the magnitude of $\begin{pmatrix} 2 \\ 6 \\ -3 \end{pmatrix}$.
+2. Find the unit vector in the direction of $\begin{pmatrix} 0 \\ 3 \\ 4 \end{pmatrix}$.
+3. Candidate A scores $(5, 3, 2)$ and candidate B scores $(4, 4, 3)$ on three interview criteria. Which is closer to the target profile $(5, 4, 4)$?
+
+**Common mistakes:**
+
+- Forgetting to square the negative components — $(-3)^2 = +9$; magnitudes are never reduced by minus signs.
+- Trying to assign a single "direction angle" in 3D — direction in 3D needs more than one angle (or a unit vector, which is the cleaner habit).
+
+::: {.webex-check .webex-box}
+**Self-check: magnitudes, unit vectors and distances**
+
+**Q1.** Find the magnitude of $\begin{pmatrix} 8 \\ 6 \end{pmatrix}$: `r fitb(10, num = TRUE)`
+
+**Q2.** Find the magnitude of $\begin{pmatrix} 2 \\ -1 \\ 2 \end{pmatrix}$: `r fitb(3, num = TRUE)`
+
+**Q3.** Which of the following is the unit vector in the direction of $\begin{pmatrix} 6 \\ 8 \end{pmatrix}$?
+
+(A) $\begin{pmatrix} 3/5 \\ 4/5 \end{pmatrix}$  
+(B) $\begin{pmatrix} 3/7 \\ 4/7 \end{pmatrix}$  
+(C) $\begin{pmatrix} 1/6 \\ 1/8 \end{pmatrix}$  
+(D) $\begin{pmatrix} 3 \\ 4 \end{pmatrix}$  
+
+Answer: `r mcq(c(answer = "A", "B", "C", "D"))`
+
+**Q4.** The unit vector in the direction of $\begin{pmatrix} 0 \\ 5 \\ 12 \end{pmatrix}$ can be written $\dfrac{1}{k}\begin{pmatrix} 0 \\ 5 \\ 12 \end{pmatrix}$. Give $k$: `r fitb(13, num = TRUE)`
+
+**Q5.** Two interview candidates score $(4, 5, 3)$ and $(5, 3, 5)$ against a target profile of $(5, 5, 5)$. Measured by distance in three dimensions, the closer match is `r mcq(c("the first candidate", answer = "the second candidate", "they are equally close"))`
+:::
+
+`r hide("Show solutions")`
+
+**Q1.** $\sqrt{64 + 36} = \sqrt{100} = 10$.
+
+**Q2.** $\sqrt{4 + 1 + 4} = 3$. The middle term is $(-1)^2 = +1$ — a minus sign never shrinks a magnitude.
+
+**Q3.** (A). The magnitude is $\sqrt{36 + 64} = 10$, so divide both components by 10. Trap (B) divides by $6 + 8 = 14$ — components don't add to give length; Pythagoras is not optional. Trap (D) cancels the common factor 2, which gives a *shorter parallel* vector of length 5, not length 1 — simplifying is not normalising. Check: $\sqrt{(3/5)^2 + (4/5)^2} = \sqrt{9/25 + 16/25} = 1$ ✓.
+
+**Q4.** $k$ is the magnitude: $\sqrt{0 + 25 + 144} = 13$.
+
+**Q5.** The second candidate. Distances to the target: first candidate $\sqrt{1 + 0 + 4} = \sqrt{5} \approx 2.24$; second $\sqrt{0 + 4 + 0} = 2$. Subtract, *then* take the magnitude — comparing total scores (12 vs 13) answers a different question, since it can't see that the first candidate misses the target badly on one criterion.
+
+`r unhide()`
+
+## Vector operations {#vector-operations}
+
+### Key idea
+
+Two operations, both componentwise, both with clean geometric meanings:
+
+- **Addition:** $\mathbf{a} + \mathbf{b}$ adds components; geometrically, place the arrows *tip-to-tail* and take the arrow from start to finish (the drone example).
+- **Scalar multiplication:** $k\mathbf{a}$ multiplies every component by $k$; geometrically it stretches the arrow by factor $k$ (reversing it if $k < 0$), leaving the direction otherwise unchanged.
+
+Consequences worth knowing: $\mathbf{a}$ and $\mathbf{b}$ are **parallel** exactly when one is a scalar multiple of the other; and expressions like $x\mathbf{a} + y\mathbf{b}$ — **linear combinations** — build new vectors from old ones. Linear combinations are the single most important construction in university mathematics; meet them here in a friendly setting.
+
+```{r vector-addition, echo=FALSE, fig.cap="Tip-to-tail addition: the resultant (dashed) runs from the start of a to the tip of b.", fig.height=4}
+plot(NA, xlim = c(0, 9), ylim = c(0, 6), xlab = "x", ylab = "y", asp = 1)
+arrows(0, 0, 3, 4, col = "steelblue", lwd = 2, length = 0.12)
+arrows(3, 4, 8, 2, col = "firebrick", lwd = 2, length = 0.12)
+arrows(0, 0, 8, 2, col = "grey30", lwd = 2, lty = 2, length = 0.12)
+text(1.1, 2.4, "a", col = "steelblue"); text(5.8, 3.6, "b", col = "firebrick")
+text(4.6, 0.7, "a + b", col = "grey30")
+```
+
+### Worked examples
+
+**Example (simple).** For $\mathbf{a} = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix} -1 \\ 3 \end{pmatrix}$, find $\mathbf{a} + \mathbf{b}$, $3\mathbf{a}$ and $2\mathbf{a} - \mathbf{b}$.
+
+$$\mathbf{a} + \mathbf{b} = \begin{pmatrix} 1 \\ 4 \end{pmatrix}, \qquad 3\mathbf{a} = \begin{pmatrix} 6 \\ 3 \end{pmatrix}, \qquad 2\mathbf{a} - \mathbf{b} = \begin{pmatrix} 5 \\ -1 \end{pmatrix}.$$
+
+**Example (moderate).** Is $\begin{pmatrix} 6 \\ -4 \end{pmatrix}$ parallel to $\begin{pmatrix} -9 \\ 6 \end{pmatrix}$?
+
+Test for a scalar multiple: $-9 = k \times 6$ gives $k = -1.5$, and indeed $6 = -1.5 \times (-4)$ ✓. Parallel (pointing opposite ways, since $k < 0$).
+
+**Example (challenging — a production plan as a linear combination).** Each unit of product $P_1$ consumes $\begin{pmatrix} 3 \\ 2 \end{pmatrix}$ (labour hours, kg of material); each unit of $P_2$ consumes $\begin{pmatrix} 1 \\ 4 \end{pmatrix}$. The factory plans to make 10 units of $P_1$ and 5 of $P_2$. Find the total resource requirement, and check it against a capacity of 40 labour hours and 45 kg.
+
+Total requirement is the linear combination
+
+$$10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix} = \begin{pmatrix} 30 \\ 20 \end{pmatrix} + \begin{pmatrix} 5 \\ 20 \end{pmatrix} = \begin{pmatrix} 35 \\ 40 \end{pmatrix}.$$
+
+The plan needs 35 hours (within 40 ✓) and 40 kg (within 45 ✓): feasible. Asking "which feasible plan is *best*?" is precisely a **linear programming** problem — the iso-profit lines of Section \@ref(parallel-perpendicular) sweeping across plans like this one. Hold this example in mind; it returns in Section \@ref(matrices) wearing a matrix.
+
+### Practice exercises
+
+1. For $\mathbf{a} = \begin{pmatrix} 4 \\ -2 \end{pmatrix}$, $\mathbf{b} = \begin{pmatrix} 1 \\ 5 \end{pmatrix}$: find $\mathbf{a} + 2\mathbf{b}$ and $|\mathbf{a} - \mathbf{b}|$.
+2. Find the value of $t$ for which $\begin{pmatrix} t \\ 6 \end{pmatrix}$ is parallel to $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$.
+3. Products $P_1$ and $P_2$ consume $\begin{pmatrix} 2 \\ 5 \end{pmatrix}$ and $\begin{pmatrix} 3 \\ 1 \end{pmatrix}$ (hours, kg) per unit. Find the total resource vector for 8 units of $P_1$ and 4 units of $P_2$.
+
+**Common mistakes:**
+
+- Mixing components while adding — line the vectors up as columns and add across rows.
+- Concluding "not parallel" after checking only one component ratio — *all* component ratios must agree.
+- Multiplying two vectors together componentwise and expecting it to mean something at this level — vector addition and scalar multiplication are the only operations defined here (the useful vector-times-vector products arrive at university).
+
+```{r, echo=FALSE}
+embed_youtube("iobbAP7-zvE", 
+              title = "Introducing vectors",
+              playlist = "PLg2tfDG3Ww4s0m-INpYT_B0yX-H-PnPTX")
+```
+
+## Position vectors and distances {#position-vectors}
+
+### Key idea
+
+Fix an origin; then every point $A$ is captured by its **position vector** $\mathbf{a} = \overrightarrow{OA}$. The vector *from* $A$ *to* $B$ is
+
+$$\overrightarrow{AB} = \mathbf{b} - \mathbf{a} \qquad (\text{"destination minus start"}),$$
+
+and the **distance** between the points is $|\overrightarrow{AB}| = |\mathbf{b} - \mathbf{a}|$ — the distance formula of coordinate geometry (Chapter \@ref(coordgeom)), now in vector clothing, and valid in any number of dimensions.
+
+### Worked examples
+
+**Example (simple).** $A = (1, 2)$ and $B = (4, 6)$. Find $\overrightarrow{AB}$ and the distance $AB$.
+
+$$\overrightarrow{AB} = \begin{pmatrix} 4 - 1 \\ 6 - 2 \end{pmatrix} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}, \qquad AB = 5.$$
+
+**Example (moderate).** $A = (2, 1)$ and $B = (5, 7)$. Find the position vector of the midpoint $M$ of $AB$.
+
+$$\mathbf{m} = \tfrac{1}{2}(\mathbf{a} + \mathbf{b}) = \tfrac{1}{2}\begin{pmatrix} 7 \\ 8 \end{pmatrix} = \begin{pmatrix} 3.5 \\ 4 \end{pmatrix}.$$
+
+(Averaging position vectors averages the points — a fact that scales up: the average of *many* position vectors is the **centroid**, which returns in Section \@ref(data-vectors).)
+
+**Example (challenging — comparing depot sites).** Three stores sit at grid positions $(1, 5)$, $(4, 1)$ and $(7, 6)$ (km). Two candidate depot sites are $P = (4, 4)$ and $Q = (3, 4)$. Which site has the smaller *total* distance to the stores?
+
+From $P$: $\sqrt{(1-4)^2 + (5-4)^2} = \sqrt{10} \approx 3.16$; $\sqrt{0 + 9} = 3$; $\sqrt{9 + 4} = \sqrt{13} \approx 3.61$. Total $\approx 9.77$ km.
+
+From $Q$: $\sqrt{4 + 1} = \sqrt{5} \approx 2.24$; $\sqrt{1 + 9} = \sqrt{10} \approx 3.16$; $\sqrt{16 + 4} = \sqrt{20} \approx 4.47$. Total $\approx 9.87$ km.
+
+$P$ wins, narrowly. This is a two-candidate version of the **facility location problem** — a genuine operations-research problem whose full version (optimise over *all* possible sites) needs the multivariable optimisation this chapter is preparing you for.
+
+### Practice exercises
+
+1. $A = (2, -1)$ and $B = (7, 11)$. Find $\overrightarrow{AB}$ and the distance $AB$.
+2. Find the midpoint of $A = (-2, 3)$ and $B = (6, -1)$.
+3. Stores sit at $(0, 4)$, $(5, 0)$ and $(6, 7)$. Which candidate depot, $(3, 3)$ or $(4, 4)$, gives the smaller total distance?
+
+**Common mistakes:**
+
+- $\overrightarrow{AB} = \mathbf{b} - \mathbf{a}$, not $\mathbf{a} - \mathbf{b}$: destination minus start. Getting it backwards reverses every direction (though — small mercy — distances survive).
+- Confusing a *point* with its position *vector* conceptually — the vector runs from the origin to the point. Interchangeable in calculations, but keep the picture straight.
+
+::: {.webex-check .webex-box}
+**Self-check: position vectors, distances and midpoints**
+
+**Q1.** $A = (1, 3)$ and $B = (6, 15)$. The components of $\overrightarrow{AB}$ are $x =$ `r fitb(5, num = TRUE)` and $y =$ `r fitb(12, num = TRUE)`
+
+**Q2.** For the same points, the distance $AB$ is `r fitb(13, num = TRUE)`
+
+**Q3.** $A = (2, 7)$ and $B = (5, 1)$. Which of the following is $\overrightarrow{AB}$?
+
+(A) $\begin{pmatrix} -3 \\ 6 \end{pmatrix}$  
+(B) $\begin{pmatrix} 3 \\ -6 \end{pmatrix}$  
+(C) $\begin{pmatrix} 7 \\ 8 \end{pmatrix}$  
+(D) $\begin{pmatrix} 3 \\ 6 \end{pmatrix}$  
+
+Answer: `r mcq(c("A", answer = "B", "C", "D"))`
+
+**Q4.** The midpoint of $A = (-2, 5)$ and $B = (6, -1)$ is the point $(x, y)$ with $x =$ `r fitb(2, num = TRUE)` and $y =$ `r fitb(2, num = TRUE)`
+
+**Q5.** Stores sit at $(1, 1)$, $(5, 2)$ and $(3, 6)$. Two candidate depot sites are $P = (3, 3)$ and $Q = (3, 2)$. The smaller *total* distance to the three stores is achieved by `r mcq(c(answer = "P", "Q", "the totals are equal"))`
+:::
+
+`r hide("Show solutions")`
+
+**Q1.** $\overrightarrow{AB} = \mathbf{b} - \mathbf{a} = (6 - 1,\ 15 - 3) = (5, 12)$: destination minus start.
+
+**Q2.** $|\overrightarrow{AB}| = \sqrt{25 + 144} = 13$.
+
+**Q3.** (B). $\overrightarrow{AB} = (5 - 2,\ 1 - 7) = (3, -6)$. Trap (A) is $\mathbf{a} - \mathbf{b}$ — the vector from $B$ to $A$, exactly backwards. A sketch settles it: moving from $A(2,7)$ to $B(5,1)$ goes right and *down*, so the $y$-component must be negative. Trap (C) adds the position vectors, which lands nowhere useful.
+
+**Q4.** Midpoint $= \tfrac{1}{2}(\mathbf{a} + \mathbf{b}) = \tfrac{1}{2}\begin{pmatrix} 4 \\ 4 \end{pmatrix} = (2, 2)$.
+
+**Q5.** $P$. From $P$: $\sqrt{8} + \sqrt{5} + 3 \approx 2.83 + 2.24 + 3.00 = 8.07$. From $Q$: $\sqrt{5} + 2 + 4 \approx 8.24$. Three distances, one sum, one comparison — a two-candidate facility location problem, just like the worked example.
+
+`r unhide()`
+
+## Vectors as data {#data-vectors}
+
+### Key idea
+
+Here is the syllabus's "preparing for data vectors and feature spaces" — and the biggest idea in the chapter. Drop the arrows; keep the algebra. A **data vector** is any record written as an ordered list of numbers:
+
+$$\text{customer } \mathbf{u} = \begin{pmatrix} \text{spend on groceries} \\ \text{spend on clothing} \\ \text{spend on travel} \end{pmatrix}.$$
+
+Every operation you've practised now has a data meaning:
+
+- **Distance** $|\mathbf{u} - \mathbf{v}|$ measures how *similar* two records are — small distance, similar customers.
+- **The mean** $\tfrac{1}{n}(\mathbf{u}_1 + \dots + \mathbf{u}_n)$ is the *average record* (the centroid) — the "typical customer".
+- **Scalar multiplication** rescales a record — $1.1\mathbf{u}$ is customer $\mathbf{u}$ with 10% higher spending across the board.
+
+The space these vectors live in is called **feature space**, and it might have hundreds of dimensions — unpicturable, but the formulas are the same ones you used for arrows.
+
+### Worked examples
+
+**Example (simple).** Customers' quarterly spend (£) across (groceries, clothing, travel): $\mathbf{u} = (120, 40, 60)$ and $\mathbf{v} = (110, 50, 55)$. How similar are they?
+
+$$|\mathbf{u} - \mathbf{v}| = \left|\begin{pmatrix} 10 \\ -10 \\ 5 \end{pmatrix}\right| = \sqrt{100 + 100 + 25} = 15.$$
+
+A £15 separation across the whole profile — very similar customers.
+
+**Example (moderate).** A third customer spends $\mathbf{w} = (20, 150, 10)$. Compare $|\mathbf{u} - \mathbf{w}|$ with the distance above, and find the centroid of all three customers.
+
+$$|\mathbf{u} - \mathbf{w}| = \sqrt{100^2 + 110^2 + 50^2} = \sqrt{24600} \approx 157.$$
+
+Ten times further away: $\mathbf{w}$ (low groceries, high clothing) belongs to a different customer *segment*. Centroid:
+
+$$\tfrac{1}{3}(\mathbf{u} + \mathbf{v} + \mathbf{w}) = \tfrac{1}{3}\begin{pmatrix} 250 \\ 240 \\ 125 \end{pmatrix} = \begin{pmatrix} 83.3 \\ 80 \\ 41.7 \end{pmatrix}.$$
+
+**Example (challenging — a one-line recommendation engine).** A streaming service scores each user's taste across four genres. Anna is $\mathbf{a} = (8, 2, 5, 1)$; the service wants to show her the "customers like you also watched" list built from Ben $\mathbf{b} = (7, 3, 5, 2)$ or Carla $\mathbf{c} = (2, 8, 1, 6)$. Whose history should it use?
+
+$$|\mathbf{a} - \mathbf{b}| = \sqrt{1 + 1 + 0 + 1} = \sqrt{3} \approx 1.73, \qquad |\mathbf{a} - \mathbf{c}| = \sqrt{36 + 36 + 16 + 25} = \sqrt{113} \approx 10.63.$$
+
+Ben, by a mile. Congratulations: "find the nearest vector" is the **nearest-neighbour** method, one of the oldest and most-used ideas in machine learning — recommendation, credit scoring and customer segmentation all begin exactly here, just with more dimensions and more neighbours. (Real systems refine the distance measure and standardise the scales, but the skeleton is this calculation.)
+
+### Practice exercises
+
+1. Products are scored on (quality, value, style): $\mathbf{p} = (7, 5, 6)$ and $\mathbf{q} = (4, 9, 5)$. Find the distance between them.
+2. Three branches record (weekday, weekend) sales: $(30, 45)$, $(38, 41)$, $(25, 52)$ (£000s). Find the centroid, and interpret it in one sentence.
+3. A target customer profile is $(6, 6, 6)$. Which of $(5, 7, 6)$ and $(8, 3, 7)$ is the nearer match?
+
+**Common mistakes:**
+
+- Comparing raw distances when components have wildly different scales (pounds vs counts vs ratings) — big-unit components dominate. At university you'll *standardise* first; for now, just be aware.
+- Forgetting that these are the *same* operations as the geometric ones — no new formulas were introduced in this section, only new interpretations.
+
+**Why this matters:** Analytics *is* vector arithmetic at scale. Clustering finds groups of mutually close data vectors; classification asks which labelled vectors a new one is nearest to; regression and machine-learning models are functions of feature vectors, trained by nudging a parameter vector downhill — using the **gradient**, a vector of the partial derivatives you'll build from Chapter \@ref(differentiation). This little section is the bridge between A-level and all of that.
+
+## A first look at matrices {#matrices}
+
+### Key idea
+
+A **matrix** is a rectangular grid of numbers. Its **size** is *rows × columns*:
+
+$$A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \text{ is } 2 \times 2, \qquad B = \begin{pmatrix} 5 & 0 & -1 \\ 2 & 1 & 3 \end{pmatrix} \text{ is } 2 \times 3.$$
+
+(Rows first, always — a $2 \times 3$ matrix has 2 rows and 3 columns.) A column vector is just an $n \times 1$ matrix, so vectors are a special case. Three operations for now:
+
+- **Addition:** add matching entries — only defined for matrices of the **same size**.
+- **Scalar multiplication:** multiply every entry by the scalar.
+- **Matrix × vector:** an $m \times n$ matrix times an $n$-component vector gives an $m$-component vector. Each output entry is a *row of the matrix times the vector*: multiply pairwise along the row, then add. Sizes must match: the matrix's column count must equal the vector's length.
+
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix}.$$
+
+Equivalent (and illuminating) view: $A\mathbf{v}$ is the **linear combination of $A$'s columns**, weighted by $\mathbf{v}$'s entries — Section \@ref(vector-operations)'s big idea, mechanised.
+
+### Worked examples
+
+**Example (simple — addition and scaling).** For $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 0 & 5 \\ -1 & 2 \end{pmatrix}$, find $A + B$ and $3A$.
+
+$$A + B = \begin{pmatrix} 1 & 7 \\ 2 & 6 \end{pmatrix}, \qquad 3A = \begin{pmatrix} 3 & 6 \\ 9 & 12 \end{pmatrix}.$$
+
+(And note: $A + \begin{pmatrix} 5 & 0 & -1 \\ 2 & 1 & 3 \end{pmatrix}$ is **undefined** — a $2\times2$ and a $2\times3$ can't be added.)
+
+**Example (simple — matrix times vector).** Compute $\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix}$.
+
+Row by row: top $= 2(4) + 1(2) = 10$; bottom $= 1(4) + 3(2) = 10$:
+
+$$\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix} = \begin{pmatrix} 10 \\ 10 \end{pmatrix}.$$
+
+**Example (moderate — matrices as geometric transformations).** Compute the effect of each matrix on the vector $\mathbf{v} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}$, and describe each geometrically:
+
+$$I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \qquad S = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix}, \qquad M = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, \qquad R = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}.$$
+
+$I\mathbf{v} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}$: the **identity** matrix leaves every vector unchanged (the matrix world's "1").
+
+$S\mathbf{v} = \begin{pmatrix} 6 \\ 4 \end{pmatrix}$: a **stretch** — every vector doubled in length, direction kept ($S\mathbf{v} = 2\mathbf{v}$).
+
+$M\mathbf{v} = \begin{pmatrix} 3 \\ -2 \end{pmatrix}$: a **reflection** in the $x$-axis — the $y$-component flips sign.
+
+$R\mathbf{v} = \begin{pmatrix} 0(3) - 1(2) \\ 1(3) + 0(2) \end{pmatrix} = \begin{pmatrix} -2 \\ 3 \end{pmatrix}$: a **rotation** by 90° anticlockwise. Check: the magnitude is preserved ($\sqrt{13}$ before and after), and $\begin{pmatrix} 1 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} 0 \\ 1 \end{pmatrix}$ — "east" turns to "north".
+
+So a matrix isn't just a table: **multiplying by a matrix moves every vector in the plane at once**, in a structured way — stretching, reflecting, rotating, or combinations. That's why matrices are called *transformations*.
+
+```{r matrix-transform, echo=FALSE, fig.cap="One matrix, every vector moved: v = (3, 2) under the identity, a stretch, a reflection and a 90° rotation.", fig.height=4.5}
+plot(NA, xlim = c(-4, 7), ylim = c(-3.5, 5), xlab = "x", ylab = "y", asp = 1)
+abline(h = 0, v = 0, col = "grey85")
+arrows(0, 0, 3, 2, col = "grey30", lwd = 3, length = 0.12)     # v (identity)
+arrows(0, 0, 6, 4, col = "steelblue", lwd = 2, length = 0.12)  # stretch
+arrows(0, 0, 3, -2, col = "seagreen", lwd = 2, length = 0.12)  # reflection
+arrows(0, 0, -2, 3, col = "firebrick", lwd = 2, length = 0.12) # rotation
+text(3.3, 2.4, "v"); text(6.2, 4.4, "Sv", col = "steelblue")
+text(3.4, -2.4, "Mv", col = "seagreen"); text(-2.5, 3.3, "Rv", col = "firebrick")
+```
+
+**Example (challenging — the production plan, now as a matrix).** Recall Section \@ref(vector-operations): products $P_1$ and $P_2$ consume $\begin{pmatrix} 3 \\ 2 \end{pmatrix}$ and $\begin{pmatrix} 1 \\ 4 \end{pmatrix}$ (hours, kg) per unit. Pack the per-unit requirements into a matrix, one product per **column**, and compute the resources needed for the production vector $\mathbf{q} = \begin{pmatrix} 10 \\ 5 \end{pmatrix}$.
+
+$$A = \begin{pmatrix} 3 & 1 \\ 2 & 4 \end{pmatrix}, \qquad A\mathbf{q} = \begin{pmatrix} 3(10) + 1(5) \\ 2(10) + 4(5) \end{pmatrix} = \begin{pmatrix} 35 \\ 40 \end{pmatrix}.$$
+
+Exactly the linear combination $10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix}$ from before — matrix–vector multiplication *is* "take this combination of the columns". The gain is scale and organisation: a factory with 40 products and 12 resources is a $12 \times 40$ matrix, and *any* production plan's requirements are one multiplication, $A\mathbf{q}$. Feasibility ("does $A\mathbf{q}$ fit within capacity?") is the constraint side of linear programming; economists use the same structure, giant-sized, in **input–output models** of whole economies.
+
+### Practice exercises
+
+1. $A$ is $2 \times 3$, $B$ is $2 \times 3$ and $C$ is $3 \times 2$. Which of $A + B$, $A + C$, and $C\,\mathbf{v}$ for a 2-component vector $\mathbf{v}$ are defined? State the size of each result that exists.
+2. For $A = \begin{pmatrix} 2 & -1 \\ 0 & 3 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 1 \\ 2 & -2 \end{pmatrix}$, compute $A + 2B$.
+3. Compute $\begin{pmatrix} 1 & 2 \\ 3 & -1 \end{pmatrix}\begin{pmatrix} 2 \\ 5 \end{pmatrix}$.
+4. What does the matrix $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ do to $\begin{pmatrix} 2 \\ 0 \end{pmatrix}$ and to $\begin{pmatrix} 0 \\ 3 \end{pmatrix}$? Describe the transformation.
+5. Per-unit resource use (rows: hours, kg; columns: products $X$, $Y$) is $A = \begin{pmatrix} 2 & 3 \\ 5 & 1 \end{pmatrix}$. Find the total resources for the plan $\mathbf{q} = \begin{pmatrix} 8 \\ 4 \end{pmatrix}$, and check it against a capacity of 30 hours and 45 kg.
+
+**Common mistakes:**
+
+- Adding matrices of different sizes — check dimensions before every operation.
+- Row/column mix-ups: size is rows × columns, and in $A\mathbf{v}$ each *row* of $A$ pairs with the vector. Writing the multiplication out slowly beats doing it "in your head" every time.
+- Multiplying entry-by-entry in the same positions: $A\mathbf{v}$ is row-times-column sums, not a componentwise product.
+- Expecting $A\mathbf{v}$ to exist regardless of size: an $m \times n$ matrix needs an $n$-component vector.
+
+```{r, echo=FALSE}
+embed_desmos("ymz73cs5jx")
+```
+
+```{r, echo=FALSE}
+embed_youtube("0iSvYwdVVPI", 
+              title = "Introducing matrices",
+              playlist = "PLg2tfDG3Ww4ucvo7CDOr5x4kExNfXgK4n")
+```
+
+## End of chapter quiz
+
+::: {.webex-check .webex-box}
+
+**Q1.** $A$ is a $3 \times 2$ matrix, $B$ is a $2 \times 3$ matrix and $\mathbf{v}$ is a 2-component vector. Is $A + B$ defined? `r mcq(c("yes", answer = "no"))` Is $A\mathbf{v}$ defined? `r mcq(c(answer = "yes", "no"))` If it is, the number of components of $A\mathbf{v}$ is `r fitb(3, num = TRUE)`
+
+**Q2.** For $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 0 & 1 \\ 2 & -1 \end{pmatrix}$, in the matrix $A + 2B$ the top-right entry is `r fitb(4, num = TRUE)` and the bottom-left entry is `r fitb(7, num = TRUE)`
+
+**Q3.** Which of the following is $\begin{pmatrix} 2 & 1 \\ 3 & -1 \end{pmatrix}\begin{pmatrix} 3 \\ 2 \end{pmatrix}$?
+
+(A) $\begin{pmatrix} 12 \\ 1 \end{pmatrix}$  
+(B) $\begin{pmatrix} 6 \\ -2 \end{pmatrix}$  
+(C) $\begin{pmatrix} 8 \\ 7 \end{pmatrix}$  
+(D) $\begin{pmatrix} 8 \\ 11 \end{pmatrix}$  
+
+Answer: `r mcq(c("A", "B", answer = "C", "D"))`
+
+**Q4.** In the product $\begin{pmatrix} 1 & 0 & 2 \\ 2 & 1 & 1 \end{pmatrix}\begin{pmatrix} 3 \\ 1 \\ 2 \end{pmatrix}$, the top component is `r fitb(7, num = TRUE)` and the bottom component is `r fitb(9, num = TRUE)`
+
+**Q5.** The matrix $\begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}$ sends $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ to $\begin{pmatrix} -2 \\ 3 \end{pmatrix}$. As a transformation of the plane it is `r mcq(c("a rotation by 90 degrees anticlockwise", "a reflection in the x-axis", answer = "a reflection in the y-axis", "a stretch of every vector by the same factor"))`
+:::
+
+`r hide("Show solutions")`
+
+**Q1.** No; yes; 3. Addition needs *identical* sizes, and $3 \times 2$ is not $2 \times 3$ — rows and columns both count. For $A\mathbf{v}$, the column count of $A$ (2) matches the length of $\mathbf{v}$ (2) ✓, and an $m \times n$ matrix times an $n$-vector gives an $m$-vector, so the result has 3 components.
+
+**Q2.** Top-right: $2 + 2(1) = 4$; bottom-left: $3 + 2(2) = 7$. Scale $B$ first, then add matching entries.
+
+**Q3.** (C). Rows times the column: top $= 2(3) + 1(2) = 8$; bottom $= 3(3) + (-1)(2) = 7$. Trap (A) pairs the vector with the *columns* of the matrix instead of the rows. Trap (B) multiplies entries sitting in matching positions — $A\mathbf{v}$ is row-times-column sums, not a componentwise product. Trap (D) drops the minus sign in the bottom row.
+
+**Q4.** Top $= 1(3) + 0(1) + 2(2) = 7$; bottom $= 2(3) + 1(1) + 1(2) = 9$. Size check first: $2 \times 3$ times a 3-vector ✓, giving a 2-vector.
+
+**Q5.** A reflection in the $y$-axis: the $x$-component flips sign and the $y$-component is untouched, so every vector jumps to its mirror image across the vertical axis. It can't be the rotation — that matrix is $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$, which sends $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ to $\begin{pmatrix} -3 \\ 2 \end{pmatrix}$ instead. Quick test with the "east" vector: $\begin{pmatrix} 1 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} -1 \\ 0 \end{pmatrix}$ — east becomes west, exactly a $y$-axis mirror.
+
+`r unhide()`
+
+**Why this matters:** Matrices are the workhorse of quantitative Management Science. Linear programming stores its constraints in a matrix; input–output economics is matrix–vector multiplication; Markov chains model shifting market shares by repeatedly multiplying by a *transition matrix*; regression and machine learning are matrix computations end to end. First-year linear algebra will add matrix×matrix products, inverses and more — but the grammar (sizes, rows-times-columns, matrices as transformations) is what you've just learned, and it doesn't change.
+
+## Chapter summary — and the end of the course
+
+You should now be able to:
+
+- work with 2D and 3D vectors in component form, computing magnitudes, directions and unit vectors;
+- add and scale vectors, recognise parallel vectors, and build linear combinations;
+- use position vectors for points, displacements, midpoints and distances;
+- treat data records as vectors, measuring similarity by distance and typicality by centroids;
+- state matrix sizes, add and scale matrices, multiply a matrix by a vector, and interpret matrices as geometric transformations and as resource-requirement tables.
+
+And that closes the bridging course. Look back at how far the ten chapters reach: you can build and criticise models (Chapters 2–6), optimise them (Chapter 7), total and solve them (Chapter 8), approximate what can't be solved exactly (Chapter 9), and organise many-variable information (this chapter). Every quantitative module in your Management Science degree — economics, operations, statistics, finance, analytics — starts from exactly these foundations. Arrive confident: you've already met the ideas; university will make them bigger, not stranger.
+
+**Self-check quiz:** Insert a final end-of-course diagnostic sampling all ten chapters, with feedback pointing students to the chapters most worth a second pass before term begins.
+
+## Answers to practice exercises {#vectors-answers}
+
+**2D vectors:** 1. Magnitude 13; direction $\tan^{-1}(12/5) \approx 67.4°$.  2. Magnitude 10; third quadrant: direction $180° + \tan^{-1}(8/6) \approx 233.1°$ (equivalently $-126.9°$).  3. Resultant $\begin{pmatrix} 6 \\ 2 \end{pmatrix}$, magnitude $\sqrt{40} \approx 6.32$ km; distance cycled $\sqrt{13} + \sqrt{17} \approx 7.73$ km.
+
+**3D vectors:** 1. $\sqrt{4 + 36 + 9} = 7$.  2. Magnitude 5, so $\begin{pmatrix} 0 \\ 3/5 \\ 4/5 \end{pmatrix}$.  3. Distances to $(5,4,4)$: A gives $\sqrt{0 + 1 + 4} = \sqrt{5} \approx 2.24$; B gives $\sqrt{1 + 0 + 1} = \sqrt{2} \approx 1.41$ — B is the closer match.
+
+**Vector operations:** 1. $\mathbf{a} + 2\mathbf{b} = \begin{pmatrix} 6 \\ 8 \end{pmatrix}$; $\mathbf{a} - \mathbf{b} = \begin{pmatrix} 3 \\ -7 \end{pmatrix}$ with magnitude $\sqrt{58} \approx 7.62$.  2. $\tfrac{t}{2} = \tfrac{6}{3}$, so $t = 4$.  3. $8\begin{pmatrix} 2 \\ 5 \end{pmatrix} + 4\begin{pmatrix} 3 \\ 1 \end{pmatrix} = \begin{pmatrix} 28 \\ 44 \end{pmatrix}$: 28 hours and 44 kg.
+
+**Position vectors:** 1. $\overrightarrow{AB} = \begin{pmatrix} 5 \\ 12 \end{pmatrix}$, distance 13.  2. $(2, 1)$.  3. From $(3,3)$: $\sqrt{9+1} + \sqrt{4+9} + \sqrt{9+16} = \sqrt{10} + \sqrt{13} + 5 \approx 11.77$. From $(4,4)$: $\sqrt{16+0} + \sqrt{1+16} + \sqrt{4+9} = 4 + \sqrt{17} + \sqrt{13} \approx 11.73$. $(4, 4)$ is (very slightly) better.
+
+**Vectors as data:** 1. $\sqrt{9 + 16 + 1} = \sqrt{26} \approx 5.10$.  2. Centroid $(31, 46)$: the "typical branch" takes about £31k on weekdays and £46k at weekends.  3. Distances to $(6,6,6)$: $\sqrt{1 + 1 + 0} = \sqrt{2} \approx 1.41$ vs $\sqrt{4 + 9 + 1} = \sqrt{14} \approx 3.74$: $(5, 7, 6)$ is the nearer match.
+
+**Matrices:** 1. $A + B$ is defined ($2 \times 3$); $A + C$ is not (sizes differ); $C\mathbf{v}$ is defined ($3 \times 2$ times a 2-vector gives a 3-vector).  2. $\begin{pmatrix} 4 & 1 \\ 4 & -1 \end{pmatrix}$.  3. $\begin{pmatrix} 1(2) + 2(5) \\ 3(2) - 1(5) \end{pmatrix} = \begin{pmatrix} 12 \\ 1 \end{pmatrix}$.  4. $\begin{pmatrix} 2 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} 0 \\ 2 \end{pmatrix}$ and $\begin{pmatrix} 0 \\ 3 \end{pmatrix} \mapsto \begin{pmatrix} -3 \\ 0 \end{pmatrix}$: every vector turns 90° anticlockwise (lengths unchanged) — a rotation.  5. $A\mathbf{q} = \begin{pmatrix} 2(8) + 3(4) \\ 5(8) + 1(4) \end{pmatrix} = \begin{pmatrix} 28 \\ 44 \end{pmatrix}$: 28 hours (within 30 ✓) and 44 kg (within 45 ✓) — feasible.

@@ -1,0 +1,87 @@
+---
+output:
+  pdf_output: default
+  html_output: default
+---
+
+# Introduction {#intro}
+
+Welcome! This is a mathematics bridging course for incoming Management Science students. Its job is simple: to take the A-level mathematics that matters most for your degree and rebuild it — carefully, with plenty of worked examples — so that you arrive at university fluent and confident rather than rusty and apprehensive.
+
+## Who this course is for
+
+You, most likely. It is written for students who have taken A-level Mathematics (or an equivalent qualification) but who might be any of the following:
+
+- **Rusty.** It may be months since your exams, and skills fade fast without use. That's normal, and it's fixable.
+- **Unevenly prepared.** Perhaps your integration is solid but logarithms always felt shaky, or vice versa. Different schools emphasise different things; this course lets you shore up exactly the topics you need.
+- **Short on confidence.** Plenty of very capable students arrive at university quietly convinced they're "not a maths person". They usually are — they've just had patchy experiences. This course is designed to rebuild fluency step by step, and fluency is where confidence comes from.
+
+If you sailed through A-level and none of this applies, the course is still worth a skim: the Management Science applications — pricing, break-even analysis, inventory models, growth forecasting, internal rates of return, recommendation engines — will show you *why* this mathematics was worth learning, and give you a head start on how your degree will use it.
+
+## Prerequisites
+
+- **A-level Mathematics** (or equivalent: IB HL/SL Mathematics, Scottish Highers/Advanced Highers, Access courses, and so on). You do *not* need Further Mathematics — nothing here assumes it.
+- **A scientific calculator**, pen and plenty of paper. Mathematics is not a spectator sport; you will get little from reading alone.
+- **A free [Desmos](https://www.desmos.com/calculator) account** is useful for the interactive graphing activities, though not essential.
+
+No statistics is assumed or covered — your degree will teach probability and statistics from the ground up (though Chapters \@ref(integration) and \@ref(vectors) quietly lay some of the foundations).
+
+## What the course covers
+
+The course has nine content chapters, sequenced so that each builds on the last:
+
+- **Chapter \@ref(algebra) — Algebraic Fluency.** Indices, surds, quadratics, simultaneous equations, inequalities, polynomials, rational expressions and partial fractions. The bedrock: everything else leans on it.
+- **Chapter \@ref(functions) — Functions and Graphs.** Sketching, intersections, asymptotes, proportionality, composite and inverse functions, transformations, and modelling with functions.
+- **Chapter \@ref(coordgeom) — Coordinate Geometry.** Straight lines, gradients as rates of change, parallel and perpendicular lines, and interpreting linear models — your first step towards regression and linear programming.
+- **Chapter \@ref(sequences) — Sequences and Series.** Recurrence relations, sigma notation, arithmetic and geometric series, the binomial expansion, and the discrete-time models behind loans, savings and depreciation.
+- **Chapter \@ref(explog) — Exponentials and Logarithms.** Growth and decay, solving exponential equations, log transformations of data, and doubling times — the mathematics of compounding.
+- **Chapter \@ref(differentiation) — Differentiation.** The longest chapter, by design. Rates of change, all the differentiation rules (with extra practice on combining them), marginal analysis, and full optimisation problems including the Economic Order Quantity.
+- **Chapter \@ref(integration) — Integration.** Totals from rates, areas and consumer surplus, the main integration techniques, and solving the differential equations that power growth and adoption models.
+- **Chapter \@ref(numerical) — Numerical Methods.** What to do when exact methods run out: locating roots, iteration, Newton–Raphson (including finding an internal rate of return by hand), and the trapezium rule on real data.
+- **Chapter \@ref(vectors) — Vectors and a First Look at Matrices.** Multi-component quantities, data vectors and similarity, and a gentle introduction to matrices as transformations and as production-planning tools.
+
+The chapters tell a connected story — quadratics learned in Chapter \@ref(algebra) become revenue curves in Chapter \@ref(functions), get optimised in Chapter \@ref(differentiation), and so on — so if you have time, work through them in order. If you don't, each chapter is self-contained enough for targeted revision, with cross-references pointing you back to anything you need.
+
+## What's not on the course
+
+The course doesn't include probability or statistics, because it's intended only to cover the core topics in mathematics - these are covered in the programme but they will have their own introduction. It also doesn't cover physical applications such as mechanics, because this isn't how we use mathematics in Management Science.
+
+## What's new on the course
+
+The only new content on this course is the in the last chapter. In this chapter we will introduce you to the concept of a matrix and show you how to perform some basic manipulations of it. Even if you're really confident with the rest of the content this chapter will be important to work through. This subject is on the Further Maths A-level and we'll only cover the very initial foothills of matrices, but you will need to go through it. 
+
+## How each chapter works
+
+Every topic follows the same flow:
+
+1. **Key idea** — a short, plain-language explanation of what the technique is and when it's used.
+2. **Worked examples** — graded from *simple* through *moderate* to *challenging*, with the challenging examples usually drawn from Management Science: demand and revenue, cost structures, break-even analysis, compound interest, inventory, forecasting.
+3. **Practice exercises** — a short set after each group of examples, with answers collected at the end of the chapter. Attempt them properly (pen, paper, no peeking) before checking.
+4. **Common mistakes boxes** — the errors examiners see year after year, flagged before you make them.
+5. **Why this matters boxes** — the honest answer to "when will I ever use this?", linking each topic to the university modules where it reappears.
+
+## How to use this course
+
+A few habits that make the difference between reading about mathematics and actually recovering it:
+
+- **Work with a pen.** Copy out the worked examples as you read them — the act of writing is where the learning happens. Reading a solution and nodding is the single most common way to *feel* prepared without *being* prepared.
+- **Attempt before checking.** Try every exercise before looking at the answer, and when you get one wrong, find out *why* before moving on. Wrong answers are the most useful thing in this course.
+- **Little and often beats a binge.** An hour a day for a few weeks will do far more than a heroic weekend. Expect a typical chapter to take somewhere between two and four hours of honest work; Chapters \@ref(differentiation) and \@ref(integration) deserve more.
+- **Use the end-of-chapter quizzes as a compass.** If a diagnostic goes well, move on cheerfully. If it doesn't, that's not a verdict — it's a map showing where to spend your next hour.
+- **Don't aim for perfection.** The goal is fluency and confidence, not a flawless record. If you finish this course able to attempt every topic without dread, it has done its job.
+
+And a note on the wobbles: at some point a topic will refuse to click, and the voice saying "everyone else finds this easy" will pipe up. It's wrong. Every topic in this course is learnable, most of them were hard for almost everyone the first time, and struggling with a technique is what learning it feels like from the inside. Take a break, come back, try a smaller example — and keep going.
+
+## Video content
+
+Throughout the course you'll find embedded videos and playlists that cover each topic in far more depth than these pages can. Almost all of them are drawn from [TLMaths](http://tlmaths.com/), whose thorough and well-organised A-level material has been a real asset in putting this course together — my thanks to its creator. If a topic doesn't click straight away, the videos are a good place to go next.
+
+## The Management Science thread
+
+This is not a generic maths revision course. Throughout, the examples are chosen to preview your degree: you will maximise revenue by completing the square, find market equilibria with simultaneous equations, derive the rule of 72, build a loan-repayment model from a recurrence relation, derive the Economic Order Quantity, compute a consumer surplus, find an internal rate of return with Newton–Raphson, and build a tiny recommendation engine out of vector distances. None of these needs anything beyond A-level mathematics — which is rather the point. The mathematics you already know goes further than you think.
+
+## Getting help
+
+If you get stuck, that's ok — come and ask for help from your Personal Academic Tutor or your lecturers in term 1 who are happy to support your progression.
+
+Good luck — and enjoy it. This course was written in the firm belief that the mathematics of Management Science is not a hurdle to clear but a genuinely powerful toolkit, and that rebuilding it is one of the best investments you can make before term begins. Let's get started: Chapter \@ref(algebra) awaits.

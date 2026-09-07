@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10 Vectors (and a First Look at Matrices) | Mathematics A-Level to University</title>
+  <meta name="description" content="A bridging course from A-Level to university mathematics." />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10 Vectors (and a First Look at Matrices) | Mathematics A-Level to University" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A bridging course from A-Level to university mathematics." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10 Vectors (and a First Look at Matrices) | Mathematics A-Level to University" />
+  
+  <meta name="twitter:description" content="A bridging course from A-Level to university mathematics." />
+  
+
+<meta name="author" content="Matthew M. Jones" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="numerical.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mathematics A-Level to University</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#who-this-course-is-for"><i class="fa fa-check"></i><b>1.1</b> Who this course is for</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#prerequisites"><i class="fa fa-check"></i><b>1.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#what-the-course-covers"><i class="fa fa-check"></i><b>1.3</b> What the course covers</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#whats-not-on-the-course"><i class="fa fa-check"></i><b>1.4</b> What's not on the course</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#whats-new-on-the-course"><i class="fa fa-check"></i><b>1.5</b> What's new on the course</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#how-each-chapter-works"><i class="fa fa-check"></i><b>1.6</b> How each chapter works</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#how-to-use-this-course"><i class="fa fa-check"></i><b>1.7</b> How to use this course</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#video-content"><i class="fa fa-check"></i><b>1.8</b> Video content</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#the-management-science-thread"><i class="fa fa-check"></i><b>1.9</b> The Management Science thread</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#getting-help"><i class="fa fa-check"></i><b>1.10</b> Getting help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="algebra.html"><a href="algebra.html"><i class="fa fa-check"></i><b>2</b> Algebraic Fluency</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="algebra.html"><a href="algebra.html#indices"><i class="fa fa-check"></i><b>2.1</b> Indices</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="algebra.html"><a href="algebra.html#key-idea"><i class="fa fa-check"></i><b>2.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.1.2" data-path="algebra.html"><a href="algebra.html#worked-examples"><i class="fa fa-check"></i><b>2.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.1.3" data-path="algebra.html"><a href="algebra.html#practice-exercises"><i class="fa fa-check"></i><b>2.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="algebra.html"><a href="algebra.html#surds"><i class="fa fa-check"></i><b>2.2</b> Surds</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="algebra.html"><a href="algebra.html#key-idea-1"><i class="fa fa-check"></i><b>2.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.2.2" data-path="algebra.html"><a href="algebra.html#worked-examples-1"><i class="fa fa-check"></i><b>2.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.2.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-1"><i class="fa fa-check"></i><b>2.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="algebra.html"><a href="algebra.html#quadratics"><i class="fa fa-check"></i><b>2.3</b> Quadratics</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="algebra.html"><a href="algebra.html#key-idea-2"><i class="fa fa-check"></i><b>2.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.3.2" data-path="algebra.html"><a href="algebra.html#worked-examples-2"><i class="fa fa-check"></i><b>2.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.3.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-2"><i class="fa fa-check"></i><b>2.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="algebra.html"><a href="algebra.html#simeq"><i class="fa fa-check"></i><b>2.4</b> Simultaneous equations</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="algebra.html"><a href="algebra.html#key-idea-3"><i class="fa fa-check"></i><b>2.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.4.2" data-path="algebra.html"><a href="algebra.html#worked-examples-3"><i class="fa fa-check"></i><b>2.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.4.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-3"><i class="fa fa-check"></i><b>2.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="algebra.html"><a href="algebra.html#inequalities"><i class="fa fa-check"></i><b>2.5</b> Inequalities</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="algebra.html"><a href="algebra.html#key-idea-4"><i class="fa fa-check"></i><b>2.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.5.2" data-path="algebra.html"><a href="algebra.html#worked-examples-4"><i class="fa fa-check"></i><b>2.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.5.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-4"><i class="fa fa-check"></i><b>2.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="algebra.html"><a href="algebra.html#polynomials"><i class="fa fa-check"></i><b>2.6</b> Polynomials</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="algebra.html"><a href="algebra.html#key-idea-5"><i class="fa fa-check"></i><b>2.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.6.2" data-path="algebra.html"><a href="algebra.html#worked-examples-5"><i class="fa fa-check"></i><b>2.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.6.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-5"><i class="fa fa-check"></i><b>2.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="algebra.html"><a href="algebra.html#rational"><i class="fa fa-check"></i><b>2.7</b> Rational expressions</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="algebra.html"><a href="algebra.html#key-idea-6"><i class="fa fa-check"></i><b>2.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.7.2" data-path="algebra.html"><a href="algebra.html#worked-examples-6"><i class="fa fa-check"></i><b>2.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.7.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-6"><i class="fa fa-check"></i><b>2.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="algebra.html"><a href="algebra.html#partialfractions"><i class="fa fa-check"></i><b>2.8</b> Partial fractions</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="algebra.html"><a href="algebra.html#key-idea-7"><i class="fa fa-check"></i><b>2.8.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.8.2" data-path="algebra.html"><a href="algebra.html#worked-examples-7"><i class="fa fa-check"></i><b>2.8.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.8.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-7"><i class="fa fa-check"></i><b>2.8.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="algebra.html"><a href="algebra.html#chapter-summary"><i class="fa fa-check"></i><b>2.9</b> Chapter summary</a></li>
+<li class="chapter" data-level="2.10" data-path="algebra.html"><a href="algebra.html#end-of-chapter-quiz"><i class="fa fa-check"></i><b>2.10</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="2.11" data-path="algebra.html"><a href="algebra.html#algebra-answers"><i class="fa fa-check"></i><b>2.11</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Graphs</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#graphs"><i class="fa fa-check"></i><b>3.1</b> Graphs of functions</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#key-idea-8"><i class="fa fa-check"></i><b>3.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#worked-examples-8"><i class="fa fa-check"></i><b>3.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.1.3" data-path="functions.html"><a href="functions.html#practice-exercises-8"><i class="fa fa-check"></i><b>3.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#intersections"><i class="fa fa-check"></i><b>3.2</b> Intersections: solving equations graphically</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions.html"><a href="functions.html#key-idea-9"><i class="fa fa-check"></i><b>3.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.2.2" data-path="functions.html"><a href="functions.html#worked-examples-9"><i class="fa fa-check"></i><b>3.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.2.3" data-path="functions.html"><a href="functions.html#practice-exercises-9"><i class="fa fa-check"></i><b>3.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#asymptotes"><i class="fa fa-check"></i><b>3.3</b> Asymptotes</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="functions.html"><a href="functions.html#key-idea-10"><i class="fa fa-check"></i><b>3.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.3.2" data-path="functions.html"><a href="functions.html#worked-examples-10"><i class="fa fa-check"></i><b>3.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.3.3" data-path="functions.html"><a href="functions.html#practice-exercises-10"><i class="fa fa-check"></i><b>3.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#proportionality"><i class="fa fa-check"></i><b>3.4</b> Proportionality</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#key-idea-11"><i class="fa fa-check"></i><b>3.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.4.2" data-path="functions.html"><a href="functions.html#worked-examples-11"><i class="fa fa-check"></i><b>3.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.4.3" data-path="functions.html"><a href="functions.html#practice-exercises-11"><i class="fa fa-check"></i><b>3.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#composite"><i class="fa fa-check"></i><b>3.5</b> Composite functions</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="functions.html"><a href="functions.html#key-idea-12"><i class="fa fa-check"></i><b>3.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.5.2" data-path="functions.html"><a href="functions.html#worked-examples-12"><i class="fa fa-check"></i><b>3.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.5.3" data-path="functions.html"><a href="functions.html#practice-exercises-12"><i class="fa fa-check"></i><b>3.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#inverse"><i class="fa fa-check"></i><b>3.6</b> Inverse functions</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="functions.html"><a href="functions.html#key-idea-13"><i class="fa fa-check"></i><b>3.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.6.2" data-path="functions.html"><a href="functions.html#worked-examples-13"><i class="fa fa-check"></i><b>3.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.6.3" data-path="functions.html"><a href="functions.html#practice-exercises-13"><i class="fa fa-check"></i><b>3.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="functions.html"><a href="functions.html#transformations"><i class="fa fa-check"></i><b>3.7</b> Transformations of graphs</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="functions.html"><a href="functions.html#key-idea-14"><i class="fa fa-check"></i><b>3.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.7.2" data-path="functions.html"><a href="functions.html#worked-examples-14"><i class="fa fa-check"></i><b>3.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.7.3" data-path="functions.html"><a href="functions.html#practice-exercises-14"><i class="fa fa-check"></i><b>3.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="functions.html"><a href="functions.html#modellingfunctions"><i class="fa fa-check"></i><b>3.8</b> Modelling with functions</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="functions.html"><a href="functions.html#key-idea-15"><i class="fa fa-check"></i><b>3.8.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.8.2" data-path="functions.html"><a href="functions.html#worked-examples-15"><i class="fa fa-check"></i><b>3.8.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.8.3" data-path="functions.html"><a href="functions.html#practice-exercises-15"><i class="fa fa-check"></i><b>3.8.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="functions.html"><a href="functions.html#chapter-summary-1"><i class="fa fa-check"></i><b>3.9</b> Chapter summary</a></li>
+<li class="chapter" data-level="3.10" data-path="functions.html"><a href="functions.html#end-of-chapter-quiz-1"><i class="fa fa-check"></i><b>3.10</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="3.11" data-path="functions.html"><a href="functions.html#functions-answers"><i class="fa fa-check"></i><b>3.11</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="coordgeom.html"><a href="coordgeom.html"><i class="fa fa-check"></i><b>4</b> Coordinate Geometry Useful for Modelling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="coordgeom.html"><a href="coordgeom.html#straightlines"><i class="fa fa-check"></i><b>4.1</b> Straight lines and their equations</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="coordgeom.html"><a href="coordgeom.html#key-idea-16"><i class="fa fa-check"></i><b>4.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="4.1.2" data-path="coordgeom.html"><a href="coordgeom.html#worked-examples-16"><i class="fa fa-check"></i><b>4.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="4.1.3" data-path="coordgeom.html"><a href="coordgeom.html#practice-exercises-16"><i class="fa fa-check"></i><b>4.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="coordgeom.html"><a href="coordgeom.html#gradient-rate"><i class="fa fa-check"></i><b>4.2</b> Gradient as a rate of change</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="coordgeom.html"><a href="coordgeom.html#key-idea-17"><i class="fa fa-check"></i><b>4.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="4.2.2" data-path="coordgeom.html"><a href="coordgeom.html#worked-examples-17"><i class="fa fa-check"></i><b>4.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="4.2.3" data-path="coordgeom.html"><a href="coordgeom.html#practice-exercises-17"><i class="fa fa-check"></i><b>4.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="coordgeom.html"><a href="coordgeom.html#parallel-perpendicular"><i class="fa fa-check"></i><b>4.3</b> Parallel and perpendicular lines</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="coordgeom.html"><a href="coordgeom.html#key-idea-18"><i class="fa fa-check"></i><b>4.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="4.3.2" data-path="coordgeom.html"><a href="coordgeom.html#worked-examples-18"><i class="fa fa-check"></i><b>4.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="4.3.3" data-path="coordgeom.html"><a href="coordgeom.html#practice-exercises-18"><i class="fa fa-check"></i><b>4.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="coordgeom.html"><a href="coordgeom.html#linearmodels"><i class="fa fa-check"></i><b>4.4</b> Linear models</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="coordgeom.html"><a href="coordgeom.html#key-idea-19"><i class="fa fa-check"></i><b>4.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="4.4.2" data-path="coordgeom.html"><a href="coordgeom.html#worked-examples-19"><i class="fa fa-check"></i><b>4.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="4.4.3" data-path="coordgeom.html"><a href="coordgeom.html#practice-exercises-19"><i class="fa fa-check"></i><b>4.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="coordgeom.html"><a href="coordgeom.html#chapter-summary-2"><i class="fa fa-check"></i><b>4.5</b> Chapter summary</a></li>
+<li class="chapter" data-level="4.6" data-path="coordgeom.html"><a href="coordgeom.html#end-of-chapter-quiz-2"><i class="fa fa-check"></i><b>4.6</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="4.7" data-path="coordgeom.html"><a href="coordgeom.html#coordgeom-answers"><i class="fa fa-check"></i><b>4.7</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sequences.html"><a href="sequences.html"><i class="fa fa-check"></i><b>5</b> Sequences and Series</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="sequences.html"><a href="sequences.html#recurrence"><i class="fa fa-check"></i><b>5.1</b> Sequences and recurrence relations</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="sequences.html"><a href="sequences.html#key-idea-20"><i class="fa fa-check"></i><b>5.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.1.2" data-path="sequences.html"><a href="sequences.html#worked-examples-20"><i class="fa fa-check"></i><b>5.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.1.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-20"><i class="fa fa-check"></i><b>5.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="sequences.html"><a href="sequences.html#sigma"><i class="fa fa-check"></i><b>5.2</b> Sigma notation</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="sequences.html"><a href="sequences.html#key-idea-21"><i class="fa fa-check"></i><b>5.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.2.2" data-path="sequences.html"><a href="sequences.html#worked-examples-21"><i class="fa fa-check"></i><b>5.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.2.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-21"><i class="fa fa-check"></i><b>5.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="sequences.html"><a href="sequences.html#arithmetic"><i class="fa fa-check"></i><b>5.3</b> Arithmetic sequences and series</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="sequences.html"><a href="sequences.html#key-idea-22"><i class="fa fa-check"></i><b>5.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.3.2" data-path="sequences.html"><a href="sequences.html#worked-examples-22"><i class="fa fa-check"></i><b>5.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.3.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-22"><i class="fa fa-check"></i><b>5.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="sequences.html"><a href="sequences.html#geometric"><i class="fa fa-check"></i><b>5.4</b> Geometric sequences and series</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="sequences.html"><a href="sequences.html#key-idea-23"><i class="fa fa-check"></i><b>5.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.4.2" data-path="sequences.html"><a href="sequences.html#worked-examples-23"><i class="fa fa-check"></i><b>5.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.4.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-23"><i class="fa fa-check"></i><b>5.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="sequences.html"><a href="sequences.html#binomial"><i class="fa fa-check"></i><b>5.5</b> Binomial expansion</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="sequences.html"><a href="sequences.html#key-idea-24"><i class="fa fa-check"></i><b>5.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.5.2" data-path="sequences.html"><a href="sequences.html#worked-examples-24"><i class="fa fa-check"></i><b>5.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.5.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-24"><i class="fa fa-check"></i><b>5.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="sequences.html"><a href="sequences.html#seqmodelling"><i class="fa fa-check"></i><b>5.6</b> Modelling with sequences and series</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="sequences.html"><a href="sequences.html#key-idea-25"><i class="fa fa-check"></i><b>5.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.6.2" data-path="sequences.html"><a href="sequences.html#worked-examples-25"><i class="fa fa-check"></i><b>5.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.6.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-25"><i class="fa fa-check"></i><b>5.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="sequences.html"><a href="sequences.html#chapter-summary-3"><i class="fa fa-check"></i><b>5.7</b> Chapter summary</a></li>
+<li class="chapter" data-level="5.8" data-path="sequences.html"><a href="sequences.html#sequences-diagnostic"><i class="fa fa-check"></i><b>5.8</b> End-of-chapter diagnostic</a></li>
+<li class="chapter" data-level="5.9" data-path="sequences.html"><a href="sequences.html#end-of-chapter-quiz-3"><i class="fa fa-check"></i><b>5.9</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="5.10" data-path="sequences.html"><a href="sequences.html#sequences-answers"><i class="fa fa-check"></i><b>5.10</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="explog.html"><a href="explog.html"><i class="fa fa-check"></i><b>6</b> Exponentials and Logarithms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="explog.html"><a href="explog.html#expfunctions"><i class="fa fa-check"></i><b>6.1</b> Exponential functions</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="explog.html"><a href="explog.html#key-idea-26"><i class="fa fa-check"></i><b>6.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.1.2" data-path="explog.html"><a href="explog.html#worked-examples-26"><i class="fa fa-check"></i><b>6.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.1.3" data-path="explog.html"><a href="explog.html#practice-exercises-26"><i class="fa fa-check"></i><b>6.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="explog.html"><a href="explog.html#logs"><i class="fa fa-check"></i><b>6.2</b> Logarithms</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="explog.html"><a href="explog.html#key-idea-27"><i class="fa fa-check"></i><b>6.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.2.2" data-path="explog.html"><a href="explog.html#worked-examples-27"><i class="fa fa-check"></i><b>6.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.2.3" data-path="explog.html"><a href="explog.html#practice-exercises-27"><i class="fa fa-check"></i><b>6.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="explog.html"><a href="explog.html#loglaws"><i class="fa fa-check"></i><b>6.3</b> Laws of logarithms</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="explog.html"><a href="explog.html#key-idea-28"><i class="fa fa-check"></i><b>6.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.3.2" data-path="explog.html"><a href="explog.html#worked-examples-28"><i class="fa fa-check"></i><b>6.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.3.3" data-path="explog.html"><a href="explog.html#practice-exercises-28"><i class="fa fa-check"></i><b>6.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="explog.html"><a href="explog.html#expequations"><i class="fa fa-check"></i><b>6.4</b> Exponential equations</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="explog.html"><a href="explog.html#key-idea-29"><i class="fa fa-check"></i><b>6.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.4.2" data-path="explog.html"><a href="explog.html#worked-examples-29"><i class="fa fa-check"></i><b>6.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.4.3" data-path="explog.html"><a href="explog.html#practice-exercises-29"><i class="fa fa-check"></i><b>6.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="explog.html"><a href="explog.html#logtransform"><i class="fa fa-check"></i><b>6.5</b> Log transformations</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="explog.html"><a href="explog.html#key-idea-30"><i class="fa fa-check"></i><b>6.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.5.2" data-path="explog.html"><a href="explog.html#worked-examples-30"><i class="fa fa-check"></i><b>6.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.5.3" data-path="explog.html"><a href="explog.html#practice-exercises-30"><i class="fa fa-check"></i><b>6.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="explog.html"><a href="explog.html#growthdecay"><i class="fa fa-check"></i><b>6.6</b> Growth and decay models</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="explog.html"><a href="explog.html#key-idea-31"><i class="fa fa-check"></i><b>6.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.6.2" data-path="explog.html"><a href="explog.html#worked-examples-31"><i class="fa fa-check"></i><b>6.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.6.3" data-path="explog.html"><a href="explog.html#practice-exercises-31"><i class="fa fa-check"></i><b>6.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="explog.html"><a href="explog.html#chapter-summary-4"><i class="fa fa-check"></i><b>6.7</b> Chapter summary</a></li>
+<li class="chapter" data-level="6.8" data-path="explog.html"><a href="explog.html#end-of-chapter-quiz-4"><i class="fa fa-check"></i><b>6.8</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="6.9" data-path="explog.html"><a href="explog.html#explog-answers"><i class="fa fa-check"></i><b>6.9</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="differentiation.html"><a href="differentiation.html"><i class="fa fa-check"></i><b>7</b> Differentiation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="differentiation.html"><a href="differentiation.html#derivative-meaning"><i class="fa fa-check"></i><b>7.1</b> What is a derivative?</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-32"><i class="fa fa-check"></i><b>7.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.1.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-32"><i class="fa fa-check"></i><b>7.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.1.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-32"><i class="fa fa-check"></i><b>7.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="differentiation.html"><a href="differentiation.html#standard-derivatives"><i class="fa fa-check"></i><b>7.2</b> Standard derivatives</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-33"><i class="fa fa-check"></i><b>7.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.2.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-33"><i class="fa fa-check"></i><b>7.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.2.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-33"><i class="fa fa-check"></i><b>7.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="differentiation.html"><a href="differentiation.html#chainrule"><i class="fa fa-check"></i><b>7.3</b> The chain rule</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-34"><i class="fa fa-check"></i><b>7.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.3.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-34"><i class="fa fa-check"></i><b>7.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.3.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-34"><i class="fa fa-check"></i><b>7.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="differentiation.html"><a href="differentiation.html#productrule"><i class="fa fa-check"></i><b>7.4</b> The product rule</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-35"><i class="fa fa-check"></i><b>7.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.4.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-35"><i class="fa fa-check"></i><b>7.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.4.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-35"><i class="fa fa-check"></i><b>7.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="differentiation.html"><a href="differentiation.html#quotientrule"><i class="fa fa-check"></i><b>7.5</b> The quotient rule</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-36"><i class="fa fa-check"></i><b>7.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.5.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-36"><i class="fa fa-check"></i><b>7.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.5.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-36"><i class="fa fa-check"></i><b>7.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="differentiation.html"><a href="differentiation.html#combining-rules"><i class="fa fa-check"></i><b>7.6</b> Combining the rules</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-37"><i class="fa fa-check"></i><b>7.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.6.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-37"><i class="fa fa-check"></i><b>7.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.6.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-37"><i class="fa fa-check"></i><b>7.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="differentiation.html"><a href="differentiation.html#second-derivative"><i class="fa fa-check"></i><b>7.7</b> Second derivatives, concavity and points of inflection</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-38"><i class="fa fa-check"></i><b>7.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.7.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-38"><i class="fa fa-check"></i><b>7.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.7.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-38"><i class="fa fa-check"></i><b>7.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="differentiation.html"><a href="differentiation.html#tangents-normals"><i class="fa fa-check"></i><b>7.8</b> Tangents and normals</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-39"><i class="fa fa-check"></i><b>7.8.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.8.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-39"><i class="fa fa-check"></i><b>7.8.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.8.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-39"><i class="fa fa-check"></i><b>7.8.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="differentiation.html"><a href="differentiation.html#optimisation"><i class="fa fa-check"></i><b>7.9</b> Increasing, decreasing and optimisation</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-40"><i class="fa fa-check"></i><b>7.9.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.9.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-40"><i class="fa fa-check"></i><b>7.9.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.9.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-40"><i class="fa fa-check"></i><b>7.9.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="differentiation.html"><a href="differentiation.html#connected-rates"><i class="fa fa-check"></i><b>7.10</b> Connected rates of change</a>
+<ul>
+<li class="chapter" data-level="7.10.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-41"><i class="fa fa-check"></i><b>7.10.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.10.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-41"><i class="fa fa-check"></i><b>7.10.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.10.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-41"><i class="fa fa-check"></i><b>7.10.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="differentiation.html"><a href="differentiation.html#implicit-parametric"><i class="fa fa-check"></i><b>7.11</b> Implicit and parametric differentiation</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-42"><i class="fa fa-check"></i><b>7.11.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.11.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-42"><i class="fa fa-check"></i><b>7.11.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.11.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-42"><i class="fa fa-check"></i><b>7.11.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="differentiation.html"><a href="differentiation.html#constructing-des"><i class="fa fa-check"></i><b>7.12</b> Constructing differential equations</a>
+<ul>
+<li class="chapter" data-level="7.12.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-43"><i class="fa fa-check"></i><b>7.12.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.12.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-43"><i class="fa fa-check"></i><b>7.12.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.12.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-43"><i class="fa fa-check"></i><b>7.12.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.13" data-path="differentiation.html"><a href="differentiation.html#chapter-summary-5"><i class="fa fa-check"></i><b>7.13</b> Chapter summary</a></li>
+<li class="chapter" data-level="7.14" data-path="differentiation.html"><a href="differentiation.html#end-of-chapter-quiz-5"><i class="fa fa-check"></i><b>7.14</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="7.15" data-path="differentiation.html"><a href="differentiation.html#differentiation-answers"><i class="fa fa-check"></i><b>7.15</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="integration.html"><a href="integration.html"><i class="fa fa-check"></i><b>8</b> Integration</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="integration.html"><a href="integration.html#antiderivatives"><i class="fa fa-check"></i><b>8.1</b> Integration as the reverse of differentiation</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="integration.html"><a href="integration.html#key-idea-44"><i class="fa fa-check"></i><b>8.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.1.2" data-path="integration.html"><a href="integration.html#worked-examples-44"><i class="fa fa-check"></i><b>8.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.1.3" data-path="integration.html"><a href="integration.html#practice-exercises-44"><i class="fa fa-check"></i><b>8.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="integration.html"><a href="integration.html#standard-integrals"><i class="fa fa-check"></i><b>8.2</b> Standard integrals</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="integration.html"><a href="integration.html#key-idea-45"><i class="fa fa-check"></i><b>8.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.2.2" data-path="integration.html"><a href="integration.html#worked-examples-45"><i class="fa fa-check"></i><b>8.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.2.3" data-path="integration.html"><a href="integration.html#practice-exercises-45"><i class="fa fa-check"></i><b>8.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="integration.html"><a href="integration.html#definite-integrals"><i class="fa fa-check"></i><b>8.3</b> Definite integrals and area</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="integration.html"><a href="integration.html#key-idea-46"><i class="fa fa-check"></i><b>8.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.3.2" data-path="integration.html"><a href="integration.html#worked-examples-46"><i class="fa fa-check"></i><b>8.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.3.3" data-path="integration.html"><a href="integration.html#practice-exercises-46"><i class="fa fa-check"></i><b>8.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="integration.html"><a href="integration.html#accumulation"><i class="fa fa-check"></i><b>8.4</b> Integration as accumulation</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="integration.html"><a href="integration.html#key-idea-47"><i class="fa fa-check"></i><b>8.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.4.2" data-path="integration.html"><a href="integration.html#worked-examples-47"><i class="fa fa-check"></i><b>8.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.4.3" data-path="integration.html"><a href="integration.html#practice-exercises-47"><i class="fa fa-check"></i><b>8.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="integration.html"><a href="integration.html#substitution"><i class="fa fa-check"></i><b>8.5</b> Integration by substitution</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="integration.html"><a href="integration.html#key-idea-48"><i class="fa fa-check"></i><b>8.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.5.2" data-path="integration.html"><a href="integration.html#worked-examples-48"><i class="fa fa-check"></i><b>8.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.5.3" data-path="integration.html"><a href="integration.html#practice-exercises-48"><i class="fa fa-check"></i><b>8.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="integration.html"><a href="integration.html#byparts"><i class="fa fa-check"></i><b>8.6</b> Integration by parts</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="integration.html"><a href="integration.html#key-idea-49"><i class="fa fa-check"></i><b>8.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.6.2" data-path="integration.html"><a href="integration.html#worked-examples-49"><i class="fa fa-check"></i><b>8.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.6.3" data-path="integration.html"><a href="integration.html#practice-exercises-49"><i class="fa fa-check"></i><b>8.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="integration.html"><a href="integration.html#pf-integration"><i class="fa fa-check"></i><b>8.7</b> Integration using partial fractions</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="integration.html"><a href="integration.html#key-idea-50"><i class="fa fa-check"></i><b>8.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.7.2" data-path="integration.html"><a href="integration.html#worked-examples-50"><i class="fa fa-check"></i><b>8.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.7.3" data-path="integration.html"><a href="integration.html#practice-exercises-50"><i class="fa fa-check"></i><b>8.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="integration.html"><a href="integration.html#separable-des"><i class="fa fa-check"></i><b>8.8</b> Separable differential equations</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="integration.html"><a href="integration.html#key-idea-51"><i class="fa fa-check"></i><b>8.8.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.8.2" data-path="integration.html"><a href="integration.html#worked-examples-51"><i class="fa fa-check"></i><b>8.8.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.8.3" data-path="integration.html"><a href="integration.html#practice-exercises-51"><i class="fa fa-check"></i><b>8.8.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="integration.html"><a href="integration.html#interpretation"><i class="fa fa-check"></i><b>8.9</b> Interpreting integrals and solutions in context</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="integration.html"><a href="integration.html#key-idea-52"><i class="fa fa-check"></i><b>8.9.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.9.2" data-path="integration.html"><a href="integration.html#worked-examples-52"><i class="fa fa-check"></i><b>8.9.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.9.3" data-path="integration.html"><a href="integration.html#practice-exercises-52"><i class="fa fa-check"></i><b>8.9.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="integration.html"><a href="integration.html#chapter-summary-6"><i class="fa fa-check"></i><b>8.10</b> Chapter summary</a></li>
+<li class="chapter" data-level="8.11" data-path="integration.html"><a href="integration.html#end-of-chapter-quiz-6"><i class="fa fa-check"></i><b>8.11</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="8.12" data-path="integration.html"><a href="integration.html#integration-answers"><i class="fa fa-check"></i><b>8.12</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="numerical.html"><a href="numerical.html"><i class="fa fa-check"></i><b>9</b> Numerical Methods</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="numerical.html"><a href="numerical.html#sign-change"><i class="fa fa-check"></i><b>9.1</b> Locating roots by sign change</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="numerical.html"><a href="numerical.html#key-idea-53"><i class="fa fa-check"></i><b>9.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.1.2" data-path="numerical.html"><a href="numerical.html#worked-examples-53"><i class="fa fa-check"></i><b>9.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="9.1.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-53"><i class="fa fa-check"></i><b>9.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="numerical.html"><a href="numerical.html#fixed-point"><i class="fa fa-check"></i><b>9.2</b> Fixed-point iteration</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="numerical.html"><a href="numerical.html#key-idea-54"><i class="fa fa-check"></i><b>9.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.2.2" data-path="numerical.html"><a href="numerical.html#worked-examples-54"><i class="fa fa-check"></i><b>9.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="9.2.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-54"><i class="fa fa-check"></i><b>9.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="numerical.html"><a href="numerical.html#newton-raphson"><i class="fa fa-check"></i><b>9.3</b> The Newton–Raphson method</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="numerical.html"><a href="numerical.html#key-idea-55"><i class="fa fa-check"></i><b>9.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.3.2" data-path="numerical.html"><a href="numerical.html#worked-examples-55"><i class="fa fa-check"></i><b>9.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="9.3.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-55"><i class="fa fa-check"></i><b>9.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="numerical.html"><a href="numerical.html#trapezium"><i class="fa fa-check"></i><b>9.4</b> Numerical integration: the trapezium rule</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="numerical.html"><a href="numerical.html#key-idea-56"><i class="fa fa-check"></i><b>9.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.4.2" data-path="numerical.html"><a href="numerical.html#worked-examples-56"><i class="fa fa-check"></i><b>9.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="9.4.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-56"><i class="fa fa-check"></i><b>9.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="numerical.html"><a href="numerical.html#numerical-context"><i class="fa fa-check"></i><b>9.5</b> Choosing and trusting a numerical method</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="numerical.html"><a href="numerical.html#key-idea-57"><i class="fa fa-check"></i><b>9.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.5.2" data-path="numerical.html"><a href="numerical.html#worked-example"><i class="fa fa-check"></i><b>9.5.2</b> Worked example</a></li>
+<li class="chapter" data-level="9.5.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-57"><i class="fa fa-check"></i><b>9.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="numerical.html"><a href="numerical.html#chapter-summary-7"><i class="fa fa-check"></i><b>9.6</b> Chapter summary</a></li>
+<li class="chapter" data-level="9.7" data-path="numerical.html"><a href="numerical.html#end-of-chapter-quiz-7"><i class="fa fa-check"></i><b>9.7</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="9.8" data-path="numerical.html"><a href="numerical.html#numerical-answers"><i class="fa fa-check"></i><b>9.8</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>10</b> Vectors (and a First Look at Matrices)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="vectors.html"><a href="vectors.html#vectors-2d"><i class="fa fa-check"></i><b>10.1</b> Two-dimensional vectors</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="vectors.html"><a href="vectors.html#key-idea-58"><i class="fa fa-check"></i><b>10.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.1.2" data-path="vectors.html"><a href="vectors.html#worked-examples-57"><i class="fa fa-check"></i><b>10.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.1.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-58"><i class="fa fa-check"></i><b>10.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="vectors.html"><a href="vectors.html#vectors-3d"><i class="fa fa-check"></i><b>10.2</b> Three-dimensional vectors</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="vectors.html"><a href="vectors.html#key-idea-59"><i class="fa fa-check"></i><b>10.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.2.2" data-path="vectors.html"><a href="vectors.html#worked-examples-58"><i class="fa fa-check"></i><b>10.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.2.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-59"><i class="fa fa-check"></i><b>10.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="vectors.html"><a href="vectors.html#vector-operations"><i class="fa fa-check"></i><b>10.3</b> Vector operations</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="vectors.html"><a href="vectors.html#key-idea-60"><i class="fa fa-check"></i><b>10.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.3.2" data-path="vectors.html"><a href="vectors.html#worked-examples-59"><i class="fa fa-check"></i><b>10.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.3.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-60"><i class="fa fa-check"></i><b>10.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="vectors.html"><a href="vectors.html#position-vectors"><i class="fa fa-check"></i><b>10.4</b> Position vectors and distances</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="vectors.html"><a href="vectors.html#key-idea-61"><i class="fa fa-check"></i><b>10.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.4.2" data-path="vectors.html"><a href="vectors.html#worked-examples-60"><i class="fa fa-check"></i><b>10.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.4.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-61"><i class="fa fa-check"></i><b>10.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="vectors.html"><a href="vectors.html#data-vectors"><i class="fa fa-check"></i><b>10.5</b> Vectors as data</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="vectors.html"><a href="vectors.html#key-idea-62"><i class="fa fa-check"></i><b>10.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.5.2" data-path="vectors.html"><a href="vectors.html#worked-examples-61"><i class="fa fa-check"></i><b>10.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.5.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-62"><i class="fa fa-check"></i><b>10.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="vectors.html"><a href="vectors.html#matrices"><i class="fa fa-check"></i><b>10.6</b> A first look at matrices</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="vectors.html"><a href="vectors.html#key-idea-63"><i class="fa fa-check"></i><b>10.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.6.2" data-path="vectors.html"><a href="vectors.html#worked-examples-62"><i class="fa fa-check"></i><b>10.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.6.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-63"><i class="fa fa-check"></i><b>10.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="vectors.html"><a href="vectors.html#end-of-chapter-quiz-8"><i class="fa fa-check"></i><b>10.7</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="10.8" data-path="vectors.html"><a href="vectors.html#chapter-summary-and-the-end-of-the-course"><i class="fa fa-check"></i><b>10.8</b> Chapter summary — and the end of the course</a></li>
+<li class="chapter" data-level="10.9" data-path="vectors.html"><a href="vectors.html#vectors-answers"><i class="fa fa-check"></i><b>10.9</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mathematics A-Level to University</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vectors" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Vectors (and a First Look at Matrices)<a href="vectors.html#vectors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A single number describes one thing: a price, a quantity, a temperature. But business objects usually have <em>many</em> components at once — a production plan has quantities of several products; a customer has spending in several categories; a location has coordinates. A <strong>vector</strong> is the mathematical object for exactly this: an ordered list of numbers treated as a single quantity. This closing chapter builds fluency with 2D and 3D vectors, then looks ahead in two directions: vectors as <em>data</em> (the language of analytics) and a gentle first meeting with <strong>matrices</strong>, which act on vectors and will dominate your quantitative modules.</p>
+<p><strong>Why this matters:</strong> University Management Science is multivariable from week one. Functions of several variables, gradients, linear programming, input–output models, Markov chains, regression, machine learning — every one of them is vectors and matrices at heart. The mechanics in this chapter are simple; the payoff is that nothing in first year will look alien.</p>
+<div id="vectors-2d" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Two-dimensional vectors<a href="vectors.html#vectors-2d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-58" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Key idea<a href="vectors.html#key-idea-58" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A 2D vector is a pair of components, written as a column <span class="math inline">\(\mathbf{v} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}\)</span> or inline as <span class="math inline">\((3, 4)\)</span>. Geometrically it is an <em>arrow</em>: 3 across, 4 up — and any arrow with the same length and direction is the same vector, wherever it starts.</p>
+<ul>
+<li><strong>Magnitude</strong> (length), by Pythagoras: <span class="math inline">\(|\mathbf{v}| = \sqrt{x^2 + y^2}\)</span>.</li>
+<li><strong>Direction:</strong> the angle the arrow makes, found from <span class="math inline">\(\tan\theta = \tfrac{y}{x}\)</span> — with a sketch to pick the right quadrant.</li>
+</ul>
+<p>Vectors and scalars are different species: a scalar is one number; a vector is a package of numbers with a direction. Keep the notation distinct (<span class="math inline">\(\mathbf{v}\)</span> or <span class="math inline">\(\underline{v}\)</span> for vectors).</p>
+</div>
+<div id="worked-examples-57" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Worked examples<a href="vectors.html#worked-examples-57" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> Find the magnitude and direction of <span class="math inline">\(\mathbf{v} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}\)</span>.</p>
+<p><span class="math inline">\(|\mathbf{v}| = \sqrt{9 + 16} = 5\)</span>; direction <span class="math inline">\(\theta = \tan^{-1}\!\big(\tfrac{4}{3}\big) \approx 53.1°\)</span> above the positive <span class="math inline">\(x\)</span>-direction.</p>
+<p><strong>Example (moderate).</strong> Find the magnitude and direction of <span class="math inline">\(\mathbf{a} = \begin{pmatrix} -2 \\ 5 \end{pmatrix}\)</span>.</p>
+<p><span class="math inline">\(|\mathbf{a}| = \sqrt{4 + 25} = \sqrt{29} \approx 5.39\)</span>. A sketch shows the arrow points up-and-left (second quadrant): the acute reference angle is <span class="math inline">\(\tan^{-1}\!\big(\tfrac{5}{2}\big) \approx 68.2°\)</span>, so the direction is <span class="math inline">\(180° - 68.2° = 111.8°\)</span> from the positive <span class="math inline">\(x\)</span>-direction. Never skip the sketch — the calculator's <span class="math inline">\(\tan^{-1}\)</span> alone can't tell the second quadrant from the fourth.</p>
+<p><strong>Example (challenging — resultant vs distance travelled).</strong> A delivery drone flies displacement <span class="math inline">\(\begin{pmatrix} 3 \\ 4 \end{pmatrix}\)</span> km, then <span class="math inline">\(\begin{pmatrix} 5 \\ -2 \end{pmatrix}\)</span> km. Find (a) its final displacement from base, (b) how far it is from base, and (c) the total distance it has flown — and explain why (b) and (c) differ.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Add components: <span class="math inline">\(\begin{pmatrix} 3 \\ 4 \end{pmatrix} + \begin{pmatrix} 5 \\ -2 \end{pmatrix} = \begin{pmatrix} 8 \\ 2 \end{pmatrix}\)</span> km.</p></li>
+<li><p><span class="math inline">\(\left|\begin{pmatrix} 8 \\ 2 \end{pmatrix}\right| = \sqrt{68} \approx 8.25\)</span> km from base.</p></li>
+<li><p>Distance flown is the sum of the two legs' <em>lengths</em>: <span class="math inline">\(5 + \sqrt{29} \approx 10.39\)</span> km.</p></li>
+</ol>
+<p>The drone flew 10.39 km but ends only 8.25 km from home — magnitudes don't add unless the legs point the same way. In symbols: <span class="math inline">\(|\mathbf{a} + \mathbf{b}| \le |\mathbf{a}| + |\mathbf{b}|\)</span>, the <em>triangle inequality</em>, and the battery pays for (c) while the crow flies (b).</p>
+</div>
+<div id="practice-exercises-58" class="section level3 hasAnchor" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Practice exercises<a href="vectors.html#practice-exercises-58" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Find the magnitude and direction of <span class="math inline">\(\begin{pmatrix} 5 \\ 12 \end{pmatrix}\)</span>.</li>
+<li>Find the magnitude and direction of <span class="math inline">\(\begin{pmatrix} -6 \\ -8 \end{pmatrix}\)</span> (sketch first!).</li>
+<li>A courier cycles <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> km then <span class="math inline">\(\begin{pmatrix} 4 \\ -1 \end{pmatrix}\)</span> km. Find the resultant displacement, its magnitude, and the total distance cycled.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Adding magnitudes instead of components: <span class="math inline">\(|\mathbf{a} + \mathbf{b}| \ne |\mathbf{a}| + |\mathbf{b}|\)</span> in general.</li>
+<li>Quadrant errors in direction — the calculator's <span class="math inline">\(\tan^{-1}\)</span> only returns angles between <span class="math inline">\(-90°\)</span> and <span class="math inline">\(90°\)</span>; the sketch supplies the correction.</li>
+<li>Writing vectors as scalars: <span class="math inline">\(\mathbf{v} = 5\)</span> is meaningless if <span class="math inline">\(\mathbf{v}\)</span> has components; its <em>magnitude</em> is 5.</li>
+</ul>
+<div class="desmos-container" style="position:relative; height:500px; overflow:hidden; border:1px solid #ccc; border-radius:4px;">
+<iframe src="https://www.desmos.com/geometry/1xrx1btbzr?embed" title="Desmos activity" frameborder="0" scrolling="no" allowfullscreen style="border:0; position:absolute; top:-94px; left:-430px; width:calc(100% + 430px); height:calc(100% + 94px);">
+</iframe>
+</div>
+</div>
+</div>
+<div id="vectors-3d" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Three-dimensional vectors<a href="vectors.html#vectors-3d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-59" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Key idea<a href="vectors.html#key-idea-59" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Nothing new except a third component: <span class="math inline">\(\mathbf{v} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}\)</span>, with magnitude by "Pythagoras twice":</p>
+<p><span class="math display">\[|\mathbf{v}| = \sqrt{x^2 + y^2 + z^2}.\]</span></p>
+<p>Addition and scaling work componentwise exactly as in 2D — and, importantly, so they do in 4, 5, or 500 dimensions. Once the picture runs out at three, the <em>algebra keeps going</em>; that observation carries the whole of Section <a href="vectors.html#data-vectors">10.5</a>.</p>
+</div>
+<div id="worked-examples-58" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Worked examples<a href="vectors.html#worked-examples-58" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> Find <span class="math inline">\(\left|\begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}\right|\)</span>.</p>
+<p><span class="math inline">\(\sqrt{1 + 4 + 4} = 3\)</span>.</p>
+<p><strong>Example (moderate).</strong> Find <span class="math inline">\(\left|\begin{pmatrix} 2 \\ -3 \\ 6 \end{pmatrix}\right|\)</span>, and write down a vector in the same direction with magnitude 1.</p>
+<p><span class="math inline">\(\sqrt{4 + 9 + 36} = 7\)</span>. Dividing by the magnitude gives the <strong>unit vector</strong> <span class="math inline">\(\tfrac{1}{7}\begin{pmatrix} 2 \\ -3 \\ 6 \end{pmatrix} = \begin{pmatrix} 2/7 \\ -3/7 \\ 6/7 \end{pmatrix}\)</span> — same direction, length 1.</p>
+<p><strong>Example (challenging — a product as a point in three dimensions).</strong> A laptop model is summarised by three standardised scores: (performance, battery, portability) <span class="math inline">\(= (4, 2, 5)\)</span>. A rival scores <span class="math inline">\((3, 4, 4)\)</span>. Which is "bigger" overall is ambiguous — but which is <em>closer to the ideal spec</em> <span class="math inline">\((5, 5, 5)\)</span>?</p>
+<p>Distances to the ideal (subtract, then take magnitude — formalised in Section <a href="vectors.html#position-vectors">10.4</a>):</p>
+<p><span class="math display">\[\left|\begin{pmatrix} 4 \\ 2 \\ 5 \end{pmatrix} - \begin{pmatrix} 5 \\ 5 \\ 5 \end{pmatrix}\right| = \sqrt{1 + 9 + 0} = \sqrt{10} \approx 3.16, \qquad \left|\begin{pmatrix} 3 \\ 4 \\ 4 \end{pmatrix} - \begin{pmatrix} 5 \\ 5 \\ 5 \end{pmatrix}\right| = \sqrt{4 + 1 + 1} = \sqrt{6} \approx 2.45.\]</span></p>
+<p>The rival sits closer to the ideal. Products as points, comparisons as distances — you've just done multi-attribute product analysis with A-level vectors.</p>
+</div>
+<div id="practice-exercises-59" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Practice exercises<a href="vectors.html#practice-exercises-59" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Find the magnitude of <span class="math inline">\(\begin{pmatrix} 2 \\ 6 \\ -3 \end{pmatrix}\)</span>.</li>
+<li>Find the unit vector in the direction of <span class="math inline">\(\begin{pmatrix} 0 \\ 3 \\ 4 \end{pmatrix}\)</span>.</li>
+<li>Candidate A scores <span class="math inline">\((5, 3, 2)\)</span> and candidate B scores <span class="math inline">\((4, 4, 3)\)</span> on three interview criteria. Which is closer to the target profile <span class="math inline">\((5, 4, 4)\)</span>?</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Forgetting to square the negative components — <span class="math inline">\((-3)^2 = +9\)</span>; magnitudes are never reduced by minus signs.</li>
+<li>Trying to assign a single "direction angle" in 3D — direction in 3D needs more than one angle (or a unit vector, which is the cleaner habit).</li>
+</ul>
+<div class="webex-check webex-box">
+<p><strong>Self-check: magnitudes, unit vectors and distances</strong></p>
+<p><strong>Q1.</strong> Find the magnitude of <span class="math inline">\(\begin{pmatrix} 8 \\ 6 \end{pmatrix}\)</span>: <input class='webex-solveme nospaces' size='2' data-answer='["10"]'/></p>
+<p><strong>Q2.</strong> Find the magnitude of <span class="math inline">\(\begin{pmatrix} 2 \\ -1 \\ 2 \end{pmatrix}\)</span>: <input class='webex-solveme nospaces' size='1' data-answer='["3"]'/></p>
+<p><strong>Q3.</strong> Which of the following is the unit vector in the direction of <span class="math inline">\(\begin{pmatrix} 6 \\ 8 \end{pmatrix}\)</span>?</p>
+<ol style="list-style-type: upper-alpha">
+<li><span class="math inline">\(\begin{pmatrix} 3/5 \\ 4/5 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 3/7 \\ 4/7 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 1/6 \\ 1/8 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 3 \\ 4 \end{pmatrix}\)</span></li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value='answer'>A</option><option value=''>B</option><option value=''>C</option><option value=''>D</option></select></p>
+<p><strong>Q4.</strong> The unit vector in the direction of <span class="math inline">\(\begin{pmatrix} 0 \\ 5 \\ 12 \end{pmatrix}\)</span> can be written <span class="math inline">\(\dfrac{1}{k}\begin{pmatrix} 0 \\ 5 \\ 12 \end{pmatrix}\)</span>. Give <span class="math inline">\(k\)</span>: <input class='webex-solveme nospaces' size='2' data-answer='["13"]'/></p>
+<p><strong>Q5.</strong> Two interview candidates score <span class="math inline">\((4, 5, 3)\)</span> and <span class="math inline">\((5, 3, 5)\)</span> against a target profile of <span class="math inline">\((5, 5, 5)\)</span>. Measured by distance in three dimensions, the closer match is <select class='webex-select'><option value='blank'></option><option value=''>the first candidate</option><option value='answer'>the second candidate</option><option value=''>they are equally close</option></select></p>
+</div>
+<div class="webex-solution">
+<button>
+Show solutions
+</button>
+<p><strong>Q1.</strong> <span class="math inline">\(\sqrt{64 + 36} = \sqrt{100} = 10\)</span>.</p>
+<p><strong>Q2.</strong> <span class="math inline">\(\sqrt{4 + 1 + 4} = 3\)</span>. The middle term is <span class="math inline">\((-1)^2 = +1\)</span> — a minus sign never shrinks a magnitude.</p>
+<p><strong>Q3.</strong> (A). The magnitude is <span class="math inline">\(\sqrt{36 + 64} = 10\)</span>, so divide both components by 10. Trap (B) divides by <span class="math inline">\(6 + 8 = 14\)</span> — components don't add to give length; Pythagoras is not optional. Trap (D) cancels the common factor 2, which gives a <em>shorter parallel</em> vector of length 5, not length 1 — simplifying is not normalising. Check: <span class="math inline">\(\sqrt{(3/5)^2 + (4/5)^2} = \sqrt{9/25 + 16/25} = 1\)</span> ✓.</p>
+<p><strong>Q4.</strong> <span class="math inline">\(k\)</span> is the magnitude: <span class="math inline">\(\sqrt{0 + 25 + 144} = 13\)</span>.</p>
+<p><strong>Q5.</strong> The second candidate. Distances to the target: first candidate <span class="math inline">\(\sqrt{1 + 0 + 4} = \sqrt{5} \approx 2.24\)</span>; second <span class="math inline">\(\sqrt{0 + 4 + 0} = 2\)</span>. Subtract, <em>then</em> take the magnitude — comparing total scores (12 vs 13) answers a different question, since it can't see that the first candidate misses the target badly on one criterion.</p>
+</div>
+</div>
+</div>
+<div id="vector-operations" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Vector operations<a href="vectors.html#vector-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-60" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Key idea<a href="vectors.html#key-idea-60" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Two operations, both componentwise, both with clean geometric meanings:</p>
+<ul>
+<li><strong>Addition:</strong> <span class="math inline">\(\mathbf{a} + \mathbf{b}\)</span> adds components; geometrically, place the arrows <em>tip-to-tail</em> and take the arrow from start to finish (the drone example).</li>
+<li><strong>Scalar multiplication:</strong> <span class="math inline">\(k\mathbf{a}\)</span> multiplies every component by <span class="math inline">\(k\)</span>; geometrically it stretches the arrow by factor <span class="math inline">\(k\)</span> (reversing it if <span class="math inline">\(k &lt; 0\)</span>), leaving the direction otherwise unchanged.</li>
+</ul>
+<p>Consequences worth knowing: <span class="math inline">\(\mathbf{a}\)</span> and <span class="math inline">\(\mathbf{b}\)</span> are <strong>parallel</strong> exactly when one is a scalar multiple of the other; and expressions like <span class="math inline">\(x\mathbf{a} + y\mathbf{b}\)</span> — <strong>linear combinations</strong> — build new vectors from old ones. Linear combinations are the single most important construction in university mathematics; meet them here in a friendly setting.</p>
+<div class="figure"><span style="display:block;" id="fig:vector-addition"></span>
+<img src="mathematics-a-level-to-university_files/figure-html/vector-addition-1.png" alt="Tip-to-tail addition: the resultant (dashed) runs from the start of a to the tip of b." width="672" />
+<p class="caption">
+Figure 10.1: Tip-to-tail addition: the resultant (dashed) runs from the start of a to the tip of b.
+</p>
+</div>
+</div>
+<div id="worked-examples-59" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Worked examples<a href="vectors.html#worked-examples-59" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> For <span class="math inline">\(\mathbf{a} = \begin{pmatrix} 2 \\ 1 \end{pmatrix}\)</span> and <span class="math inline">\(\mathbf{b} = \begin{pmatrix} -1 \\ 3 \end{pmatrix}\)</span>, find <span class="math inline">\(\mathbf{a} + \mathbf{b}\)</span>, <span class="math inline">\(3\mathbf{a}\)</span> and <span class="math inline">\(2\mathbf{a} - \mathbf{b}\)</span>.</p>
+<p><span class="math display">\[\mathbf{a} + \mathbf{b} = \begin{pmatrix} 1 \\ 4 \end{pmatrix}, \qquad 3\mathbf{a} = \begin{pmatrix} 6 \\ 3 \end{pmatrix}, \qquad 2\mathbf{a} - \mathbf{b} = \begin{pmatrix} 5 \\ -1 \end{pmatrix}.\]</span></p>
+<p><strong>Example (moderate).</strong> Is <span class="math inline">\(\begin{pmatrix} 6 \\ -4 \end{pmatrix}\)</span> parallel to <span class="math inline">\(\begin{pmatrix} -9 \\ 6 \end{pmatrix}\)</span>?</p>
+<p>Test for a scalar multiple: <span class="math inline">\(-9 = k \times 6\)</span> gives <span class="math inline">\(k = -1.5\)</span>, and indeed <span class="math inline">\(6 = -1.5 \times (-4)\)</span> ✓. Parallel (pointing opposite ways, since <span class="math inline">\(k &lt; 0\)</span>).</p>
+<p><strong>Example (challenging — a production plan as a linear combination).</strong> Each unit of product <span class="math inline">\(P_1\)</span> consumes <span class="math inline">\(\begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span> (labour hours, kg of material); each unit of <span class="math inline">\(P_2\)</span> consumes <span class="math inline">\(\begin{pmatrix} 1 \\ 4 \end{pmatrix}\)</span>. The factory plans to make 10 units of <span class="math inline">\(P_1\)</span> and 5 of <span class="math inline">\(P_2\)</span>. Find the total resource requirement, and check it against a capacity of 40 labour hours and 45 kg.</p>
+<p>Total requirement is the linear combination</p>
+<p><span class="math display">\[10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix} = \begin{pmatrix} 30 \\ 20 \end{pmatrix} + \begin{pmatrix} 5 \\ 20 \end{pmatrix} = \begin{pmatrix} 35 \\ 40 \end{pmatrix}.\]</span></p>
+<p>The plan needs 35 hours (within 40 ✓) and 40 kg (within 45 ✓): feasible. Asking "which feasible plan is <em>best</em>?" is precisely a <strong>linear programming</strong> problem — the iso-profit lines of Section <a href="coordgeom.html#parallel-perpendicular">4.3</a> sweeping across plans like this one. Hold this example in mind; it returns in Section <a href="vectors.html#matrices">10.6</a> wearing a matrix.</p>
+</div>
+<div id="practice-exercises-60" class="section level3 hasAnchor" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> Practice exercises<a href="vectors.html#practice-exercises-60" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>For <span class="math inline">\(\mathbf{a} = \begin{pmatrix} 4 \\ -2 \end{pmatrix}\)</span>, <span class="math inline">\(\mathbf{b} = \begin{pmatrix} 1 \\ 5 \end{pmatrix}\)</span>: find <span class="math inline">\(\mathbf{a} + 2\mathbf{b}\)</span> and <span class="math inline">\(|\mathbf{a} - \mathbf{b}|\)</span>.</li>
+<li>Find the value of <span class="math inline">\(t\)</span> for which <span class="math inline">\(\begin{pmatrix} t \\ 6 \end{pmatrix}\)</span> is parallel to <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span>.</li>
+<li>Products <span class="math inline">\(P_1\)</span> and <span class="math inline">\(P_2\)</span> consume <span class="math inline">\(\begin{pmatrix} 2 \\ 5 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 3 \\ 1 \end{pmatrix}\)</span> (hours, kg) per unit. Find the total resource vector for 8 units of <span class="math inline">\(P_1\)</span> and 4 units of <span class="math inline">\(P_2\)</span>.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Mixing components while adding — line the vectors up as columns and add across rows.</li>
+<li>Concluding "not parallel" after checking only one component ratio — <em>all</em> component ratios must agree.</li>
+<li>Multiplying two vectors together componentwise and expecting it to mean something at this level — vector addition and scalar multiplication are the only operations defined here (the useful vector-times-vector products arrive at university).</li>
+</ul>
+<div class="video-container">
+<iframe src="https://www.youtube-nocookie.com/embed/iobbAP7-zvE?list=PLg2tfDG3Ww4s0m-INpYT_B0yX-H-PnPTX" referrerpolicy="strict-origin-when-cross-origin" title="Introducing vectors" frameborder="0" allowfullscreen>
+</iframe>
+</div>
+<p class="video-playlist-link">
+<a href="https://www.youtube.com/playlist?list=PLg2tfDG3Ww4s0m-INpYT_B0yX-H-PnPTX" target="_blank" rel="noopener">View the full playlist on YouTube</a>
+</p>
+</div>
+</div>
+<div id="position-vectors" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Position vectors and distances<a href="vectors.html#position-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-61" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Key idea<a href="vectors.html#key-idea-61" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fix an origin; then every point <span class="math inline">\(A\)</span> is captured by its <strong>position vector</strong> <span class="math inline">\(\mathbf{a} = \overrightarrow{OA}\)</span>. The vector <em>from</em> <span class="math inline">\(A\)</span> <em>to</em> <span class="math inline">\(B\)</span> is</p>
+<p><span class="math display">\[\overrightarrow{AB} = \mathbf{b} - \mathbf{a} \qquad (\text{&quot;destination minus start&quot;}),\]</span></p>
+<p>and the <strong>distance</strong> between the points is <span class="math inline">\(|\overrightarrow{AB}| = |\mathbf{b} - \mathbf{a}|\)</span> — the distance formula of coordinate geometry (Chapter <a href="coordgeom.html#coordgeom">4</a>), now in vector clothing, and valid in any number of dimensions.</p>
+</div>
+<div id="worked-examples-60" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Worked examples<a href="vectors.html#worked-examples-60" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> <span class="math inline">\(A = (1, 2)\)</span> and <span class="math inline">\(B = (4, 6)\)</span>. Find <span class="math inline">\(\overrightarrow{AB}\)</span> and the distance <span class="math inline">\(AB\)</span>.</p>
+<p><span class="math display">\[\overrightarrow{AB} = \begin{pmatrix} 4 - 1 \\ 6 - 2 \end{pmatrix} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}, \qquad AB = 5.\]</span></p>
+<p><strong>Example (moderate).</strong> <span class="math inline">\(A = (2, 1)\)</span> and <span class="math inline">\(B = (5, 7)\)</span>. Find the position vector of the midpoint <span class="math inline">\(M\)</span> of <span class="math inline">\(AB\)</span>.</p>
+<p><span class="math display">\[\mathbf{m} = \tfrac{1}{2}(\mathbf{a} + \mathbf{b}) = \tfrac{1}{2}\begin{pmatrix} 7 \\ 8 \end{pmatrix} = \begin{pmatrix} 3.5 \\ 4 \end{pmatrix}.\]</span></p>
+<p>(Averaging position vectors averages the points — a fact that scales up: the average of <em>many</em> position vectors is the <strong>centroid</strong>, which returns in Section <a href="vectors.html#data-vectors">10.5</a>.)</p>
+<p><strong>Example (challenging — comparing depot sites).</strong> Three stores sit at grid positions <span class="math inline">\((1, 5)\)</span>, <span class="math inline">\((4, 1)\)</span> and <span class="math inline">\((7, 6)\)</span> (km). Two candidate depot sites are <span class="math inline">\(P = (4, 4)\)</span> and <span class="math inline">\(Q = (3, 4)\)</span>. Which site has the smaller <em>total</em> distance to the stores?</p>
+<p>From <span class="math inline">\(P\)</span>: <span class="math inline">\(\sqrt{(1-4)^2 + (5-4)^2} = \sqrt{10} \approx 3.16\)</span>; <span class="math inline">\(\sqrt{0 + 9} = 3\)</span>; <span class="math inline">\(\sqrt{9 + 4} = \sqrt{13} \approx 3.61\)</span>. Total <span class="math inline">\(\approx 9.77\)</span> km.</p>
+<p>From <span class="math inline">\(Q\)</span>: <span class="math inline">\(\sqrt{4 + 1} = \sqrt{5} \approx 2.24\)</span>; <span class="math inline">\(\sqrt{1 + 9} = \sqrt{10} \approx 3.16\)</span>; <span class="math inline">\(\sqrt{16 + 4} = \sqrt{20} \approx 4.47\)</span>. Total <span class="math inline">\(\approx 9.87\)</span> km.</p>
+<p><span class="math inline">\(P\)</span> wins, narrowly. This is a two-candidate version of the <strong>facility location problem</strong> — a genuine operations-research problem whose full version (optimise over <em>all</em> possible sites) needs the multivariable optimisation this chapter is preparing you for.</p>
+</div>
+<div id="practice-exercises-61" class="section level3 hasAnchor" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Practice exercises<a href="vectors.html#practice-exercises-61" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A = (2, -1)\)</span> and <span class="math inline">\(B = (7, 11)\)</span>. Find <span class="math inline">\(\overrightarrow{AB}\)</span> and the distance <span class="math inline">\(AB\)</span>.</li>
+<li>Find the midpoint of <span class="math inline">\(A = (-2, 3)\)</span> and <span class="math inline">\(B = (6, -1)\)</span>.</li>
+<li>Stores sit at <span class="math inline">\((0, 4)\)</span>, <span class="math inline">\((5, 0)\)</span> and <span class="math inline">\((6, 7)\)</span>. Which candidate depot, <span class="math inline">\((3, 3)\)</span> or <span class="math inline">\((4, 4)\)</span>, gives the smaller total distance?</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li><span class="math inline">\(\overrightarrow{AB} = \mathbf{b} - \mathbf{a}\)</span>, not <span class="math inline">\(\mathbf{a} - \mathbf{b}\)</span>: destination minus start. Getting it backwards reverses every direction (though — small mercy — distances survive).</li>
+<li>Confusing a <em>point</em> with its position <em>vector</em> conceptually — the vector runs from the origin to the point. Interchangeable in calculations, but keep the picture straight.</li>
+</ul>
+<div class="webex-check webex-box">
+<p><strong>Self-check: position vectors, distances and midpoints</strong></p>
+<p><strong>Q1.</strong> <span class="math inline">\(A = (1, 3)\)</span> and <span class="math inline">\(B = (6, 15)\)</span>. The components of <span class="math inline">\(\overrightarrow{AB}\)</span> are <span class="math inline">\(x =\)</span> <input class='webex-solveme nospaces' size='1' data-answer='["5"]'/> and <span class="math inline">\(y =\)</span> <input class='webex-solveme nospaces' size='2' data-answer='["12"]'/></p>
+<p><strong>Q2.</strong> For the same points, the distance <span class="math inline">\(AB\)</span> is <input class='webex-solveme nospaces' size='2' data-answer='["13"]'/></p>
+<p><strong>Q3.</strong> <span class="math inline">\(A = (2, 7)\)</span> and <span class="math inline">\(B = (5, 1)\)</span>. Which of the following is <span class="math inline">\(\overrightarrow{AB}\)</span>?</p>
+<ol style="list-style-type: upper-alpha">
+<li><span class="math inline">\(\begin{pmatrix} -3 \\ 6 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 3 \\ -6 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 7 \\ 8 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 3 \\ 6 \end{pmatrix}\)</span></li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value='answer'>B</option><option value=''>C</option><option value=''>D</option></select></p>
+<p><strong>Q4.</strong> The midpoint of <span class="math inline">\(A = (-2, 5)\)</span> and <span class="math inline">\(B = (6, -1)\)</span> is the point <span class="math inline">\((x, y)\)</span> with <span class="math inline">\(x =\)</span> <input class='webex-solveme nospaces' size='1' data-answer='["2"]'/> and <span class="math inline">\(y =\)</span> <input class='webex-solveme nospaces' size='1' data-answer='["2"]'/></p>
+<p><strong>Q5.</strong> Stores sit at <span class="math inline">\((1, 1)\)</span>, <span class="math inline">\((5, 2)\)</span> and <span class="math inline">\((3, 6)\)</span>. Two candidate depot sites are <span class="math inline">\(P = (3, 3)\)</span> and <span class="math inline">\(Q = (3, 2)\)</span>. The smaller <em>total</em> distance to the three stores is achieved by <select class='webex-select'><option value='blank'></option><option value='answer'>P</option><option value=''>Q</option><option value=''>the totals are equal</option></select></p>
+</div>
+<div class="webex-solution">
+<button>
+Show solutions
+</button>
+<p><strong>Q1.</strong> <span class="math inline">\(\overrightarrow{AB} = \mathbf{b} - \mathbf{a} = (6 - 1,\ 15 - 3) = (5, 12)\)</span>: destination minus start.</p>
+<p><strong>Q2.</strong> <span class="math inline">\(|\overrightarrow{AB}| = \sqrt{25 + 144} = 13\)</span>.</p>
+<p><strong>Q3.</strong> (B). <span class="math inline">\(\overrightarrow{AB} = (5 - 2,\ 1 - 7) = (3, -6)\)</span>. Trap (A) is <span class="math inline">\(\mathbf{a} - \mathbf{b}\)</span> — the vector from <span class="math inline">\(B\)</span> to <span class="math inline">\(A\)</span>, exactly backwards. A sketch settles it: moving from <span class="math inline">\(A(2,7)\)</span> to <span class="math inline">\(B(5,1)\)</span> goes right and <em>down</em>, so the <span class="math inline">\(y\)</span>-component must be negative. Trap (C) adds the position vectors, which lands nowhere useful.</p>
+<p><strong>Q4.</strong> Midpoint <span class="math inline">\(= \tfrac{1}{2}(\mathbf{a} + \mathbf{b}) = \tfrac{1}{2}\begin{pmatrix} 4 \\ 4 \end{pmatrix} = (2, 2)\)</span>.</p>
+<p><strong>Q5.</strong> <span class="math inline">\(P\)</span>. From <span class="math inline">\(P\)</span>: <span class="math inline">\(\sqrt{8} + \sqrt{5} + 3 \approx 2.83 + 2.24 + 3.00 = 8.07\)</span>. From <span class="math inline">\(Q\)</span>: <span class="math inline">\(\sqrt{5} + 2 + 4 \approx 8.24\)</span>. Three distances, one sum, one comparison — a two-candidate facility location problem, just like the worked example.</p>
+</div>
+</div>
+</div>
+<div id="data-vectors" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Vectors as data<a href="vectors.html#data-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-62" class="section level3 hasAnchor" number="10.5.1">
+<h3><span class="header-section-number">10.5.1</span> Key idea<a href="vectors.html#key-idea-62" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here is the syllabus's "preparing for data vectors and feature spaces" — and the biggest idea in the chapter. Drop the arrows; keep the algebra. A <strong>data vector</strong> is any record written as an ordered list of numbers:</p>
+<p><span class="math display">\[\text{customer } \mathbf{u} = \begin{pmatrix} \text{spend on groceries} \\ \text{spend on clothing} \\ \text{spend on travel} \end{pmatrix}.\]</span></p>
+<p>Every operation you've practised now has a data meaning:</p>
+<ul>
+<li><strong>Distance</strong> <span class="math inline">\(|\mathbf{u} - \mathbf{v}|\)</span> measures how <em>similar</em> two records are — small distance, similar customers.</li>
+<li><strong>The mean</strong> <span class="math inline">\(\tfrac{1}{n}(\mathbf{u}_1 + \dots + \mathbf{u}_n)\)</span> is the <em>average record</em> (the centroid) — the "typical customer".</li>
+<li><strong>Scalar multiplication</strong> rescales a record — <span class="math inline">\(1.1\mathbf{u}\)</span> is customer <span class="math inline">\(\mathbf{u}\)</span> with 10% higher spending across the board.</li>
+</ul>
+<p>The space these vectors live in is called <strong>feature space</strong>, and it might have hundreds of dimensions — unpicturable, but the formulas are the same ones you used for arrows.</p>
+</div>
+<div id="worked-examples-61" class="section level3 hasAnchor" number="10.5.2">
+<h3><span class="header-section-number">10.5.2</span> Worked examples<a href="vectors.html#worked-examples-61" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> Customers' quarterly spend (£) across (groceries, clothing, travel): <span class="math inline">\(\mathbf{u} = (120, 40, 60)\)</span> and <span class="math inline">\(\mathbf{v} = (110, 50, 55)\)</span>. How similar are they?</p>
+<p><span class="math display">\[|\mathbf{u} - \mathbf{v}| = \left|\begin{pmatrix} 10 \\ -10 \\ 5 \end{pmatrix}\right| = \sqrt{100 + 100 + 25} = 15.\]</span></p>
+<p>A £15 separation across the whole profile — very similar customers.</p>
+<p><strong>Example (moderate).</strong> A third customer spends <span class="math inline">\(\mathbf{w} = (20, 150, 10)\)</span>. Compare <span class="math inline">\(|\mathbf{u} - \mathbf{w}|\)</span> with the distance above, and find the centroid of all three customers.</p>
+<p><span class="math display">\[|\mathbf{u} - \mathbf{w}| = \sqrt{100^2 + 110^2 + 50^2} = \sqrt{24600} \approx 157.\]</span></p>
+<p>Ten times further away: <span class="math inline">\(\mathbf{w}\)</span> (low groceries, high clothing) belongs to a different customer <em>segment</em>. Centroid:</p>
+<p><span class="math display">\[\tfrac{1}{3}(\mathbf{u} + \mathbf{v} + \mathbf{w}) = \tfrac{1}{3}\begin{pmatrix} 250 \\ 240 \\ 125 \end{pmatrix} = \begin{pmatrix} 83.3 \\ 80 \\ 41.7 \end{pmatrix}.\]</span></p>
+<p><strong>Example (challenging — a one-line recommendation engine).</strong> A streaming service scores each user's taste across four genres. Anna is <span class="math inline">\(\mathbf{a} = (8, 2, 5, 1)\)</span>; the service wants to show her the "customers like you also watched" list built from Ben <span class="math inline">\(\mathbf{b} = (7, 3, 5, 2)\)</span> or Carla <span class="math inline">\(\mathbf{c} = (2, 8, 1, 6)\)</span>. Whose history should it use?</p>
+<p><span class="math display">\[|\mathbf{a} - \mathbf{b}| = \sqrt{1 + 1 + 0 + 1} = \sqrt{3} \approx 1.73, \qquad |\mathbf{a} - \mathbf{c}| = \sqrt{36 + 36 + 16 + 25} = \sqrt{113} \approx 10.63.\]</span></p>
+<p>Ben, by a mile. Congratulations: "find the nearest vector" is the <strong>nearest-neighbour</strong> method, one of the oldest and most-used ideas in machine learning — recommendation, credit scoring and customer segmentation all begin exactly here, just with more dimensions and more neighbours. (Real systems refine the distance measure and standardise the scales, but the skeleton is this calculation.)</p>
+</div>
+<div id="practice-exercises-62" class="section level3 hasAnchor" number="10.5.3">
+<h3><span class="header-section-number">10.5.3</span> Practice exercises<a href="vectors.html#practice-exercises-62" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Products are scored on (quality, value, style): <span class="math inline">\(\mathbf{p} = (7, 5, 6)\)</span> and <span class="math inline">\(\mathbf{q} = (4, 9, 5)\)</span>. Find the distance between them.</li>
+<li>Three branches record (weekday, weekend) sales: <span class="math inline">\((30, 45)\)</span>, <span class="math inline">\((38, 41)\)</span>, <span class="math inline">\((25, 52)\)</span> (£000s). Find the centroid, and interpret it in one sentence.</li>
+<li>A target customer profile is <span class="math inline">\((6, 6, 6)\)</span>. Which of <span class="math inline">\((5, 7, 6)\)</span> and <span class="math inline">\((8, 3, 7)\)</span> is the nearer match?</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Comparing raw distances when components have wildly different scales (pounds vs counts vs ratings) — big-unit components dominate. At university you'll <em>standardise</em> first; for now, just be aware.</li>
+<li>Forgetting that these are the <em>same</em> operations as the geometric ones — no new formulas were introduced in this section, only new interpretations.</li>
+</ul>
+<p><strong>Why this matters:</strong> Analytics <em>is</em> vector arithmetic at scale. Clustering finds groups of mutually close data vectors; classification asks which labelled vectors a new one is nearest to; regression and machine-learning models are functions of feature vectors, trained by nudging a parameter vector downhill — using the <strong>gradient</strong>, a vector of the partial derivatives you'll build from Chapter <a href="differentiation.html#differentiation">7</a>. This little section is the bridge between A-level and all of that.</p>
+</div>
+</div>
+<div id="matrices" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> A first look at matrices<a href="vectors.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-63" class="section level3 hasAnchor" number="10.6.1">
+<h3><span class="header-section-number">10.6.1</span> Key idea<a href="vectors.html#key-idea-63" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>matrix</strong> is a rectangular grid of numbers. Its <strong>size</strong> is <em>rows × columns</em>:</p>
+<p><span class="math display">\[A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} \text{ is } 2 \times 2, \qquad B = \begin{pmatrix} 5 &amp; 0 &amp; -1 \\ 2 &amp; 1 &amp; 3 \end{pmatrix} \text{ is } 2 \times 3.\]</span></p>
+<p>(Rows first, always — a <span class="math inline">\(2 \times 3\)</span> matrix has 2 rows and 3 columns.) A column vector is just an <span class="math inline">\(n \times 1\)</span> matrix, so vectors are a special case. Three operations for now:</p>
+<ul>
+<li><strong>Addition:</strong> add matching entries — only defined for matrices of the <strong>same size</strong>.</li>
+<li><strong>Scalar multiplication:</strong> multiply every entry by the scalar.</li>
+<li><strong>Matrix × vector:</strong> an <span class="math inline">\(m \times n\)</span> matrix times an <span class="math inline">\(n\)</span>-component vector gives an <span class="math inline">\(m\)</span>-component vector. Each output entry is a <em>row of the matrix times the vector</em>: multiply pairwise along the row, then add. Sizes must match: the matrix's column count must equal the vector's length.</li>
+</ul>
+<p><span class="math display">\[\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix}.\]</span></p>
+<p>Equivalent (and illuminating) view: <span class="math inline">\(A\mathbf{v}\)</span> is the <strong>linear combination of <span class="math inline">\(A\)</span>'s columns</strong>, weighted by <span class="math inline">\(\mathbf{v}\)</span>'s entries — Section <a href="vectors.html#vector-operations">10.3</a>'s big idea, mechanised.</p>
+</div>
+<div id="worked-examples-62" class="section level3 hasAnchor" number="10.6.2">
+<h3><span class="header-section-number">10.6.2</span> Worked examples<a href="vectors.html#worked-examples-62" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple — addition and scaling).</strong> For <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 0 &amp; 5 \\ -1 &amp; 2 \end{pmatrix}\)</span>, find <span class="math inline">\(A + B\)</span> and <span class="math inline">\(3A\)</span>.</p>
+<p><span class="math display">\[A + B = \begin{pmatrix} 1 &amp; 7 \\ 2 &amp; 6 \end{pmatrix}, \qquad 3A = \begin{pmatrix} 3 &amp; 6 \\ 9 &amp; 12 \end{pmatrix}.\]</span></p>
+<p>(And note: <span class="math inline">\(A + \begin{pmatrix} 5 &amp; 0 &amp; -1 \\ 2 &amp; 1 &amp; 3 \end{pmatrix}\)</span> is <strong>undefined</strong> — a <span class="math inline">\(2\times2\)</span> and a <span class="math inline">\(2\times3\)</span> can't be added.)</p>
+<p><strong>Example (simple — matrix times vector).</strong> Compute <span class="math inline">\(\begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix}\)</span>.</p>
+<p>Row by row: top <span class="math inline">\(= 2(4) + 1(2) = 10\)</span>; bottom <span class="math inline">\(= 1(4) + 3(2) = 10\)</span>:</p>
+<p><span class="math display">\[\begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix} = \begin{pmatrix} 10 \\ 10 \end{pmatrix}.\]</span></p>
+<p><strong>Example (moderate — matrices as geometric transformations).</strong> Compute the effect of each matrix on the vector <span class="math inline">\(\mathbf{v} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span>, and describe each geometrically:</p>
+<p><span class="math display">\[I = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}, \qquad S = \begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}, \qquad M = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}, \qquad R = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}.\]</span></p>
+<p><span class="math inline">\(I\mathbf{v} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span>: the <strong>identity</strong> matrix leaves every vector unchanged (the matrix world's "1").</p>
+<p><span class="math inline">\(S\mathbf{v} = \begin{pmatrix} 6 \\ 4 \end{pmatrix}\)</span>: a <strong>stretch</strong> — every vector doubled in length, direction kept (<span class="math inline">\(S\mathbf{v} = 2\mathbf{v}\)</span>).</p>
+<p><span class="math inline">\(M\mathbf{v} = \begin{pmatrix} 3 \\ -2 \end{pmatrix}\)</span>: a <strong>reflection</strong> in the <span class="math inline">\(x\)</span>-axis — the <span class="math inline">\(y\)</span>-component flips sign.</p>
+<p><span class="math inline">\(R\mathbf{v} = \begin{pmatrix} 0(3) - 1(2) \\ 1(3) + 0(2) \end{pmatrix} = \begin{pmatrix} -2 \\ 3 \end{pmatrix}\)</span>: a <strong>rotation</strong> by 90° anticlockwise. Check: the magnitude is preserved (<span class="math inline">\(\sqrt{13}\)</span> before and after), and <span class="math inline">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span> — "east" turns to "north".</p>
+<p>So a matrix isn't just a table: <strong>multiplying by a matrix moves every vector in the plane at once</strong>, in a structured way — stretching, reflecting, rotating, or combinations. That's why matrices are called <em>transformations</em>.</p>
+<div class="figure"><span style="display:block;" id="fig:matrix-transform"></span>
+<img src="mathematics-a-level-to-university_files/figure-html/matrix-transform-1.png" alt="One matrix, every vector moved: v = (3, 2) under the identity, a stretch, a reflection and a 90° rotation." width="672" />
+<p class="caption">
+Figure 10.2: One matrix, every vector moved: v = (3, 2) under the identity, a stretch, a reflection and a 90° rotation.
+</p>
+</div>
+<p><strong>Example (challenging — the production plan, now as a matrix).</strong> Recall Section <a href="vectors.html#vector-operations">10.3</a>: products <span class="math inline">\(P_1\)</span> and <span class="math inline">\(P_2\)</span> consume <span class="math inline">\(\begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 1 \\ 4 \end{pmatrix}\)</span> (hours, kg) per unit. Pack the per-unit requirements into a matrix, one product per <strong>column</strong>, and compute the resources needed for the production vector <span class="math inline">\(\mathbf{q} = \begin{pmatrix} 10 \\ 5 \end{pmatrix}\)</span>.</p>
+<p><span class="math display">\[A = \begin{pmatrix} 3 &amp; 1 \\ 2 &amp; 4 \end{pmatrix}, \qquad A\mathbf{q} = \begin{pmatrix} 3(10) + 1(5) \\ 2(10) + 4(5) \end{pmatrix} = \begin{pmatrix} 35 \\ 40 \end{pmatrix}.\]</span></p>
+<p>Exactly the linear combination <span class="math inline">\(10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix}\)</span> from before — matrix–vector multiplication <em>is</em> "take this combination of the columns". The gain is scale and organisation: a factory with 40 products and 12 resources is a <span class="math inline">\(12 \times 40\)</span> matrix, and <em>any</em> production plan's requirements are one multiplication, <span class="math inline">\(A\mathbf{q}\)</span>. Feasibility ("does <span class="math inline">\(A\mathbf{q}\)</span> fit within capacity?") is the constraint side of linear programming; economists use the same structure, giant-sized, in <strong>input–output models</strong> of whole economies.</p>
+</div>
+<div id="practice-exercises-63" class="section level3 hasAnchor" number="10.6.3">
+<h3><span class="header-section-number">10.6.3</span> Practice exercises<a href="vectors.html#practice-exercises-63" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A\)</span> is <span class="math inline">\(2 \times 3\)</span>, <span class="math inline">\(B\)</span> is <span class="math inline">\(2 \times 3\)</span> and <span class="math inline">\(C\)</span> is <span class="math inline">\(3 \times 2\)</span>. Which of <span class="math inline">\(A + B\)</span>, <span class="math inline">\(A + C\)</span>, and <span class="math inline">\(C\,\mathbf{v}\)</span> for a 2-component vector <span class="math inline">\(\mathbf{v}\)</span> are defined? State the size of each result that exists.</li>
+<li>For <span class="math inline">\(A = \begin{pmatrix} 2 &amp; -1 \\ 0 &amp; 3 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 1 &amp; 1 \\ 2 &amp; -2 \end{pmatrix}\)</span>, compute <span class="math inline">\(A + 2B\)</span>.</li>
+<li>Compute <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; -1 \end{pmatrix}\begin{pmatrix} 2 \\ 5 \end{pmatrix}\)</span>.</li>
+<li>What does the matrix <span class="math inline">\(\begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\)</span> do to <span class="math inline">\(\begin{pmatrix} 2 \\ 0 \end{pmatrix}\)</span> and to <span class="math inline">\(\begin{pmatrix} 0 \\ 3 \end{pmatrix}\)</span>? Describe the transformation.</li>
+<li>Per-unit resource use (rows: hours, kg; columns: products <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>) is <span class="math inline">\(A = \begin{pmatrix} 2 &amp; 3 \\ 5 &amp; 1 \end{pmatrix}\)</span>. Find the total resources for the plan <span class="math inline">\(\mathbf{q} = \begin{pmatrix} 8 \\ 4 \end{pmatrix}\)</span>, and check it against a capacity of 30 hours and 45 kg.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Adding matrices of different sizes — check dimensions before every operation.</li>
+<li>Row/column mix-ups: size is rows × columns, and in <span class="math inline">\(A\mathbf{v}\)</span> each <em>row</em> of <span class="math inline">\(A\)</span> pairs with the vector. Writing the multiplication out slowly beats doing it "in your head" every time.</li>
+<li>Multiplying entry-by-entry in the same positions: <span class="math inline">\(A\mathbf{v}\)</span> is row-times-column sums, not a componentwise product.</li>
+<li>Expecting <span class="math inline">\(A\mathbf{v}\)</span> to exist regardless of size: an <span class="math inline">\(m \times n\)</span> matrix needs an <span class="math inline">\(n\)</span>-component vector.</li>
+</ul>
+<div class="desmos-container" style="height:500px;">
+<iframe src="https://www.desmos.com/calculator/ymz73cs5jx?embed" title="Desmos activity" frameborder="0" allowfullscreen style="width:100%; height:100%; border:1px solid #ccc; border-radius:4px;">
+</iframe>
+</div>
+<div class="video-container">
+<iframe src="https://www.youtube-nocookie.com/embed/0iSvYwdVVPI?list=PLg2tfDG3Ww4ucvo7CDOr5x4kExNfXgK4n" referrerpolicy="strict-origin-when-cross-origin" title="Introducing matrices" frameborder="0" allowfullscreen>
+</iframe>
+</div>
+<p class="video-playlist-link">
+<a href="https://www.youtube.com/playlist?list=PLg2tfDG3Ww4ucvo7CDOr5x4kExNfXgK4n" target="_blank" rel="noopener">View the full playlist on YouTube</a>
+</p>
+</div>
+</div>
+<div id="end-of-chapter-quiz-8" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> End of chapter quiz<a href="vectors.html#end-of-chapter-quiz-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="webex-check webex-box">
+<p><strong>Q1.</strong> <span class="math inline">\(A\)</span> is a <span class="math inline">\(3 \times 2\)</span> matrix, <span class="math inline">\(B\)</span> is a <span class="math inline">\(2 \times 3\)</span> matrix and <span class="math inline">\(\mathbf{v}\)</span> is a 2-component vector. Is <span class="math inline">\(A + B\)</span> defined? <select class='webex-select'><option value='blank'></option><option value=''>yes</option><option value='answer'>no</option></select> Is <span class="math inline">\(A\mathbf{v}\)</span> defined? <select class='webex-select'><option value='blank'></option><option value='answer'>yes</option><option value=''>no</option></select> If it is, the number of components of <span class="math inline">\(A\mathbf{v}\)</span> is <input class='webex-solveme nospaces' size='1' data-answer='["3"]'/></p>
+<p><strong>Q2.</strong> For <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 0 &amp; 1 \\ 2 &amp; -1 \end{pmatrix}\)</span>, in the matrix <span class="math inline">\(A + 2B\)</span> the top-right entry is <input class='webex-solveme nospaces' size='1' data-answer='["4"]'/> and the bottom-left entry is <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/></p>
+<p><strong>Q3.</strong> Which of the following is <span class="math inline">\(\begin{pmatrix} 2 &amp; 1 \\ 3 &amp; -1 \end{pmatrix}\begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span>?</p>
+<ol style="list-style-type: upper-alpha">
+<li><span class="math inline">\(\begin{pmatrix} 12 \\ 1 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 6 \\ -2 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 8 \\ 7 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 8 \\ 11 \end{pmatrix}\)</span></li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value=''>B</option><option value='answer'>C</option><option value=''>D</option></select></p>
+<p><strong>Q4.</strong> In the product <span class="math inline">\(\begin{pmatrix} 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 \end{pmatrix}\begin{pmatrix} 3 \\ 1 \\ 2 \end{pmatrix}\)</span>, the top component is <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/> and the bottom component is <input class='webex-solveme nospaces' size='1' data-answer='["9"]'/></p>
+<p><strong>Q5.</strong> The matrix <span class="math inline">\(\begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span> sends <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> to <span class="math inline">\(\begin{pmatrix} -2 \\ 3 \end{pmatrix}\)</span>. As a transformation of the plane it is <select class='webex-select'><option value='blank'></option><option value=''>a rotation by 90 degrees anticlockwise</option><option value=''>a reflection in the x-axis</option><option value='answer'>a reflection in the y-axis</option><option value=''>a stretch of every vector by the same factor</option></select></p>
+</div>
+<div class="webex-solution">
+<button>
+Show solutions
+</button>
+<p><strong>Q1.</strong> No; yes; 3. Addition needs <em>identical</em> sizes, and <span class="math inline">\(3 \times 2\)</span> is not <span class="math inline">\(2 \times 3\)</span> — rows and columns both count. For <span class="math inline">\(A\mathbf{v}\)</span>, the column count of <span class="math inline">\(A\)</span> (2) matches the length of <span class="math inline">\(\mathbf{v}\)</span> (2) ✓, and an <span class="math inline">\(m \times n\)</span> matrix times an <span class="math inline">\(n\)</span>-vector gives an <span class="math inline">\(m\)</span>-vector, so the result has 3 components.</p>
+<p><strong>Q2.</strong> Top-right: <span class="math inline">\(2 + 2(1) = 4\)</span>; bottom-left: <span class="math inline">\(3 + 2(2) = 7\)</span>. Scale <span class="math inline">\(B\)</span> first, then add matching entries.</p>
+<p><strong>Q3.</strong> (C). Rows times the column: top <span class="math inline">\(= 2(3) + 1(2) = 8\)</span>; bottom <span class="math inline">\(= 3(3) + (-1)(2) = 7\)</span>. Trap (A) pairs the vector with the <em>columns</em> of the matrix instead of the rows. Trap (B) multiplies entries sitting in matching positions — <span class="math inline">\(A\mathbf{v}\)</span> is row-times-column sums, not a componentwise product. Trap (D) drops the minus sign in the bottom row.</p>
+<p><strong>Q4.</strong> Top <span class="math inline">\(= 1(3) + 0(1) + 2(2) = 7\)</span>; bottom <span class="math inline">\(= 2(3) + 1(1) + 1(2) = 9\)</span>. Size check first: <span class="math inline">\(2 \times 3\)</span> times a 3-vector ✓, giving a 2-vector.</p>
+<p><strong>Q5.</strong> A reflection in the <span class="math inline">\(y\)</span>-axis: the <span class="math inline">\(x\)</span>-component flips sign and the <span class="math inline">\(y\)</span>-component is untouched, so every vector jumps to its mirror image across the vertical axis. It can't be the rotation — that matrix is <span class="math inline">\(\begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\)</span>, which sends <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> to <span class="math inline">\(\begin{pmatrix} -3 \\ 2 \end{pmatrix}\)</span> instead. Quick test with the "east" vector: <span class="math inline">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} -1 \\ 0 \end{pmatrix}\)</span> — east becomes west, exactly a <span class="math inline">\(y\)</span>-axis mirror.</p>
+</div>
+<p><strong>Why this matters:</strong> Matrices are the workhorse of quantitative Management Science. Linear programming stores its constraints in a matrix; input–output economics is matrix–vector multiplication; Markov chains model shifting market shares by repeatedly multiplying by a <em>transition matrix</em>; regression and machine learning are matrix computations end to end. First-year linear algebra will add matrix×matrix products, inverses and more — but the grammar (sizes, rows-times-columns, matrices as transformations) is what you've just learned, and it doesn't change.</p>
+</div>
+<div id="chapter-summary-and-the-end-of-the-course" class="section level2 hasAnchor" number="10.8">
+<h2><span class="header-section-number">10.8</span> Chapter summary — and the end of the course<a href="vectors.html#chapter-summary-and-the-end-of-the-course" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You should now be able to:</p>
+<ul>
+<li>work with 2D and 3D vectors in component form, computing magnitudes, directions and unit vectors;</li>
+<li>add and scale vectors, recognise parallel vectors, and build linear combinations;</li>
+<li>use position vectors for points, displacements, midpoints and distances;</li>
+<li>treat data records as vectors, measuring similarity by distance and typicality by centroids;</li>
+<li>state matrix sizes, add and scale matrices, multiply a matrix by a vector, and interpret matrices as geometric transformations and as resource-requirement tables.</li>
+</ul>
+<p>And that closes the bridging course. Look back at how far the ten chapters reach: you can build and criticise models (Chapters 2–6), optimise them (Chapter 7), total and solve them (Chapter 8), approximate what can't be solved exactly (Chapter 9), and organise many-variable information (this chapter). Every quantitative module in your Management Science degree — economics, operations, statistics, finance, analytics — starts from exactly these foundations. Arrive confident: you've already met the ideas; university will make them bigger, not stranger.</p>
+<p><strong>Self-check quiz:</strong> Insert a final end-of-course diagnostic sampling all ten chapters, with feedback pointing students to the chapters most worth a second pass before term begins.</p>
+</div>
+<div id="vectors-answers" class="section level2 hasAnchor" number="10.9">
+<h2><span class="header-section-number">10.9</span> Answers to practice exercises<a href="vectors.html#vectors-answers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>2D vectors:</strong> 1. Magnitude 13; direction <span class="math inline">\(\tan^{-1}(12/5) \approx 67.4°\)</span>. 2. Magnitude 10; third quadrant: direction <span class="math inline">\(180° + \tan^{-1}(8/6) \approx 233.1°\)</span> (equivalently <span class="math inline">\(-126.9°\)</span>). 3. Resultant <span class="math inline">\(\begin{pmatrix} 6 \\ 2 \end{pmatrix}\)</span>, magnitude <span class="math inline">\(\sqrt{40} \approx 6.32\)</span> km; distance cycled <span class="math inline">\(\sqrt{13} + \sqrt{17} \approx 7.73\)</span> km.</p>
+<p><strong>3D vectors:</strong> 1. <span class="math inline">\(\sqrt{4 + 36 + 9} = 7\)</span>. 2. Magnitude 5, so <span class="math inline">\(\begin{pmatrix} 0 \\ 3/5 \\ 4/5 \end{pmatrix}\)</span>. 3. Distances to <span class="math inline">\((5,4,4)\)</span>: A gives <span class="math inline">\(\sqrt{0 + 1 + 4} = \sqrt{5} \approx 2.24\)</span>; B gives <span class="math inline">\(\sqrt{1 + 0 + 1} = \sqrt{2} \approx 1.41\)</span> — B is the closer match.</p>
+<p><strong>Vector operations:</strong> 1. <span class="math inline">\(\mathbf{a} + 2\mathbf{b} = \begin{pmatrix} 6 \\ 8 \end{pmatrix}\)</span>; <span class="math inline">\(\mathbf{a} - \mathbf{b} = \begin{pmatrix} 3 \\ -7 \end{pmatrix}\)</span> with magnitude <span class="math inline">\(\sqrt{58} \approx 7.62\)</span>. 2. <span class="math inline">\(\tfrac{t}{2} = \tfrac{6}{3}\)</span>, so <span class="math inline">\(t = 4\)</span>. 3. <span class="math inline">\(8\begin{pmatrix} 2 \\ 5 \end{pmatrix} + 4\begin{pmatrix} 3 \\ 1 \end{pmatrix} = \begin{pmatrix} 28 \\ 44 \end{pmatrix}\)</span>: 28 hours and 44 kg.</p>
+<p><strong>Position vectors:</strong> 1. <span class="math inline">\(\overrightarrow{AB} = \begin{pmatrix} 5 \\ 12 \end{pmatrix}\)</span>, distance 13. 2. <span class="math inline">\((2, 1)\)</span>. 3. From <span class="math inline">\((3,3)\)</span>: <span class="math inline">\(\sqrt{9+1} + \sqrt{4+9} + \sqrt{9+16} = \sqrt{10} + \sqrt{13} + 5 \approx 11.77\)</span>. From <span class="math inline">\((4,4)\)</span>: <span class="math inline">\(\sqrt{16+0} + \sqrt{1+16} + \sqrt{4+9} = 4 + \sqrt{17} + \sqrt{13} \approx 11.73\)</span>. <span class="math inline">\((4, 4)\)</span> is (very slightly) better.</p>
+<p><strong>Vectors as data:</strong> 1. <span class="math inline">\(\sqrt{9 + 16 + 1} = \sqrt{26} \approx 5.10\)</span>. 2. Centroid <span class="math inline">\((31, 46)\)</span>: the "typical branch" takes about £31k on weekdays and £46k at weekends. 3. Distances to <span class="math inline">\((6,6,6)\)</span>: <span class="math inline">\(\sqrt{1 + 1 + 0} = \sqrt{2} \approx 1.41\)</span> vs <span class="math inline">\(\sqrt{4 + 9 + 1} = \sqrt{14} \approx 3.74\)</span>: <span class="math inline">\((5, 7, 6)\)</span> is the nearer match.</p>
+<p><strong>Matrices:</strong> 1. <span class="math inline">\(A + B\)</span> is defined (<span class="math inline">\(2 \times 3\)</span>); <span class="math inline">\(A + C\)</span> is not (sizes differ); <span class="math inline">\(C\mathbf{v}\)</span> is defined (<span class="math inline">\(3 \times 2\)</span> times a 2-vector gives a 3-vector). 2. <span class="math inline">\(\begin{pmatrix} 4 &amp; 1 \\ 4 &amp; -1 \end{pmatrix}\)</span>. 3. <span class="math inline">\(\begin{pmatrix} 1(2) + 2(5) \\ 3(2) - 1(5) \end{pmatrix} = \begin{pmatrix} 12 \\ 1 \end{pmatrix}\)</span>. 4. <span class="math inline">\(\begin{pmatrix} 2 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} 0 \\ 2 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 0 \\ 3 \end{pmatrix} \mapsto \begin{pmatrix} -3 \\ 0 \end{pmatrix}\)</span>: every vector turns 90° anticlockwise (lengths unchanged) — a rotation. 5. <span class="math inline">\(A\mathbf{q} = \begin{pmatrix} 2(8) + 3(4) \\ 5(8) + 1(4) \end{pmatrix} = \begin{pmatrix} 28 \\ 44 \end{pmatrix}\)</span>: 28 hours (within 30 ✓) and 44 kg (within 45 ✓) — feasible.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="numerical.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

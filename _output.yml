@@ -1,0 +1,19 @@
+bookdown::gitbook:
+  css:
+  - styles.css
+  - include/webex.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Mathematics A-Level to University</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="_blank">Published with bookdown</a></li>
+  includes:
+    after_body: include/webex.js
+  md_extensions: -smart
+bookdown::pdf_book:
+  fontsize: 12pt
+  keep_tex: yes
+  latex_engine: lualatex
+  includes:
+    in_header: template.tex

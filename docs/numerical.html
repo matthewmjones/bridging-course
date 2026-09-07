@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Numerical Methods | Mathematics A-Level to University</title>
+  <meta name="description" content="A bridging course from A-Level to university mathematics." />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Numerical Methods | Mathematics A-Level to University" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A bridging course from A-Level to university mathematics." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Numerical Methods | Mathematics A-Level to University" />
+  
+  <meta name="twitter:description" content="A bridging course from A-Level to university mathematics." />
+  
+
+<meta name="author" content="Matthew M. Jones" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="integration.html"/>
+<link rel="next" href="vectors.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Mathematics A-Level to University</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#who-this-course-is-for"><i class="fa fa-check"></i><b>1.1</b> Who this course is for</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#prerequisites"><i class="fa fa-check"></i><b>1.2</b> Prerequisites</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#what-the-course-covers"><i class="fa fa-check"></i><b>1.3</b> What the course covers</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#whats-not-on-the-course"><i class="fa fa-check"></i><b>1.4</b> What's not on the course</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#whats-new-on-the-course"><i class="fa fa-check"></i><b>1.5</b> What's new on the course</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#how-each-chapter-works"><i class="fa fa-check"></i><b>1.6</b> How each chapter works</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#how-to-use-this-course"><i class="fa fa-check"></i><b>1.7</b> How to use this course</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#video-content"><i class="fa fa-check"></i><b>1.8</b> Video content</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#the-management-science-thread"><i class="fa fa-check"></i><b>1.9</b> The Management Science thread</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#getting-help"><i class="fa fa-check"></i><b>1.10</b> Getting help</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="algebra.html"><a href="algebra.html"><i class="fa fa-check"></i><b>2</b> Algebraic Fluency</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="algebra.html"><a href="algebra.html#indices"><i class="fa fa-check"></i><b>2.1</b> Indices</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="algebra.html"><a href="algebra.html#key-idea"><i class="fa fa-check"></i><b>2.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.1.2" data-path="algebra.html"><a href="algebra.html#worked-examples"><i class="fa fa-check"></i><b>2.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.1.3" data-path="algebra.html"><a href="algebra.html#practice-exercises"><i class="fa fa-check"></i><b>2.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="algebra.html"><a href="algebra.html#surds"><i class="fa fa-check"></i><b>2.2</b> Surds</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="algebra.html"><a href="algebra.html#key-idea-1"><i class="fa fa-check"></i><b>2.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.2.2" data-path="algebra.html"><a href="algebra.html#worked-examples-1"><i class="fa fa-check"></i><b>2.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.2.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-1"><i class="fa fa-check"></i><b>2.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="algebra.html"><a href="algebra.html#quadratics"><i class="fa fa-check"></i><b>2.3</b> Quadratics</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="algebra.html"><a href="algebra.html#key-idea-2"><i class="fa fa-check"></i><b>2.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.3.2" data-path="algebra.html"><a href="algebra.html#worked-examples-2"><i class="fa fa-check"></i><b>2.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.3.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-2"><i class="fa fa-check"></i><b>2.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="algebra.html"><a href="algebra.html#simeq"><i class="fa fa-check"></i><b>2.4</b> Simultaneous equations</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="algebra.html"><a href="algebra.html#key-idea-3"><i class="fa fa-check"></i><b>2.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.4.2" data-path="algebra.html"><a href="algebra.html#worked-examples-3"><i class="fa fa-check"></i><b>2.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.4.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-3"><i class="fa fa-check"></i><b>2.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="algebra.html"><a href="algebra.html#inequalities"><i class="fa fa-check"></i><b>2.5</b> Inequalities</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="algebra.html"><a href="algebra.html#key-idea-4"><i class="fa fa-check"></i><b>2.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.5.2" data-path="algebra.html"><a href="algebra.html#worked-examples-4"><i class="fa fa-check"></i><b>2.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.5.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-4"><i class="fa fa-check"></i><b>2.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="algebra.html"><a href="algebra.html#polynomials"><i class="fa fa-check"></i><b>2.6</b> Polynomials</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="algebra.html"><a href="algebra.html#key-idea-5"><i class="fa fa-check"></i><b>2.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.6.2" data-path="algebra.html"><a href="algebra.html#worked-examples-5"><i class="fa fa-check"></i><b>2.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.6.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-5"><i class="fa fa-check"></i><b>2.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="algebra.html"><a href="algebra.html#rational"><i class="fa fa-check"></i><b>2.7</b> Rational expressions</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="algebra.html"><a href="algebra.html#key-idea-6"><i class="fa fa-check"></i><b>2.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.7.2" data-path="algebra.html"><a href="algebra.html#worked-examples-6"><i class="fa fa-check"></i><b>2.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.7.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-6"><i class="fa fa-check"></i><b>2.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="algebra.html"><a href="algebra.html#partialfractions"><i class="fa fa-check"></i><b>2.8</b> Partial fractions</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="algebra.html"><a href="algebra.html#key-idea-7"><i class="fa fa-check"></i><b>2.8.1</b> Key idea</a></li>
+<li class="chapter" data-level="2.8.2" data-path="algebra.html"><a href="algebra.html#worked-examples-7"><i class="fa fa-check"></i><b>2.8.2</b> Worked examples</a></li>
+<li class="chapter" data-level="2.8.3" data-path="algebra.html"><a href="algebra.html#practice-exercises-7"><i class="fa fa-check"></i><b>2.8.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="algebra.html"><a href="algebra.html#chapter-summary"><i class="fa fa-check"></i><b>2.9</b> Chapter summary</a></li>
+<li class="chapter" data-level="2.10" data-path="algebra.html"><a href="algebra.html#end-of-chapter-quiz"><i class="fa fa-check"></i><b>2.10</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="2.11" data-path="algebra.html"><a href="algebra.html#algebra-answers"><i class="fa fa-check"></i><b>2.11</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions and Graphs</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#graphs"><i class="fa fa-check"></i><b>3.1</b> Graphs of functions</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#key-idea-8"><i class="fa fa-check"></i><b>3.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#worked-examples-8"><i class="fa fa-check"></i><b>3.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.1.3" data-path="functions.html"><a href="functions.html#practice-exercises-8"><i class="fa fa-check"></i><b>3.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#intersections"><i class="fa fa-check"></i><b>3.2</b> Intersections: solving equations graphically</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="functions.html"><a href="functions.html#key-idea-9"><i class="fa fa-check"></i><b>3.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.2.2" data-path="functions.html"><a href="functions.html#worked-examples-9"><i class="fa fa-check"></i><b>3.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.2.3" data-path="functions.html"><a href="functions.html#practice-exercises-9"><i class="fa fa-check"></i><b>3.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#asymptotes"><i class="fa fa-check"></i><b>3.3</b> Asymptotes</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="functions.html"><a href="functions.html#key-idea-10"><i class="fa fa-check"></i><b>3.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.3.2" data-path="functions.html"><a href="functions.html#worked-examples-10"><i class="fa fa-check"></i><b>3.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.3.3" data-path="functions.html"><a href="functions.html#practice-exercises-10"><i class="fa fa-check"></i><b>3.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#proportionality"><i class="fa fa-check"></i><b>3.4</b> Proportionality</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="functions.html"><a href="functions.html#key-idea-11"><i class="fa fa-check"></i><b>3.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.4.2" data-path="functions.html"><a href="functions.html#worked-examples-11"><i class="fa fa-check"></i><b>3.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.4.3" data-path="functions.html"><a href="functions.html#practice-exercises-11"><i class="fa fa-check"></i><b>3.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#composite"><i class="fa fa-check"></i><b>3.5</b> Composite functions</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="functions.html"><a href="functions.html#key-idea-12"><i class="fa fa-check"></i><b>3.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.5.2" data-path="functions.html"><a href="functions.html#worked-examples-12"><i class="fa fa-check"></i><b>3.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.5.3" data-path="functions.html"><a href="functions.html#practice-exercises-12"><i class="fa fa-check"></i><b>3.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="functions.html"><a href="functions.html#inverse"><i class="fa fa-check"></i><b>3.6</b> Inverse functions</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="functions.html"><a href="functions.html#key-idea-13"><i class="fa fa-check"></i><b>3.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.6.2" data-path="functions.html"><a href="functions.html#worked-examples-13"><i class="fa fa-check"></i><b>3.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.6.3" data-path="functions.html"><a href="functions.html#practice-exercises-13"><i class="fa fa-check"></i><b>3.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="functions.html"><a href="functions.html#transformations"><i class="fa fa-check"></i><b>3.7</b> Transformations of graphs</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="functions.html"><a href="functions.html#key-idea-14"><i class="fa fa-check"></i><b>3.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.7.2" data-path="functions.html"><a href="functions.html#worked-examples-14"><i class="fa fa-check"></i><b>3.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.7.3" data-path="functions.html"><a href="functions.html#practice-exercises-14"><i class="fa fa-check"></i><b>3.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="functions.html"><a href="functions.html#modellingfunctions"><i class="fa fa-check"></i><b>3.8</b> Modelling with functions</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="functions.html"><a href="functions.html#key-idea-15"><i class="fa fa-check"></i><b>3.8.1</b> Key idea</a></li>
+<li class="chapter" data-level="3.8.2" data-path="functions.html"><a href="functions.html#worked-examples-15"><i class="fa fa-check"></i><b>3.8.2</b> Worked examples</a></li>
+<li class="chapter" data-level="3.8.3" data-path="functions.html"><a href="functions.html#practice-exercises-15"><i class="fa fa-check"></i><b>3.8.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="functions.html"><a href="functions.html#chapter-summary-1"><i class="fa fa-check"></i><b>3.9</b> Chapter summary</a></li>
+<li class="chapter" data-level="3.10" data-path="functions.html"><a href="functions.html#end-of-chapter-quiz-1"><i class="fa fa-check"></i><b>3.10</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="3.11" data-path="functions.html"><a href="functions.html#functions-answers"><i class="fa fa-check"></i><b>3.11</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="coordgeom.html"><a href="coordgeom.html"><i class="fa fa-check"></i><b>4</b> Coordinate Geometry Useful for Modelling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="coordgeom.html"><a href="coordgeom.html#straightlines"><i class="fa fa-check"></i><b>4.1</b> Straight lines and their equations</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="coordgeom.html"><a href="coordgeom.html#key-idea-16"><i class="fa fa-check"></i><b>4.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="4.1.2" data-path="coordgeom.html"><a href="coordgeom.html#worked-examples-16"><i class="fa fa-check"></i><b>4.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="4.1.3" data-path="coordgeom.html"><a href="coordgeom.html#practice-exercises-16"><i class="fa fa-check"></i><b>4.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="coordgeom.html"><a href="coordgeom.html#gradient-rate"><i class="fa fa-check"></i><b>4.2</b> Gradient as a rate of change</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="coordgeom.html"><a href="coordgeom.html#key-idea-17"><i class="fa fa-check"></i><b>4.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="4.2.2" data-path="coordgeom.html"><a href="coordgeom.html#worked-examples-17"><i class="fa fa-check"></i><b>4.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="4.2.3" data-path="coordgeom.html"><a href="coordgeom.html#practice-exercises-17"><i class="fa fa-check"></i><b>4.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="coordgeom.html"><a href="coordgeom.html#parallel-perpendicular"><i class="fa fa-check"></i><b>4.3</b> Parallel and perpendicular lines</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="coordgeom.html"><a href="coordgeom.html#key-idea-18"><i class="fa fa-check"></i><b>4.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="4.3.2" data-path="coordgeom.html"><a href="coordgeom.html#worked-examples-18"><i class="fa fa-check"></i><b>4.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="4.3.3" data-path="coordgeom.html"><a href="coordgeom.html#practice-exercises-18"><i class="fa fa-check"></i><b>4.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="coordgeom.html"><a href="coordgeom.html#linearmodels"><i class="fa fa-check"></i><b>4.4</b> Linear models</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="coordgeom.html"><a href="coordgeom.html#key-idea-19"><i class="fa fa-check"></i><b>4.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="4.4.2" data-path="coordgeom.html"><a href="coordgeom.html#worked-examples-19"><i class="fa fa-check"></i><b>4.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="4.4.3" data-path="coordgeom.html"><a href="coordgeom.html#practice-exercises-19"><i class="fa fa-check"></i><b>4.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="coordgeom.html"><a href="coordgeom.html#chapter-summary-2"><i class="fa fa-check"></i><b>4.5</b> Chapter summary</a></li>
+<li class="chapter" data-level="4.6" data-path="coordgeom.html"><a href="coordgeom.html#end-of-chapter-quiz-2"><i class="fa fa-check"></i><b>4.6</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="4.7" data-path="coordgeom.html"><a href="coordgeom.html#coordgeom-answers"><i class="fa fa-check"></i><b>4.7</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sequences.html"><a href="sequences.html"><i class="fa fa-check"></i><b>5</b> Sequences and Series</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="sequences.html"><a href="sequences.html#recurrence"><i class="fa fa-check"></i><b>5.1</b> Sequences and recurrence relations</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="sequences.html"><a href="sequences.html#key-idea-20"><i class="fa fa-check"></i><b>5.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.1.2" data-path="sequences.html"><a href="sequences.html#worked-examples-20"><i class="fa fa-check"></i><b>5.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.1.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-20"><i class="fa fa-check"></i><b>5.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="sequences.html"><a href="sequences.html#sigma"><i class="fa fa-check"></i><b>5.2</b> Sigma notation</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="sequences.html"><a href="sequences.html#key-idea-21"><i class="fa fa-check"></i><b>5.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.2.2" data-path="sequences.html"><a href="sequences.html#worked-examples-21"><i class="fa fa-check"></i><b>5.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.2.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-21"><i class="fa fa-check"></i><b>5.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="sequences.html"><a href="sequences.html#arithmetic"><i class="fa fa-check"></i><b>5.3</b> Arithmetic sequences and series</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="sequences.html"><a href="sequences.html#key-idea-22"><i class="fa fa-check"></i><b>5.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.3.2" data-path="sequences.html"><a href="sequences.html#worked-examples-22"><i class="fa fa-check"></i><b>5.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.3.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-22"><i class="fa fa-check"></i><b>5.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="sequences.html"><a href="sequences.html#geometric"><i class="fa fa-check"></i><b>5.4</b> Geometric sequences and series</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="sequences.html"><a href="sequences.html#key-idea-23"><i class="fa fa-check"></i><b>5.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.4.2" data-path="sequences.html"><a href="sequences.html#worked-examples-23"><i class="fa fa-check"></i><b>5.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.4.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-23"><i class="fa fa-check"></i><b>5.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="sequences.html"><a href="sequences.html#binomial"><i class="fa fa-check"></i><b>5.5</b> Binomial expansion</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="sequences.html"><a href="sequences.html#key-idea-24"><i class="fa fa-check"></i><b>5.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.5.2" data-path="sequences.html"><a href="sequences.html#worked-examples-24"><i class="fa fa-check"></i><b>5.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.5.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-24"><i class="fa fa-check"></i><b>5.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="sequences.html"><a href="sequences.html#seqmodelling"><i class="fa fa-check"></i><b>5.6</b> Modelling with sequences and series</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="sequences.html"><a href="sequences.html#key-idea-25"><i class="fa fa-check"></i><b>5.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="5.6.2" data-path="sequences.html"><a href="sequences.html#worked-examples-25"><i class="fa fa-check"></i><b>5.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="5.6.3" data-path="sequences.html"><a href="sequences.html#practice-exercises-25"><i class="fa fa-check"></i><b>5.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="sequences.html"><a href="sequences.html#chapter-summary-3"><i class="fa fa-check"></i><b>5.7</b> Chapter summary</a></li>
+<li class="chapter" data-level="5.8" data-path="sequences.html"><a href="sequences.html#sequences-diagnostic"><i class="fa fa-check"></i><b>5.8</b> End-of-chapter diagnostic</a></li>
+<li class="chapter" data-level="5.9" data-path="sequences.html"><a href="sequences.html#end-of-chapter-quiz-3"><i class="fa fa-check"></i><b>5.9</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="5.10" data-path="sequences.html"><a href="sequences.html#sequences-answers"><i class="fa fa-check"></i><b>5.10</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="explog.html"><a href="explog.html"><i class="fa fa-check"></i><b>6</b> Exponentials and Logarithms</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="explog.html"><a href="explog.html#expfunctions"><i class="fa fa-check"></i><b>6.1</b> Exponential functions</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="explog.html"><a href="explog.html#key-idea-26"><i class="fa fa-check"></i><b>6.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.1.2" data-path="explog.html"><a href="explog.html#worked-examples-26"><i class="fa fa-check"></i><b>6.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.1.3" data-path="explog.html"><a href="explog.html#practice-exercises-26"><i class="fa fa-check"></i><b>6.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="explog.html"><a href="explog.html#logs"><i class="fa fa-check"></i><b>6.2</b> Logarithms</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="explog.html"><a href="explog.html#key-idea-27"><i class="fa fa-check"></i><b>6.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.2.2" data-path="explog.html"><a href="explog.html#worked-examples-27"><i class="fa fa-check"></i><b>6.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.2.3" data-path="explog.html"><a href="explog.html#practice-exercises-27"><i class="fa fa-check"></i><b>6.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="explog.html"><a href="explog.html#loglaws"><i class="fa fa-check"></i><b>6.3</b> Laws of logarithms</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="explog.html"><a href="explog.html#key-idea-28"><i class="fa fa-check"></i><b>6.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.3.2" data-path="explog.html"><a href="explog.html#worked-examples-28"><i class="fa fa-check"></i><b>6.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.3.3" data-path="explog.html"><a href="explog.html#practice-exercises-28"><i class="fa fa-check"></i><b>6.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="explog.html"><a href="explog.html#expequations"><i class="fa fa-check"></i><b>6.4</b> Exponential equations</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="explog.html"><a href="explog.html#key-idea-29"><i class="fa fa-check"></i><b>6.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.4.2" data-path="explog.html"><a href="explog.html#worked-examples-29"><i class="fa fa-check"></i><b>6.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.4.3" data-path="explog.html"><a href="explog.html#practice-exercises-29"><i class="fa fa-check"></i><b>6.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="explog.html"><a href="explog.html#logtransform"><i class="fa fa-check"></i><b>6.5</b> Log transformations</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="explog.html"><a href="explog.html#key-idea-30"><i class="fa fa-check"></i><b>6.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.5.2" data-path="explog.html"><a href="explog.html#worked-examples-30"><i class="fa fa-check"></i><b>6.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.5.3" data-path="explog.html"><a href="explog.html#practice-exercises-30"><i class="fa fa-check"></i><b>6.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="explog.html"><a href="explog.html#growthdecay"><i class="fa fa-check"></i><b>6.6</b> Growth and decay models</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="explog.html"><a href="explog.html#key-idea-31"><i class="fa fa-check"></i><b>6.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="6.6.2" data-path="explog.html"><a href="explog.html#worked-examples-31"><i class="fa fa-check"></i><b>6.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="6.6.3" data-path="explog.html"><a href="explog.html#practice-exercises-31"><i class="fa fa-check"></i><b>6.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="explog.html"><a href="explog.html#chapter-summary-4"><i class="fa fa-check"></i><b>6.7</b> Chapter summary</a></li>
+<li class="chapter" data-level="6.8" data-path="explog.html"><a href="explog.html#end-of-chapter-quiz-4"><i class="fa fa-check"></i><b>6.8</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="6.9" data-path="explog.html"><a href="explog.html#explog-answers"><i class="fa fa-check"></i><b>6.9</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="differentiation.html"><a href="differentiation.html"><i class="fa fa-check"></i><b>7</b> Differentiation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="differentiation.html"><a href="differentiation.html#derivative-meaning"><i class="fa fa-check"></i><b>7.1</b> What is a derivative?</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-32"><i class="fa fa-check"></i><b>7.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.1.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-32"><i class="fa fa-check"></i><b>7.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.1.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-32"><i class="fa fa-check"></i><b>7.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="differentiation.html"><a href="differentiation.html#standard-derivatives"><i class="fa fa-check"></i><b>7.2</b> Standard derivatives</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-33"><i class="fa fa-check"></i><b>7.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.2.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-33"><i class="fa fa-check"></i><b>7.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.2.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-33"><i class="fa fa-check"></i><b>7.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="differentiation.html"><a href="differentiation.html#chainrule"><i class="fa fa-check"></i><b>7.3</b> The chain rule</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-34"><i class="fa fa-check"></i><b>7.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.3.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-34"><i class="fa fa-check"></i><b>7.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.3.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-34"><i class="fa fa-check"></i><b>7.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="differentiation.html"><a href="differentiation.html#productrule"><i class="fa fa-check"></i><b>7.4</b> The product rule</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-35"><i class="fa fa-check"></i><b>7.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.4.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-35"><i class="fa fa-check"></i><b>7.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.4.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-35"><i class="fa fa-check"></i><b>7.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="differentiation.html"><a href="differentiation.html#quotientrule"><i class="fa fa-check"></i><b>7.5</b> The quotient rule</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-36"><i class="fa fa-check"></i><b>7.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.5.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-36"><i class="fa fa-check"></i><b>7.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.5.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-36"><i class="fa fa-check"></i><b>7.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="differentiation.html"><a href="differentiation.html#combining-rules"><i class="fa fa-check"></i><b>7.6</b> Combining the rules</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-37"><i class="fa fa-check"></i><b>7.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.6.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-37"><i class="fa fa-check"></i><b>7.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.6.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-37"><i class="fa fa-check"></i><b>7.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="differentiation.html"><a href="differentiation.html#second-derivative"><i class="fa fa-check"></i><b>7.7</b> Second derivatives, concavity and points of inflection</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-38"><i class="fa fa-check"></i><b>7.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.7.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-38"><i class="fa fa-check"></i><b>7.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.7.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-38"><i class="fa fa-check"></i><b>7.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="differentiation.html"><a href="differentiation.html#tangents-normals"><i class="fa fa-check"></i><b>7.8</b> Tangents and normals</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-39"><i class="fa fa-check"></i><b>7.8.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.8.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-39"><i class="fa fa-check"></i><b>7.8.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.8.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-39"><i class="fa fa-check"></i><b>7.8.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="differentiation.html"><a href="differentiation.html#optimisation"><i class="fa fa-check"></i><b>7.9</b> Increasing, decreasing and optimisation</a>
+<ul>
+<li class="chapter" data-level="7.9.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-40"><i class="fa fa-check"></i><b>7.9.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.9.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-40"><i class="fa fa-check"></i><b>7.9.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.9.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-40"><i class="fa fa-check"></i><b>7.9.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="differentiation.html"><a href="differentiation.html#connected-rates"><i class="fa fa-check"></i><b>7.10</b> Connected rates of change</a>
+<ul>
+<li class="chapter" data-level="7.10.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-41"><i class="fa fa-check"></i><b>7.10.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.10.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-41"><i class="fa fa-check"></i><b>7.10.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.10.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-41"><i class="fa fa-check"></i><b>7.10.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="differentiation.html"><a href="differentiation.html#implicit-parametric"><i class="fa fa-check"></i><b>7.11</b> Implicit and parametric differentiation</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-42"><i class="fa fa-check"></i><b>7.11.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.11.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-42"><i class="fa fa-check"></i><b>7.11.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.11.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-42"><i class="fa fa-check"></i><b>7.11.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="differentiation.html"><a href="differentiation.html#constructing-des"><i class="fa fa-check"></i><b>7.12</b> Constructing differential equations</a>
+<ul>
+<li class="chapter" data-level="7.12.1" data-path="differentiation.html"><a href="differentiation.html#key-idea-43"><i class="fa fa-check"></i><b>7.12.1</b> Key idea</a></li>
+<li class="chapter" data-level="7.12.2" data-path="differentiation.html"><a href="differentiation.html#worked-examples-43"><i class="fa fa-check"></i><b>7.12.2</b> Worked examples</a></li>
+<li class="chapter" data-level="7.12.3" data-path="differentiation.html"><a href="differentiation.html#practice-exercises-43"><i class="fa fa-check"></i><b>7.12.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.13" data-path="differentiation.html"><a href="differentiation.html#chapter-summary-5"><i class="fa fa-check"></i><b>7.13</b> Chapter summary</a></li>
+<li class="chapter" data-level="7.14" data-path="differentiation.html"><a href="differentiation.html#end-of-chapter-quiz-5"><i class="fa fa-check"></i><b>7.14</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="7.15" data-path="differentiation.html"><a href="differentiation.html#differentiation-answers"><i class="fa fa-check"></i><b>7.15</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="integration.html"><a href="integration.html"><i class="fa fa-check"></i><b>8</b> Integration</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="integration.html"><a href="integration.html#antiderivatives"><i class="fa fa-check"></i><b>8.1</b> Integration as the reverse of differentiation</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="integration.html"><a href="integration.html#key-idea-44"><i class="fa fa-check"></i><b>8.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.1.2" data-path="integration.html"><a href="integration.html#worked-examples-44"><i class="fa fa-check"></i><b>8.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.1.3" data-path="integration.html"><a href="integration.html#practice-exercises-44"><i class="fa fa-check"></i><b>8.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="integration.html"><a href="integration.html#standard-integrals"><i class="fa fa-check"></i><b>8.2</b> Standard integrals</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="integration.html"><a href="integration.html#key-idea-45"><i class="fa fa-check"></i><b>8.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.2.2" data-path="integration.html"><a href="integration.html#worked-examples-45"><i class="fa fa-check"></i><b>8.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.2.3" data-path="integration.html"><a href="integration.html#practice-exercises-45"><i class="fa fa-check"></i><b>8.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="integration.html"><a href="integration.html#definite-integrals"><i class="fa fa-check"></i><b>8.3</b> Definite integrals and area</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="integration.html"><a href="integration.html#key-idea-46"><i class="fa fa-check"></i><b>8.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.3.2" data-path="integration.html"><a href="integration.html#worked-examples-46"><i class="fa fa-check"></i><b>8.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.3.3" data-path="integration.html"><a href="integration.html#practice-exercises-46"><i class="fa fa-check"></i><b>8.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="integration.html"><a href="integration.html#accumulation"><i class="fa fa-check"></i><b>8.4</b> Integration as accumulation</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="integration.html"><a href="integration.html#key-idea-47"><i class="fa fa-check"></i><b>8.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.4.2" data-path="integration.html"><a href="integration.html#worked-examples-47"><i class="fa fa-check"></i><b>8.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.4.3" data-path="integration.html"><a href="integration.html#practice-exercises-47"><i class="fa fa-check"></i><b>8.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="integration.html"><a href="integration.html#substitution"><i class="fa fa-check"></i><b>8.5</b> Integration by substitution</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="integration.html"><a href="integration.html#key-idea-48"><i class="fa fa-check"></i><b>8.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.5.2" data-path="integration.html"><a href="integration.html#worked-examples-48"><i class="fa fa-check"></i><b>8.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.5.3" data-path="integration.html"><a href="integration.html#practice-exercises-48"><i class="fa fa-check"></i><b>8.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="integration.html"><a href="integration.html#byparts"><i class="fa fa-check"></i><b>8.6</b> Integration by parts</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="integration.html"><a href="integration.html#key-idea-49"><i class="fa fa-check"></i><b>8.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.6.2" data-path="integration.html"><a href="integration.html#worked-examples-49"><i class="fa fa-check"></i><b>8.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.6.3" data-path="integration.html"><a href="integration.html#practice-exercises-49"><i class="fa fa-check"></i><b>8.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="integration.html"><a href="integration.html#pf-integration"><i class="fa fa-check"></i><b>8.7</b> Integration using partial fractions</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="integration.html"><a href="integration.html#key-idea-50"><i class="fa fa-check"></i><b>8.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.7.2" data-path="integration.html"><a href="integration.html#worked-examples-50"><i class="fa fa-check"></i><b>8.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.7.3" data-path="integration.html"><a href="integration.html#practice-exercises-50"><i class="fa fa-check"></i><b>8.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="integration.html"><a href="integration.html#separable-des"><i class="fa fa-check"></i><b>8.8</b> Separable differential equations</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="integration.html"><a href="integration.html#key-idea-51"><i class="fa fa-check"></i><b>8.8.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.8.2" data-path="integration.html"><a href="integration.html#worked-examples-51"><i class="fa fa-check"></i><b>8.8.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.8.3" data-path="integration.html"><a href="integration.html#practice-exercises-51"><i class="fa fa-check"></i><b>8.8.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="integration.html"><a href="integration.html#interpretation"><i class="fa fa-check"></i><b>8.9</b> Interpreting integrals and solutions in context</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="integration.html"><a href="integration.html#key-idea-52"><i class="fa fa-check"></i><b>8.9.1</b> Key idea</a></li>
+<li class="chapter" data-level="8.9.2" data-path="integration.html"><a href="integration.html#worked-examples-52"><i class="fa fa-check"></i><b>8.9.2</b> Worked examples</a></li>
+<li class="chapter" data-level="8.9.3" data-path="integration.html"><a href="integration.html#practice-exercises-52"><i class="fa fa-check"></i><b>8.9.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="integration.html"><a href="integration.html#chapter-summary-6"><i class="fa fa-check"></i><b>8.10</b> Chapter summary</a></li>
+<li class="chapter" data-level="8.11" data-path="integration.html"><a href="integration.html#end-of-chapter-quiz-6"><i class="fa fa-check"></i><b>8.11</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="8.12" data-path="integration.html"><a href="integration.html#integration-answers"><i class="fa fa-check"></i><b>8.12</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="numerical.html"><a href="numerical.html"><i class="fa fa-check"></i><b>9</b> Numerical Methods</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="numerical.html"><a href="numerical.html#sign-change"><i class="fa fa-check"></i><b>9.1</b> Locating roots by sign change</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="numerical.html"><a href="numerical.html#key-idea-53"><i class="fa fa-check"></i><b>9.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.1.2" data-path="numerical.html"><a href="numerical.html#worked-examples-53"><i class="fa fa-check"></i><b>9.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="9.1.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-53"><i class="fa fa-check"></i><b>9.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="numerical.html"><a href="numerical.html#fixed-point"><i class="fa fa-check"></i><b>9.2</b> Fixed-point iteration</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="numerical.html"><a href="numerical.html#key-idea-54"><i class="fa fa-check"></i><b>9.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.2.2" data-path="numerical.html"><a href="numerical.html#worked-examples-54"><i class="fa fa-check"></i><b>9.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="9.2.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-54"><i class="fa fa-check"></i><b>9.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="numerical.html"><a href="numerical.html#newton-raphson"><i class="fa fa-check"></i><b>9.3</b> The Newton–Raphson method</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="numerical.html"><a href="numerical.html#key-idea-55"><i class="fa fa-check"></i><b>9.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.3.2" data-path="numerical.html"><a href="numerical.html#worked-examples-55"><i class="fa fa-check"></i><b>9.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="9.3.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-55"><i class="fa fa-check"></i><b>9.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="numerical.html"><a href="numerical.html#trapezium"><i class="fa fa-check"></i><b>9.4</b> Numerical integration: the trapezium rule</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="numerical.html"><a href="numerical.html#key-idea-56"><i class="fa fa-check"></i><b>9.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.4.2" data-path="numerical.html"><a href="numerical.html#worked-examples-56"><i class="fa fa-check"></i><b>9.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="9.4.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-56"><i class="fa fa-check"></i><b>9.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="numerical.html"><a href="numerical.html#numerical-context"><i class="fa fa-check"></i><b>9.5</b> Choosing and trusting a numerical method</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="numerical.html"><a href="numerical.html#key-idea-57"><i class="fa fa-check"></i><b>9.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="9.5.2" data-path="numerical.html"><a href="numerical.html#worked-example"><i class="fa fa-check"></i><b>9.5.2</b> Worked example</a></li>
+<li class="chapter" data-level="9.5.3" data-path="numerical.html"><a href="numerical.html#practice-exercises-57"><i class="fa fa-check"></i><b>9.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="numerical.html"><a href="numerical.html#chapter-summary-7"><i class="fa fa-check"></i><b>9.6</b> Chapter summary</a></li>
+<li class="chapter" data-level="9.7" data-path="numerical.html"><a href="numerical.html#end-of-chapter-quiz-7"><i class="fa fa-check"></i><b>9.7</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="9.8" data-path="numerical.html"><a href="numerical.html#numerical-answers"><i class="fa fa-check"></i><b>9.8</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>10</b> Vectors (and a First Look at Matrices)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="vectors.html"><a href="vectors.html#vectors-2d"><i class="fa fa-check"></i><b>10.1</b> Two-dimensional vectors</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="vectors.html"><a href="vectors.html#key-idea-58"><i class="fa fa-check"></i><b>10.1.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.1.2" data-path="vectors.html"><a href="vectors.html#worked-examples-57"><i class="fa fa-check"></i><b>10.1.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.1.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-58"><i class="fa fa-check"></i><b>10.1.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="vectors.html"><a href="vectors.html#vectors-3d"><i class="fa fa-check"></i><b>10.2</b> Three-dimensional vectors</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="vectors.html"><a href="vectors.html#key-idea-59"><i class="fa fa-check"></i><b>10.2.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.2.2" data-path="vectors.html"><a href="vectors.html#worked-examples-58"><i class="fa fa-check"></i><b>10.2.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.2.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-59"><i class="fa fa-check"></i><b>10.2.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="vectors.html"><a href="vectors.html#vector-operations"><i class="fa fa-check"></i><b>10.3</b> Vector operations</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="vectors.html"><a href="vectors.html#key-idea-60"><i class="fa fa-check"></i><b>10.3.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.3.2" data-path="vectors.html"><a href="vectors.html#worked-examples-59"><i class="fa fa-check"></i><b>10.3.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.3.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-60"><i class="fa fa-check"></i><b>10.3.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="vectors.html"><a href="vectors.html#position-vectors"><i class="fa fa-check"></i><b>10.4</b> Position vectors and distances</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="vectors.html"><a href="vectors.html#key-idea-61"><i class="fa fa-check"></i><b>10.4.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.4.2" data-path="vectors.html"><a href="vectors.html#worked-examples-60"><i class="fa fa-check"></i><b>10.4.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.4.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-61"><i class="fa fa-check"></i><b>10.4.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="vectors.html"><a href="vectors.html#data-vectors"><i class="fa fa-check"></i><b>10.5</b> Vectors as data</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="vectors.html"><a href="vectors.html#key-idea-62"><i class="fa fa-check"></i><b>10.5.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.5.2" data-path="vectors.html"><a href="vectors.html#worked-examples-61"><i class="fa fa-check"></i><b>10.5.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.5.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-62"><i class="fa fa-check"></i><b>10.5.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="vectors.html"><a href="vectors.html#matrices"><i class="fa fa-check"></i><b>10.6</b> A first look at matrices</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="vectors.html"><a href="vectors.html#key-idea-63"><i class="fa fa-check"></i><b>10.6.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.6.2" data-path="vectors.html"><a href="vectors.html#worked-examples-62"><i class="fa fa-check"></i><b>10.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.6.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-63"><i class="fa fa-check"></i><b>10.6.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="vectors.html"><a href="vectors.html#end-of-chapter-quiz-8"><i class="fa fa-check"></i><b>10.7</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="10.8" data-path="vectors.html"><a href="vectors.html#chapter-summary-and-the-end-of-the-course"><i class="fa fa-check"></i><b>10.8</b> Chapter summary — and the end of the course</a></li>
+<li class="chapter" data-level="10.9" data-path="vectors.html"><a href="vectors.html#vectors-answers"><i class="fa fa-check"></i><b>10.9</b> Answers to practice exercises</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mathematics A-Level to University</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="numerical" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Numerical Methods<a href="numerical.html#numerical" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Chapters <a href="algebra.html#algebra">2</a>–<a href="integration.html#integration">8</a> solved equations and integrals <em>exactly</em>. But exactness has limits: mix an exponential with a polynomial (<span class="math inline">\(e^x = 3x\)</span>), or ask for the interest rate hiding inside a stream of cash flows, and no formula will save you. Numerical methods trade exact answers for <em>arbitrarily good approximations</em> — and since real business data is itself approximate, that trade is usually a bargain.</p>
+<p>This chapter covers the A-level toolkit: locating roots by sign changes, refining them by iteration and by the Newton–Raphson method, approximating integrals with the trapezium rule — and, throughout, knowing when each method can <em>fail</em>.</p>
+<p><strong>Why this matters:</strong> Every time Excel's Goal Seek, Solver or <code>IRR</code> function returns an answer, one of this chapter's algorithms (or a close cousin) has just run. Numerical root-finding, iteration and quadrature sit inside every piece of financial, forecasting and optimisation software you will ever use. Understanding them means knowing when to trust the software — and when it's quietly failing.</p>
+<div id="sign-change" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Locating roots by sign change<a href="numerical.html#sign-change" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-53" class="section level3 hasAnchor" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Key idea<a href="numerical.html#key-idea-53" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If <span class="math inline">\(f\)</span> is <strong>continuous</strong> on <span class="math inline">\([a, b]\)</span> and <span class="math inline">\(f(a)\)</span> and <span class="math inline">\(f(b)\)</span> have <strong>opposite signs</strong>, then <span class="math inline">\(f(x) = 0\)</span> has at least one root between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> — the curve can't get from below the axis to above it without crossing. Repeatedly halving or narrowing the interval traps the root as tightly as you like.</p>
+<p>Two ways the logic can fail, both worth knowing cold:</p>
+<ul>
+<li><strong>No sign change ≠ no root.</strong> A curve can <em>touch</em> the axis (a repeated root, like <span class="math inline">\((x-2)^2\)</span>) without crossing, and an interval can contain an <em>even number</em> of roots whose sign changes cancel.</li>
+<li><strong>Sign change ≠ root, if <span class="math inline">\(f\)</span> isn't continuous.</strong> <span class="math inline">\(f(x) = \dfrac{1}{x - 1}\)</span> satisfies <span class="math inline">\(f(0) &lt; 0 &lt; f(2)\)</span>, but there is no root — the "crossing" is a vertical asymptote.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:sign-change-plot"></span>
+<img src="mathematics-a-level-to-university_files/figure-html/sign-change-plot-1.png" alt="A sign change traps a root (left); a sign change across an asymptote traps nothing (right)." width="672" />
+<p class="caption">
+Figure 9.1: A sign change traps a root (left); a sign change across an asymptote traps nothing (right).
+</p>
+</div>
+</div>
+<div id="worked-examples-53" class="section level3 hasAnchor" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Worked examples<a href="numerical.html#worked-examples-53" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> Show that <span class="math inline">\(x^3 - 2x - 5 = 0\)</span> has a root between 2 and 3.</p>
+<p><span class="math inline">\(f(2) = 8 - 4 - 5 = -1 &lt; 0\)</span> and <span class="math inline">\(f(3) = 27 - 6 - 5 = 16 &gt; 0\)</span>. <span class="math inline">\(f\)</span> is a polynomial (continuous everywhere), so a root lies in <span class="math inline">\((2, 3)\)</span>.</p>
+<p><strong>Example (moderate).</strong> Locate that root to 1 decimal place.</p>
+<p>Narrow the interval: <span class="math inline">\(f(2.1) = 9.261 - 4.2 - 5 = 0.061 &gt; 0\)</span>, so the root is in <span class="math inline">\((2, 2.1)\)</span>. Deciding the first decimal needs the midpoint: <span class="math inline">\(f(2.05) = 8.615 - 4.1 - 5 = -0.485 &lt; 0\)</span>, so the root is in <span class="math inline">\((2.05, 2.1)\)</span> — closer to 2.1 than to 2.0. Root <span class="math inline">\(= 2.1\)</span> (1 d.p.).</p>
+<p>Note the technique for "to <span class="math inline">\(n\)</span> decimal places": show a sign change across an interval that pins down the rounding, typically by testing the halfway point.</p>
+<p><strong>Example (challenging — locating break-even points).</strong> A firm's profit is <span class="math inline">\(P(q) = 60\sqrt{q} - 100 - 4q\)</span> (revenue grows with diminishing returns; costs are fixed-plus-linear). Show that the firm has a break-even point between <span class="math inline">\(q = 3\)</span> and <span class="math inline">\(q = 4\)</span>, and another between <span class="math inline">\(q = 150\)</span> and <span class="math inline">\(q = 200\)</span>.</p>
+<p><span class="math inline">\(P(3) = 60\sqrt{3} - 112 \approx 103.9 - 112 = -8.1 &lt; 0\)</span>; <span class="math inline">\(P(4) = 120 - 116 = 4 &gt; 0\)</span>: a break-even in <span class="math inline">\((3, 4)\)</span>.</p>
+<p><span class="math inline">\(P(150) = 60\sqrt{150} - 700 \approx 734.8 - 700 = 34.8 &gt; 0\)</span>; <span class="math inline">\(P(200) \approx 848.5 - 900 = -51.5 &lt; 0\)</span>: another in <span class="math inline">\((150, 200)\)</span>.</p>
+<p>So the firm is profitable only for outputs between roughly 4 and 170 — too small and fixed costs dominate; too large and the linear costs outrun the diminishing-returns revenue. (This particular equation can be checked exactly with a substitution <span class="math inline">\(u = \sqrt{q}\)</span>, turning it into a quadratic — we'll do that in Section <a href="numerical.html#fixed-point">9.2</a>. In genuinely mixed equations, no such rescue exists and the sign-change method is your starting point.)</p>
+</div>
+<div id="practice-exercises-53" class="section level3 hasAnchor" number="9.1.3">
+<h3><span class="header-section-number">9.1.3</span> Practice exercises<a href="numerical.html#practice-exercises-53" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Show that <span class="math inline">\(x^3 + x - 7 = 0\)</span> has a root between 1 and 2, and locate it to 1 decimal place.</li>
+<li><span class="math inline">\(f(x) = (x - 2)^2\)</span> has a root at <span class="math inline">\(x = 2\)</span>, yet <span class="math inline">\(f(1)\)</span> and <span class="math inline">\(f(3)\)</span> are both positive. Explain why the sign-change method misses it.</li>
+<li><span class="math inline">\(f(x) = \dfrac{1}{x - 1}\)</span> has <span class="math inline">\(f(0) = -1\)</span> and <span class="math inline">\(f(2) = 1\)</span>. Explain why there is no root in <span class="math inline">\((0, 2)\)</span> despite the sign change.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Concluding "root = 2.1 to 1 d.p." from a sign change over <span class="math inline">\((2, 2.1)\)</span> alone — that interval contains numbers rounding to 2.0 <em>and</em> to 2.1. Test the midpoint.</li>
+<li>Forgetting the continuity requirement — always ask whether the function has any asymptotes or jumps in the interval.</li>
+<li>Assuming the interval contains only <em>one</em> root. Sketch first (Chapter <a href="functions.html#functions">3</a>); a cubic can cross three times.</li>
+</ul>
+<div class="webex-check webex-box">
+<p><strong>Self-check: locating roots by sign change</strong></p>
+<p><strong>Q1.</strong> Let <span class="math inline">\(f(x) = x^3 + 2x - 9\)</span>. Compute <span class="math inline">\(f(1) =\)</span> <input class='webex-solveme nospaces' size='2' data-answer='["-6"]'/> and <span class="math inline">\(f(2) =\)</span> <input class='webex-solveme nospaces' size='1' data-answer='["3"]'/>. Since <span class="math inline">\(f\)</span> is continuous, the sign change guarantees <select class='webex-select'><option value='blank'></option><option value=''>exactly one root in (1, 2)</option><option value='answer'>at least one root in (1, 2)</option><option value=''>an even number of roots in (1, 2)</option></select>.</p>
+<p><strong>Q2.</strong> A continuous function has <span class="math inline">\(f(2.3) = -0.21\)</span>, <span class="math inline">\(f(2.35) = 0.14\)</span> and <span class="math inline">\(f(2.4) = 0.52\)</span>. To 1 decimal place, the root is <input class='webex-solveme nospaces' data-tol='0.01' size='3' data-answer='["2.3"]'/>.</p>
+<p><strong>Q3.</strong> <span class="math inline">\(g(x) = (x - 3)^2\)</span> satisfies <span class="math inline">\(g(2) = 1 &gt; 0\)</span> and <span class="math inline">\(g(4) = 1 &gt; 0\)</span>: no sign change on <span class="math inline">\((2, 4)\)</span>. Which statement is correct?</p>
+<ol style="list-style-type: upper-alpha">
+<li><span class="math inline">\(g\)</span> has no root in <span class="math inline">\((2, 4)\)</span>.<br />
+</li>
+<li><span class="math inline">\(g\)</span> has a root in <span class="math inline">\((2, 4)\)</span> that the test cannot detect, because the curve touches the axis without crossing it.<br />
+</li>
+<li><span class="math inline">\(g\)</span> must be discontinuous somewhere in <span class="math inline">\((2, 4)\)</span>.<br />
+</li>
+<li><span class="math inline">\(g\)</span> has two distinct roots in <span class="math inline">\((2, 4)\)</span> whose sign changes cancel.</li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value='answer'>B</option><option value=''>C</option><option value=''>D</option></select></p>
+<p><strong>Q4.</strong> <span class="math inline">\(h(x) = \dfrac{1}{x - 2}\)</span> has <span class="math inline">\(h(1) = -1 &lt; 0\)</span> and <span class="math inline">\(h(3) = 1 &gt; 0\)</span>, yet <span class="math inline">\(h(x) = 0\)</span> has no solution. The sign-change conclusion fails here because <select class='webex-select'><option value='blank'></option><option value=''>the interval contains an even number of roots</option><option value=''>the root is repeated</option><option value='answer'>h is not continuous on the interval</option></select>.</p>
+<p><strong>Q5.</strong> A firm's profit is <span class="math inline">\(P(q) = 50\sqrt{q} - 80 - 2q\)</span>. Compute <span class="math inline">\(P(1) =\)</span> <input class='webex-solveme nospaces' size='3' data-answer='["-32"]'/> and <span class="math inline">\(P(4) =\)</span> <input class='webex-solveme nospaces' size='2' data-answer='["12"]'/>. The sign-change test guarantees a break-even output in the interval <select class='webex-select'><option value='blank'></option><option value=''>(0, 1)</option><option value='answer'>(1, 4)</option><option value=''>(4, 9)</option></select>.</p>
+</div>
+<div class="webex-solution">
+<button>
+Show solutions
+</button>
+<p><strong>Q1.</strong> <span class="math inline">\(f(1) = 1 + 2 - 9 = -6\)</span> and <span class="math inline">\(f(2) = 8 + 4 - 9 = 3\)</span>. The conclusion is <em>at least one</em> root: a sign change can never count crossings, and a cubic can cross three times — "exactly one" claims more than the test delivers.</p>
+<p><strong>Q2.</strong> <span class="math inline">\(2.3\)</span>. Since <span class="math inline">\(f(2.35) &gt; 0\)</span>, the root sits in <span class="math inline">\((2.3, 2.35)\)</span>, and every number there rounds to <span class="math inline">\(2.3\)</span>. The trap is stopping at the first bracket <span class="math inline">\((2.3, 2.4)\)</span>: that interval contains numbers rounding to <span class="math inline">\(2.3\)</span> <em>and</em> to <span class="math inline">\(2.4\)</span>, which is exactly why the midpoint test exists.</p>
+<p><strong>Q3.</strong> (B). The curve touches the axis at the repeated root <span class="math inline">\(x = 3\)</span> without crossing, so <span class="math inline">\(g\)</span> has the same sign on both sides — nothing for the test to detect. (A) is the tempting trap: "no sign change" never means "no root".</p>
+<p><strong>Q4.</strong> <span class="math inline">\(h\)</span> is not continuous on the interval — the sign change happens across the vertical asymptote at <span class="math inline">\(x = 2\)</span>, not across a root. Continuity is a working part of the test, not small print.</p>
+<p><strong>Q5.</strong> <span class="math inline">\(P(1) = 50 - 80 - 2 = -32\)</span> and <span class="math inline">\(P(4) = 100 - 80 - 8 = 12\)</span>, so a break-even lies in <span class="math inline">\((1, 4)\)</span>: <span class="math inline">\(P\)</span> is continuous there and changes sign. Quick sense check: <span class="math inline">\(P(4) &gt; 0\)</span> says the firm is already profitable at <span class="math inline">\(q = 4\)</span>, so it must have broken even at some smaller output.</p>
+</div>
+</div>
+</div>
+<div id="fixed-point" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Fixed-point iteration<a href="numerical.html#fixed-point" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-54" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Key idea<a href="numerical.html#key-idea-54" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Rearrange <span class="math inline">\(f(x) = 0\)</span> into the form <span class="math inline">\(x = g(x)\)</span>, pick a starting value <span class="math inline">\(x_0\)</span>, and iterate:</p>
+<p><span class="math display">\[x_{n+1} = g(x_n).\]</span></p>
+<p>If the sequence settles down, it settles on a <strong>fixed point</strong> of <span class="math inline">\(g\)</span> — a value the rule doesn't move (Section <a href="sequences.html#recurrence">5.1</a>) — which is a root of the original equation. Whether it settles depends on the <em>steepness of <span class="math inline">\(g\)</span> near the root</em>:</p>
+<p><span class="math display">\[|g&#39;(x)| &lt; 1 \text{ near the root} \;\Rightarrow\; \text{convergence}; \qquad |g&#39;(x)| &gt; 1 \;\Rightarrow\; \text{divergence}.\]</span></p>
+<p>The same equation has many rearrangements; some converge and some don't. If one fails, try another.</p>
+<div class="video-container">
+<iframe src="https://www.youtube-nocookie.com/embed/gfKu1ILeVdg?list=PLg2tfDG3Ww4uHZWDIOiK3V7iyz4sw1HCP" referrerpolicy="strict-origin-when-cross-origin" title="Numerical methods" frameborder="0" allowfullscreen>
+</iframe>
+</div>
+<p class="video-playlist-link">
+<a href="https://www.youtube.com/playlist?list=PLg2tfDG3Ww4uHZWDIOiK3V7iyz4sw1HCP" target="_blank" rel="noopener">View the full playlist on YouTube</a>
+</p>
+</div>
+<div id="worked-examples-54" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Worked examples<a href="numerical.html#worked-examples-54" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> Show that <span class="math inline">\(x^3 - 2x - 5 = 0\)</span> can be rearranged as <span class="math inline">\(x = (2x + 5)^{1/3}\)</span>, and iterate from <span class="math inline">\(x_0 = 2\)</span>.</p>
+<p>Rearranging: <span class="math inline">\(x^3 = 2x + 5\)</span>, so <span class="math inline">\(x = (2x+5)^{1/3}\)</span>. Iterating <span class="math inline">\(x_{n+1} = (2x_n + 5)^{1/3}\)</span>:</p>
+<p><span class="math display">\[x_1 = 9^{1/3} = 2.0801, \quad x_2 = 2.0924, \quad x_3 = 2.0942, \quad x_4 = 2.0945.\]</span></p>
+<p>The iterates are settling: root <span class="math inline">\(\approx 2.0946\)</span> (4 d.p.) — consistent with the interval <span class="math inline">\((2, 2.1)\)</span> found in Section <a href="numerical.html#sign-change">9.1</a>.</p>
+<p><strong>Example (moderate — a rearrangement that fails).</strong> The same equation also rearranges to <span class="math inline">\(x = \dfrac{x^3 - 5}{2}\)</span>. Iterate from <span class="math inline">\(x_0 = 2\)</span> and explain what happens.</p>
+<p><span class="math display">\[x_1 = \frac{8 - 5}{2} = 1.5, \qquad x_2 = \frac{3.375 - 5}{2} = -0.81, \qquad x_3 = \frac{-0.54 - 5}{2} = -2.77, \dots\]</span></p>
+<p>The iterates flee the root. Diagnosis: here <span class="math inline">\(g(x) = \tfrac{x^3 - 5}{2}\)</span> has <span class="math inline">\(g&#39;(x) = \tfrac{3x^2}{2}\)</span>, which at the root (<span class="math inline">\(x \approx 2.09\)</span>) is about <span class="math inline">\(6.6\)</span> — far bigger than 1. Each step <em>amplifies</em> the error instead of shrinking it. Same equation, different rearrangement, opposite behaviour: the convergence condition is not a footnote.</p>
+<p><strong>Example (challenging — iterating to a break-even point).</strong> Return to <span class="math inline">\(P(q) = 60\sqrt{q} - 100 - 4q\)</span> from Section <a href="numerical.html#sign-change">9.1</a>. Rearranging <span class="math inline">\(P(q) = 0\)</span> gives <span class="math inline">\(q = 15\sqrt{q} - 25\)</span>. Iterate from <span class="math inline">\(q_0 = 150\)</span>, explain which break-even point the scheme finds, and verify exactly.</p>
+<p>Iterating <span class="math inline">\(q_{n+1} = 15\sqrt{q_n} - 25\)</span>:</p>
+<p><span class="math display">\[q_1 = 15\sqrt{150} - 25 = 158.7, \quad q_2 = 164.0, \quad q_3 = 167.1, \quad q_4 = 168.9, \dots \to \approx 171.4.\]</span></p>
+<p>Here <span class="math inline">\(g(q) = 15\sqrt{q} - 25\)</span> has <span class="math inline">\(g&#39;(q) = \dfrac{7.5}{\sqrt{q}}\)</span>. At the large root (<span class="math inline">\(q \approx 171\)</span>): <span class="math inline">\(g&#39; \approx 0.57 &lt; 1\)</span> — converges. At the small root (<span class="math inline">\(q \approx 3.6\)</span>): <span class="math inline">\(g&#39; \approx 3.9 &gt; 1\)</span> — this scheme can <em>never</em> find the small break-even, from any nearby start.</p>
+<p>Verification (the promised exact check): substitute <span class="math inline">\(u = \sqrt{q}\)</span> into <span class="math inline">\(P = 0\)</span>: <span class="math inline">\(4u^2 - 60u + 100 = 0\)</span>, i.e. <span class="math inline">\(u^2 - 15u + 25 = 0\)</span>, so <span class="math inline">\(u = \tfrac{15 \pm \sqrt{125}}{2}\)</span>, giving <span class="math inline">\(q = u^2 \approx 3.65\)</span> or <span class="math inline">\(171.35\)</span>. The iteration was heading exactly where the algebra says it should. When an exact check exists, take it — it's how you learn to trust (and distrust) your numerical schemes.</p>
+</div>
+<div id="practice-exercises-54" class="section level3 hasAnchor" number="9.2.3">
+<h3><span class="header-section-number">9.2.3</span> Practice exercises<a href="numerical.html#practice-exercises-54" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Rearrange <span class="math inline">\(x^3 - 2x - 5 = 0\)</span> as <span class="math inline">\(x = (2x+5)^{1/3}\)</span> and compute <span class="math inline">\(x_1, x_2, x_3\)</span> from <span class="math inline">\(x_0 = 2\)</span>, to 4 d.p.</li>
+<li>The iteration <span class="math inline">\(x_{n+1} = \dfrac{x_n^2 + 6}{5}\)</span> solves <span class="math inline">\(x^2 - 5x + 6 = 0\)</span> (roots 2 and 3). Starting from <span class="math inline">\(x_0 = 1\)</span>, compute three iterates and state which root the scheme is approaching. Using <span class="math inline">\(g&#39;(x) = \tfrac{2x}{5}\)</span>, explain why it can approach that root but not the other.</li>
+<li>Explain, using <span class="math inline">\(g&#39;\)</span>, why <span class="math inline">\(x_{n+1} = \dfrac{x_n^3 - 5}{2}\)</span> diverges from the root of <span class="math inline">\(x^3 - 2x - 5 = 0\)</span> near <span class="math inline">\(2.09\)</span>.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Blaming the <em>equation</em> when the <em>rearrangement</em> diverges. Try a different <span class="math inline">\(g\)</span>.</li>
+<li>Reporting an unconverged iterate as "the root". Iterate until successive values agree to the accuracy required — and then confirm with a sign change around your answer.</li>
+<li>Forgetting that iteration finds <em>a</em> fixed point, not necessarily the one you wanted (as the break-even example shows) — bracket your target root first.</li>
+</ul>
+<div class="desmos-container" style="height:500px;">
+<iframe src="https://www.desmos.com/calculator/8c1irtl7w4?embed" title="Desmos activity" frameborder="0" allowfullscreen style="width:100%; height:100%; border:1px solid #ccc; border-radius:4px;">
+</iframe>
+</div>
+</div>
+</div>
+<div id="newton-raphson" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> The Newton–Raphson method<a href="numerical.html#newton-raphson" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-55" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Key idea<a href="numerical.html#key-idea-55" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Newton–Raphson turbo-charges root-finding using Chapter <a href="differentiation.html#differentiation">7</a>'s tangent lines. From an estimate <span class="math inline">\(x_n\)</span>, slide down the tangent at <span class="math inline">\(\big(x_n, f(x_n)\big)\)</span> to where it hits the axis; that landing point is the next estimate:</p>
+<p><span class="math display">\[x_{n+1} = x_n - \frac{f(x_n)}{f&#39;(x_n)}.\]</span></p>
+<p>When it works, it works spectacularly — the number of correct decimal places roughly <em>doubles</em> each step. But the tangent can betray you:</p>
+<ul>
+<li>if <span class="math inline">\(f&#39;(x_n) = 0\)</span> (a stationary point), the tangent is horizontal and never meets the axis — the formula divides by zero;</li>
+<li>if <span class="math inline">\(f&#39;(x_n)\)</span> is merely <em>small</em>, the tangent is nearly flat and fires the next estimate far away, possibly towards a different root or off to nowhere.</li>
+</ul>
+<p>Good practice: bracket the root with a sign change first, then start Newton–Raphson from inside the bracket, away from any turning points.</p>
+</div>
+<div id="worked-examples-55" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Worked examples<a href="numerical.html#worked-examples-55" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> Apply Newton–Raphson to <span class="math inline">\(f(x) = x^3 - 2x - 5\)</span> from <span class="math inline">\(x_0 = 2\)</span>.</p>
+<p><span class="math inline">\(f&#39;(x) = 3x^2 - 2\)</span>. Step 1: <span class="math inline">\(f(2) = -1\)</span>, <span class="math inline">\(f&#39;(2) = 10\)</span>:</p>
+<p><span class="math display">\[x_1 = 2 - \frac{-1}{10} = 2.1.\]</span></p>
+<p>Step 2: <span class="math inline">\(f(2.1) = 0.061\)</span>, <span class="math inline">\(f&#39;(2.1) = 11.23\)</span>:</p>
+<p><span class="math display">\[x_2 = 2.1 - \frac{0.061}{11.23} = 2.09457.\]</span></p>
+<p>Step 3 gives <span class="math inline">\(x_3 = 2.094551\ldots\)</span> — six correct decimals after three steps. Compare the fixed-point scheme of Section <a href="numerical.html#fixed-point">9.2</a>, still on four decimals after four steps: this is the "doubling of accuracy" in action.</p>
+<p><strong>Example (moderate — a mixed equation with no exact solution).</strong> Solve <span class="math inline">\(e^x = 3x\)</span> for the smaller root, to 3 d.p.</p>
+<p>Set <span class="math inline">\(f(x) = e^x - 3x\)</span>: <span class="math inline">\(f(0) = 1 &gt; 0\)</span>, <span class="math inline">\(f(1) = e - 3 \approx -0.28 &lt; 0\)</span> — a root in <span class="math inline">\((0, 1)\)</span>, and no algebraic technique in this course (or any other) solves it exactly. Newton–Raphson with <span class="math inline">\(f&#39;(x) = e^x - 3\)</span>, from <span class="math inline">\(x_0 = 0.5\)</span>:</p>
+<p><span class="math display">\[x_1 = 0.5 - \frac{0.1487}{-1.3513} = 0.610, \qquad x_2 = 0.610 - \frac{0.0104}{-1.1596} = 0.619,\]</span></p>
+<p>and <span class="math inline">\(x_3\)</span> agrees: root <span class="math inline">\(\approx 0.619\)</span>. (Sanity check: <span class="math inline">\(e^{0.619} \approx 1.857 \approx 3 \times 0.619\)</span> ✓.)</p>
+<p><strong>Example (moderate — watching it fail).</strong> Apply one Newton–Raphson step to <span class="math inline">\(f(x) = x^3 - 2x - 5\)</span> from the unwise starting point <span class="math inline">\(x_0 = 0.8\)</span>.</p>
+<p><span class="math inline">\(f(0.8) = -6.088\)</span> and <span class="math inline">\(f&#39;(0.8) = 3(0.64) - 2 = -0.08\)</span> — a nearly flat tangent. The step:</p>
+<p><span class="math display">\[x_1 = 0.8 - \frac{-6.088}{-0.08} = 0.8 - 76.1 = -75.3.\]</span></p>
+<p>One step, and the estimate has been launched seventy-six units in the wrong direction (<span class="math inline">\(x_0 = 0.8\)</span> sits close to the turning point at <span class="math inline">\(x = \sqrt{2/3} \approx 0.816\)</span>). The method didn't warn us; the <em>bracketing habit</em> — start inside a sign-change interval near the root — is what prevents this.</p>
+<p><strong>Example (challenging — the internal rate of return).</strong> A project costs £1,000 today and returns £600 at the end of each of the next two years. Its <strong>internal rate of return (IRR)</strong> is the discount rate <span class="math inline">\(r\)</span> making the net present value zero:</p>
+<p><span class="math display">\[\text{NPV}(r) = -1000 + \frac{600}{1+r} + \frac{600}{(1+r)^2} = 0.\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Show the IRR lies between 10% and 15%. (b) Perform one Newton–Raphson step from <span class="math inline">\(r_0 = 0.12\)</span>. (c) Verify the answer exactly.</p></li>
+<li><p><span class="math inline">\(\text{NPV}(0.10) = -1000 + 545.45 + 495.87 = +41.32\)</span>; <span class="math inline">\(\text{NPV}(0.15) = -1000 + 521.74 + 453.69 = -24.57\)</span>. Sign change: IRR <span class="math inline">\(\in (0.10, 0.15)\)</span>.</p></li>
+<li><p>Differentiating, <span class="math inline">\(\text{NPV}&#39;(r) = -\dfrac{600}{(1+r)^2} - \dfrac{1200}{(1+r)^3}\)</span>. At <span class="math inline">\(r_0 = 0.12\)</span>: <span class="math inline">\(\text{NPV} = 14.03\)</span> and <span class="math inline">\(\text{NPV}&#39; = -1332.5\)</span>, so</p></li>
+</ol>
+<p><span class="math display">\[r_1 = 0.12 - \frac{14.03}{-1332.5} = 0.1305.\]</span></p>
+<p>A second step gives <span class="math inline">\(r_2 \approx 0.1307\)</span>: the IRR is <strong>13.07%</strong>.</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>With only two cash flows, the exact check is available: multiply through by <span class="math inline">\((1+r)^2\)</span> and set <span class="math inline">\(x = 1 + r\)</span>: <span class="math inline">\(1000x^2 - 600x - 600 = 0\)</span>, so <span class="math inline">\(x = \tfrac{600 + \sqrt{2,760,000}}{2000} = 1.13066\)</span>, i.e. <span class="math inline">\(r = 13.07\%\)</span> ✓.</li>
+</ol>
+<p>Here is the punchline: with <strong>three or more</strong> years of cash flows, the polynomial is cubic, quartic, quintic… and beyond degree 4 <em>no formula exists, even in principle</em>. Every IRR ever computed for a realistic project — including by Excel's <code>IRR</code> function — comes from an iteration like the one you just performed by hand.</p>
+</div>
+<div id="practice-exercises-55" class="section level3 hasAnchor" number="9.3.3">
+<h3><span class="header-section-number">9.3.3</span> Practice exercises<a href="numerical.html#practice-exercises-55" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Use two Newton–Raphson steps on <span class="math inline">\(f(x) = x^2 - 7\)</span> from <span class="math inline">\(x_0 = 2.5\)</span> to approximate <span class="math inline">\(\sqrt{7}\)</span>, to 4 d.p.</li>
+<li>Show that <span class="math inline">\(e^x = 4x\)</span> has a root between <span class="math inline">\(0.3\)</span> and <span class="math inline">\(0.4\)</span>, and perform one Newton–Raphson step from <span class="math inline">\(x_0 = 0.35\)</span>.</li>
+<li>Explain what goes wrong if Newton–Raphson is started exactly at a point where <span class="math inline">\(f&#39;(x_0) = 0\)</span>, and why starting <em>near</em> such a point is almost as bad.</li>
+<li>A project costs £800 now and returns £500 in year 1 and £400 in year 2. Show its IRR lies between 5% and 10%, and perform one Newton–Raphson step from <span class="math inline">\(r_0 = 0.08\)</span>.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Sign slips in <span class="math inline">\(x_{n+1} = x_n - \tfrac{f}{f&#39;}\)</span>: it's a <em>subtraction</em>, and both <span class="math inline">\(f\)</span> and <span class="math inline">\(f&#39;\)</span> carry their own signs. Write out each ingredient before combining.</li>
+<li>Differentiating wrongly and iterating confidently to the wrong answer — check <span class="math inline">\(f&#39;\)</span> before starting, and check the final root by substituting into <span class="math inline">\(f\)</span>.</li>
+<li>Stopping after one step because the number "looks right". Iterate until successive estimates agree to the required accuracy.</li>
+</ul>
+<div class="desmos-container" style="height:500px;">
+<iframe src="https://www.desmos.com/calculator/syd7ky2kqo?embed" title="Desmos activity" frameborder="0" allowfullscreen style="width:100%; height:100%; border:1px solid #ccc; border-radius:4px;">
+</iframe>
+</div>
+<p><strong>Why this matters:</strong> IRR is a standard investment-appraisal tool you will meet in your first finance module, and it is <em>defined</em> as the root of a polynomial that generally has no closed-form solution. Newton–Raphson (and safeguarded variants) is the engine inside the software. Knowing the engine also means knowing its failure modes — projects with sign-changing cash flows can have <em>multiple</em> IRRs, which is a sign-change subtlety straight out of Section <a href="numerical.html#sign-change">9.1</a>.</p>
+</div>
+</div>
+<div id="trapezium" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Numerical integration: the trapezium rule<a href="numerical.html#trapezium" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-56" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Key idea<a href="numerical.html#key-idea-56" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When an integral can't be done exactly — or when you have <strong>data instead of a formula</strong> — approximate the area with trapezia. Split <span class="math inline">\([a, b]\)</span> into <span class="math inline">\(n\)</span> strips of width <span class="math inline">\(h = \tfrac{b - a}{n}\)</span>, with ordinates <span class="math inline">\(y_0, y_1, \dots, y_n\)</span> at the strip edges:</p>
+<p><span class="math display">\[\int_a^b y\,dx \;\approx\; \frac{h}{2}\Big[y_0 + y_n + 2\big(y_1 + y_2 + \dots + y_{n-1}\big)\Big].\]</span></p>
+<p>("Ends once, middles twice.") Accuracy improves as <span class="math inline">\(n\)</span> grows, and the <em>direction</em> of the error is readable from Chapter <a href="differentiation.html#second-derivative">7.7</a>'s concavity: the straight tops of the trapezia sit <strong>above</strong> a convex curve (overestimate) and <strong>below</strong> a concave one (underestimate).</p>
+<div class="desmos-container" style="height:500px;">
+<iframe src="https://www.desmos.com/calculator/dmq9cseknv?embed" title="Desmos activity" frameborder="0" allowfullscreen style="width:100%; height:100%; border:1px solid #ccc; border-radius:4px;">
+</iframe>
+</div>
+<div class="video-container">
+<iframe src="https://www.youtube-nocookie.com/embed/3LeeYrUHHvY?list=PLg2tfDG3Ww4ubvUZZcnBd05DA0_EIu8ah" referrerpolicy="strict-origin-when-cross-origin" title="Numerical integration" frameborder="0" allowfullscreen>
+</iframe>
+</div>
+<p class="video-playlist-link">
+<a href="https://www.youtube.com/playlist?list=PLg2tfDG3Ww4ubvUZZcnBd05DA0_EIu8ah" target="_blank" rel="noopener">View the full playlist on YouTube</a>
+</p>
+</div>
+<div id="worked-examples-56" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Worked examples<a href="numerical.html#worked-examples-56" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> Estimate <span class="math inline">\(\displaystyle\int_0^1 x^2\,dx\)</span> using 4 strips, and compare with the exact value.</p>
+<p><span class="math inline">\(h = 0.25\)</span>; ordinates at <span class="math inline">\(0, 0.25, 0.5, 0.75, 1\)</span>: <span class="math inline">\(y = 0, 0.0625, 0.25, 0.5625, 1\)</span>.</p>
+<p><span class="math display">\[T = \frac{0.25}{2}\Big[0 + 1 + 2(0.0625 + 0.25 + 0.5625)\Big] = 0.125 \times 2.75 = 0.34375.\]</span></p>
+<p>Exact value: <span class="math inline">\(\tfrac13 = 0.3333\)</span>. The estimate is high — as predicted, since <span class="math inline">\(x^2\)</span> is convex (<span class="math inline">\(f&#39;&#39; = 2 &gt; 0\)</span>).</p>
+<p><strong>Example (moderate).</strong> Estimate <span class="math inline">\(\displaystyle\int_1^3 \frac{1}{x}\,dx\)</span> with 4 strips, compare with the exact value, and state (with reason) the direction of the error.</p>
+<p><span class="math inline">\(h = 0.5\)</span>; ordinates at <span class="math inline">\(1, 1.5, 2, 2.5, 3\)</span>: <span class="math inline">\(y = 1, 0.6667, 0.5, 0.4, 0.3333\)</span>.</p>
+<p><span class="math display">\[T = \frac{0.5}{2}\Big[1 + 0.3333 + 2(0.6667 + 0.5 + 0.4)\Big] = 0.25 \times 4.4667 = 1.1167.\]</span></p>
+<p>Exact: <span class="math inline">\(\ln 3 = 1.0986\)</span>. Overestimate, because <span class="math inline">\(y = \tfrac1x\)</span> is convex on <span class="math inline">\([1,3]\)</span> (<span class="math inline">\(y&#39;&#39; = \tfrac{2}{x^3} &gt; 0\)</span>). Doubling the strips to 8 gives <span class="math inline">\(1.1032\)</span> — the error shrinks by roughly a factor of 4, a characteristic of the trapezium rule.</p>
+<p><strong>Example (challenging — integrating data, with no formula at all).</strong> A firm measures its sales <em>rate</em> (units per month) at two-month intervals:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"><span class="math inline">\(t\)</span> (months)</th>
+<th align="right">0</th>
+<th align="right">2</th>
+<th align="right">4</th>
+<th align="right">6</th>
+<th align="right">8</th>
+<th align="right">10</th>
+<th align="right">12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">rate</td>
+<td align="right">120</td>
+<td align="right">150</td>
+<td align="right">180</td>
+<td align="right">160</td>
+<td align="right">130</td>
+<td align="right">90</td>
+<td align="right">60</td>
+</tr>
+</tbody>
+</table>
+<p>Estimate the total units sold over the year.</p>
+<p>Total sales <span class="math inline">\(= \displaystyle\int_0^{12} (\text{rate})\,dt\)</span> (Section <a href="integration.html#accumulation">8.4</a>) — but there is no formula to antidifferentiate, only measurements. Trapezium rule with <span class="math inline">\(h = 2\)</span>:</p>
+<p><span class="math display">\[T = \frac{2}{2}\Big[120 + 60 + 2(150 + 180 + 160 + 130 + 90)\Big] = 180 + 2 \times 710 = 1600 \text{ units}.\]</span></p>
+<p>About 1,600 units for the year. This is the trapezium rule's day job in practice: sensor readings, monthly figures, sampled web traffic — real data arrives as a table, and "the integral of the data" <em>means</em> a rule like this one. (The honest caveat: the estimate assumes the rate moved roughly linearly between measurements; a spike between readings would be missed entirely. More frequent measurement is the cure.)</p>
+</div>
+<div id="practice-exercises-56" class="section level3 hasAnchor" number="9.4.3">
+<h3><span class="header-section-number">9.4.3</span> Practice exercises<a href="numerical.html#practice-exercises-56" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Estimate <span class="math inline">\(\displaystyle\int_0^2 (x^2 + 1)\,dx\)</span> using 4 strips, compare with the exact value, and explain the direction of the error.</li>
+<li>Estimate <span class="math inline">\(\displaystyle\int_1^2 \ln x\,dx\)</span> using 4 strips (4 d.p.), compare with the exact value <span class="math inline">\(2\ln 2 - 1\)</span> from Section <a href="integration.html#byparts">8.6</a>, and explain why the rule <em>under</em>estimates this time.</li>
+<li>A machine's output rate is measured hourly: <span class="math inline">\(t = 0, 1, 2, 3, 4\)</span> hours give rates <span class="math inline">\(40, 52, 60, 58, 45\)</span> units per hour. Estimate the total output over the four hours.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Muddling strips and ordinates: <span class="math inline">\(n\)</span> strips need <span class="math inline">\(n + 1\)</span> ordinates. Four strips, five <span class="math inline">\(y\)</span>-values.</li>
+<li>Doubling the <em>end</em> values or forgetting to double the middles — recite "ends once, middles twice".</li>
+<li>Using an <span class="math inline">\(h\)</span> that doesn't match the data spacing, or applying the rule to unevenly spaced data without adjusting (the formula above assumes equal spacing).</li>
+<li>Claiming over/underestimation without a reason — the reason is concavity, and it's checkable via <span class="math inline">\(f&#39;&#39;\)</span> or a sketch.</li>
+</ul>
+<div class="webex-check webex-box">
+<p><strong>Self-check: the trapezium rule</strong></p>
+<p><strong>Q1.</strong> Applying the trapezium rule with 5 strips requires <input class='webex-solveme nospaces' size='1' data-answer='["6"]'/> ordinates.</p>
+<p><strong>Q2.</strong> Estimate <span class="math inline">\(\displaystyle\int_0^2 x^2\,dx\)</span> using 4 strips. <span class="math inline">\(T =\)</span> <input class='webex-solveme nospaces' data-tol='0.01' size='4' data-answer='["2.75"]'/></p>
+<p><strong>Q3.</strong> The exact value in Q2 is <span class="math inline">\(\tfrac{8}{3} \approx 2.667\)</span>, so the trapezium estimate is an <select class='webex-select'><option value='blank'></option><option value='answer'>overestimate</option><option value=''>underestimate</option></select>, because on this interval the curve is <select class='webex-select'><option value='blank'></option><option value=''>concave</option><option value='answer'>convex</option></select>.</p>
+<p><strong>Q4.</strong> A warehouse measures its dispatch rate (units per hour) every hour: <span class="math inline">\(t = 0, 1, 2, 3, 4\)</span> give rates <span class="math inline">\(30, 44, 50, 46, 38\)</span>. Estimate the total number of units dispatched over the four hours: <input class='webex-solveme nospaces' size='3' data-answer='["174"]'/> units.</p>
+<p><strong>Q5.</strong> With 4 strips of width <span class="math inline">\(h\)</span> and ordinates <span class="math inline">\(y_0, y_1, y_2, y_3, y_4\)</span>, the trapezium rule is:</p>
+<ol style="list-style-type: upper-alpha">
+<li><span class="math inline">\(h\big[y_0 + y_1 + y_2 + y_3 + y_4\big]\)</span><br />
+</li>
+<li><span class="math inline">\(\dfrac{h}{2}\big[2(y_0 + y_4) + y_1 + y_2 + y_3\big]\)</span><br />
+</li>
+<li><span class="math inline">\(\dfrac{h}{2}\big[y_0 + y_4 + 2(y_1 + y_2 + y_3)\big]\)</span><br />
+</li>
+<li><span class="math inline">\(\dfrac{h}{2}\big[y_0 + y_1 + y_2 + y_3 + y_4\big]\)</span></li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value=''>B</option><option value='answer'>C</option><option value=''>D</option></select></p>
+</div>
+<div class="webex-solution">
+<button>
+Show solutions
+</button>
+<p><strong>Q1.</strong> <span class="math inline">\(6\)</span>: <span class="math inline">\(n\)</span> strips have <span class="math inline">\(n + 1\)</span> edges. Answering <span class="math inline">\(5\)</span> is the classic strips/ordinates muddle — four fence panels need five posts.</p>
+<p><strong>Q2.</strong> <span class="math inline">\(h = 0.5\)</span>; ordinates <span class="math inline">\(0, 0.25, 1, 2.25, 4\)</span>. Then <span class="math inline">\(T = \dfrac{0.5}{2}\big[0 + 4 + 2(0.25 + 1 + 2.25)\big] = 0.25 \times 11 = 2.75\)</span>.</p>
+<p><strong>Q3.</strong> Overestimate, because <span class="math inline">\(x^2\)</span> is convex (<span class="math inline">\(f&#39;&#39; = 2 &gt; 0\)</span>): the straight trapezium tops sit <em>above</em> the curve. The check against the exact value confirms it: <span class="math inline">\(2.75 &gt; 2.667\)</span> ✓. Always give the reason via concavity — "it just is" earns no marks.</p>
+<p><strong>Q4.</strong> <span class="math inline">\(h = 1\)</span>: <span class="math inline">\(T = \dfrac{1}{2}\big[30 + 38 + 2(44 + 50 + 46)\big] = \dfrac{1}{2}\big[68 + 280\big] = 174\)</span> units.</p>
+<p><strong>Q5.</strong> (C) — "ends once, middles twice". (B) is the mirror-image trap with ends doubled instead of middles; (D) forgets the doubling entirely; (A) drops the halving as well.</p>
+</div>
+</div>
+</div>
+<div id="numerical-context" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Choosing and trusting a numerical method<a href="numerical.html#numerical-context" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-57" class="section level3 hasAnchor" number="9.5.1">
+<h3><span class="header-section-number">9.5.1</span> Key idea<a href="numerical.html#key-idea-57" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The syllabus's final requirement is judgement: knowing <em>when</em> numerical methods are the right tool, <em>which</em> one to reach for, and <em>how much</em> to trust the output.</p>
+<p><strong>When:</strong> reach for numerical methods if (i) the equation mixes function types with no algebraic exit (<span class="math inline">\(e^x = 3x\)</span>, NPV polynomials of high degree), or (ii) you have data rather than formulae. Do <strong>not</strong> reach for them when an exact method exists — a quadratic deserves the quadratic formula, and a Chapter <a href="integration.html#integration">8</a> integral deserves antidifferentiation.</p>
+<p><strong>Which:</strong> sign changes to <em>locate and bracket</em>; fixed-point iteration when a natural rearrangement converges; Newton–Raphson for speed when you can differentiate and start sensibly; trapezium rule for integrals of formulae-without-antiderivatives and for data.</p>
+<p><strong>Trust:</strong> a numerical answer earns trust by verification —</p>
+<ol style="list-style-type: decimal">
+<li>it sits inside a confirmed sign-change bracket;</li>
+<li>substituting it back gives <span class="math inline">\(f(\text{root}) \approx 0\)</span> (or the integral estimate is stable when you double the strips);</li>
+<li>successive iterates agree to the accuracy you're claiming.</li>
+</ol>
+</div>
+<div id="worked-example" class="section level3 hasAnchor" number="9.5.2">
+<h3><span class="header-section-number">9.5.2</span> Worked example<a href="numerical.html#worked-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (putting it together).</strong> A start-up's cumulative profit satisfies <span class="math inline">\(P(q) = 200\ln(q + 1) - 30q + 50\)</span>, and management wants the output at which cumulative profit returns to zero. Plan the numerical attack.</p>
+<p>Parse: <span class="math inline">\(\ln\)</span> mixed with a linear term — no exact solution. Locate: <span class="math inline">\(P(10) = 200\ln 11 - 250 \approx 479.6 - 250 &gt; 0\)</span>; <span class="math inline">\(P(20) = 200\ln 21 - 550 \approx 608.9 - 550 &gt; 0\)</span>; <span class="math inline">\(P(30) = 200\ln 31 - 850 \approx 686.8 - 850 &lt; 0\)</span>: bracket <span class="math inline">\((20, 30)\)</span>. Refine: Newton–Raphson with <span class="math inline">\(P&#39;(q) = \tfrac{200}{q+1} - 30\)</span>, starting from <span class="math inline">\(q_0 = 25\)</span> (safely inside the bracket; <span class="math inline">\(P&#39;\)</span> is comfortably negative there, no flat-tangent danger). Verify: final answer back into <span class="math inline">\(P\)</span>, and confirm it still lies in a tightened sign-change bracket. That four-step plan — <em>parse, locate, refine, verify</em> — is the whole discipline in one line.</p>
+</div>
+<div id="practice-exercises-57" class="section level3 hasAnchor" number="9.5.3">
+<h3><span class="header-section-number">9.5.3</span> Practice exercises<a href="numerical.html#practice-exercises-57" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>For each task, name the appropriate method and justify briefly: (a) finding the IRR of a project with eight years of cash flows; (b) totalling a day's factory output from hourly sensor readings; (c) solving <span class="math inline">\(x^2 - 5x + 6 = 0\)</span>.</li>
+<li>State two checks you should perform before reporting a numerically found root to a client.</li>
+<li>A colleague's iteration produced <span class="math inline">\(x_{10} = 4.2071\)</span> and <span class="math inline">\(x_{11} = 4.1808\)</span>. They report the root as "4.21 to 2 d.p.". What's wrong, and what should they do?</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Using a sledgehammer on a walnut: numerically "solving" equations that factorise in one line. Always try Chapter <a href="algebra.html#algebra">2</a> first.</li>
+<li>Reporting unverified output. Software returns a number even when it has failed to converge; the checks above are your defence.</li>
+<li>Quoting more decimal places than the method (or the data feeding it) can justify.</li>
+</ul>
+<p><strong>Why this matters:</strong> In your degree, numerical methods stop being a topic and become the <em>substrate</em>: simulation, optimisation solvers, econometric estimation and machine-learning training are all iterative numerical schemes under the hood. The professional skills are exactly the ones practised here — bracket, iterate, verify, and stay alert to the failure modes.</p>
+</div>
+</div>
+<div id="chapter-summary-7" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Chapter summary<a href="numerical.html#chapter-summary-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You should now be able to:</p>
+<ul>
+<li>locate roots with the sign-change test, and explain its two failure modes (repeated roots; discontinuities);</li>
+<li>rearrange equations into <span class="math inline">\(x = g(x)\)</span>, iterate, and use <span class="math inline">\(|g&#39;|\)</span> to explain convergence or divergence;</li>
+<li>apply Newton–Raphson from a sensible start, appreciate its speed, and recognise how flat tangents wreck it;</li>
+<li>approximate integrals of formulae <em>and of raw data</em> with the trapezium rule, predicting the direction of error from concavity;</li>
+<li>choose the right method for a task, and verify a numerical answer before trusting it.</li>
+</ul>
+<p>One chapter remains: vectors — the language of multi-component quantities, and your on-ramp to the multivariable mathematics of university Management Science.</p>
+</div>
+<div id="end-of-chapter-quiz-7" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> End of chapter quiz<a href="numerical.html#end-of-chapter-quiz-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="webex-check webex-box">
+<p>Twelve questions covering the whole chapter — treat the result as a compass, not a verdict.</p>
+<p><strong>D1.</strong> Let <span class="math inline">\(f(x) = x^3 - 4x + 1\)</span>. Compute <span class="math inline">\(f(0) =\)</span> <input class='webex-solveme nospaces' size='1' data-answer='["1"]'/> and <span class="math inline">\(f(1) =\)</span> <input class='webex-solveme nospaces' size='2' data-answer='["-2"]'/>. The sign-change test guarantees <select class='webex-select'><option value='blank'></option><option value=''>exactly one root in (0, 1)</option><option value='answer'>at least one root in (0, 1)</option><option value=''>an even number of roots in (0, 1)</option></select>.</p>
+<p><strong>D2.</strong> <span class="math inline">\(g(x) = (x - 5)^2\)</span> is positive at <span class="math inline">\(x = 4\)</span> and at <span class="math inline">\(x = 6\)</span>. The sign-change method misses the root at <span class="math inline">\(x = 5\)</span> because <select class='webex-select'><option value='blank'></option><option value=''>g is discontinuous at x = 5</option><option value='answer'>the curve touches the axis without crossing it</option><option value=''>the interval is too wide</option></select>.</p>
+<p><strong>D3.</strong> <span class="math inline">\(h(x) = \dfrac{3}{x - 4}\)</span> has <span class="math inline">\(h(3) = -3 &lt; 0\)</span> and <span class="math inline">\(h(5) = 3 &gt; 0\)</span>. What can be concluded?</p>
+<ol style="list-style-type: upper-alpha">
+<li>There is at least one root in <span class="math inline">\((3, 5)\)</span>.<br />
+</li>
+<li>There is exactly one root in <span class="math inline">\((3, 5)\)</span>.<br />
+</li>
+<li>Nothing — <span class="math inline">\(h\)</span> is not continuous on <span class="math inline">\((3, 5)\)</span>, so the sign-change test does not apply.<br />
+</li>
+<li>There is a repeated root at <span class="math inline">\(x = 4\)</span>.</li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value=''>B</option><option value='answer'>C</option><option value=''>D</option></select></p>
+<p><strong>D4.</strong> Rearranging <span class="math inline">\(x^3 - 3x - 2 = 0\)</span> gives the iteration <span class="math inline">\(x_{n+1} = (3x_n + 2)^{1/3}\)</span>. Starting from <span class="math inline">\(x_0 = 1.5\)</span>, give the next two iterates to 3 decimal places: <span class="math inline">\(x_1 =\)</span> <input class='webex-solveme nospaces' data-tol='0.001' size='5' data-answer='["1.866"]'/> and <span class="math inline">\(x_2 =\)</span> <input class='webex-solveme nospaces' data-tol='0.001' size='5' data-answer='["1.966"]'/>. The iterates are approaching the root <span class="math inline">\(x =\)</span> <input class='webex-solveme nospaces' size='1' data-answer='["2"]'/>.</p>
+<p><strong>D5.</strong> An equation is rearranged as <span class="math inline">\(x = g(x)\)</span> and iterated. Near the fixed point, the scheme converges precisely when:</p>
+<ol style="list-style-type: upper-alpha">
+<li><span class="math inline">\(|g(x)| &lt; 1\)</span><br />
+</li>
+<li><span class="math inline">\(|g&#39;(x)| &lt; 1\)</span><br />
+</li>
+<li><span class="math inline">\(g&#39;(x) &gt; 0\)</span><br />
+</li>
+<li><span class="math inline">\(|g&#39;(x)| &gt; 1\)</span></li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value='answer'>B</option><option value=''>C</option><option value=''>D</option></select></p>
+<p><strong>D6.</strong> For one particular rearrangement, <span class="math inline">\(g&#39;(x) \approx 2.4\)</span> near the target root. Starting nearby, the iteration will <select class='webex-select'><option value='blank'></option><option value=''>converge quickly</option><option value=''>converge slowly</option><option value='answer'>diverge</option></select>.</p>
+<p><strong>D7.</strong> Apply one Newton–Raphson step to <span class="math inline">\(f(x) = x^2 - 10\)</span> from <span class="math inline">\(x_0 = 3\)</span>. To 4 decimal places, <span class="math inline">\(x_1 =\)</span> <input class='webex-solveme nospaces' data-tol='0.001' size='6' data-answer='["3.1667"]'/></p>
+<p><strong>D8.</strong> Newton–Raphson breaks down completely when the current estimate lands on a point where <select class='webex-select'><option value='blank'></option><option value=''>the function is negative</option><option value='answer'>the tangent is horizontal</option><option value=''>the function is zero</option></select>.</p>
+<p><strong>D9.</strong> A firm records its spending rate (£ per month) every three months: <span class="math inline">\(t = 0, 3, 6, 9, 12\)</span> give rates <span class="math inline">\(200, 260, 300, 280, 220\)</span>. Use the trapezium rule to estimate total spending over the year: <input class='webex-solveme nospaces' size='4' data-answer='["3150"]'/> pounds.</p>
+<p><strong>D10.</strong> The curve <span class="math inline">\(y = e^x\)</span> is convex, so a trapezium estimate of <span class="math inline">\(\displaystyle\int_0^1 e^x\,dx\)</span> is <select class='webex-select'><option value='blank'></option><option value='answer'>an overestimate</option><option value=''>an underestimate</option></select>.</p>
+<p><strong>D11.</strong> A project has seven years of cash flows and you need its IRR. The right plan is:</p>
+<ol style="list-style-type: upper-alpha">
+<li>apply the quadratic formula to the NPV equation<br />
+</li>
+<li>apply the trapezium rule to the cash flows<br />
+</li>
+<li>factorise the NPV polynomial exactly<br />
+</li>
+<li>bracket the IRR with a sign change, then refine with Newton–Raphson</li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value=''>B</option><option value=''>C</option><option value='answer'>D</option></select></p>
+<p><strong>D12.</strong> A colleague's successive iterates are <span class="math inline">\(5.3126\)</span> and <span class="math inline">\(5.2871\)</span>, and they report the root as "5.31 to 2 d.p.". They should instead <select class='webex-select'><option value='blank'></option><option value=''>accept the answer</option><option value='answer'>keep iterating until successive values agree to 2 d.p.</option><option value=''>average the two values</option></select>.</p>
+</div>
+<div class="webex-solution">
+<button>
+Show solutions
+</button>
+<p><strong>D1.</strong> <span class="math inline">\(f(0) = 1\)</span> and <span class="math inline">\(f(1) = 1 - 4 + 1 = -2\)</span>; the guarantee is <em>at least one</em> root. A sign change never counts crossings — this cubic in fact has three real roots. <em>Shaky? Revisit Section <a href="numerical.html#sign-change">9.1</a>.</em></p>
+<p><strong>D2.</strong> The curve touches the axis at the repeated root <span class="math inline">\(x = 5\)</span> without crossing, so <span class="math inline">\(g\)</span> has the same sign on both sides. "No sign change" never means "no root". <em>Shaky? Revisit Section <a href="numerical.html#sign-change">9.1</a>.</em></p>
+<p><strong>D3.</strong> (C). The sign change happens across the vertical asymptote at <span class="math inline">\(x = 4\)</span>, and with continuity broken the test says nothing. (A) is what the test <em>would</em> deliver if <span class="math inline">\(h\)</span> were continuous — which is exactly why the continuity check comes first. <em>Shaky? Revisit Section <a href="numerical.html#sign-change">9.1</a>.</em></p>
+<p><strong>D4.</strong> <span class="math inline">\(x_1 = 6.5^{1/3} = 1.866\)</span> and <span class="math inline">\(x_2 = (3 \times 1.866 + 2)^{1/3} = 7.599^{1/3} = 1.966\)</span>, heading towards <span class="math inline">\(x = 2\)</span>. Verify exactly: <span class="math inline">\(2^3 - 3(2) - 2 = 0\)</span> ✓. <em>Shaky? Revisit Section <a href="numerical.html#fixed-point">9.2</a>.</em></p>
+<p><strong>D5.</strong> (B). Convergence is about the <em>steepness</em> of <span class="math inline">\(g\)</span> near the fixed point: when <span class="math inline">\(|g&#39;| &lt; 1\)</span>, each step shrinks the error. (A) confuses the size of <span class="math inline">\(g\)</span> with its gradient; (D) is the divergence condition. <em>Shaky? Revisit Section <a href="numerical.html#fixed-point">9.2</a>.</em></p>
+<p><strong>D6.</strong> Diverge: with <span class="math inline">\(|g&#39;| \approx 2.4 &gt; 1\)</span>, each iteration multiplies the error by roughly <span class="math inline">\(2.4\)</span>. The fix is a different <em>rearrangement</em>, not a different equation. <em>Shaky? Revisit Section <a href="numerical.html#fixed-point">9.2</a>.</em></p>
+<p><strong>D7.</strong> <span class="math inline">\(f(3) = -1\)</span> and <span class="math inline">\(f&#39;(3) = 6\)</span>, so <span class="math inline">\(x_1 = 3 - \dfrac{-1}{6} = 3.1667\)</span>. Sanity check: <span class="math inline">\(\sqrt{10} \approx 3.1623\)</span>, so one step already lands close. The tempting wrong answer <span class="math inline">\(2.8333\)</span> comes from a sign slip — the formula <em>subtracts</em> <span class="math inline">\(f/f&#39;\)</span>, and <span class="math inline">\(f\)</span> is negative here. <em>Shaky? Revisit Section <a href="numerical.html#newton-raphson">9.3</a>.</em></p>
+<p><strong>D8.</strong> A horizontal tangent: if <span class="math inline">\(f&#39;(x_n) = 0\)</span> the formula divides by zero, and if <span class="math inline">\(f&#39;\)</span> is merely tiny, the step fires the estimate far from the root. ("The function is zero" is the <em>goal</em>, not a failure — that's the root itself.) <em>Shaky? Revisit Section <a href="numerical.html#newton-raphson">9.3</a>.</em></p>
+<p><strong>D9.</strong> <span class="math inline">\(h = 3\)</span>: <span class="math inline">\(T = \dfrac{3}{2}\big[200 + 220 + 2(260 + 300 + 280)\big] = 1.5 \times 2100 = 3150\)</span>. The likeliest slip is doubling the ends instead of the middles (giving <span class="math inline">\(2520\)</span>) — "ends once, middles twice". <em>Shaky? Revisit Section <a href="numerical.html#trapezium">9.4</a>.</em></p>
+<p><strong>D10.</strong> An overestimate: on a convex curve the straight trapezium tops sit above the curve. <em>Shaky? Revisit Section <a href="numerical.html#trapezium">9.4</a>.</em></p>
+<p><strong>D11.</strong> (D). Seven years makes the NPV polynomial degree 7 — beyond degree 4 no exact formula exists even in principle, so (A) and (C) are non-starters, and (B) is an integration tool, not a root-finder. Bracket, then refine. <em>Shaky? Revisit Section <a href="numerical.html#numerical-context">9.5</a>.</em></p>
+<p><strong>D12.</strong> Keep iterating: <span class="math inline">\(5.3126\)</span> and <span class="math inline">\(5.2871\)</span> still disagree in the <em>first</em> decimal place, so no 2 d.p. claim is possible yet. Agree to the accuracy first, then confirm with a sign-change bracket around the answer. <em>Shaky? Revisit Section <a href="numerical.html#numerical-context">9.5</a>.</em></p>
+</div>
+<p><strong>Rule of thumb:</strong> if two or three questions from the same section went wrong, rework that section before starting the next chapter — everything else can wait.</p>
+</div>
+<div id="numerical-answers" class="section level2 hasAnchor" number="9.8">
+<h2><span class="header-section-number">9.8</span> Answers to practice exercises<a href="numerical.html#numerical-answers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Sign change:</strong> 1. <span class="math inline">\(f(1) = -5 &lt; 0\)</span>, <span class="math inline">\(f(2) = 3 &gt; 0\)</span> ✓; <span class="math inline">\(f(1.7) \approx -0.39 &lt; 0\)</span>, <span class="math inline">\(f(1.8) \approx 0.63 &gt; 0\)</span>, and <span class="math inline">\(f(1.75) \approx 0.11 &gt; 0\)</span>, so the root lies in <span class="math inline">\((1.70, 1.75)\)</span>: root <span class="math inline">\(= 1.7\)</span> (1 d.p.). 2. The curve touches the axis at the repeated root without crossing, so <span class="math inline">\(f\)</span> has the same sign on both sides — no sign change to detect. 3. <span class="math inline">\(f\)</span> is not continuous on <span class="math inline">\((0, 2)\)</span>: the sign change happens across the vertical asymptote at <span class="math inline">\(x = 1\)</span>, not across a root.</p>
+<p><strong>Fixed-point iteration:</strong> 1. <span class="math inline">\(x_1 = 2.0801\)</span>, <span class="math inline">\(x_2 = 2.0924\)</span>, <span class="math inline">\(x_3 = 2.0942\)</span>. 2. <span class="math inline">\(x_1 = 1.4\)</span>, <span class="math inline">\(x_2 = 1.592\)</span>, <span class="math inline">\(x_3 = 1.707\)</span>: approaching the root 2. Since <span class="math inline">\(g&#39;(x) = \tfrac{2x}{5}\)</span>, <span class="math inline">\(|g&#39;(2)| = 0.8 &lt; 1\)</span> (attracting) but <span class="math inline">\(|g&#39;(3)| = 1.2 &gt; 1\)</span> (repelling): this scheme can converge to 2 but never to 3. 3. <span class="math inline">\(g&#39;(x) = \tfrac{3x^2}{2} \approx 6.6\)</span> at the root — each iteration multiplies the error by about 6.6, so the scheme diverges.</p>
+<p><strong>Newton–Raphson:</strong> 1. <span class="math inline">\(x_1 = 2.5 - \tfrac{-0.75}{5} = 2.65\)</span>; <span class="math inline">\(x_2 = 2.65 - \tfrac{0.0225}{5.3} = 2.6458\)</span> (<span class="math inline">\(\sqrt{7} = 2.6458\)</span> ✓). 2. <span class="math inline">\(f(0.3) \approx 0.150 &gt; 0\)</span>, <span class="math inline">\(f(0.4) \approx -0.108 &lt; 0\)</span> ✓; from <span class="math inline">\(x_0 = 0.35\)</span>: <span class="math inline">\(f = 0.0191\)</span>, <span class="math inline">\(f&#39; = -2.581\)</span>, so <span class="math inline">\(x_1 = 0.35 + \tfrac{0.0191}{2.581} = 0.3574\)</span> (root <span class="math inline">\(\approx 0.357\)</span>). 3. The tangent at a stationary point is horizontal and never meets the <span class="math inline">\(x\)</span>-axis: the formula divides by zero. Near such a point, <span class="math inline">\(f&#39;\)</span> is tiny, so <span class="math inline">\(\tfrac{f}{f&#39;}\)</span> is huge and the next estimate lands far from the root. 4. <span class="math inline">\(\text{NPV}(0.05) = -800 + 476.19 + 362.81 = +39.00\)</span>; <span class="math inline">\(\text{NPV}(0.10) = -800 + 454.55 + 330.58 = -14.88\)</span>: IRR <span class="math inline">\(\in (5\%, 10\%)\)</span>. From <span class="math inline">\(r_0 = 0.08\)</span>: <span class="math inline">\(\text{NPV} = 5.90\)</span>, <span class="math inline">\(\text{NPV}&#39; = -1063.7\)</span>, so <span class="math inline">\(r_1 = 0.08 + \tfrac{5.90}{1063.7} = 0.0855\)</span>, i.e. about <span class="math inline">\(8.55\%\)</span> (exact IRR: <span class="math inline">\(8.56\%\)</span>).</p>
+<p><strong>Trapezium rule:</strong> 1. <span class="math inline">\(h = 0.5\)</span>; ordinates <span class="math inline">\(1, 1.25, 2, 3.25, 5\)</span>: <span class="math inline">\(T = 0.25[6 + 2(6.5)] = 4.75\)</span> vs exact <span class="math inline">\(\tfrac{14}{3} \approx 4.667\)</span> — overestimate, since <span class="math inline">\(x^2 + 1\)</span> is convex. 2. <span class="math inline">\(h = 0.25\)</span>; ordinates <span class="math inline">\(0, 0.2231, 0.4055, 0.5596, 0.6931\)</span>: <span class="math inline">\(T = 0.125[0.6931 + 2(1.1882)] = 0.3837\)</span> vs exact <span class="math inline">\(2\ln 2 - 1 = 0.3863\)</span> — underestimate, since <span class="math inline">\(\ln x\)</span> is concave (the trapezium tops sit below the curve). 3. <span class="math inline">\(T = \tfrac{1}{2}[40 + 45 + 2(52 + 60 + 58)] = \tfrac{1}{2}[85 + 340] = 212.5\)</span> units.</p>
+<p><strong>Choosing and trusting:</strong> 1. (a) Sign-change bracketing then Newton–Raphson (or iteration): the NPV polynomial has degree 8, so no exact formula exists. (b) Trapezium rule: data, not formulae. (c) Neither — factorise: <span class="math inline">\((x-2)(x-3) = 0\)</span>. Exact methods first. 2. E.g.: confirm the answer lies in a sign-change bracket, and substitute it back to check <span class="math inline">\(f(\text{root}) \approx 0\)</span> (equivalently: check successive iterates agree to the claimed accuracy). 3. The iterates still differ in the <em>first</em> decimal place — the scheme hasn't converged to 2 d.p., so no 2 d.p. answer can be claimed. Keep iterating until successive values agree to 2 d.p. (and then verify with a sign change).</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="integration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vectors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

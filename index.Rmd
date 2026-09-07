@@ -1,0 +1,110 @@
+---
+title: "Mathematics A-Level to University"
+author: "Matthew M. Jones"
+date: "2026/27"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: true
+description: "A bridging course from A-Level to university mathematics."
+---
+
+```{r, echo=FALSE, results='asis'}
+library(webexercises)
+```
+
+```{r embed-helpers, echo=FALSE}
+# Shared static fallback: linked image if available, plain link otherwise.
+# Emits markdown, so pandoc handles the LaTeX conversion.
+static_embed <- function(img, url, title, width = "70%") {
+  if (file.exists(img)) {
+    knitr::asis_output(sprintf(
+      "[![%s](%s){width=%s}](%s)\n\n*%s — available online at* <%s>\n\n",
+      title, img, width, url, title, url))
+  } else {
+    knitr::asis_output(sprintf("> **%s:** <%s>\n\n", title, url))
+  }
+}
+
+embed_youtube <- function(id, title = "Video tutorial",
+                          playlist = NULL, playlist_link = TRUE) {
+  if (knitr::is_html_output()) {
+    src <- sprintf("https://www.youtube-nocookie.com/embed/%s", id)
+    if (!is.null(playlist)) {
+      src <- sprintf("%s?list=%s", src, playlist)
+    }
+    html <- sprintf(
+      '<div class="video-container"><iframe src="%s" referrerpolicy="strict-origin-when-cross-origin" title="%s" frameborder="0" allowfullscreen></iframe></div>',
+      src, title)
+    if (!is.null(playlist) && playlist_link) {
+      html <- paste0(html, sprintf(
+        '<p class="video-playlist-link"><a href="https://www.youtube.com/playlist?list=%s" target="_blank" rel="noopener">View the full playlist on YouTube</a></p>',
+        playlist))
+    }
+    knitr::asis_output(html)
+  } else {
+    watch_url <- sprintf("https://www.youtube.com/watch?v=%s", id)
+    if (!is.null(playlist)) {
+      watch_url <- sprintf("%s&list=%s", watch_url, playlist)
+    }
+    img <- file.path("images", "videos", paste0(id, ".jpg"))
+    if (!file.exists(img)) {
+      dir.create(dirname(img), recursive = TRUE, showWarnings = FALSE)
+      try(download.file(
+        sprintf("https://img.youtube.com/vi/%s/hqdefault.jpg", id),
+        img, mode = "wb", quiet = TRUE), silent = TRUE)
+    }
+    static_embed(img, watch_url, title)
+  }
+}
+
+embed_desmos <- function(id, title = "Desmos activity", height = "500px",
+                         geometry = FALSE, crop_top = 94, crop_left = 430) {
+  # collapse newlines/indentation so pandoc sees one raw HTML block
+  one_line <- function(x) gsub("[ \t]*\n[ \t]*", " ", x)
+
+  if (knitr::is_html_output()) {
+    html <- if (geometry) {
+      sprintf(
+        '<div class="desmos-container" style="position:relative; height:%s; overflow:hidden;
+         border:1px solid #ccc; border-radius:4px;"><iframe src="https://www.desmos.com/geometry/%s?embed"
+         title="%s" frameborder="0" scrolling="no" allowfullscreen
+         style="border:0; position:absolute; top:-%dpx; left:-%dpx;
+         width:calc(100%% + %dpx); height:calc(100%% + %dpx);"></iframe></div>',
+        height, id, title, crop_top, crop_left, crop_left, crop_top)
+    } else {
+      sprintf(
+        '<div class="desmos-container" style="height:%s;"><iframe src="https://www.desmos.com/calculator/%s?embed"
+         title="%s" frameborder="0" allowfullscreen
+         style="width:100%%; height:100%%; border:1px solid #ccc; border-radius:4px;"></iframe></div>',
+        height, id, title)
+    }
+    knitr::asis_output(one_line(html))
+  } else {
+    img  <- file.path("images", "desmos", paste0(id, ".png"))
+    base <- if (geometry) "geometry" else "calculator"
+    static_embed(img, sprintf("https://www.desmos.com/%s/%s", base, id), title)
+  }
+}
+```
+
+# Preface {-}
+
+This course has been written to help you prepare for the mathematical content you will meet on the BSc Management Science programme at University College London (UCL).
+
+Students arrive on the programme with different mathematical backgrounds. Some of you will have studied A-level Mathematics recently and will mainly need a structured revision route. Others may be returning to topics that feel less familiar, or may need to fill in gaps before term begins. This course is designed for both groups. Additionally there is some content that is on the A-level Further Mathematics that you should know that will help you to keep up with the content on the programme.
+
+The aim is not simply to rehearse techniques, but to rebuild confidence and fluency. Management Science makes regular use of mathematical ideas: functions, equations, graphs, rates of change, optimisation, logarithms, exponentials, sequences, series, and calculus all appear naturally when we model decisions, analyse data, describe change, and solve business problems. The better these foundations are, the easier it becomes to focus on the modelling, interpretation, and decision-making that sit at the heart of the degree.
+
+The course works through the relevant A-level Mathematics content topic by topic. Each section introduces the key ideas clearly, gives worked examples, and then provides practice questions that build from routine skills to more challenging applications. You should not expect everything to feel easy on first reading. Mathematics is learned actively: by trying examples, making mistakes, correcting them, and gradually seeing how different ideas connect.
+
+You are encouraged to work through the material with a notebook beside you. Do not just read the solutions. Pause before each worked example develops, try the next step yourself, sketch graphs where appropriate, and check that you understand not only what is being done, but why it is being done. Short video explanations and interactive graphing activities are included throughout the course to support this process, but they are there to complement your own work rather than replace it.
+
+This course is not an entrance test and it is not intended to catch you out. It is a preparation resource. Its purpose is to give you a clear route through the mathematics you are expected to know, and to help you arrive ready to engage fully with the quantitative parts of the Management Science programme.
+
+If you already know a topic well, use the exercises to check your fluency and move on. If a topic feels difficult, slow down and spend time with it. That is exactly what this course is for.
+
+By the end, you should have a stronger command of the mathematical language, notation, and techniques that will support your first-year studies. More importantly, you should begin to see mathematics not as a separate hurdle, but as one of the main tools we use to understand systems, make decisions, and solve real problems.
+
+The embedded videos cover the content in detail; they are taken from the YouTube channel for <a href="https://www.tlmaths.com/">https://www.tlmaths.com/</a>.

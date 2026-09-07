@@ -1,0 +1,4 @@
+book_filename: mathematics-a-level-to-university
+delete_merged_file: yes
+output_dir: docs
+before_chapter_script: R/webex.R
