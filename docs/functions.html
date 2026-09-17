@@ -519,15 +519,31 @@
 <li class="chapter" data-level="10.5.2" data-path="vectors.html"><a href="vectors.html#worked-examples-61"><i class="fa fa-check"></i><b>10.5.2</b> Worked examples</a></li>
 <li class="chapter" data-level="10.5.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-62"><i class="fa fa-check"></i><b>10.5.3</b> Practice exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="vectors.html"><a href="vectors.html#matrices"><i class="fa fa-check"></i><b>10.6</b> A first look at matrices</a>
+<li class="chapter" data-level="10.6" data-path="vectors.html"><a href="vectors.html#dot-product"><i class="fa fa-check"></i><b>10.6</b> The dot product</a>
 <ul>
 <li class="chapter" data-level="10.6.1" data-path="vectors.html"><a href="vectors.html#key-idea-63"><i class="fa fa-check"></i><b>10.6.1</b> Key idea</a></li>
-<li class="chapter" data-level="10.6.2" data-path="vectors.html"><a href="vectors.html#worked-examples-62"><i class="fa fa-check"></i><b>10.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.6.2" data-path="vectors.html"><a href="vectors.html#worked-examples-computing-dot-products"><i class="fa fa-check"></i><b>10.6.2</b> Worked examples: computing dot products</a></li>
 <li class="chapter" data-level="10.6.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-63"><i class="fa fa-check"></i><b>10.6.3</b> Practice exercises</a></li>
+<li class="chapter" data-level="10.6.4" data-path="vectors.html"><a href="vectors.html#worked-examples-angles-perpendicularity-and-similarity"><i class="fa fa-check"></i><b>10.6.4</b> Worked examples: angles, perpendicularity and similarity</a></li>
+<li class="chapter" data-level="10.6.5" data-path="vectors.html"><a href="vectors.html#practice-exercises-64"><i class="fa fa-check"></i><b>10.6.5</b> Practice exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="vectors.html"><a href="vectors.html#end-of-chapter-quiz-8"><i class="fa fa-check"></i><b>10.7</b> End of chapter quiz</a></li>
-<li class="chapter" data-level="10.8" data-path="vectors.html"><a href="vectors.html#chapter-summary-and-the-end-of-the-course"><i class="fa fa-check"></i><b>10.8</b> Chapter summary — and the end of the course</a></li>
-<li class="chapter" data-level="10.9" data-path="vectors.html"><a href="vectors.html#vectors-answers"><i class="fa fa-check"></i><b>10.9</b> Answers to practice exercises</a></li>
+<li class="chapter" data-level="10.7" data-path="vectors.html"><a href="vectors.html#matrices"><i class="fa fa-check"></i><b>10.7</b> A first look at matrices</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="vectors.html"><a href="vectors.html#key-idea-64"><i class="fa fa-check"></i><b>10.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.7.2" data-path="vectors.html"><a href="vectors.html#worked-examples-62"><i class="fa fa-check"></i><b>10.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.7.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-65"><i class="fa fa-check"></i><b>10.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="vectors.html"><a href="vectors.html#matrix-multiplication"><i class="fa fa-check"></i><b>10.8</b> Matrix multiplication</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="vectors.html"><a href="vectors.html#matmult-step1"><i class="fa fa-check"></i><b>10.8.1</b> Step 1: a row times a column</a></li>
+<li class="chapter" data-level="10.8.2" data-path="vectors.html"><a href="vectors.html#matmult-step2"><i class="fa fa-check"></i><b>10.8.2</b> Step 2: a matrix times a vector, revisited</a></li>
+<li class="chapter" data-level="10.8.3" data-path="vectors.html"><a href="vectors.html#matmult-step3"><i class="fa fa-check"></i><b>10.8.3</b> Step 3: a matrix times a matrix</a></li>
+<li class="chapter" data-level="10.8.4" data-path="vectors.html"><a href="vectors.html#matmult-step4"><i class="fa fa-check"></i><b>10.8.4</b> Step 4: sizes — when does a product exist?</a></li>
+<li class="chapter" data-level="10.8.5" data-path="vectors.html"><a href="vectors.html#matmult-applications"><i class="fa fa-check"></i><b>10.8.5</b> Matrix multiplication in action</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="vectors.html"><a href="vectors.html#end-of-chapter-quiz-8"><i class="fa fa-check"></i><b>10.9</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="10.10" data-path="vectors.html"><a href="vectors.html#chapter-summary-and-the-end-of-the-course"><i class="fa fa-check"></i><b>10.10</b> Chapter summary — and the end of the course</a></li>
+<li class="chapter" data-level="10.11" data-path="vectors.html"><a href="vectors.html#vectors-answers"><i class="fa fa-check"></i><b>10.11</b> Answers to practice exercises</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="_blank">Published with bookdown</a></li>
@@ -643,8 +659,8 @@ Figure 3.1: A factorised cubic crossing at its roots, and the two branches of a 
 <p>The discriminant of this quadratic is <input class='webex-solveme nospaces' size='1' data-answer='["0"]'/>, so the line and the parabola meet at <select class='webex-select'><option value='blank'></option><option value=''>no points</option><option value='answer'>exactly one point</option><option value=''>two distinct points</option></select>.</p>
 <p><strong>Q3.</strong> Setting <span class="math inline">\(y = 2x\)</span> equal to <span class="math inline">\(y = x^2 + 3\)</span> gives <span class="math inline">\(x^2 - 2x + 3 = 0\)</span>.</p>
 <p>The discriminant is <input class='webex-solveme nospaces' size='2' data-answer='["-8"]'/>. Graphically, this means:</p>
-<div id="radio_DEMETBHCZA" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_DEMETBHCZA" value="answer"></input> <span>the line never meets the parabola</span></label><label><input type="radio" autocomplete="off" name="radio_DEMETBHCZA" value=""></input> <span>the line is tangent to the parabola</span></label><label><input type="radio" autocomplete="off" name="radio_DEMETBHCZA" value=""></input> <span>the line crosses the parabola twice</span></label><label><input type="radio" autocomplete="off" name="radio_DEMETBHCZA" value=""></input> <span>the working must contain an error</span></label>
+<div id="radio_UBWFZJHEAQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UBWFZJHEAQ" value="answer"></input> <span>the line never meets the parabola</span></label><label><input type="radio" autocomplete="off" name="radio_UBWFZJHEAQ" value=""></input> <span>the line is tangent to the parabola</span></label><label><input type="radio" autocomplete="off" name="radio_UBWFZJHEAQ" value=""></input> <span>the line crosses the parabola twice</span></label><label><input type="radio" autocomplete="off" name="radio_UBWFZJHEAQ" value=""></input> <span>the working must contain an error</span></label>
 </div>
 <p><strong>Q4.</strong> A firm has total cost <span class="math inline">\(C(q) = 24 + 5q\)</span> and total revenue <span class="math inline">\(R(q) = 16q - q^2\)</span> (both in £000s). Find the break-even quantities.</p>
 <p>Smaller: <span class="math inline">\(q =\)</span> <input class='webex-solveme nospaces' size='1' data-answer='["3"]'/> Larger: <span class="math inline">\(q =\)</span> <input class='webex-solveme nospaces' size='1' data-answer='["8"]'/></p>

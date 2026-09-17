@@ -1,6 +1,6 @@
 # Vectors (and a First Look at Matrices) {#vectors}
 
-A single number describes one thing: a price, a quantity, a temperature. But business objects usually have *many* components at once — a production plan has quantities of several products; a customer has spending in several categories; a location has coordinates. A **vector** is the mathematical object for exactly this: an ordered list of numbers treated as a single quantity. This closing chapter builds fluency with 2D and 3D vectors, then looks ahead in two directions: vectors as *data* (the language of analytics) and a gentle first meeting with **matrices**, which act on vectors and will dominate your quantitative modules.
+A single number describes one thing: a price, a quantity, a temperature. But business objects usually have *many* components at once — a production plan has quantities of several products; a customer has spending in several categories; a location has coordinates. A **vector** is the mathematical object for exactly this: an ordered list of numbers treated as a single quantity. This closing chapter builds fluency with 2D and 3D vectors, then looks ahead: vectors as *data* (the language of analytics), the **dot product** (the one vector-times-vector product you'll use constantly), and **matrices** — first acting on vectors, then multiplied together — which will dominate your quantitative modules.
 
 **Why this matters:** University Management Science is multivariable from week one. Functions of several variables, gradients, linear programming, input–output models, Markov chains, regression, machine learning — every one of them is vectors and matrices at heart. The mechanics in this chapter are simple; the payoff is that nothing in first year will look alien.
 
@@ -173,7 +173,7 @@ The plan needs 35 hours (within 40 ✓) and 40 kg (within 45 ✓): feasible. Ask
 
 - Mixing components while adding — line the vectors up as columns and add across rows.
 - Concluding "not parallel" after checking only one component ratio — *all* component ratios must agree.
-- Multiplying two vectors together componentwise and expecting it to mean something at this level — vector addition and scalar multiplication are the only operations defined here (the useful vector-times-vector products arrive at university).
+- Multiplying two vectors together componentwise and expecting it to mean something — it doesn't. The useful vector-times-vector product is the **dot product** (Section \@ref(dot-product)), and its answer is a single number, not a vector.
 
 ```{r, echo=FALSE}
 embed_youtube("iobbAP7-zvE", 
@@ -308,6 +308,175 @@ Ben, by a mile. Congratulations: "find the nearest vector" is the **nearest-neig
 
 **Why this matters:** Analytics *is* vector arithmetic at scale. Clustering finds groups of mutually close data vectors; classification asks which labelled vectors a new one is nearest to; regression and machine-learning models are functions of feature vectors, trained by nudging a parameter vector downhill — using the **gradient**, a vector of the partial derivatives you'll build from Chapter \@ref(differentiation). This little section is the bridge between A-level and all of that.
 
+## The dot product {#dot-product}
+
+### Key idea
+
+Section \@ref(vector-operations) warned that multiplying two vectors component by component doesn't give anything useful. There *is* one vector-times-vector product that earns its keep everywhere, though, and it is refreshingly simple: the **dot product** (also called the **scalar product** — if you took Further Mathematics you may have met it under that name). For two vectors of the same length, multiply matching components and add up:
+
+$$\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + \dots + a_n b_n.$$
+
+For example, $\begin{pmatrix} 2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 1 \end{pmatrix} = 2(4) + 3(1) = 11$. Three facts to hold on to:
+
+- The answer is a **single number** (a scalar), not a vector.
+- Both vectors must have the **same number of components** — $(1, 2) \cdot (1, 2, 3)$ is undefined.
+- $\mathbf{a} \cdot \mathbf{a} = a_1^2 + a_2^2 + \dots = |\mathbf{a}|^2$: the magnitude you've been computing all chapter is a dot product in disguise.
+
+It also behaves politely: order doesn't matter ($\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}$), it spreads over addition ($\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = \mathbf{a} \cdot \mathbf{b} + \mathbf{a} \cdot \mathbf{c}$), and scalars slide out ($(k\mathbf{a}) \cdot \mathbf{b} = k(\mathbf{a} \cdot \mathbf{b})$).
+
+**The geometric meaning.** Place the two arrows tail to tail and let $\theta$ be the angle between them. Then
+
+$$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}|\,|\mathbf{b}| \cos\theta, \qquad \text{so} \qquad \cos\theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}|\,|\mathbf{b}|}.$$
+
+The dot product measures *how much two vectors point the same way*. Since magnitudes are positive, its sign alone tells you about the angle:
+
+- $\mathbf{a} \cdot \mathbf{b} > 0$: acute angle — broadly the same direction;
+- $\mathbf{a} \cdot \mathbf{b} = 0$: right angle — the vectors are **perpendicular** (non-zero vectors only);
+- $\mathbf{a} \cdot \mathbf{b} < 0$: obtuse angle — broadly opposing directions.
+
+```{r dot-product-signs, echo=FALSE, fig.cap="The sign of the dot product tells you whether the angle between two vectors is acute, a right angle, or obtuse.", fig.height=2.3}
+op <- par(mfrow = c(1, 3), mar = c(0.5, 0.5, 3, 0.5))
+dot_panel <- function(b, title) {
+  plot(NA, xlim = c(-2.8, 3.8), ylim = c(-0.6, 3.2), asp = 1,
+       axes = FALSE, xlab = "", ylab = "", main = title)
+  arrows(0, 0, 3, 0, col = "steelblue", lwd = 2, length = 0.1)
+  arrows(0, 0, b[1], b[2], col = "firebrick", lwd = 2, length = 0.1)
+  text(3, -0.45, "a", col = "steelblue", font = 2)
+  text(b[1], b[2] + 0.35, "b", col = "firebrick", font = 2)
+}
+dot_panel(c(2, 2.4), "Acute: a \u00b7 b > 0")
+dot_panel(c(0, 3), "Right angle: a \u00b7 b = 0")
+dot_panel(c(-2, 2.4), "Obtuse: a \u00b7 b < 0")
+par(op)
+```
+
+```{r, echo=FALSE}
+embed_desmos("a1o0qs1pdd", geometry = TRUE)
+```
+
+### Worked examples: computing dot products
+
+**Example (simple).** Find $\begin{pmatrix} 2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ -1 \end{pmatrix}$ and $\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 0 \\ -2 \end{pmatrix}$.
+
+$$2(4) + 3(-1) = 8 - 3 = 5, \qquad 1(4) + 2(0) + 3(-2) = 4 + 0 - 6 = -2.$$
+
+One number each time. The second is negative, so those two vectors make an obtuse angle.
+
+**Example (moderate).** For $\mathbf{a} = \begin{pmatrix} 3 \\ -1 \\ 2 \end{pmatrix}$, $\mathbf{b} = \begin{pmatrix} 1 \\ 4 \\ 0 \end{pmatrix}$ and $\mathbf{c} = \begin{pmatrix} 2 \\ 1 \\ 5 \end{pmatrix}$, find $\mathbf{a} \cdot \mathbf{a}$ and $\mathbf{a} \cdot (\mathbf{b} + \mathbf{c})$.
+
+$\mathbf{a} \cdot \mathbf{a} = 9 + 1 + 4 = 14$, so $|\mathbf{a}| = \sqrt{14}$ — the usual magnitude, reached by a different road.
+
+For the second, either add first — $\mathbf{b} + \mathbf{c} = (3, 5, 5)$, so $\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = 9 - 5 + 10 = 14$ — or use the distributive law: $\mathbf{a} \cdot \mathbf{b} = 3 - 4 + 0 = -1$ and $\mathbf{a} \cdot \mathbf{c} = 6 - 1 + 10 = 15$, total $14$ ✓. Both routes agree, as they must.
+
+**Example (challenging — revenue, cost and profit as dot products).** A bakery sells bread, pastries and cakes at prices $\mathbf{p} = (12, 8, 15)$ (£ per tray). Today it sells $\mathbf{q} = (40, 25, 10)$ trays, and the unit costs are $\mathbf{c} = (7, 5, 9)$. Find the revenue, the total cost and the profit.
+
+Revenue is "price times quantity, summed over products" — which is exactly a dot product:
+
+$$R = \mathbf{p} \cdot \mathbf{q} = 12(40) + 8(25) + 15(10) = 480 + 200 + 150 = 830,$$
+
+so revenue is £830.
+
+Likewise total cost $C = \mathbf{c} \cdot \mathbf{q} = 280 + 125 + 90 = 495$, i.e. £495, so profit is £830 − £495 = £335.
+
+Or, in one step, using the distributive law: the per-tray margin vector is $\mathbf{p} - \mathbf{c} = (5, 3, 6)$, and
+
+$$\Pi = (\mathbf{p} - \mathbf{c}) \cdot \mathbf{q} = 5(40) + 3(25) + 6(10) = 200 + 75 + 60 = 335,$$
+
+the same £335 ✓.
+
+With three products this is ordinary arithmetic; with 3,000 products it is still *one* dot product, which is why spreadsheets have `SUMPRODUCT` and why linear programming writes every objective as $\mathbf{c} \cdot \mathbf{x}$.
+
+### Practice exercises
+
+1. Find $\begin{pmatrix} 3 \\ -2 \end{pmatrix} \cdot \begin{pmatrix} 5 \\ 4 \end{pmatrix}$.
+2. Find $\begin{pmatrix} 2 \\ -1 \\ 4 \end{pmatrix} \cdot \begin{pmatrix} 3 \\ 5 \\ -1 \end{pmatrix}$. What does the sign tell you about the angle between the vectors?
+3. A café sells coffee, tea and cake at prices $(3.20, 2.50, 4.00)$ (£). Today's sales are $(150, 60, 45)$ and the unit costs are $(0.90, 0.40, 1.60)$. Find the revenue, the total cost and the profit, then check the profit with a single dot product.
+4. An investor puts weights $\mathbf{w} = (0.5, 0.3, 0.2)$ of her money into three funds whose annual returns are $\mathbf{r} = (6\%, 10\%, -2\%)$. The portfolio return is $\mathbf{w} \cdot \mathbf{r}$. Find it.
+
+### Worked examples: angles, perpendicularity and similarity
+
+**Example (simple — a perpendicularity test).** Are $\begin{pmatrix} 2 \\ 5 \end{pmatrix}$ and $\begin{pmatrix} 5 \\ -2 \end{pmatrix}$ perpendicular?
+
+$2(5) + 5(-2) = 10 - 10 = 0$. Yes. No angles, no sketch — a zero dot product settles it.
+
+**Example (moderate — finding an angle and an unknown).** (a) Find the angle between $\mathbf{a} = \begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix} 3 \\ 0 \\ 4 \end{pmatrix}$. (b) Find $t$ so that $\begin{pmatrix} t \\ 4 \end{pmatrix}$ is perpendicular to $\begin{pmatrix} 3 \\ -6 \end{pmatrix}$.
+
+(a) $\mathbf{a} \cdot \mathbf{b} = 3 + 0 + 8 = 11$, $|\mathbf{a}| = 3$, $|\mathbf{b}| = 5$, so
+
+$$\cos\theta = \frac{11}{3 \times 5} = \frac{11}{15}, \qquad \theta = \cos^{-1}\!\left(\tfrac{11}{15}\right) \approx 42.8°.$$
+
+Unlike $\tan^{-1}$, the calculator's $\cos^{-1}$ returns angles from $0°$ to $180°$ — exactly the range an angle between vectors can take — so no quadrant correction is needed.
+
+(b) Set the dot product to zero: $3t - 24 = 0$, so $t = 8$.
+
+**Example (challenging — cosine similarity).** Return to the streaming service of Section \@ref(data-vectors): Anna $\mathbf{a} = (8, 2, 5, 1)$, Ben $\mathbf{b} = (7, 3, 5, 2)$, Carla $\mathbf{c} = (2, 8, 1, 6)$. Compute the **cosine similarity** $\cos\theta$ between Anna and each of the others. Then consider a fourth user, Dev, with $\mathbf{d} = (16, 4, 10, 2)$, and compare the two similarity measures.
+
+$$|\mathbf{a}| = \sqrt{94} \approx 9.70, \quad |\mathbf{b}| = \sqrt{87} \approx 9.33, \quad |\mathbf{c}| = \sqrt{105} \approx 10.25.$$
+
+$$\cos\theta_{ab} = \frac{56 + 6 + 25 + 2}{9.70 \times 9.33} = \frac{89}{90.4} \approx 0.98, \qquad \cos\theta_{ac} = \frac{16 + 16 + 5 + 6}{9.70 \times 10.25} = \frac{43}{99.3} \approx 0.43.$$
+
+Anna and Ben point in almost the same direction (cosine near 1); Carla's taste is far off. Same verdict as the distance calculation — so far.
+
+Now Dev: $\mathbf{d} = 2\mathbf{a}$. He has *exactly* Anna's mix of tastes, but watches twice as much. Distance calls him far away: $|\mathbf{a} - \mathbf{d}| = |\mathbf{a}| \approx 9.70$, much further than Ben. But cosine similarity is $\cos\theta = 1$ — the vectors are parallel, so the angle is $0°$. The two measures answer different questions: **distance** compares *levels*, **angle** compares *mix* (direction), ignoring scale. For "what will she enjoy?", mix is usually what matters, which is why cosine similarity is the standard tool in recommendation engines and text analytics.
+
+### Practice exercises
+
+1. Show that the angle between $\begin{pmatrix} 2 \\ 1 \end{pmatrix}$ and $\begin{pmatrix} 1 \\ 3 \end{pmatrix}$ is exactly $45°$.
+2. Show that $\begin{pmatrix} 4 \\ -2 \\ 1 \end{pmatrix}$ and $\begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}$ are perpendicular.
+3. Find $k$ so that $\begin{pmatrix} k \\ 2 \\ -1 \end{pmatrix}$ is perpendicular to $\begin{pmatrix} 3 \\ k \\ 4 \end{pmatrix}$.
+4. Customer $\mathbf{u}$ spends $(10, 2, 4)$ (£00s) across three categories. Customer $\mathbf{v}$ spends $(5, 1, 2)$ and customer $\mathbf{w}$ spends $(9, 4, 2)$. Which of $\mathbf{v}$, $\mathbf{w}$ is closer to $\mathbf{u}$ by distance? Which is more similar by cosine similarity? Explain in one sentence why the answers differ.
+
+**Common mistakes:**
+
+- Writing the answer as a vector: $\begin{pmatrix} 2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 1 \end{pmatrix}$ is $11$, not $\begin{pmatrix} 8 \\ 3 \end{pmatrix}$. Multiply, then **add**.
+- Dropping minus signs mid-sum — write every product out, brackets and all, before adding.
+- Concluding "perpendicular" from a small dot product: only exactly $0$ means a right angle.
+- Forgetting to divide by *both* magnitudes in the angle formula, or having the calculator in radians when you want degrees.
+- Treating distance and cosine similarity as interchangeable — they agree often, but not always (Dev!).
+
+> **Video tutorial:** Embed a short video (5–7 minutes) introducing the dot product: calculating it, the angle formula $\cos\theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}||\mathbf{b}|}$, and the zero test for perpendicular vectors.
+
+::: {.webex-check .webex-box}
+**Self-check: the dot product**
+
+**Q1.** Find $\begin{pmatrix} 3 \\ 4 \end{pmatrix} \cdot \begin{pmatrix} 2 \\ -1 \end{pmatrix}$: `r fitb(2, num = TRUE)`
+
+**Q2.** Find $\begin{pmatrix} 1 \\ -2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 1 \\ -1 \end{pmatrix}$: `r fitb(-1, num = TRUE)`
+
+**Q3.** The value of $t$ that makes $\begin{pmatrix} 2 \\ t \end{pmatrix}$ perpendicular to $\begin{pmatrix} 6 \\ -3 \end{pmatrix}$ is `r fitb(4, num = TRUE)`
+
+**Q4.** The angle between $\begin{pmatrix} 3 \\ 4 \end{pmatrix}$ and $\begin{pmatrix} 4 \\ 3 \end{pmatrix}$, in degrees to 1 decimal place, is `r fitb(16.3, tol = 0.1, num = TRUE)`
+
+**Q5.** A shop sells two items at prices $\mathbf{p} = (2, 5)$ (£) and sells quantities $\mathbf{q} = (30, 10)$. Which of the following is the revenue $\mathbf{p} \cdot \mathbf{q}$?
+
+(A) £110  
+(B) $\begin{pmatrix} 60 \\ 50 \end{pmatrix}$  
+(C) £280  
+(D) £47  
+
+Answer: `r mcq(c(answer = "A", "B", "C", "D"))`
+
+**Q6.** For two non-zero vectors, $\mathbf{a} \cdot \mathbf{b} < 0$ means the angle between them is `r mcq(c("acute", "a right angle", answer = "obtuse", "impossible to say without the magnitudes"))`
+:::
+
+`r hide("Show solutions")`
+
+**Q1.** $3(2) + 4(-1) = 6 - 4 = 2$.
+
+**Q2.** $1(4) + (-2)(1) + 3(-1) = 4 - 2 - 3 = -1$. A negative answer is perfectly legal.
+
+**Q3.** Perpendicular means a zero dot product: $12 - 3t = 0$, so $t = 4$.
+
+**Q4.** $\cos\theta = \dfrac{12 + 12}{5 \times 5} = 0.96$, so $\theta = \cos^{-1}(0.96) \approx 16.3°$.
+
+**Q5.** (A): $2(30) + 5(10) = 60 + 50 = 110$. Trap (B) multiplies but forgets to add — revenue is one number, not a list. Trap (C) is $(2 + 5)(30 + 10)$, which pairs every price with every quantity. Trap (D) is $2 + 5 + 30 + 10$.
+
+**Q6.** Obtuse. Magnitudes are always positive, so the sign of $\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta$ is the sign of $\cos\theta$, and $\cos\theta < 0$ exactly when $90° < \theta \le 180°$.
+
+`r unhide()`
+
+**Why this matters:** The dot product is everywhere once you know to look. Revenue, cost and portfolio return are dot products; every linear programming objective and every constraint is a dot product ($\mathbf{c} \cdot \mathbf{x}$, "resource use $\le$ capacity"); a regression model's prediction is a dot product of a weight vector with a feature vector; and cosine similarity drives recommendation systems and text search. It is also the engine of matrix multiplication — as the next two sections show, each entry of a matrix product is one dot product.
+
 ## A first look at matrices {#matrices}
 
 ### Key idea
@@ -320,7 +489,7 @@ $$A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \text{ is } 2 \times 2, \qqua
 
 - **Addition:** add matching entries — only defined for matrices of the **same size**.
 - **Scalar multiplication:** multiply every entry by the scalar.
-- **Matrix × vector:** an $m \times n$ matrix times an $n$-component vector gives an $m$-component vector. Each output entry is a *row of the matrix times the vector*: multiply pairwise along the row, then add. Sizes must match: the matrix's column count must equal the vector's length.
+- **Matrix × vector:** an $m \times n$ matrix times an $n$-component vector gives an $m$-component vector. Each output entry is a *row of the matrix times the vector*: multiply pairwise along the row, then add — a dot product (Section \@ref(dot-product)). Sizes must match: the matrix's column count must equal the vector's length.
 
 $$\begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix}.$$
 
@@ -369,7 +538,7 @@ text(3.4, -2.4, "Mv", col = "seagreen"); text(-2.5, 3.3, "Rv", col = "firebrick"
 
 $$A = \begin{pmatrix} 3 & 1 \\ 2 & 4 \end{pmatrix}, \qquad A\mathbf{q} = \begin{pmatrix} 3(10) + 1(5) \\ 2(10) + 4(5) \end{pmatrix} = \begin{pmatrix} 35 \\ 40 \end{pmatrix}.$$
 
-Exactly the linear combination $10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix}$ from before — matrix–vector multiplication *is* "take this combination of the columns". The gain is scale and organisation: a factory with 40 products and 12 resources is a $12 \times 40$ matrix, and *any* production plan's requirements are one multiplication, $A\mathbf{q}$. Feasibility ("does $A\mathbf{q}$ fit within capacity?") is the constraint side of linear programming; economists use the same structure, giant-sized, in **input–output models** of whole economies.
+Exactly the linear combination $10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix}$ from before — matrix–vector multiplication *is* "take this combination of the columns". The gain is scale and organisation: a factory with 40 products and 12 resources is a $12 \times 40$ matrix, and *any* production plan's requirements are one multiplication, $A\mathbf{q}$. Feasibility ("does $A\mathbf{q}$ fit within capacity?") is the constraint side of linear programming; economists use the same structure, giant-sized, in **input–output models** of whole economies. In Section \@ref(matrix-multiplication) this example goes one step further, with a second matrix turning resources into costs.
 
 ### Practice exercises
 
@@ -386,6 +555,280 @@ Exactly the linear combination $10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin
 - Multiplying entry-by-entry in the same positions: $A\mathbf{v}$ is row-times-column sums, not a componentwise product.
 - Expecting $A\mathbf{v}$ to exist regardless of size: an $m \times n$ matrix needs an $n$-component vector.
 
+## Matrix multiplication {#matrix-multiplication}
+
+In Section \@ref(matrices) you multiplied a matrix by a *vector*. Now for a matrix times a *matrix*. This is likely to be new to you, and the rule looks strange on first sight — so rather than state it all at once, we'll build it in four small steps, each resting on the one before:
+
+1. a row times a column (the dot product, wearing matrix notation);
+2. a matrix times a vector (which you've done, now reread as dot products);
+3. a matrix times a matrix (step 2, repeated for each column);
+4. the size rule: when does a product exist, and how big is it?
+
+Then we'll put it to work on transformations, costing and changing market shares.
+
+### Step 1: a row times a column {#matmult-step1}
+
+#### Key idea {-}
+
+A **row vector** is a $1 \times n$ matrix, such as $\begin{pmatrix} 2 & 3 \end{pmatrix}$. Multiplying a row by a column of the same length means: multiply pairwise, then add. It is the dot product of Section \@ref(dot-product), and the result is a single number (a $1 \times 1$ matrix):
+
+$$\begin{pmatrix} a_1 & a_2 & a_3 \end{pmatrix}\begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} = a_1 b_1 + a_2 b_2 + a_3 b_3.$$
+
+A useful chant: **"along the row, down the column."** This single move is the entire engine of matrix multiplication; every later step just repeats it.
+
+#### Worked examples {-}
+
+**Example (simple).** $\begin{pmatrix} 2 & 3 \end{pmatrix}\begin{pmatrix} 4 \\ 5 \end{pmatrix} = 2(4) + 3(5) = 23.$
+
+**Example (moderate).** $\begin{pmatrix} 1 & 0 & -2 \end{pmatrix}\begin{pmatrix} 3 \\ 7 \\ 1 \end{pmatrix} = 1(3) + 0(7) + (-2)(1) = 1.$
+
+**Example (challenging — revenue in matrix notation).** Write the bakery's revenue from Section \@ref(dot-product) as a row times a column.
+
+$$\underbrace{\begin{pmatrix} 12 & 8 & 15 \end{pmatrix}}_{\text{prices}}\underbrace{\begin{pmatrix} 40 \\ 25 \\ 10 \end{pmatrix}}_{\text{quantities}} = 480 + 200 + 150 = 830.$$
+
+Prices laid out *along* a row and quantities *down* a column is the standard convention, and it pays off in Section \@ref(matmult-applications), where a whole table of quantities gets costed in one multiplication.
+
+#### Practice exercises {-}
+
+1. Compute $\begin{pmatrix} 3 & -1 \end{pmatrix}\begin{pmatrix} 2 \\ 5 \end{pmatrix}$.
+2. Compute $\begin{pmatrix} 2 & 0 & 1 \end{pmatrix}\begin{pmatrix} 4 \\ -3 \\ 6 \end{pmatrix}$.
+3. Unit prices are $\begin{pmatrix} 4 & 6 & 10 \end{pmatrix}$ (£) and quantities sold are $\begin{pmatrix} 20 \\ 15 \\ 5 \end{pmatrix}$. Find the revenue as a row-times-column product.
+
+### Step 2: a matrix times a vector, revisited {#matmult-step2}
+
+Look again at the example from Section \@ref(matrices):
+
+$$\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix} = \begin{pmatrix} 10 \\ 10 \end{pmatrix}.$$
+
+The top entry was $\begin{pmatrix} 2 & 1 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix} = 10$ — row 1 times the column. The bottom entry was $\begin{pmatrix} 1 & 3 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix} = 10$ — row 2 times the column. So:
+
+$$\text{entry } i \text{ of } A\mathbf{v} = (\text{row } i \text{ of } A) \times \mathbf{v}.$$
+
+Nothing new — just Step 1, done once per row. Quick check before moving on: in $\begin{pmatrix} 1 & 4 \\ 2 & -1 \end{pmatrix}\begin{pmatrix} 3 \\ 2 \end{pmatrix}$, the top entry is $3 + 8 = 11$ and the bottom entry is $6 - 2 = 4$. If that felt comfortable, you're ready for Step 3.
+
+### Step 3: a matrix times a matrix {#matmult-step3}
+
+#### Key idea {-}
+
+To multiply $A$ by $B$, treat each **column of $B$** as a vector and multiply $A$ by it (Step 2). The results, in order, are the columns of $AB$. Zooming in to a single entry, that says:
+
+$$\text{entry in row } i, \text{ column } j \text{ of } AB \;=\; (\text{row } i \text{ of } A) \times (\text{column } j \text{ of } B).$$
+
+For two $2 \times 2$ matrices this gives
+
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix}\begin{pmatrix} e & f \\ g & h \end{pmatrix} = \begin{pmatrix} ae + bg & af + bh \\ ce + dg & cf + dh \end{pmatrix}.$$
+
+Don't try to memorise that grid of letters. Memorise "**row $i$ of the first, column $j$ of the second**" and the formula writes itself.
+
+```{r matmult-row-column, echo=FALSE, fig.cap="Finding the entry in row 1, column 2 of AB: run along row 1 of A and down column 2 of B, giving 1(6) + 2(8) = 22.", fig.height=2.2}
+op <- par(mar = c(0, 0, 0, 0))
+plot(NA, xlim = c(0, 10.2), ylim = c(0.1, 2.7), axes = FALSE, xlab = "", ylab = "", asp = 1)
+A <- matrix(c(1, 2, 3, 4), 2, byrow = TRUE)
+B <- matrix(c(5, 6, 7, 8), 2, byrow = TRUE)
+AB <- A %*% B
+draw_mat <- function(M, x0, y0, w = 1, label = "") {
+  for (i in 1:2) for (j in 1:2) {
+    text(x0 + (j - 0.5) * w, y0 + 2 - i + 0.5, M[i, j], cex = 1.4)
+  }
+  ytop <- y0 + 1.95; ybot <- y0 + 0.05; xr <- x0 + 2 * w
+  segments(c(x0, xr), ybot, c(x0, xr), ytop)                    # bracket sides
+  segments(x0, c(ybot, ytop), x0 + 0.12, c(ybot, ytop))         # left serifs
+  segments(xr, c(ybot, ytop), xr - 0.12, c(ybot, ytop))         # right serifs
+  text(x0 + w, y0 + 2.3, label, font = 2)
+}
+draw_mat(A, 0.3, 0.2, label = "A")
+draw_mat(B, 3.2, 0.2, label = "B")
+draw_mat(AB, 6.9, 0.2, w = 1.4, label = "AB")
+text(2.75, 1.2, "\u00d7", cex = 1.6)
+text(6.05, 1.2, "=", cex = 1.6)
+rect(0.4, 1.3, 2.2, 2.1, border = "steelblue", lwd = 2)    # row 1 of A
+rect(4.3, 0.3, 5.1, 2.1, border = "firebrick", lwd = 2)    # column 2 of B
+rect(8.45, 1.3, 9.55, 2.1, border = "darkorchid", lwd = 2) # entry (1, 2) of AB
+par(op)
+```
+
+#### Worked examples {-}
+
+**Example (simple — a first product, every step shown).** Find $AB$ for $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$.
+
+Four entries, four row-times-column calculations:
+
+- Row 1, column 1: $\begin{pmatrix} 1 & 2 \end{pmatrix}\begin{pmatrix} 5 \\ 7 \end{pmatrix} = 5 + 14 = 19$.
+- Row 1, column 2: $\begin{pmatrix} 1 & 2 \end{pmatrix}\begin{pmatrix} 6 \\ 8 \end{pmatrix} = 6 + 16 = 22$.
+- Row 2, column 1: $\begin{pmatrix} 3 & 4 \end{pmatrix}\begin{pmatrix} 5 \\ 7 \end{pmatrix} = 15 + 28 = 43$.
+- Row 2, column 2: $\begin{pmatrix} 3 & 4 \end{pmatrix}\begin{pmatrix} 6 \\ 8 \end{pmatrix} = 18 + 32 = 50$.
+
+$$AB = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}.$$
+
+Check with the column view: $A\begin{pmatrix} 5 \\ 7 \end{pmatrix} = \begin{pmatrix} 19 \\ 43 \end{pmatrix}$, which is indeed the first column of $AB$.
+
+**Example (simple — order matters).** With the same matrices, find $BA$.
+
+$$BA = \begin{pmatrix} 5(1) + 6(3) & 5(2) + 6(4) \\ 7(1) + 8(3) & 7(2) + 8(4) \end{pmatrix} = \begin{pmatrix} 23 & 34 \\ 31 & 46 \end{pmatrix} \ne AB.$$
+
+This is the biggest surprise in the whole topic: **in general, $AB \ne BA$.** With numbers, $3 \times 5 = 5 \times 3$ without a second thought; with matrices, you must keep track of the order. (Some particular pairs do commute — but you can never *assume* it.)
+
+**Example (moderate — the identity and squaring).** Let $I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ and $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$. Find $AI$, $IA$ and $A^2$.
+
+$$AI = \begin{pmatrix} 1(1) + 2(0) & 1(0) + 2(1) \\ 3(1) + 4(0) & 3(0) + 4(1) \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} = A,$$
+
+and in the same way $IA = A$: the identity is to matrices what $1$ is to numbers, whichever side it sits on. Next, $A^2$ means $AA$:
+
+$$A^2 = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} = \begin{pmatrix} 1 + 6 & 2 + 8 \\ 3 + 12 & 6 + 16 \end{pmatrix} = \begin{pmatrix} 7 & 10 \\ 15 & 22 \end{pmatrix}.$$
+
+Note that $A^2$ is **not** $\begin{pmatrix} 1 & 4 \\ 9 & 16 \end{pmatrix}$: squaring a matrix is not squaring its entries.
+
+#### Practice exercises {-}
+
+For $A = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 4 \\ 2 & -1 \end{pmatrix}$:
+
+1. Find $AB$.
+2. Find $BA$, and confirm that $AB \ne BA$.
+3. For $C = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$, find $C^2$ and $C^3$. Can you guess $C^{10}$?
+4. Find $a$ and $b$ such that $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix}\begin{pmatrix} 2 & 1 \\ 3 & 4 \end{pmatrix} = \begin{pmatrix} 4 & 2 \\ -3 & -4 \end{pmatrix}$. What does multiplying by a diagonal matrix on the left do to the rows?
+
+### Step 4: sizes — when does a product exist? {#matmult-step4}
+
+#### Key idea {-}
+
+Every entry of $AB$ is "a row of $A$ times a column of $B$", and that only works if the row and column have the same length. A row of $A$ has as many entries as $A$ has *columns*; a column of $B$ has as many entries as $B$ has *rows*. So:
+
+$$\underset{m \times n}{A} \;\; \underset{n \times p}{B} \;=\; \underset{m \times p}{AB}.$$
+
+**The inner numbers must match; the outer numbers give the size of the answer.** Write the sizes side by side *before* you start calculating — it takes two seconds and catches most errors. (Matrix times vector is just the case $p = 1$.)
+
+#### Worked examples {-}
+
+**Example (simple — size checks).** $A$ is $2 \times 3$, $B$ is $3 \times 4$ and $C$ is $2 \times 2$. Which of $AB$, $BA$, $CA$ and $AC$ exist?
+
+- $AB$: $(2 \times 3)(3 \times 4)$ — inner 3s match, so $AB$ exists and is $2 \times 4$.
+- $BA$: $(3 \times 4)(2 \times 3)$ — inner $4 \ne 2$, so undefined.
+- $CA$: $(2 \times 2)(2 \times 3)$ — exists, $2 \times 3$.
+- $AC$: $(2 \times 3)(2 \times 2)$ — inner $3 \ne 2$, so undefined.
+
+So for non-square matrices, one order can work while the other doesn't even make sense.
+
+**Example (moderate — a non-square product).** Find $AB$ for $A = \begin{pmatrix} 1 & 0 & 2 \\ -1 & 3 & 1 \end{pmatrix}$ and $B = \begin{pmatrix} 3 & 1 \\ 2 & 1 \\ 1 & 0 \end{pmatrix}$.
+
+Sizes: $(2 \times 3)(3 \times 2)$ gives $2 \times 2$. Rows of $A$ have three entries, columns of $B$ have three entries ✓.
+
+- Row 1, column 1: $1(3) + 0(2) + 2(1) = 5$.
+- Row 1, column 2: $1(1) + 0(1) + 2(0) = 1$.
+- Row 2, column 1: $-1(3) + 3(2) + 1(1) = 4$.
+- Row 2, column 2: $-1(1) + 3(1) + 1(0) = 2$.
+
+$$AB = \begin{pmatrix} 5 & 1 \\ 4 & 2 \end{pmatrix}.$$
+
+**Example (challenging — same matrices, other order).** For the same $A$ and $B$, find $BA$ and compare it with $AB$.
+
+Sizes: $(3 \times 2)(2 \times 3)$ gives $3 \times 3$. Each row of $B$ (two entries) meets each column of $A$ (two entries):
+
+$$BA = \begin{pmatrix} 3(1) + 1(-1) & 3(0) + 1(3) & 3(2) + 1(1) \\ 2(1) + 1(-1) & 2(0) + 1(3) & 2(2) + 1(1) \\ 1(1) + 0(-1) & 1(0) + 0(3) & 1(2) + 0(1) \end{pmatrix} = \begin{pmatrix} 2 & 3 & 7 \\ 1 & 3 & 5 \\ 1 & 0 & 2 \end{pmatrix}.$$
+
+$AB$ is $2 \times 2$ and $BA$ is $3 \times 3$: not only different numbers, but different *shapes*. A vivid reminder that order matters.
+
+#### Practice exercises {-}
+
+1. $A$ is $2 \times 3$, $B$ is $3 \times 3$, $C$ is $3 \times 1$ and $D$ is $1 \times 2$. Which of $AB$, $BA$, $BC$, $CD$ and $DA$ are defined? Give the size of each one that is.
+2. Compute $\begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 3 \end{pmatrix}\begin{pmatrix} 2 & 1 \\ 0 & 1 \\ 1 & 0 \end{pmatrix}$.
+3. Compute $\begin{pmatrix} 1 & 2 \end{pmatrix}\begin{pmatrix} 3 & 0 \\ 1 & 4 \end{pmatrix}$. Is $\begin{pmatrix} 3 & 0 \\ 1 & 4 \end{pmatrix}\begin{pmatrix} 1 & 2 \end{pmatrix}$ defined?
+
+### Matrix multiplication in action {#matmult-applications}
+
+#### Key idea {-}
+
+Why multiply matrices at all? Because a product $AB$ **combines two processes into one**:
+
+- if $B$ transforms vectors and then $A$ transforms the results, the single matrix $AB$ does both at once;
+- if $B$ turns plans into resource use and $A$ turns resource use into cost, then $AB$ goes straight from plans to cost.
+
+Notice the order: in $AB\mathbf{v} = A(B\mathbf{v})$, the matrix **nearest the vector acts first**. Read products right to left — just like the composite function $fg(x) = f(g(x))$ from Chapter 3, which applies $g$ first.
+
+#### Worked examples {-}
+
+**Example (moderate — combining transformations).** From Section \@ref(matrices), $M = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ reflects in the $x$-axis and $R = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ rotates $90°$ anticlockwise. Find $MR$ and $RM$, and describe each.
+
+$$MR = \begin{pmatrix} 1(0) + 0(1) & 1(-1) + 0(0) \\ 0(0) + (-1)(1) & 0(-1) + (-1)(0) \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ -1 & 0 \end{pmatrix}, \qquad RM = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.$$
+
+$MR$ means "rotate first, then reflect". It sends $\begin{pmatrix} x \\ y \end{pmatrix}$ to $\begin{pmatrix} -y \\ -x \end{pmatrix}$: a reflection in the line $y = -x$. Check with $\mathbf{v} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}$: rotating gives $\begin{pmatrix} -2 \\ 3 \end{pmatrix}$, then reflecting gives $\begin{pmatrix} -2 \\ -3 \end{pmatrix}$ — and $MR\mathbf{v} = \begin{pmatrix} -2 \\ -3 \end{pmatrix}$ ✓.
+
+$RM$ means "reflect first, then rotate". It sends $\begin{pmatrix} x \\ y \end{pmatrix}$ to $\begin{pmatrix} y \\ x \end{pmatrix}$: a reflection in $y = x$. Different order, different result — $AB \ne BA$ now has a picture.
+
+**Example (challenging — from production plans to costs).** Return to the factory from Section \@ref(matrices). Per-unit resource use is
+
+$$A = \begin{pmatrix} 3 & 1 \\ 2 & 4 \end{pmatrix} \quad \begin{matrix} \leftarrow \text{hours} \\ \leftarrow \text{kg} \end{matrix} \qquad (\text{columns: } P_1, P_2).$$
+
+The plans for two weeks are stored as the columns of $Q = \begin{pmatrix} 10 & 6 \\ 5 & 8 \end{pmatrix}$ (rows: units of $P_1$, $P_2$; columns: week 1, week 2). Labour costs £15 per hour and material £4 per kg: $\mathbf{c} = \begin{pmatrix} 15 & 4 \end{pmatrix}$. Find (a) the resources needed each week, (b) each week's total cost, and (c) the cost of making one unit of each product.
+
+(a) Sizes $(2 \times 2)(2 \times 2)$:
+
+$$AQ = \begin{pmatrix} 3(10) + 1(5) & 3(6) + 1(8) \\ 2(10) + 4(5) & 2(6) + 4(8) \end{pmatrix} = \begin{pmatrix} 35 & 26 \\ 40 & 44 \end{pmatrix}.$$
+
+Week 1 needs 35 hours and 40 kg (our old friend); week 2 needs 26 hours and 44 kg. One multiplication handled both weeks.
+
+(b) Sizes $(1 \times 2)(2 \times 2)$ give a $1 \times 2$ row — one cost per week:
+
+$$\mathbf{c}(AQ) = \begin{pmatrix} 15(35) + 4(40) & 15(26) + 4(44) \end{pmatrix} = \begin{pmatrix} 685 & 566 \end{pmatrix},$$
+
+so £685 in week 1 and £566 in week 2.
+
+(c) Multiply in a different grouping: $\mathbf{c}A = \begin{pmatrix} 15(3) + 4(2) & 15(1) + 4(4) \end{pmatrix} = \begin{pmatrix} 53 & 31 \end{pmatrix}$. Each unit of $P_1$ costs £53 and each unit of $P_2$ costs £31 — a genuinely useful product costing. And then
+
+$$(\mathbf{c}A)Q = \begin{pmatrix} 53(10) + 31(5) & 53(6) + 31(8) \end{pmatrix} = \begin{pmatrix} 685 & 566 \end{pmatrix}.$$
+
+Same answer as (b). This is no coincidence: matrix multiplication is **associative**, $(\mathbf{c}A)Q = \mathbf{c}(AQ)$, so you may group a chain of products however is most useful — as long as you *never change the order*. Each grouping told us something different: resource use per week, or cost per unit.
+
+**Example (challenging — market shares and Markov chains).** Two brands, $X$ and $Y$, share a market. Each month, 80% of $X$'s customers stay loyal and 20% switch to $Y$; 90% of $Y$'s customers stay and 10% switch to $X$. Put this into a **transition matrix** whose column $j$ says where brand $j$'s customers go:
+
+$$P = \begin{pmatrix} 0.8 & 0.1 \\ 0.2 & 0.9 \end{pmatrix} \quad \begin{matrix} \leftarrow \text{to } X \\ \leftarrow \text{to } Y \end{matrix} \qquad (\text{columns: from } X, \text{ from } Y).$$
+
+Each column adds to 1 — every customer goes somewhere. Today the shares are $\mathbf{s}_0 = \begin{pmatrix} 0.5 \\ 0.5 \end{pmatrix}$. Find the shares after one and two months, and find $P^2$.
+
+$$\mathbf{s}_1 = P\mathbf{s}_0 = \begin{pmatrix} 0.40 + 0.05 \\ 0.10 + 0.45 \end{pmatrix} = \begin{pmatrix} 0.45 \\ 0.55 \end{pmatrix}, \qquad \mathbf{s}_2 = P\mathbf{s}_1 = \begin{pmatrix} 0.360 + 0.055 \\ 0.090 + 0.495 \end{pmatrix} = \begin{pmatrix} 0.415 \\ 0.585 \end{pmatrix}.$$
+
+Now the two-month transition matrix:
+
+$$P^2 = \begin{pmatrix} 0.64 + 0.02 & 0.08 + 0.09 \\ 0.16 + 0.18 & 0.02 + 0.81 \end{pmatrix} = \begin{pmatrix} 0.66 & 0.17 \\ 0.34 & 0.83 \end{pmatrix}.$$
+
+Its entries have a meaning: 66% of today's $X$ customers are with $X$ two months from now (whether they stayed both months or left and came back). And $P^2\mathbf{s}_0 = \begin{pmatrix} 0.33 + 0.085 \\ 0.17 + 0.415 \end{pmatrix} = \begin{pmatrix} 0.415 \\ 0.585 \end{pmatrix} = \mathbf{s}_2$ ✓. In general, $\mathbf{s}_n = P^n\mathbf{s}_0$: the matrix power *is* the forecast.
+
+Keep going and the shares settle down to $X \approx \tfrac{1}{3}$, $Y \approx \tfrac{2}{3}$, the **steady state** (Figure \@ref(fig:markov-shares)) — a recurrence relation $\mathbf{s}_{n+1} = P\mathbf{s}_n$ converging to a fixed point, exactly as in Chapter 9, now with vectors.
+
+(A note on conventions: some textbooks put "from" in the rows instead and multiply by a row vector on the left. The arithmetic is the same idea mirrored — always check which way round a course is using.)
+
+```{r markov-shares, echo=FALSE, fig.cap="Market shares under the transition matrix P, starting from 50:50. The shares settle towards the steady state of one-third and two-thirds (dashed lines).", fig.height=3.8}
+P <- matrix(c(0.8, 0.1,
+              0.2, 0.9), nrow = 2, byrow = TRUE)
+shares <- matrix(NA, nrow = 13, ncol = 2)
+shares[1, ] <- c(0.5, 0.5)
+for (n in 2:13) shares[n, ] <- P %*% shares[n - 1, ]
+matplot(0:12, shares, type = "b", pch = 19, lty = 1,
+        col = c("steelblue", "firebrick"), ylim = c(0, 1),
+        xlab = "Month", ylab = "Market share")
+abline(h = c(1/3, 2/3), lty = 2, col = "grey60")
+legend("right", legend = c("Brand X", "Brand Y"),
+       col = c("steelblue", "firebrick"), pch = 19, bty = "n")
+```
+
+#### Practice exercises {-}
+
+1. With $S = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix}$ and $R = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$, find $SR$ and $RS$. They are equal — explain geometrically why this pair commutes.
+2. Per-unit resource use for products $X$ and $Y$ is $A = \begin{pmatrix} 2 & 3 \\ 5 & 1 \end{pmatrix}$ (rows: hours, kg). Labour costs £20 per hour and material £3 per kg. Find $\mathbf{c}A$ and interpret it, then find the cost of the plan $\mathbf{q} = \begin{pmatrix} 8 \\ 4 \end{pmatrix}$ in two different ways.
+3. A transition matrix is $P = \begin{pmatrix} 0.7 & 0.2 \\ 0.3 & 0.8 \end{pmatrix}$ and today's shares are $\mathbf{s}_0 = \begin{pmatrix} 0.6 \\ 0.4 \end{pmatrix}$. Find $\mathbf{s}_1$ and $\mathbf{s}_2$. Then find $P^2$ and check that $P^2\mathbf{s}_0 = \mathbf{s}_2$.
+4. *(Networks.)* Three depots are linked by one-way routes, recorded in the matrix $N$ with entry $(i, j)$ equal to 1 if there is a direct route from depot $i$ to depot $j$:
+$$N = \begin{pmatrix} 0 & 1 & 1 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}.$$
+Find $N^2$. By thinking about what "row $i$ times column $j$" adds up, explain why entry $(i, j)$ of $N^2$ counts the two-leg routes from $i$ to $j$, and list the two-leg routes from depot 2 back to depot 2.
+
+
+**Common mistakes:**
+
+- Multiplying entries in matching positions: $\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$ is **not** $\begin{pmatrix} 5 & 12 \\ 21 & 32 \end{pmatrix}$. Always row times column.
+- Swapping the order: $AB$ and $BA$ are usually different, and one may not even exist.
+- Skipping the size check — write $(m \times n)(n \times p)$ down first.
+- Pairing *columns* of the first matrix with *rows* of the second — it's always rows of the first, columns of the second.
+- Squaring entries instead of the matrix: $A^2 = AA$.
+- Reading a chain of transformations left to right: in $AB\mathbf{v}$, $B$ acts first.
+
 ```{r, echo=FALSE}
 embed_desmos("ymz73cs5jx")
 ```
@@ -395,6 +838,47 @@ embed_youtube("0iSvYwdVVPI",
               title = "Introducing matrices",
               playlist = "PLg2tfDG3Ww4ucvo7CDOr5x4kExNfXgK4n")
 ```
+
+::: {.webex-check .webex-box}
+**Self-check: matrix multiplication**
+
+**Q1.** $A$ is $3 \times 2$ and $B$ is $2 \times 4$. The product $AB$ has `r fitb(3, num = TRUE)` rows and `r fitb(4, num = TRUE)` columns. Is $BA$ defined? `r mcq(c("yes", answer = "no"))`
+
+**Q2.** For $\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix} 1 & 0 \\ 2 & 1 \end{pmatrix}$, the top-left entry is `r fitb(4, num = TRUE)` and the bottom-left entry is `r fitb(7, num = TRUE)`
+
+**Q3.** Which of the following is $\begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$?
+
+(A) $\begin{pmatrix} 3 & 2 \\ 0 & 2 \end{pmatrix}$  
+(B) $\begin{pmatrix} 5 & 5 \\ 1 & 2 \end{pmatrix}$  
+(C) $\begin{pmatrix} 3 & 7 \\ 1 & 4 \end{pmatrix}$  
+(D) $\begin{pmatrix} 4 & 3 \\ 1 & 3 \end{pmatrix}$  
+
+Answer: `r mcq(c("A", answer = "B", "C", "D"))`
+
+**Q4.** Which statement about $2 \times 2$ matrices is true? `r mcq(c("AB and BA are always equal", answer = "AB and BA are usually different, though some pairs are equal", "AB and BA are never equal", "AB is found by multiplying entries in matching positions"))`
+
+**Q5.** A transition matrix is $P = \begin{pmatrix} 0.9 & 0.3 \\ 0.1 & 0.7 \end{pmatrix}$ (columns: from $X$, from $Y$) and today's shares are $\begin{pmatrix} 0.5 \\ 0.5 \end{pmatrix}$. Next month, brand $X$'s share is `r fitb(0.6, num = TRUE)`
+
+**Q6.** Costs are $\mathbf{c} = \begin{pmatrix} 10 & 2 \end{pmatrix}$ (£ per hour, £ per kg) and per-unit resource use is $A = \begin{pmatrix} 1 & 3 \\ 4 & 2 \end{pmatrix}$ (rows: hours, kg; columns: products 1, 2). The cost of one unit of product 2, in pounds, is `r fitb(34, num = TRUE)`
+:::
+
+`r hide("Show solutions")`
+
+**Q1.** $(3 \times 2)(2 \times 4)$: inner 2s match, outer numbers give $3 \times 4$. $BA$ is $(2 \times 4)(3 \times 2)$ and $4 \ne 3$, so it is undefined.
+
+**Q2.** Top-left: row 1 times column 1 $= 2(1) + 1(2) = 4$. Bottom-left: row 2 times column 1 $= 1(1) + 3(2) = 7$. The full product is $\begin{pmatrix} 4 & 1 \\ 7 & 3 \end{pmatrix}$.
+
+**Q3.** (B). Row 1: $1(3) + 2(1) = 5$ and $1(1) + 2(2) = 5$; row 2: $0(3) + 1(1) = 1$ and $0(1) + 1(2) = 2$. Trap (A) multiplies entries in matching positions. Trap (C) is the product in the *other* order, $BA$. Trap (D) adds matching entries.
+
+**Q4.** Usually different, though some pairs are equal — for example, any matrix commutes with $I$, and $S$ and $R$ in the practice exercises commute. You can never assume it.
+
+**Q5.** Top entry of $P\mathbf{s}_0$: $0.9(0.5) + 0.3(0.5) = 0.45 + 0.15 = 0.6$.
+
+**Q6.** $\mathbf{c}A = \begin{pmatrix} 10(1) + 2(4) & 10(3) + 2(2) \end{pmatrix} = \begin{pmatrix} 18 & 34 \end{pmatrix}$, so product 2 costs £34 per unit.
+
+`r unhide()`
+
+**Why this matters:** Matrix multiplication is how quantitative Management Science chains processes together. Markov chains forecast market shares, customer churn and machine breakdowns through powers $P^n$; input–output models of whole economies ask how much each industry must produce, using products of an industry-to-industry matrix; network analysis counts routes and connections through powers of an adjacency matrix; and regression, which you'll meet in statistics, is written compactly as a chain of matrix products. First-year linear algebra builds on exactly the rule you've just learned — row of the first, column of the second, order matters.
 
 ## End of chapter quiz
 
@@ -416,6 +900,10 @@ Answer: `r mcq(c("A", "B", answer = "C", "D"))`
 **Q4.** In the product $\begin{pmatrix} 1 & 0 & 2 \\ 2 & 1 & 1 \end{pmatrix}\begin{pmatrix} 3 \\ 1 \\ 2 \end{pmatrix}$, the top component is `r fitb(7, num = TRUE)` and the bottom component is `r fitb(9, num = TRUE)`
 
 **Q5.** The matrix $\begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}$ sends $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ to $\begin{pmatrix} -2 \\ 3 \end{pmatrix}$. As a transformation of the plane it is `r mcq(c("a rotation by 90 degrees anticlockwise", "a reflection in the x-axis", answer = "a reflection in the y-axis", "a stretch of every vector by the same factor"))`
+
+**Q6.** Find $\begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 5 \\ 1 \end{pmatrix}$: `r fitb(6, num = TRUE)`
+
+**Q7.** In the product $\begin{pmatrix} 1 & 2 \\ 3 & 0 \end{pmatrix}\begin{pmatrix} 2 & 1 \\ 1 & 4 \end{pmatrix}$, the top-right entry is `r fitb(9, num = TRUE)` and the bottom-left entry is `r fitb(6, num = TRUE)`
 :::
 
 `r hide("Show solutions")`
@@ -430,9 +918,13 @@ Answer: `r mcq(c("A", "B", answer = "C", "D"))`
 
 **Q5.** A reflection in the $y$-axis: the $x$-component flips sign and the $y$-component is untouched, so every vector jumps to its mirror image across the vertical axis. It can't be the rotation — that matrix is $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$, which sends $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ to $\begin{pmatrix} -3 \\ 2 \end{pmatrix}$ instead. Quick test with the "east" vector: $\begin{pmatrix} 1 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} -1 \\ 0 \end{pmatrix}$ — east becomes west, exactly a $y$-axis mirror.
 
+**Q6.** $2(4) + (-1)(5) + 3(1) = 8 - 5 + 3 = 6$. One number, not a vector.
+
+**Q7.** Top-right is row 1 times column 2: $1(1) + 2(4) = 9$. Bottom-left is row 2 times column 1: $3(2) + 0(1) = 6$. The full product is $\begin{pmatrix} 4 & 9 \\ 6 & 3 \end{pmatrix}$.
+
 `r unhide()`
 
-**Why this matters:** Matrices are the workhorse of quantitative Management Science. Linear programming stores its constraints in a matrix; input–output economics is matrix–vector multiplication; Markov chains model shifting market shares by repeatedly multiplying by a *transition matrix*; regression and machine learning are matrix computations end to end. First-year linear algebra will add matrix×matrix products, inverses and more — but the grammar (sizes, rows-times-columns, matrices as transformations) is what you've just learned, and it doesn't change.
+**Why this matters:** Matrices are the workhorse of quantitative Management Science. Linear programming stores its constraints in a matrix; input–output economics is matrix–vector multiplication; Markov chains model shifting market shares by repeatedly multiplying by a *transition matrix*; regression and machine learning are matrix computations end to end. First-year linear algebra will add inverses, determinants and more — but the grammar (sizes, rows-times-columns, order matters, matrices as transformations) is what you've just learned, and it doesn't change.
 
 ## Chapter summary — and the end of the course
 
@@ -442,9 +934,11 @@ You should now be able to:
 - add and scale vectors, recognise parallel vectors, and build linear combinations;
 - use position vectors for points, displacements, midpoints and distances;
 - treat data records as vectors, measuring similarity by distance and typicality by centroids;
-- state matrix sizes, add and scale matrices, multiply a matrix by a vector, and interpret matrices as geometric transformations and as resource-requirement tables.
+- compute dot products, use them to find angles and test for perpendicularity, and interpret them as revenues, costs and similarity scores;
+- state matrix sizes, add and scale matrices, multiply a matrix by a vector, and interpret matrices as geometric transformations and as resource-requirement tables;
+- multiply matrices using "row of the first, column of the second", check when a product is defined, remember that order matters, and use products to combine transformations, cost production plans and forecast market shares.
 
-And that closes the bridging course. Look back at how far the ten chapters reach: you can build and criticise models (Chapters 2–6), optimise them (Chapter 7), total and solve them (Chapter 8), approximate what can't be solved exactly (Chapter 9), and organise many-variable information (this chapter). Every quantitative module in your Management Science degree — economics, operations, statistics, finance, analytics — starts from exactly these foundations. Arrive confident: you've already met the ideas; university will make them bigger, not stranger.
+And that closes the bridging course. Look back at how far the ten chapters reach: you can build and criticise models (Chapters 2–6), optimise them (Chapter 7), total and solve them (Chapter 8), approximate what can't be solved exactly (Chapter 9), and organise and combine many-variable information (this chapter). Every quantitative module in your Management Science degree — economics, operations, statistics, finance, analytics — starts from exactly these foundations. Arrive confident: you've already met the ideas; university will make them bigger, not stranger.
 
 **Self-check quiz:** Insert a final end-of-course diagnostic sampling all ten chapters, with feedback pointing students to the chapters most worth a second pass before term begins.
 
@@ -461,3 +955,15 @@ And that closes the bridging course. Look back at how far the ten chapters reach
 **Vectors as data:** 1. $\sqrt{9 + 16 + 1} = \sqrt{26} \approx 5.10$.  2. Centroid $(31, 46)$: the "typical branch" takes about £31k on weekdays and £46k at weekends.  3. Distances to $(6,6,6)$: $\sqrt{1 + 1 + 0} = \sqrt{2} \approx 1.41$ vs $\sqrt{4 + 9 + 1} = \sqrt{14} \approx 3.74$: $(5, 7, 6)$ is the nearer match.
 
 **Matrices:** 1. $A + B$ is defined ($2 \times 3$); $A + C$ is not (sizes differ); $C\mathbf{v}$ is defined ($3 \times 2$ times a 2-vector gives a 3-vector).  2. $\begin{pmatrix} 4 & 1 \\ 4 & -1 \end{pmatrix}$.  3. $\begin{pmatrix} 1(2) + 2(5) \\ 3(2) - 1(5) \end{pmatrix} = \begin{pmatrix} 12 \\ 1 \end{pmatrix}$.  4. $\begin{pmatrix} 2 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} 0 \\ 2 \end{pmatrix}$ and $\begin{pmatrix} 0 \\ 3 \end{pmatrix} \mapsto \begin{pmatrix} -3 \\ 0 \end{pmatrix}$: every vector turns 90° anticlockwise (lengths unchanged) — a rotation.  5. $A\mathbf{q} = \begin{pmatrix} 2(8) + 3(4) \\ 5(8) + 1(4) \end{pmatrix} = \begin{pmatrix} 28 \\ 44 \end{pmatrix}$: 28 hours (within 30 ✓) and 44 kg (within 45 ✓) — feasible.
+
+**Dot product (computing):** 1. $15 - 8 = 7$.  2. $6 - 5 - 4 = -3$; negative, so the angle between the vectors is obtuse.  3. Revenue $480 + 150 + 180 = 810$, i.e. £810; cost $135 + 24 + 72 = 231$, i.e. £231; profit £579. Check: $(2.30, 2.10, 2.40) \cdot (150, 60, 45) = 345 + 126 + 108 = 579$ ✓.  4. $0.5(6) + 0.3(10) + 0.2(-2) = 5.6$, so the portfolio returns 5.6%.
+
+**Dot product (angles):** 1. Dot product $2 + 3 = 5$; magnitudes $\sqrt{5}$ and $\sqrt{10}$; $\cos\theta = \frac{5}{\sqrt{50}} = \frac{1}{\sqrt{2}}$, so $\theta = 45°$.  2. $4 - 6 + 2 = 0$ ✓.  3. $3k + 2k - 4 = 0$, so $k = 0.8$.  4. Distances: $|\mathbf{u} - \mathbf{v}| = \sqrt{25 + 1 + 4} = \sqrt{30} \approx 5.48$ and $|\mathbf{u} - \mathbf{w}| = \sqrt{1 + 4 + 4} = 3$, so $\mathbf{w}$ is closer. Cosines: $\mathbf{v} = \frac{1}{2}\mathbf{u}$, so $\cos\theta = 1$; $\cos\theta_{uw} = \frac{106}{\sqrt{120}\sqrt{101}} \approx 0.96$, so $\mathbf{v}$ is more similar. $\mathbf{v}$ has exactly $\mathbf{u}$'s spending *mix* at half the level; $\mathbf{w}$ spends at a similar *level* with a slightly different mix.
+
+**Matrix multiplication (Step 1):** 1. $6 - 5 = 1$.  2. $8 + 0 + 6 = 14$.  3. $80 + 90 + 50 = 220$, i.e. £220.
+
+**Matrix multiplication (Step 3):** 1. $AB = \begin{pmatrix} 4 & 7 \\ 6 & -3 \end{pmatrix}$.  2. $BA = \begin{pmatrix} 2 & 13 \\ 4 & -1 \end{pmatrix} \ne AB$.  3. $C^2 = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}$, $C^3 = \begin{pmatrix} 1 & 3 \\ 0 & 1 \end{pmatrix}$, so $C^{10} = \begin{pmatrix} 1 & 10 \\ 0 & 1 \end{pmatrix}$.  4. $a = 2$, $b = -1$: multiplying on the left by $\begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix}$ scales row 1 by $a$ and row 2 by $b$.
+
+**Matrix multiplication (Step 4):** 1. $AB$ is $2 \times 3$; $BA$ is undefined ($3 \ne 2$); $BC$ is $3 \times 1$; $CD$ is $3 \times 2$; $DA$ is $1 \times 3$.  2. $\begin{pmatrix} 2 & 3 \\ 3 & 1 \end{pmatrix}$.  3. $\begin{pmatrix} 5 & 8 \end{pmatrix}$. The reverse product is $(2 \times 2)(1 \times 2)$; the inner numbers $2 \ne 1$, so it is undefined.
+
+**Matrix multiplication in action:** 1. $SR = RS = \begin{pmatrix} 0 & -2 \\ 2 & 0 \end{pmatrix}$. $S$ doubles every length without changing directions and $R$ turns every vector without changing lengths, so the two effects don't interfere: either order gives "turn 90° and double".  2. $\mathbf{c}A = \begin{pmatrix} 20(2) + 3(5) & 20(3) + 3(1) \end{pmatrix} = \begin{pmatrix} 55 & 63 \end{pmatrix}$: each unit of $X$ costs £55 and each unit of $Y$ costs £63. Plan cost: $(\mathbf{c}A)\mathbf{q} = 440 + 252 = 692$, or $\mathbf{c}(A\mathbf{q}) = \begin{pmatrix} 20 & 3 \end{pmatrix}\begin{pmatrix} 28 \\ 44 \end{pmatrix} = 560 + 132 = 692$ — £692 either way.  3. $\mathbf{s}_1 = \begin{pmatrix} 0.5 \\ 0.5 \end{pmatrix}$, $\mathbf{s}_2 = \begin{pmatrix} 0.45 \\ 0.55 \end{pmatrix}$, $P^2 = \begin{pmatrix} 0.55 & 0.30 \\ 0.45 & 0.70 \end{pmatrix}$, and $P^2\mathbf{s}_0 = \begin{pmatrix} 0.33 + 0.12 \\ 0.27 + 0.28 \end{pmatrix} = \begin{pmatrix} 0.45 \\ 0.55 \end{pmatrix}$ ✓.  4. $N^2 = \begin{pmatrix} 1 & 1 & 1 \\ 0 & 2 & 1 \\ 1 & 0 & 1 \end{pmatrix}$. Row $i$ times column $j$ adds up one term per intermediate depot $k$, and each term (route $i \to k$) × (route $k \to j$) equals 1 only when both legs exist — so the sum counts two-leg routes. From depot 2 back to depot 2: $2 \to 1 \to 2$ and $2 \to 3 \to 2$.

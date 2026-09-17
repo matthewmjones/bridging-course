@@ -519,15 +519,31 @@
 <li class="chapter" data-level="10.5.2" data-path="vectors.html"><a href="vectors.html#worked-examples-61"><i class="fa fa-check"></i><b>10.5.2</b> Worked examples</a></li>
 <li class="chapter" data-level="10.5.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-62"><i class="fa fa-check"></i><b>10.5.3</b> Practice exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="vectors.html"><a href="vectors.html#matrices"><i class="fa fa-check"></i><b>10.6</b> A first look at matrices</a>
+<li class="chapter" data-level="10.6" data-path="vectors.html"><a href="vectors.html#dot-product"><i class="fa fa-check"></i><b>10.6</b> The dot product</a>
 <ul>
 <li class="chapter" data-level="10.6.1" data-path="vectors.html"><a href="vectors.html#key-idea-63"><i class="fa fa-check"></i><b>10.6.1</b> Key idea</a></li>
-<li class="chapter" data-level="10.6.2" data-path="vectors.html"><a href="vectors.html#worked-examples-62"><i class="fa fa-check"></i><b>10.6.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.6.2" data-path="vectors.html"><a href="vectors.html#worked-examples-computing-dot-products"><i class="fa fa-check"></i><b>10.6.2</b> Worked examples: computing dot products</a></li>
 <li class="chapter" data-level="10.6.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-63"><i class="fa fa-check"></i><b>10.6.3</b> Practice exercises</a></li>
+<li class="chapter" data-level="10.6.4" data-path="vectors.html"><a href="vectors.html#worked-examples-angles-perpendicularity-and-similarity"><i class="fa fa-check"></i><b>10.6.4</b> Worked examples: angles, perpendicularity and similarity</a></li>
+<li class="chapter" data-level="10.6.5" data-path="vectors.html"><a href="vectors.html#practice-exercises-64"><i class="fa fa-check"></i><b>10.6.5</b> Practice exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="vectors.html"><a href="vectors.html#end-of-chapter-quiz-8"><i class="fa fa-check"></i><b>10.7</b> End of chapter quiz</a></li>
-<li class="chapter" data-level="10.8" data-path="vectors.html"><a href="vectors.html#chapter-summary-and-the-end-of-the-course"><i class="fa fa-check"></i><b>10.8</b> Chapter summary — and the end of the course</a></li>
-<li class="chapter" data-level="10.9" data-path="vectors.html"><a href="vectors.html#vectors-answers"><i class="fa fa-check"></i><b>10.9</b> Answers to practice exercises</a></li>
+<li class="chapter" data-level="10.7" data-path="vectors.html"><a href="vectors.html#matrices"><i class="fa fa-check"></i><b>10.7</b> A first look at matrices</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="vectors.html"><a href="vectors.html#key-idea-64"><i class="fa fa-check"></i><b>10.7.1</b> Key idea</a></li>
+<li class="chapter" data-level="10.7.2" data-path="vectors.html"><a href="vectors.html#worked-examples-62"><i class="fa fa-check"></i><b>10.7.2</b> Worked examples</a></li>
+<li class="chapter" data-level="10.7.3" data-path="vectors.html"><a href="vectors.html#practice-exercises-65"><i class="fa fa-check"></i><b>10.7.3</b> Practice exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="vectors.html"><a href="vectors.html#matrix-multiplication"><i class="fa fa-check"></i><b>10.8</b> Matrix multiplication</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="vectors.html"><a href="vectors.html#matmult-step1"><i class="fa fa-check"></i><b>10.8.1</b> Step 1: a row times a column</a></li>
+<li class="chapter" data-level="10.8.2" data-path="vectors.html"><a href="vectors.html#matmult-step2"><i class="fa fa-check"></i><b>10.8.2</b> Step 2: a matrix times a vector, revisited</a></li>
+<li class="chapter" data-level="10.8.3" data-path="vectors.html"><a href="vectors.html#matmult-step3"><i class="fa fa-check"></i><b>10.8.3</b> Step 3: a matrix times a matrix</a></li>
+<li class="chapter" data-level="10.8.4" data-path="vectors.html"><a href="vectors.html#matmult-step4"><i class="fa fa-check"></i><b>10.8.4</b> Step 4: sizes — when does a product exist?</a></li>
+<li class="chapter" data-level="10.8.5" data-path="vectors.html"><a href="vectors.html#matmult-applications"><i class="fa fa-check"></i><b>10.8.5</b> Matrix multiplication in action</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="vectors.html"><a href="vectors.html#end-of-chapter-quiz-8"><i class="fa fa-check"></i><b>10.9</b> End of chapter quiz</a></li>
+<li class="chapter" data-level="10.10" data-path="vectors.html"><a href="vectors.html#chapter-summary-and-the-end-of-the-course"><i class="fa fa-check"></i><b>10.10</b> Chapter summary — and the end of the course</a></li>
+<li class="chapter" data-level="10.11" data-path="vectors.html"><a href="vectors.html#vectors-answers"><i class="fa fa-check"></i><b>10.11</b> Answers to practice exercises</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="_blank">Published with bookdown</a></li>
@@ -551,7 +567,7 @@
             <section class="normal" id="section-">
 <div id="vectors" class="section level1 hasAnchor" number="10">
 <h1><span class="header-section-number">10</span> Vectors (and a First Look at Matrices)<a href="vectors.html#vectors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>A single number describes one thing: a price, a quantity, a temperature. But business objects usually have <em>many</em> components at once — a production plan has quantities of several products; a customer has spending in several categories; a location has coordinates. A <strong>vector</strong> is the mathematical object for exactly this: an ordered list of numbers treated as a single quantity. This closing chapter builds fluency with 2D and 3D vectors, then looks ahead in two directions: vectors as <em>data</em> (the language of analytics) and a gentle first meeting with <strong>matrices</strong>, which act on vectors and will dominate your quantitative modules.</p>
+<p>A single number describes one thing: a price, a quantity, a temperature. But business objects usually have <em>many</em> components at once — a production plan has quantities of several products; a customer has spending in several categories; a location has coordinates. A <strong>vector</strong> is the mathematical object for exactly this: an ordered list of numbers treated as a single quantity. This closing chapter builds fluency with 2D and 3D vectors, then looks ahead: vectors as <em>data</em> (the language of analytics), the <strong>dot product</strong> (the one vector-times-vector product you'll use constantly), and <strong>matrices</strong> — first acting on vectors, then multiplied together — which will dominate your quantitative modules.</p>
 <p><strong>Why this matters:</strong> University Management Science is multivariable from week one. Functions of several variables, gradients, linear programming, input–output models, Markov chains, regression, machine learning — every one of them is vectors and matrices at heart. The mechanics in this chapter are simple; the payoff is that nothing in first year will look alien.</p>
 <div id="vectors-2d" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Two-dimensional vectors<a href="vectors.html#vectors-2d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -684,7 +700,7 @@ Figure 10.1: Tip-to-tail addition: the resultant (dashed) runs from the start of
 <p><strong>Example (challenging — a production plan as a linear combination).</strong> Each unit of product <span class="math inline">\(P_1\)</span> consumes <span class="math inline">\(\begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span> (labour hours, kg of material); each unit of <span class="math inline">\(P_2\)</span> consumes <span class="math inline">\(\begin{pmatrix} 1 \\ 4 \end{pmatrix}\)</span>. The factory plans to make 10 units of <span class="math inline">\(P_1\)</span> and 5 of <span class="math inline">\(P_2\)</span>. Find the total resource requirement, and check it against a capacity of 40 labour hours and 45 kg.</p>
 <p>Total requirement is the linear combination</p>
 <p><span class="math display">\[10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix} = \begin{pmatrix} 30 \\ 20 \end{pmatrix} + \begin{pmatrix} 5 \\ 20 \end{pmatrix} = \begin{pmatrix} 35 \\ 40 \end{pmatrix}.\]</span></p>
-<p>The plan needs 35 hours (within 40 ✓) and 40 kg (within 45 ✓): feasible. Asking "which feasible plan is <em>best</em>?" is precisely a <strong>linear programming</strong> problem — the iso-profit lines of Section <a href="coordgeom.html#parallel-perpendicular">4.3</a> sweeping across plans like this one. Hold this example in mind; it returns in Section <a href="vectors.html#matrices">10.6</a> wearing a matrix.</p>
+<p>The plan needs 35 hours (within 40 ✓) and 40 kg (within 45 ✓): feasible. Asking "which feasible plan is <em>best</em>?" is precisely a <strong>linear programming</strong> problem — the iso-profit lines of Section <a href="coordgeom.html#parallel-perpendicular">4.3</a> sweeping across plans like this one. Hold this example in mind; it returns in Section <a href="vectors.html#matrices">10.7</a> wearing a matrix.</p>
 </div>
 <div id="practice-exercises-60" class="section level3 hasAnchor" number="10.3.3">
 <h3><span class="header-section-number">10.3.3</span> Practice exercises<a href="vectors.html#practice-exercises-60" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -697,7 +713,7 @@ Figure 10.1: Tip-to-tail addition: the resultant (dashed) runs from the start of
 <ul>
 <li>Mixing components while adding — line the vectors up as columns and add across rows.</li>
 <li>Concluding "not parallel" after checking only one component ratio — <em>all</em> component ratios must agree.</li>
-<li>Multiplying two vectors together componentwise and expecting it to mean something at this level — vector addition and scalar multiplication are the only operations defined here (the useful vector-times-vector products arrive at university).</li>
+<li>Multiplying two vectors together componentwise and expecting it to mean something — it doesn't. The useful vector-times-vector product is the <strong>dot product</strong> (Section <a href="vectors.html#dot-product">10.6</a>), and its answer is a single number, not a vector.</li>
 </ul>
 <div class="video-container">
 <iframe src="https://www.youtube-nocookie.com/embed/iobbAP7-zvE?list=PLg2tfDG3Ww4s0m-INpYT_B0yX-H-PnPTX" referrerpolicy="strict-origin-when-cross-origin" title="Introducing vectors" frameborder="0" allowfullscreen>
@@ -812,23 +828,153 @@ Show solutions
 <p><strong>Why this matters:</strong> Analytics <em>is</em> vector arithmetic at scale. Clustering finds groups of mutually close data vectors; classification asks which labelled vectors a new one is nearest to; regression and machine-learning models are functions of feature vectors, trained by nudging a parameter vector downhill — using the <strong>gradient</strong>, a vector of the partial derivatives you'll build from Chapter <a href="differentiation.html#differentiation">7</a>. This little section is the bridge between A-level and all of that.</p>
 </div>
 </div>
-<div id="matrices" class="section level2 hasAnchor" number="10.6">
-<h2><span class="header-section-number">10.6</span> A first look at matrices<a href="vectors.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dot-product" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> The dot product<a href="vectors.html#dot-product" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="key-idea-63" class="section level3 hasAnchor" number="10.6.1">
 <h3><span class="header-section-number">10.6.1</span> Key idea<a href="vectors.html#key-idea-63" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Section <a href="vectors.html#vector-operations">10.3</a> warned that multiplying two vectors component by component doesn't give anything useful. There <em>is</em> one vector-times-vector product that earns its keep everywhere, though, and it is refreshingly simple: the <strong>dot product</strong> (also called the <strong>scalar product</strong> — if you took Further Mathematics you may have met it under that name). For two vectors of the same length, multiply matching components and add up:</p>
+<p><span class="math display">\[\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + \dots + a_n b_n.\]</span></p>
+<p>For example, <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 1 \end{pmatrix} = 2(4) + 3(1) = 11\)</span>. Three facts to hold on to:</p>
+<ul>
+<li>The answer is a <strong>single number</strong> (a scalar), not a vector.</li>
+<li>Both vectors must have the <strong>same number of components</strong> — <span class="math inline">\((1, 2) \cdot (1, 2, 3)\)</span> is undefined.</li>
+<li><span class="math inline">\(\mathbf{a} \cdot \mathbf{a} = a_1^2 + a_2^2 + \dots = |\mathbf{a}|^2\)</span>: the magnitude you've been computing all chapter is a dot product in disguise.</li>
+</ul>
+<p>It also behaves politely: order doesn't matter (<span class="math inline">\(\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}\)</span>), it spreads over addition (<span class="math inline">\(\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = \mathbf{a} \cdot \mathbf{b} + \mathbf{a} \cdot \mathbf{c}\)</span>), and scalars slide out (<span class="math inline">\((k\mathbf{a}) \cdot \mathbf{b} = k(\mathbf{a} \cdot \mathbf{b})\)</span>).</p>
+<p><strong>The geometric meaning.</strong> Place the two arrows tail to tail and let <span class="math inline">\(\theta\)</span> be the angle between them. Then</p>
+<p><span class="math display">\[\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}|\,|\mathbf{b}| \cos\theta, \qquad \text{so} \qquad \cos\theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}|\,|\mathbf{b}|}.\]</span></p>
+<p>The dot product measures <em>how much two vectors point the same way</em>. Since magnitudes are positive, its sign alone tells you about the angle:</p>
+<ul>
+<li><span class="math inline">\(\mathbf{a} \cdot \mathbf{b} &gt; 0\)</span>: acute angle — broadly the same direction;</li>
+<li><span class="math inline">\(\mathbf{a} \cdot \mathbf{b} = 0\)</span>: right angle — the vectors are <strong>perpendicular</strong> (non-zero vectors only);</li>
+<li><span class="math inline">\(\mathbf{a} \cdot \mathbf{b} &lt; 0\)</span>: obtuse angle — broadly opposing directions.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:dot-product-signs"></span>
+<img src="mathematics-a-level-to-university_files/figure-html/dot-product-signs-1.png" alt="The sign of the dot product tells you whether the angle between two vectors is acute, a right angle, or obtuse." width="672" />
+<p class="caption">
+Figure 10.2: The sign of the dot product tells you whether the angle between two vectors is acute, a right angle, or obtuse.
+</p>
+</div>
+<div class="desmos-container" style="position:relative; height:500px; overflow:hidden; border:1px solid #ccc; border-radius:4px;">
+<iframe src="https://www.desmos.com/geometry/a1o0qs1pdd?embed" title="Desmos activity" frameborder="0" scrolling="no" allowfullscreen style="border:0; position:absolute; top:-94px; left:-430px; width:calc(100% + 430px); height:calc(100% + 94px);">
+</iframe>
+</div>
+</div>
+<div id="worked-examples-computing-dot-products" class="section level3 hasAnchor" number="10.6.2">
+<h3><span class="header-section-number">10.6.2</span> Worked examples: computing dot products<a href="vectors.html#worked-examples-computing-dot-products" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple).</strong> Find <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ -1 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 0 \\ -2 \end{pmatrix}\)</span>.</p>
+<p><span class="math display">\[2(4) + 3(-1) = 8 - 3 = 5, \qquad 1(4) + 2(0) + 3(-2) = 4 + 0 - 6 = -2.\]</span></p>
+<p>One number each time. The second is negative, so those two vectors make an obtuse angle.</p>
+<p><strong>Example (moderate).</strong> For <span class="math inline">\(\mathbf{a} = \begin{pmatrix} 3 \\ -1 \\ 2 \end{pmatrix}\)</span>, <span class="math inline">\(\mathbf{b} = \begin{pmatrix} 1 \\ 4 \\ 0 \end{pmatrix}\)</span> and <span class="math inline">\(\mathbf{c} = \begin{pmatrix} 2 \\ 1 \\ 5 \end{pmatrix}\)</span>, find <span class="math inline">\(\mathbf{a} \cdot \mathbf{a}\)</span> and <span class="math inline">\(\mathbf{a} \cdot (\mathbf{b} + \mathbf{c})\)</span>.</p>
+<p><span class="math inline">\(\mathbf{a} \cdot \mathbf{a} = 9 + 1 + 4 = 14\)</span>, so <span class="math inline">\(|\mathbf{a}| = \sqrt{14}\)</span> — the usual magnitude, reached by a different road.</p>
+<p>For the second, either add first — <span class="math inline">\(\mathbf{b} + \mathbf{c} = (3, 5, 5)\)</span>, so <span class="math inline">\(\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = 9 - 5 + 10 = 14\)</span> — or use the distributive law: <span class="math inline">\(\mathbf{a} \cdot \mathbf{b} = 3 - 4 + 0 = -1\)</span> and <span class="math inline">\(\mathbf{a} \cdot \mathbf{c} = 6 - 1 + 10 = 15\)</span>, total <span class="math inline">\(14\)</span> ✓. Both routes agree, as they must.</p>
+<p><strong>Example (challenging — revenue, cost and profit as dot products).</strong> A bakery sells bread, pastries and cakes at prices <span class="math inline">\(\mathbf{p} = (12, 8, 15)\)</span> (£ per tray). Today it sells <span class="math inline">\(\mathbf{q} = (40, 25, 10)\)</span> trays, and the unit costs are <span class="math inline">\(\mathbf{c} = (7, 5, 9)\)</span>. Find the revenue, the total cost and the profit.</p>
+<p>Revenue is "price times quantity, summed over products" — which is exactly a dot product:</p>
+<p><span class="math display">\[R = \mathbf{p} \cdot \mathbf{q} = 12(40) + 8(25) + 15(10) = 480 + 200 + 150 = 830,\]</span></p>
+<p>so revenue is £830.</p>
+<p>Likewise total cost <span class="math inline">\(C = \mathbf{c} \cdot \mathbf{q} = 280 + 125 + 90 = 495\)</span>, i.e. £495, so profit is £830 − £495 = £335.</p>
+<p>Or, in one step, using the distributive law: the per-tray margin vector is <span class="math inline">\(\mathbf{p} - \mathbf{c} = (5, 3, 6)\)</span>, and</p>
+<p><span class="math display">\[\Pi = (\mathbf{p} - \mathbf{c}) \cdot \mathbf{q} = 5(40) + 3(25) + 6(10) = 200 + 75 + 60 = 335,\]</span></p>
+<p>the same £335 ✓.</p>
+<p>With three products this is ordinary arithmetic; with 3,000 products it is still <em>one</em> dot product, which is why spreadsheets have <code>SUMPRODUCT</code> and why linear programming writes every objective as <span class="math inline">\(\mathbf{c} \cdot \mathbf{x}\)</span>.</p>
+</div>
+<div id="practice-exercises-63" class="section level3 hasAnchor" number="10.6.3">
+<h3><span class="header-section-number">10.6.3</span> Practice exercises<a href="vectors.html#practice-exercises-63" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Find <span class="math inline">\(\begin{pmatrix} 3 \\ -2 \end{pmatrix} \cdot \begin{pmatrix} 5 \\ 4 \end{pmatrix}\)</span>.</li>
+<li>Find <span class="math inline">\(\begin{pmatrix} 2 \\ -1 \\ 4 \end{pmatrix} \cdot \begin{pmatrix} 3 \\ 5 \\ -1 \end{pmatrix}\)</span>. What does the sign tell you about the angle between the vectors?</li>
+<li>A café sells coffee, tea and cake at prices <span class="math inline">\((3.20, 2.50, 4.00)\)</span> (£). Today's sales are <span class="math inline">\((150, 60, 45)\)</span> and the unit costs are <span class="math inline">\((0.90, 0.40, 1.60)\)</span>. Find the revenue, the total cost and the profit, then check the profit with a single dot product.</li>
+<li>An investor puts weights <span class="math inline">\(\mathbf{w} = (0.5, 0.3, 0.2)\)</span> of her money into three funds whose annual returns are <span class="math inline">\(\mathbf{r} = (6\%, 10\%, -2\%)\)</span>. The portfolio return is <span class="math inline">\(\mathbf{w} \cdot \mathbf{r}\)</span>. Find it.</li>
+</ol>
+</div>
+<div id="worked-examples-angles-perpendicularity-and-similarity" class="section level3 hasAnchor" number="10.6.4">
+<h3><span class="header-section-number">10.6.4</span> Worked examples: angles, perpendicularity and similarity<a href="vectors.html#worked-examples-angles-perpendicularity-and-similarity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Example (simple — a perpendicularity test).</strong> Are <span class="math inline">\(\begin{pmatrix} 2 \\ 5 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 5 \\ -2 \end{pmatrix}\)</span> perpendicular?</p>
+<p><span class="math inline">\(2(5) + 5(-2) = 10 - 10 = 0\)</span>. Yes. No angles, no sketch — a zero dot product settles it.</p>
+<p><strong>Example (moderate — finding an angle and an unknown).</strong> (a) Find the angle between <span class="math inline">\(\mathbf{a} = \begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}\)</span> and <span class="math inline">\(\mathbf{b} = \begin{pmatrix} 3 \\ 0 \\ 4 \end{pmatrix}\)</span>. (b) Find <span class="math inline">\(t\)</span> so that <span class="math inline">\(\begin{pmatrix} t \\ 4 \end{pmatrix}\)</span> is perpendicular to <span class="math inline">\(\begin{pmatrix} 3 \\ -6 \end{pmatrix}\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(\mathbf{a} \cdot \mathbf{b} = 3 + 0 + 8 = 11\)</span>, <span class="math inline">\(|\mathbf{a}| = 3\)</span>, <span class="math inline">\(|\mathbf{b}| = 5\)</span>, so</li>
+</ol>
+<p><span class="math display">\[\cos\theta = \frac{11}{3 \times 5} = \frac{11}{15}, \qquad \theta = \cos^{-1}\!\left(\tfrac{11}{15}\right) \approx 42.8°.\]</span></p>
+<p>Unlike <span class="math inline">\(\tan^{-1}\)</span>, the calculator's <span class="math inline">\(\cos^{-1}\)</span> returns angles from <span class="math inline">\(0°\)</span> to <span class="math inline">\(180°\)</span> — exactly the range an angle between vectors can take — so no quadrant correction is needed.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Set the dot product to zero: <span class="math inline">\(3t - 24 = 0\)</span>, so <span class="math inline">\(t = 8\)</span>.</li>
+</ol>
+<p><strong>Example (challenging — cosine similarity).</strong> Return to the streaming service of Section <a href="vectors.html#data-vectors">10.5</a>: Anna <span class="math inline">\(\mathbf{a} = (8, 2, 5, 1)\)</span>, Ben <span class="math inline">\(\mathbf{b} = (7, 3, 5, 2)\)</span>, Carla <span class="math inline">\(\mathbf{c} = (2, 8, 1, 6)\)</span>. Compute the <strong>cosine similarity</strong> <span class="math inline">\(\cos\theta\)</span> between Anna and each of the others. Then consider a fourth user, Dev, with <span class="math inline">\(\mathbf{d} = (16, 4, 10, 2)\)</span>, and compare the two similarity measures.</p>
+<p><span class="math display">\[|\mathbf{a}| = \sqrt{94} \approx 9.70, \quad |\mathbf{b}| = \sqrt{87} \approx 9.33, \quad |\mathbf{c}| = \sqrt{105} \approx 10.25.\]</span></p>
+<p><span class="math display">\[\cos\theta_{ab} = \frac{56 + 6 + 25 + 2}{9.70 \times 9.33} = \frac{89}{90.4} \approx 0.98, \qquad \cos\theta_{ac} = \frac{16 + 16 + 5 + 6}{9.70 \times 10.25} = \frac{43}{99.3} \approx 0.43.\]</span></p>
+<p>Anna and Ben point in almost the same direction (cosine near 1); Carla's taste is far off. Same verdict as the distance calculation — so far.</p>
+<p>Now Dev: <span class="math inline">\(\mathbf{d} = 2\mathbf{a}\)</span>. He has <em>exactly</em> Anna's mix of tastes, but watches twice as much. Distance calls him far away: <span class="math inline">\(|\mathbf{a} - \mathbf{d}| = |\mathbf{a}| \approx 9.70\)</span>, much further than Ben. But cosine similarity is <span class="math inline">\(\cos\theta = 1\)</span> — the vectors are parallel, so the angle is <span class="math inline">\(0°\)</span>. The two measures answer different questions: <strong>distance</strong> compares <em>levels</em>, <strong>angle</strong> compares <em>mix</em> (direction), ignoring scale. For "what will she enjoy?", mix is usually what matters, which is why cosine similarity is the standard tool in recommendation engines and text analytics.</p>
+</div>
+<div id="practice-exercises-64" class="section level3 hasAnchor" number="10.6.5">
+<h3><span class="header-section-number">10.6.5</span> Practice exercises<a href="vectors.html#practice-exercises-64" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Show that the angle between <span class="math inline">\(\begin{pmatrix} 2 \\ 1 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 1 \\ 3 \end{pmatrix}\)</span> is exactly <span class="math inline">\(45°\)</span>.</li>
+<li>Show that <span class="math inline">\(\begin{pmatrix} 4 \\ -2 \\ 1 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}\)</span> are perpendicular.</li>
+<li>Find <span class="math inline">\(k\)</span> so that <span class="math inline">\(\begin{pmatrix} k \\ 2 \\ -1 \end{pmatrix}\)</span> is perpendicular to <span class="math inline">\(\begin{pmatrix} 3 \\ k \\ 4 \end{pmatrix}\)</span>.</li>
+<li>Customer <span class="math inline">\(\mathbf{u}\)</span> spends <span class="math inline">\((10, 2, 4)\)</span> (£00s) across three categories. Customer <span class="math inline">\(\mathbf{v}\)</span> spends <span class="math inline">\((5, 1, 2)\)</span> and customer <span class="math inline">\(\mathbf{w}\)</span> spends <span class="math inline">\((9, 4, 2)\)</span>. Which of <span class="math inline">\(\mathbf{v}\)</span>, <span class="math inline">\(\mathbf{w}\)</span> is closer to <span class="math inline">\(\mathbf{u}\)</span> by distance? Which is more similar by cosine similarity? Explain in one sentence why the answers differ.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Writing the answer as a vector: <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 1 \end{pmatrix}\)</span> is <span class="math inline">\(11\)</span>, not <span class="math inline">\(\begin{pmatrix} 8 \\ 3 \end{pmatrix}\)</span>. Multiply, then <strong>add</strong>.</li>
+<li>Dropping minus signs mid-sum — write every product out, brackets and all, before adding.</li>
+<li>Concluding "perpendicular" from a small dot product: only exactly <span class="math inline">\(0\)</span> means a right angle.</li>
+<li>Forgetting to divide by <em>both</em> magnitudes in the angle formula, or having the calculator in radians when you want degrees.</li>
+<li>Treating distance and cosine similarity as interchangeable — they agree often, but not always (Dev!).</li>
+</ul>
+<blockquote>
+<p><strong>Video tutorial:</strong> Embed a short video (5–7 minutes) introducing the dot product: calculating it, the angle formula <span class="math inline">\(\cos\theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}||\mathbf{b}|}\)</span>, and the zero test for perpendicular vectors.</p>
+</blockquote>
+<div class="webex-check webex-box">
+<p><strong>Self-check: the dot product</strong></p>
+<p><strong>Q1.</strong> Find <span class="math inline">\(\begin{pmatrix} 3 \\ 4 \end{pmatrix} \cdot \begin{pmatrix} 2 \\ -1 \end{pmatrix}\)</span>: <input class='webex-solveme nospaces' size='1' data-answer='["2"]'/></p>
+<p><strong>Q2.</strong> Find <span class="math inline">\(\begin{pmatrix} 1 \\ -2 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 1 \\ -1 \end{pmatrix}\)</span>: <input class='webex-solveme nospaces' size='2' data-answer='["-1"]'/></p>
+<p><strong>Q3.</strong> The value of <span class="math inline">\(t\)</span> that makes <span class="math inline">\(\begin{pmatrix} 2 \\ t \end{pmatrix}\)</span> perpendicular to <span class="math inline">\(\begin{pmatrix} 6 \\ -3 \end{pmatrix}\)</span> is <input class='webex-solveme nospaces' size='1' data-answer='["4"]'/></p>
+<p><strong>Q4.</strong> The angle between <span class="math inline">\(\begin{pmatrix} 3 \\ 4 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 4 \\ 3 \end{pmatrix}\)</span>, in degrees to 1 decimal place, is <input class='webex-solveme nospaces' data-tol='0.1' size='4' data-answer='["16.3"]'/></p>
+<p><strong>Q5.</strong> A shop sells two items at prices <span class="math inline">\(\mathbf{p} = (2, 5)\)</span> (£) and sells quantities <span class="math inline">\(\mathbf{q} = (30, 10)\)</span>. Which of the following is the revenue <span class="math inline">\(\mathbf{p} \cdot \mathbf{q}\)</span>?</p>
+<ol style="list-style-type: upper-alpha">
+<li>£110<br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 60 \\ 50 \end{pmatrix}\)</span><br />
+</li>
+<li>£280<br />
+</li>
+<li>£47</li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value='answer'>A</option><option value=''>B</option><option value=''>C</option><option value=''>D</option></select></p>
+<p><strong>Q6.</strong> For two non-zero vectors, <span class="math inline">\(\mathbf{a} \cdot \mathbf{b} &lt; 0\)</span> means the angle between them is <select class='webex-select'><option value='blank'></option><option value=''>acute</option><option value=''>a right angle</option><option value='answer'>obtuse</option><option value=''>impossible to say without the magnitudes</option></select></p>
+</div>
+<div class="webex-solution">
+<button>
+Show solutions
+</button>
+<p><strong>Q1.</strong> <span class="math inline">\(3(2) + 4(-1) = 6 - 4 = 2\)</span>.</p>
+<p><strong>Q2.</strong> <span class="math inline">\(1(4) + (-2)(1) + 3(-1) = 4 - 2 - 3 = -1\)</span>. A negative answer is perfectly legal.</p>
+<p><strong>Q3.</strong> Perpendicular means a zero dot product: <span class="math inline">\(12 - 3t = 0\)</span>, so <span class="math inline">\(t = 4\)</span>.</p>
+<p><strong>Q4.</strong> <span class="math inline">\(\cos\theta = \dfrac{12 + 12}{5 \times 5} = 0.96\)</span>, so <span class="math inline">\(\theta = \cos^{-1}(0.96) \approx 16.3°\)</span>.</p>
+<p><strong>Q5.</strong> (A): <span class="math inline">\(2(30) + 5(10) = 60 + 50 = 110\)</span>. Trap (B) multiplies but forgets to add — revenue is one number, not a list. Trap (C) is <span class="math inline">\((2 + 5)(30 + 10)\)</span>, which pairs every price with every quantity. Trap (D) is <span class="math inline">\(2 + 5 + 30 + 10\)</span>.</p>
+<p><strong>Q6.</strong> Obtuse. Magnitudes are always positive, so the sign of <span class="math inline">\(\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta\)</span> is the sign of <span class="math inline">\(\cos\theta\)</span>, and <span class="math inline">\(\cos\theta &lt; 0\)</span> exactly when <span class="math inline">\(90° &lt; \theta \le 180°\)</span>.</p>
+</div>
+<p><strong>Why this matters:</strong> The dot product is everywhere once you know to look. Revenue, cost and portfolio return are dot products; every linear programming objective and every constraint is a dot product (<span class="math inline">\(\mathbf{c} \cdot \mathbf{x}\)</span>, "resource use <span class="math inline">\(\le\)</span> capacity"); a regression model's prediction is a dot product of a weight vector with a feature vector; and cosine similarity drives recommendation systems and text search. It is also the engine of matrix multiplication — as the next two sections show, each entry of a matrix product is one dot product.</p>
+</div>
+</div>
+<div id="matrices" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> A first look at matrices<a href="vectors.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-idea-64" class="section level3 hasAnchor" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> Key idea<a href="vectors.html#key-idea-64" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A <strong>matrix</strong> is a rectangular grid of numbers. Its <strong>size</strong> is <em>rows × columns</em>:</p>
 <p><span class="math display">\[A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} \text{ is } 2 \times 2, \qquad B = \begin{pmatrix} 5 &amp; 0 &amp; -1 \\ 2 &amp; 1 &amp; 3 \end{pmatrix} \text{ is } 2 \times 3.\]</span></p>
 <p>(Rows first, always — a <span class="math inline">\(2 \times 3\)</span> matrix has 2 rows and 3 columns.) A column vector is just an <span class="math inline">\(n \times 1\)</span> matrix, so vectors are a special case. Three operations for now:</p>
 <ul>
 <li><strong>Addition:</strong> add matching entries — only defined for matrices of the <strong>same size</strong>.</li>
 <li><strong>Scalar multiplication:</strong> multiply every entry by the scalar.</li>
-<li><strong>Matrix × vector:</strong> an <span class="math inline">\(m \times n\)</span> matrix times an <span class="math inline">\(n\)</span>-component vector gives an <span class="math inline">\(m\)</span>-component vector. Each output entry is a <em>row of the matrix times the vector</em>: multiply pairwise along the row, then add. Sizes must match: the matrix's column count must equal the vector's length.</li>
+<li><strong>Matrix × vector:</strong> an <span class="math inline">\(m \times n\)</span> matrix times an <span class="math inline">\(n\)</span>-component vector gives an <span class="math inline">\(m\)</span>-component vector. Each output entry is a <em>row of the matrix times the vector</em>: multiply pairwise along the row, then add — a dot product (Section <a href="vectors.html#dot-product">10.6</a>). Sizes must match: the matrix's column count must equal the vector's length.</li>
 </ul>
 <p><span class="math display">\[\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix}.\]</span></p>
 <p>Equivalent (and illuminating) view: <span class="math inline">\(A\mathbf{v}\)</span> is the <strong>linear combination of <span class="math inline">\(A\)</span>'s columns</strong>, weighted by <span class="math inline">\(\mathbf{v}\)</span>'s entries — Section <a href="vectors.html#vector-operations">10.3</a>'s big idea, mechanised.</p>
 </div>
-<div id="worked-examples-62" class="section level3 hasAnchor" number="10.6.2">
-<h3><span class="header-section-number">10.6.2</span> Worked examples<a href="vectors.html#worked-examples-62" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="worked-examples-62" class="section level3 hasAnchor" number="10.7.2">
+<h3><span class="header-section-number">10.7.2</span> Worked examples<a href="vectors.html#worked-examples-62" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Example (simple — addition and scaling).</strong> For <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 0 &amp; 5 \\ -1 &amp; 2 \end{pmatrix}\)</span>, find <span class="math inline">\(A + B\)</span> and <span class="math inline">\(3A\)</span>.</p>
 <p><span class="math display">\[A + B = \begin{pmatrix} 1 &amp; 7 \\ 2 &amp; 6 \end{pmatrix}, \qquad 3A = \begin{pmatrix} 3 &amp; 6 \\ 9 &amp; 12 \end{pmatrix}.\]</span></p>
 <p>(And note: <span class="math inline">\(A + \begin{pmatrix} 5 &amp; 0 &amp; -1 \\ 2 &amp; 1 &amp; 3 \end{pmatrix}\)</span> is <strong>undefined</strong> — a <span class="math inline">\(2\times2\)</span> and a <span class="math inline">\(2\times3\)</span> can't be added.)</p>
@@ -845,15 +991,15 @@ Show solutions
 <div class="figure"><span style="display:block;" id="fig:matrix-transform"></span>
 <img src="mathematics-a-level-to-university_files/figure-html/matrix-transform-1.png" alt="One matrix, every vector moved: v = (3, 2) under the identity, a stretch, a reflection and a 90° rotation." width="672" />
 <p class="caption">
-Figure 10.2: One matrix, every vector moved: v = (3, 2) under the identity, a stretch, a reflection and a 90° rotation.
+Figure 10.3: One matrix, every vector moved: v = (3, 2) under the identity, a stretch, a reflection and a 90° rotation.
 </p>
 </div>
 <p><strong>Example (challenging — the production plan, now as a matrix).</strong> Recall Section <a href="vectors.html#vector-operations">10.3</a>: products <span class="math inline">\(P_1\)</span> and <span class="math inline">\(P_2\)</span> consume <span class="math inline">\(\begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 1 \\ 4 \end{pmatrix}\)</span> (hours, kg) per unit. Pack the per-unit requirements into a matrix, one product per <strong>column</strong>, and compute the resources needed for the production vector <span class="math inline">\(\mathbf{q} = \begin{pmatrix} 10 \\ 5 \end{pmatrix}\)</span>.</p>
 <p><span class="math display">\[A = \begin{pmatrix} 3 &amp; 1 \\ 2 &amp; 4 \end{pmatrix}, \qquad A\mathbf{q} = \begin{pmatrix} 3(10) + 1(5) \\ 2(10) + 4(5) \end{pmatrix} = \begin{pmatrix} 35 \\ 40 \end{pmatrix}.\]</span></p>
-<p>Exactly the linear combination <span class="math inline">\(10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix}\)</span> from before — matrix–vector multiplication <em>is</em> "take this combination of the columns". The gain is scale and organisation: a factory with 40 products and 12 resources is a <span class="math inline">\(12 \times 40\)</span> matrix, and <em>any</em> production plan's requirements are one multiplication, <span class="math inline">\(A\mathbf{q}\)</span>. Feasibility ("does <span class="math inline">\(A\mathbf{q}\)</span> fit within capacity?") is the constraint side of linear programming; economists use the same structure, giant-sized, in <strong>input–output models</strong> of whole economies.</p>
+<p>Exactly the linear combination <span class="math inline">\(10\begin{pmatrix} 3 \\ 2 \end{pmatrix} + 5\begin{pmatrix} 1 \\ 4 \end{pmatrix}\)</span> from before — matrix–vector multiplication <em>is</em> "take this combination of the columns". The gain is scale and organisation: a factory with 40 products and 12 resources is a <span class="math inline">\(12 \times 40\)</span> matrix, and <em>any</em> production plan's requirements are one multiplication, <span class="math inline">\(A\mathbf{q}\)</span>. Feasibility ("does <span class="math inline">\(A\mathbf{q}\)</span> fit within capacity?") is the constraint side of linear programming; economists use the same structure, giant-sized, in <strong>input–output models</strong> of whole economies. In Section <a href="vectors.html#matrix-multiplication">10.8</a> this example goes one step further, with a second matrix turning resources into costs.</p>
 </div>
-<div id="practice-exercises-63" class="section level3 hasAnchor" number="10.6.3">
-<h3><span class="header-section-number">10.6.3</span> Practice exercises<a href="vectors.html#practice-exercises-63" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="practice-exercises-65" class="section level3 hasAnchor" number="10.7.3">
+<h3><span class="header-section-number">10.7.3</span> Practice exercises<a href="vectors.html#practice-exercises-65" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(A\)</span> is <span class="math inline">\(2 \times 3\)</span>, <span class="math inline">\(B\)</span> is <span class="math inline">\(2 \times 3\)</span> and <span class="math inline">\(C\)</span> is <span class="math inline">\(3 \times 2\)</span>. Which of <span class="math inline">\(A + B\)</span>, <span class="math inline">\(A + C\)</span>, and <span class="math inline">\(C\,\mathbf{v}\)</span> for a 2-component vector <span class="math inline">\(\mathbf{v}\)</span> are defined? State the size of each result that exists.</li>
 <li>For <span class="math inline">\(A = \begin{pmatrix} 2 &amp; -1 \\ 0 &amp; 3 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 1 &amp; 1 \\ 2 &amp; -2 \end{pmatrix}\)</span>, compute <span class="math inline">\(A + 2B\)</span>.</li>
@@ -868,6 +1014,210 @@ Figure 10.2: One matrix, every vector moved: v = (3, 2) under the identity, a st
 <li>Multiplying entry-by-entry in the same positions: <span class="math inline">\(A\mathbf{v}\)</span> is row-times-column sums, not a componentwise product.</li>
 <li>Expecting <span class="math inline">\(A\mathbf{v}\)</span> to exist regardless of size: an <span class="math inline">\(m \times n\)</span> matrix needs an <span class="math inline">\(n\)</span>-component vector.</li>
 </ul>
+</div>
+</div>
+<div id="matrix-multiplication" class="section level2 hasAnchor" number="10.8">
+<h2><span class="header-section-number">10.8</span> Matrix multiplication<a href="vectors.html#matrix-multiplication" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In Section <a href="vectors.html#matrices">10.7</a> you multiplied a matrix by a <em>vector</em>. Now for a matrix times a <em>matrix</em>. This is likely to be new to you, and the rule looks strange on first sight — so rather than state it all at once, we'll build it in four small steps, each resting on the one before:</p>
+<ol style="list-style-type: decimal">
+<li>a row times a column (the dot product, wearing matrix notation);</li>
+<li>a matrix times a vector (which you've done, now reread as dot products);</li>
+<li>a matrix times a matrix (step 2, repeated for each column);</li>
+<li>the size rule: when does a product exist, and how big is it?</li>
+</ol>
+<p>Then we'll put it to work on transformations, costing and changing market shares.</p>
+<div id="matmult-step1" class="section level3 hasAnchor" number="10.8.1">
+<h3><span class="header-section-number">10.8.1</span> Step 1: a row times a column<a href="vectors.html#matmult-step1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="key-idea-65" class="section level4 unnumbered hasAnchor">
+<h4>Key idea<a href="vectors.html#key-idea-65" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A <strong>row vector</strong> is a <span class="math inline">\(1 \times n\)</span> matrix, such as <span class="math inline">\(\begin{pmatrix} 2 &amp; 3 \end{pmatrix}\)</span>. Multiplying a row by a column of the same length means: multiply pairwise, then add. It is the dot product of Section <a href="vectors.html#dot-product">10.6</a>, and the result is a single number (a <span class="math inline">\(1 \times 1\)</span> matrix):</p>
+<p><span class="math display">\[\begin{pmatrix} a_1 &amp; a_2 &amp; a_3 \end{pmatrix}\begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix} = a_1 b_1 + a_2 b_2 + a_3 b_3.\]</span></p>
+<p>A useful chant: <strong>"along the row, down the column."</strong> This single move is the entire engine of matrix multiplication; every later step just repeats it.</p>
+</div>
+<div id="worked-examples-63" class="section level4 unnumbered hasAnchor">
+<h4>Worked examples<a href="vectors.html#worked-examples-63" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Example (simple).</strong> <span class="math inline">\(\begin{pmatrix} 2 &amp; 3 \end{pmatrix}\begin{pmatrix} 4 \\ 5 \end{pmatrix} = 2(4) + 3(5) = 23.\)</span></p>
+<p><strong>Example (moderate).</strong> <span class="math inline">\(\begin{pmatrix} 1 &amp; 0 &amp; -2 \end{pmatrix}\begin{pmatrix} 3 \\ 7 \\ 1 \end{pmatrix} = 1(3) + 0(7) + (-2)(1) = 1.\)</span></p>
+<p><strong>Example (challenging — revenue in matrix notation).</strong> Write the bakery's revenue from Section <a href="vectors.html#dot-product">10.6</a> as a row times a column.</p>
+<p><span class="math display">\[\underbrace{\begin{pmatrix} 12 &amp; 8 &amp; 15 \end{pmatrix}}_{\text{prices}}\underbrace{\begin{pmatrix} 40 \\ 25 \\ 10 \end{pmatrix}}_{\text{quantities}} = 480 + 200 + 150 = 830.\]</span></p>
+<p>Prices laid out <em>along</em> a row and quantities <em>down</em> a column is the standard convention, and it pays off in Section <a href="vectors.html#matmult-applications">10.8.5</a>, where a whole table of quantities gets costed in one multiplication.</p>
+</div>
+<div id="practice-exercises-66" class="section level4 unnumbered hasAnchor">
+<h4>Practice exercises<a href="vectors.html#practice-exercises-66" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Compute <span class="math inline">\(\begin{pmatrix} 3 &amp; -1 \end{pmatrix}\begin{pmatrix} 2 \\ 5 \end{pmatrix}\)</span>.</li>
+<li>Compute <span class="math inline">\(\begin{pmatrix} 2 &amp; 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 4 \\ -3 \\ 6 \end{pmatrix}\)</span>.</li>
+<li>Unit prices are <span class="math inline">\(\begin{pmatrix} 4 &amp; 6 &amp; 10 \end{pmatrix}\)</span> (£) and quantities sold are <span class="math inline">\(\begin{pmatrix} 20 \\ 15 \\ 5 \end{pmatrix}\)</span>. Find the revenue as a row-times-column product.</li>
+</ol>
+</div>
+</div>
+<div id="matmult-step2" class="section level3 hasAnchor" number="10.8.2">
+<h3><span class="header-section-number">10.8.2</span> Step 2: a matrix times a vector, revisited<a href="vectors.html#matmult-step2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Look again at the example from Section <a href="vectors.html#matrices">10.7</a>:</p>
+<p><span class="math display">\[\begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix} = \begin{pmatrix} 10 \\ 10 \end{pmatrix}.\]</span></p>
+<p>The top entry was <span class="math inline">\(\begin{pmatrix} 2 &amp; 1 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix} = 10\)</span> — row 1 times the column. The bottom entry was <span class="math inline">\(\begin{pmatrix} 1 &amp; 3 \end{pmatrix}\begin{pmatrix} 4 \\ 2 \end{pmatrix} = 10\)</span> — row 2 times the column. So:</p>
+<p><span class="math display">\[\text{entry } i \text{ of } A\mathbf{v} = (\text{row } i \text{ of } A) \times \mathbf{v}.\]</span></p>
+<p>Nothing new — just Step 1, done once per row. Quick check before moving on: in <span class="math inline">\(\begin{pmatrix} 1 &amp; 4 \\ 2 &amp; -1 \end{pmatrix}\begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span>, the top entry is <span class="math inline">\(3 + 8 = 11\)</span> and the bottom entry is <span class="math inline">\(6 - 2 = 4\)</span>. If that felt comfortable, you're ready for Step 3.</p>
+</div>
+<div id="matmult-step3" class="section level3 hasAnchor" number="10.8.3">
+<h3><span class="header-section-number">10.8.3</span> Step 3: a matrix times a matrix<a href="vectors.html#matmult-step3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="key-idea-66" class="section level4 unnumbered hasAnchor">
+<h4>Key idea<a href="vectors.html#key-idea-66" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To multiply <span class="math inline">\(A\)</span> by <span class="math inline">\(B\)</span>, treat each <strong>column of <span class="math inline">\(B\)</span></strong> as a vector and multiply <span class="math inline">\(A\)</span> by it (Step 2). The results, in order, are the columns of <span class="math inline">\(AB\)</span>. Zooming in to a single entry, that says:</p>
+<p><span class="math display">\[\text{entry in row } i, \text{ column } j \text{ of } AB \;=\; (\text{row } i \text{ of } A) \times (\text{column } j \text{ of } B).\]</span></p>
+<p>For two <span class="math inline">\(2 \times 2\)</span> matrices this gives</p>
+<p><span class="math display">\[\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\begin{pmatrix} e &amp; f \\ g &amp; h \end{pmatrix} = \begin{pmatrix} ae + bg &amp; af + bh \\ ce + dg &amp; cf + dh \end{pmatrix}.\]</span></p>
+<p>Don't try to memorise that grid of letters. Memorise "<strong>row <span class="math inline">\(i\)</span> of the first, column <span class="math inline">\(j\)</span> of the second</strong>" and the formula writes itself.</p>
+<div class="figure"><span style="display:block;" id="fig:matmult-row-column"></span>
+<img src="mathematics-a-level-to-university_files/figure-html/matmult-row-column-1.png" alt="Finding the entry in row 1, column 2 of AB: run along row 1 of A and down column 2 of B, giving 1(6) + 2(8) = 22." width="672" />
+<p class="caption">
+Figure 10.4: Finding the entry in row 1, column 2 of AB: run along row 1 of A and down column 2 of B, giving 1(6) + 2(8) = 22.
+</p>
+</div>
+</div>
+<div id="worked-examples-64" class="section level4 unnumbered hasAnchor">
+<h4>Worked examples<a href="vectors.html#worked-examples-64" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Example (simple — a first product, every step shown).</strong> Find <span class="math inline">\(AB\)</span> for <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}\)</span>.</p>
+<p>Four entries, four row-times-column calculations:</p>
+<ul>
+<li>Row 1, column 1: <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 \end{pmatrix}\begin{pmatrix} 5 \\ 7 \end{pmatrix} = 5 + 14 = 19\)</span>.</li>
+<li>Row 1, column 2: <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 \end{pmatrix}\begin{pmatrix} 6 \\ 8 \end{pmatrix} = 6 + 16 = 22\)</span>.</li>
+<li>Row 2, column 1: <span class="math inline">\(\begin{pmatrix} 3 &amp; 4 \end{pmatrix}\begin{pmatrix} 5 \\ 7 \end{pmatrix} = 15 + 28 = 43\)</span>.</li>
+<li>Row 2, column 2: <span class="math inline">\(\begin{pmatrix} 3 &amp; 4 \end{pmatrix}\begin{pmatrix} 6 \\ 8 \end{pmatrix} = 18 + 32 = 50\)</span>.</li>
+</ul>
+<p><span class="math display">\[AB = \begin{pmatrix} 19 &amp; 22 \\ 43 &amp; 50 \end{pmatrix}.\]</span></p>
+<p>Check with the column view: <span class="math inline">\(A\begin{pmatrix} 5 \\ 7 \end{pmatrix} = \begin{pmatrix} 19 \\ 43 \end{pmatrix}\)</span>, which is indeed the first column of <span class="math inline">\(AB\)</span>.</p>
+<p><strong>Example (simple — order matters).</strong> With the same matrices, find <span class="math inline">\(BA\)</span>.</p>
+<p><span class="math display">\[BA = \begin{pmatrix} 5(1) + 6(3) &amp; 5(2) + 6(4) \\ 7(1) + 8(3) &amp; 7(2) + 8(4) \end{pmatrix} = \begin{pmatrix} 23 &amp; 34 \\ 31 &amp; 46 \end{pmatrix} \ne AB.\]</span></p>
+<p>This is the biggest surprise in the whole topic: <strong>in general, <span class="math inline">\(AB \ne BA\)</span>.</strong> With numbers, <span class="math inline">\(3 \times 5 = 5 \times 3\)</span> without a second thought; with matrices, you must keep track of the order. (Some particular pairs do commute — but you can never <em>assume</em> it.)</p>
+<p><strong>Example (moderate — the identity and squaring).</strong> Let <span class="math inline">\(I = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span> and <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span>. Find <span class="math inline">\(AI\)</span>, <span class="math inline">\(IA\)</span> and <span class="math inline">\(A^2\)</span>.</p>
+<p><span class="math display">\[AI = \begin{pmatrix} 1(1) + 2(0) &amp; 1(0) + 2(1) \\ 3(1) + 4(0) &amp; 3(0) + 4(1) \end{pmatrix} = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} = A,\]</span></p>
+<p>and in the same way <span class="math inline">\(IA = A\)</span>: the identity is to matrices what <span class="math inline">\(1\)</span> is to numbers, whichever side it sits on. Next, <span class="math inline">\(A^2\)</span> means <span class="math inline">\(AA\)</span>:</p>
+<p><span class="math display">\[A^2 = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix} = \begin{pmatrix} 1 + 6 &amp; 2 + 8 \\ 3 + 12 &amp; 6 + 16 \end{pmatrix} = \begin{pmatrix} 7 &amp; 10 \\ 15 &amp; 22 \end{pmatrix}.\]</span></p>
+<p>Note that <span class="math inline">\(A^2\)</span> is <strong>not</strong> <span class="math inline">\(\begin{pmatrix} 1 &amp; 4 \\ 9 &amp; 16 \end{pmatrix}\)</span>: squaring a matrix is not squaring its entries.</p>
+</div>
+<div id="practice-exercises-67" class="section level4 unnumbered hasAnchor">
+<h4>Practice exercises<a href="vectors.html#practice-exercises-67" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For <span class="math inline">\(A = \begin{pmatrix} 2 &amp; 1 \\ 0 &amp; 3 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 1 &amp; 4 \\ 2 &amp; -1 \end{pmatrix}\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>Find <span class="math inline">\(AB\)</span>.</li>
+<li>Find <span class="math inline">\(BA\)</span>, and confirm that <span class="math inline">\(AB \ne BA\)</span>.</li>
+<li>For <span class="math inline">\(C = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}\)</span>, find <span class="math inline">\(C^2\)</span> and <span class="math inline">\(C^3\)</span>. Can you guess <span class="math inline">\(C^{10}\)</span>?</li>
+<li>Find <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> such that <span class="math inline">\(\begin{pmatrix} a &amp; 0 \\ 0 &amp; b \end{pmatrix}\begin{pmatrix} 2 &amp; 1 \\ 3 &amp; 4 \end{pmatrix} = \begin{pmatrix} 4 &amp; 2 \\ -3 &amp; -4 \end{pmatrix}\)</span>. What does multiplying by a diagonal matrix on the left do to the rows?</li>
+</ol>
+</div>
+</div>
+<div id="matmult-step4" class="section level3 hasAnchor" number="10.8.4">
+<h3><span class="header-section-number">10.8.4</span> Step 4: sizes — when does a product exist?<a href="vectors.html#matmult-step4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="key-idea-67" class="section level4 unnumbered hasAnchor">
+<h4>Key idea<a href="vectors.html#key-idea-67" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Every entry of <span class="math inline">\(AB\)</span> is "a row of <span class="math inline">\(A\)</span> times a column of <span class="math inline">\(B\)</span>", and that only works if the row and column have the same length. A row of <span class="math inline">\(A\)</span> has as many entries as <span class="math inline">\(A\)</span> has <em>columns</em>; a column of <span class="math inline">\(B\)</span> has as many entries as <span class="math inline">\(B\)</span> has <em>rows</em>. So:</p>
+<p><span class="math display">\[\underset{m \times n}{A} \;\; \underset{n \times p}{B} \;=\; \underset{m \times p}{AB}.\]</span></p>
+<p><strong>The inner numbers must match; the outer numbers give the size of the answer.</strong> Write the sizes side by side <em>before</em> you start calculating — it takes two seconds and catches most errors. (Matrix times vector is just the case <span class="math inline">\(p = 1\)</span>.)</p>
+</div>
+<div id="worked-examples-65" class="section level4 unnumbered hasAnchor">
+<h4>Worked examples<a href="vectors.html#worked-examples-65" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Example (simple — size checks).</strong> <span class="math inline">\(A\)</span> is <span class="math inline">\(2 \times 3\)</span>, <span class="math inline">\(B\)</span> is <span class="math inline">\(3 \times 4\)</span> and <span class="math inline">\(C\)</span> is <span class="math inline">\(2 \times 2\)</span>. Which of <span class="math inline">\(AB\)</span>, <span class="math inline">\(BA\)</span>, <span class="math inline">\(CA\)</span> and <span class="math inline">\(AC\)</span> exist?</p>
+<ul>
+<li><span class="math inline">\(AB\)</span>: <span class="math inline">\((2 \times 3)(3 \times 4)\)</span> — inner 3s match, so <span class="math inline">\(AB\)</span> exists and is <span class="math inline">\(2 \times 4\)</span>.</li>
+<li><span class="math inline">\(BA\)</span>: <span class="math inline">\((3 \times 4)(2 \times 3)\)</span> — inner <span class="math inline">\(4 \ne 2\)</span>, so undefined.</li>
+<li><span class="math inline">\(CA\)</span>: <span class="math inline">\((2 \times 2)(2 \times 3)\)</span> — exists, <span class="math inline">\(2 \times 3\)</span>.</li>
+<li><span class="math inline">\(AC\)</span>: <span class="math inline">\((2 \times 3)(2 \times 2)\)</span> — inner <span class="math inline">\(3 \ne 2\)</span>, so undefined.</li>
+</ul>
+<p>So for non-square matrices, one order can work while the other doesn't even make sense.</p>
+<p><strong>Example (moderate — a non-square product).</strong> Find <span class="math inline">\(AB\)</span> for <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 0 &amp; 2 \\ -1 &amp; 3 &amp; 1 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 3 &amp; 1 \\ 2 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span>.</p>
+<p>Sizes: <span class="math inline">\((2 \times 3)(3 \times 2)\)</span> gives <span class="math inline">\(2 \times 2\)</span>. Rows of <span class="math inline">\(A\)</span> have three entries, columns of <span class="math inline">\(B\)</span> have three entries ✓.</p>
+<ul>
+<li>Row 1, column 1: <span class="math inline">\(1(3) + 0(2) + 2(1) = 5\)</span>.</li>
+<li>Row 1, column 2: <span class="math inline">\(1(1) + 0(1) + 2(0) = 1\)</span>.</li>
+<li>Row 2, column 1: <span class="math inline">\(-1(3) + 3(2) + 1(1) = 4\)</span>.</li>
+<li>Row 2, column 2: <span class="math inline">\(-1(1) + 3(1) + 1(0) = 2\)</span>.</li>
+</ul>
+<p><span class="math display">\[AB = \begin{pmatrix} 5 &amp; 1 \\ 4 &amp; 2 \end{pmatrix}.\]</span></p>
+<p><strong>Example (challenging — same matrices, other order).</strong> For the same <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, find <span class="math inline">\(BA\)</span> and compare it with <span class="math inline">\(AB\)</span>.</p>
+<p>Sizes: <span class="math inline">\((3 \times 2)(2 \times 3)\)</span> gives <span class="math inline">\(3 \times 3\)</span>. Each row of <span class="math inline">\(B\)</span> (two entries) meets each column of <span class="math inline">\(A\)</span> (two entries):</p>
+<p><span class="math display">\[BA = \begin{pmatrix} 3(1) + 1(-1) &amp; 3(0) + 1(3) &amp; 3(2) + 1(1) \\ 2(1) + 1(-1) &amp; 2(0) + 1(3) &amp; 2(2) + 1(1) \\ 1(1) + 0(-1) &amp; 1(0) + 0(3) &amp; 1(2) + 0(1) \end{pmatrix} = \begin{pmatrix} 2 &amp; 3 &amp; 7 \\ 1 &amp; 3 &amp; 5 \\ 1 &amp; 0 &amp; 2 \end{pmatrix}.\]</span></p>
+<p><span class="math inline">\(AB\)</span> is <span class="math inline">\(2 \times 2\)</span> and <span class="math inline">\(BA\)</span> is <span class="math inline">\(3 \times 3\)</span>: not only different numbers, but different <em>shapes</em>. A vivid reminder that order matters.</p>
+</div>
+<div id="practice-exercises-68" class="section level4 unnumbered hasAnchor">
+<h4>Practice exercises<a href="vectors.html#practice-exercises-68" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A\)</span> is <span class="math inline">\(2 \times 3\)</span>, <span class="math inline">\(B\)</span> is <span class="math inline">\(3 \times 3\)</span>, <span class="math inline">\(C\)</span> is <span class="math inline">\(3 \times 1\)</span> and <span class="math inline">\(D\)</span> is <span class="math inline">\(1 \times 2\)</span>. Which of <span class="math inline">\(AB\)</span>, <span class="math inline">\(BA\)</span>, <span class="math inline">\(BC\)</span>, <span class="math inline">\(CD\)</span> and <span class="math inline">\(DA\)</span> are defined? Give the size of each one that is.</li>
+<li>Compute <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 3 \end{pmatrix}\begin{pmatrix} 2 &amp; 1 \\ 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span>.</li>
+<li>Compute <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 \end{pmatrix}\begin{pmatrix} 3 &amp; 0 \\ 1 &amp; 4 \end{pmatrix}\)</span>. Is <span class="math inline">\(\begin{pmatrix} 3 &amp; 0 \\ 1 &amp; 4 \end{pmatrix}\begin{pmatrix} 1 &amp; 2 \end{pmatrix}\)</span> defined?</li>
+</ol>
+</div>
+</div>
+<div id="matmult-applications" class="section level3 hasAnchor" number="10.8.5">
+<h3><span class="header-section-number">10.8.5</span> Matrix multiplication in action<a href="vectors.html#matmult-applications" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="key-idea-68" class="section level4 unnumbered hasAnchor">
+<h4>Key idea<a href="vectors.html#key-idea-68" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Why multiply matrices at all? Because a product <span class="math inline">\(AB\)</span> <strong>combines two processes into one</strong>:</p>
+<ul>
+<li>if <span class="math inline">\(B\)</span> transforms vectors and then <span class="math inline">\(A\)</span> transforms the results, the single matrix <span class="math inline">\(AB\)</span> does both at once;</li>
+<li>if <span class="math inline">\(B\)</span> turns plans into resource use and <span class="math inline">\(A\)</span> turns resource use into cost, then <span class="math inline">\(AB\)</span> goes straight from plans to cost.</li>
+</ul>
+<p>Notice the order: in <span class="math inline">\(AB\mathbf{v} = A(B\mathbf{v})\)</span>, the matrix <strong>nearest the vector acts first</strong>. Read products right to left — just like the composite function <span class="math inline">\(fg(x) = f(g(x))\)</span> from Chapter 3, which applies <span class="math inline">\(g\)</span> first.</p>
+</div>
+<div id="worked-examples-66" class="section level4 unnumbered hasAnchor">
+<h4>Worked examples<a href="vectors.html#worked-examples-66" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Example (moderate — combining transformations).</strong> From Section <a href="vectors.html#matrices">10.7</a>, <span class="math inline">\(M = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}\)</span> reflects in the <span class="math inline">\(x\)</span>-axis and <span class="math inline">\(R = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\)</span> rotates <span class="math inline">\(90°\)</span> anticlockwise. Find <span class="math inline">\(MR\)</span> and <span class="math inline">\(RM\)</span>, and describe each.</p>
+<p><span class="math display">\[MR = \begin{pmatrix} 1(0) + 0(1) &amp; 1(-1) + 0(0) \\ 0(0) + (-1)(1) &amp; 0(-1) + (-1)(0) \end{pmatrix} = \begin{pmatrix} 0 &amp; -1 \\ -1 &amp; 0 \end{pmatrix}, \qquad RM = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}.\]</span></p>
+<p><span class="math inline">\(MR\)</span> means "rotate first, then reflect". It sends <span class="math inline">\(\begin{pmatrix} x \\ y \end{pmatrix}\)</span> to <span class="math inline">\(\begin{pmatrix} -y \\ -x \end{pmatrix}\)</span>: a reflection in the line <span class="math inline">\(y = -x\)</span>. Check with <span class="math inline">\(\mathbf{v} = \begin{pmatrix} 3 \\ 2 \end{pmatrix}\)</span>: rotating gives <span class="math inline">\(\begin{pmatrix} -2 \\ 3 \end{pmatrix}\)</span>, then reflecting gives <span class="math inline">\(\begin{pmatrix} -2 \\ -3 \end{pmatrix}\)</span> — and <span class="math inline">\(MR\mathbf{v} = \begin{pmatrix} -2 \\ -3 \end{pmatrix}\)</span> ✓.</p>
+<p><span class="math inline">\(RM\)</span> means "reflect first, then rotate". It sends <span class="math inline">\(\begin{pmatrix} x \\ y \end{pmatrix}\)</span> to <span class="math inline">\(\begin{pmatrix} y \\ x \end{pmatrix}\)</span>: a reflection in <span class="math inline">\(y = x\)</span>. Different order, different result — <span class="math inline">\(AB \ne BA\)</span> now has a picture.</p>
+<p><strong>Example (challenging — from production plans to costs).</strong> Return to the factory from Section <a href="vectors.html#matrices">10.7</a>. Per-unit resource use is</p>
+<p><span class="math display">\[A = \begin{pmatrix} 3 &amp; 1 \\ 2 &amp; 4 \end{pmatrix} \quad \begin{matrix} \leftarrow \text{hours} \\ \leftarrow \text{kg} \end{matrix} \qquad (\text{columns: } P_1, P_2).\]</span></p>
+<p>The plans for two weeks are stored as the columns of <span class="math inline">\(Q = \begin{pmatrix} 10 &amp; 6 \\ 5 &amp; 8 \end{pmatrix}\)</span> (rows: units of <span class="math inline">\(P_1\)</span>, <span class="math inline">\(P_2\)</span>; columns: week 1, week 2). Labour costs £15 per hour and material £4 per kg: <span class="math inline">\(\mathbf{c} = \begin{pmatrix} 15 &amp; 4 \end{pmatrix}\)</span>. Find (a) the resources needed each week, (b) each week's total cost, and (c) the cost of making one unit of each product.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Sizes <span class="math inline">\((2 \times 2)(2 \times 2)\)</span>:</li>
+</ol>
+<p><span class="math display">\[AQ = \begin{pmatrix} 3(10) + 1(5) &amp; 3(6) + 1(8) \\ 2(10) + 4(5) &amp; 2(6) + 4(8) \end{pmatrix} = \begin{pmatrix} 35 &amp; 26 \\ 40 &amp; 44 \end{pmatrix}.\]</span></p>
+<p>Week 1 needs 35 hours and 40 kg (our old friend); week 2 needs 26 hours and 44 kg. One multiplication handled both weeks.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Sizes <span class="math inline">\((1 \times 2)(2 \times 2)\)</span> give a <span class="math inline">\(1 \times 2\)</span> row — one cost per week:</li>
+</ol>
+<p><span class="math display">\[\mathbf{c}(AQ) = \begin{pmatrix} 15(35) + 4(40) &amp; 15(26) + 4(44) \end{pmatrix} = \begin{pmatrix} 685 &amp; 566 \end{pmatrix},\]</span></p>
+<p>so £685 in week 1 and £566 in week 2.</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Multiply in a different grouping: <span class="math inline">\(\mathbf{c}A = \begin{pmatrix} 15(3) + 4(2) &amp; 15(1) + 4(4) \end{pmatrix} = \begin{pmatrix} 53 &amp; 31 \end{pmatrix}\)</span>. Each unit of <span class="math inline">\(P_1\)</span> costs £53 and each unit of <span class="math inline">\(P_2\)</span> costs £31 — a genuinely useful product costing. And then</li>
+</ol>
+<p><span class="math display">\[(\mathbf{c}A)Q = \begin{pmatrix} 53(10) + 31(5) &amp; 53(6) + 31(8) \end{pmatrix} = \begin{pmatrix} 685 &amp; 566 \end{pmatrix}.\]</span></p>
+<p>Same answer as (b). This is no coincidence: matrix multiplication is <strong>associative</strong>, <span class="math inline">\((\mathbf{c}A)Q = \mathbf{c}(AQ)\)</span>, so you may group a chain of products however is most useful — as long as you <em>never change the order</em>. Each grouping told us something different: resource use per week, or cost per unit.</p>
+<p><strong>Example (challenging — market shares and Markov chains).</strong> Two brands, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, share a market. Each month, 80% of <span class="math inline">\(X\)</span>'s customers stay loyal and 20% switch to <span class="math inline">\(Y\)</span>; 90% of <span class="math inline">\(Y\)</span>'s customers stay and 10% switch to <span class="math inline">\(X\)</span>. Put this into a <strong>transition matrix</strong> whose column <span class="math inline">\(j\)</span> says where brand <span class="math inline">\(j\)</span>'s customers go:</p>
+<p><span class="math display">\[P = \begin{pmatrix} 0.8 &amp; 0.1 \\ 0.2 &amp; 0.9 \end{pmatrix} \quad \begin{matrix} \leftarrow \text{to } X \\ \leftarrow \text{to } Y \end{matrix} \qquad (\text{columns: from } X, \text{ from } Y).\]</span></p>
+<p>Each column adds to 1 — every customer goes somewhere. Today the shares are <span class="math inline">\(\mathbf{s}_0 = \begin{pmatrix} 0.5 \\ 0.5 \end{pmatrix}\)</span>. Find the shares after one and two months, and find <span class="math inline">\(P^2\)</span>.</p>
+<p><span class="math display">\[\mathbf{s}_1 = P\mathbf{s}_0 = \begin{pmatrix} 0.40 + 0.05 \\ 0.10 + 0.45 \end{pmatrix} = \begin{pmatrix} 0.45 \\ 0.55 \end{pmatrix}, \qquad \mathbf{s}_2 = P\mathbf{s}_1 = \begin{pmatrix} 0.360 + 0.055 \\ 0.090 + 0.495 \end{pmatrix} = \begin{pmatrix} 0.415 \\ 0.585 \end{pmatrix}.\]</span></p>
+<p>Now the two-month transition matrix:</p>
+<p><span class="math display">\[P^2 = \begin{pmatrix} 0.64 + 0.02 &amp; 0.08 + 0.09 \\ 0.16 + 0.18 &amp; 0.02 + 0.81 \end{pmatrix} = \begin{pmatrix} 0.66 &amp; 0.17 \\ 0.34 &amp; 0.83 \end{pmatrix}.\]</span></p>
+<p>Its entries have a meaning: 66% of today's <span class="math inline">\(X\)</span> customers are with <span class="math inline">\(X\)</span> two months from now (whether they stayed both months or left and came back). And <span class="math inline">\(P^2\mathbf{s}_0 = \begin{pmatrix} 0.33 + 0.085 \\ 0.17 + 0.415 \end{pmatrix} = \begin{pmatrix} 0.415 \\ 0.585 \end{pmatrix} = \mathbf{s}_2\)</span> ✓. In general, <span class="math inline">\(\mathbf{s}_n = P^n\mathbf{s}_0\)</span>: the matrix power <em>is</em> the forecast.</p>
+<p>Keep going and the shares settle down to <span class="math inline">\(X \approx \tfrac{1}{3}\)</span>, <span class="math inline">\(Y \approx \tfrac{2}{3}\)</span>, the <strong>steady state</strong> (Figure <a href="vectors.html#fig:markov-shares">10.5</a>) — a recurrence relation <span class="math inline">\(\mathbf{s}_{n+1} = P\mathbf{s}_n\)</span> converging to a fixed point, exactly as in Chapter 9, now with vectors.</p>
+<p>(A note on conventions: some textbooks put "from" in the rows instead and multiply by a row vector on the left. The arithmetic is the same idea mirrored — always check which way round a course is using.)</p>
+<div class="figure"><span style="display:block;" id="fig:markov-shares"></span>
+<img src="mathematics-a-level-to-university_files/figure-html/markov-shares-1.png" alt="Market shares under the transition matrix P, starting from 50:50. The shares settle towards the steady state of one-third and two-thirds (dashed lines)." width="672" />
+<p class="caption">
+Figure 10.5: Market shares under the transition matrix P, starting from 50:50. The shares settle towards the steady state of one-third and two-thirds (dashed lines).
+</p>
+</div>
+</div>
+<div id="practice-exercises-69" class="section level4 unnumbered hasAnchor">
+<h4>Practice exercises<a href="vectors.html#practice-exercises-69" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>With <span class="math inline">\(S = \begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}\)</span> and <span class="math inline">\(R = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\)</span>, find <span class="math inline">\(SR\)</span> and <span class="math inline">\(RS\)</span>. They are equal — explain geometrically why this pair commutes.</li>
+<li>Per-unit resource use for products <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is <span class="math inline">\(A = \begin{pmatrix} 2 &amp; 3 \\ 5 &amp; 1 \end{pmatrix}\)</span> (rows: hours, kg). Labour costs £20 per hour and material £3 per kg. Find <span class="math inline">\(\mathbf{c}A\)</span> and interpret it, then find the cost of the plan <span class="math inline">\(\mathbf{q} = \begin{pmatrix} 8 \\ 4 \end{pmatrix}\)</span> in two different ways.</li>
+<li>A transition matrix is <span class="math inline">\(P = \begin{pmatrix} 0.7 &amp; 0.2 \\ 0.3 &amp; 0.8 \end{pmatrix}\)</span> and today's shares are <span class="math inline">\(\mathbf{s}_0 = \begin{pmatrix} 0.6 \\ 0.4 \end{pmatrix}\)</span>. Find <span class="math inline">\(\mathbf{s}_1\)</span> and <span class="math inline">\(\mathbf{s}_2\)</span>. Then find <span class="math inline">\(P^2\)</span> and check that <span class="math inline">\(P^2\mathbf{s}_0 = \mathbf{s}_2\)</span>.</li>
+<li><em>(Networks.)</em> Three depots are linked by one-way routes, recorded in the matrix <span class="math inline">\(N\)</span> with entry <span class="math inline">\((i, j)\)</span> equal to 1 if there is a direct route from depot <span class="math inline">\(i\)</span> to depot <span class="math inline">\(j\)</span>:
+<span class="math display">\[N = \begin{pmatrix} 0 &amp; 1 &amp; 1 \\ 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{pmatrix}.\]</span>
+Find <span class="math inline">\(N^2\)</span>. By thinking about what "row <span class="math inline">\(i\)</span> times column <span class="math inline">\(j\)</span>" adds up, explain why entry <span class="math inline">\((i, j)\)</span> of <span class="math inline">\(N^2\)</span> counts the two-leg routes from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span>, and list the two-leg routes from depot 2 back to depot 2.</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Multiplying entries in matching positions: <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\begin{pmatrix} 5 &amp; 6 \\ 7 &amp; 8 \end{pmatrix}\)</span> is <strong>not</strong> <span class="math inline">\(\begin{pmatrix} 5 &amp; 12 \\ 21 &amp; 32 \end{pmatrix}\)</span>. Always row times column.</li>
+<li>Swapping the order: <span class="math inline">\(AB\)</span> and <span class="math inline">\(BA\)</span> are usually different, and one may not even exist.</li>
+<li>Skipping the size check — write <span class="math inline">\((m \times n)(n \times p)\)</span> down first.</li>
+<li>Pairing <em>columns</em> of the first matrix with <em>rows</em> of the second — it's always rows of the first, columns of the second.</li>
+<li>Squaring entries instead of the matrix: <span class="math inline">\(A^2 = AA\)</span>.</li>
+<li>Reading a chain of transformations left to right: in <span class="math inline">\(AB\mathbf{v}\)</span>, <span class="math inline">\(B\)</span> acts first.</li>
+</ul>
 <div class="desmos-container" style="height:500px;">
 <iframe src="https://www.desmos.com/calculator/ymz73cs5jx?embed" title="Desmos activity" frameborder="0" allowfullscreen style="width:100%; height:100%; border:1px solid #ccc; border-radius:4px;">
 </iframe>
@@ -879,10 +1229,42 @@ Figure 10.2: One matrix, every vector moved: v = (3, 2) under the identity, a st
 <p class="video-playlist-link">
 <a href="https://www.youtube.com/playlist?list=PLg2tfDG3Ww4ucvo7CDOr5x4kExNfXgK4n" target="_blank" rel="noopener">View the full playlist on YouTube</a>
 </p>
+<div class="webex-check webex-box">
+<p><strong>Self-check: matrix multiplication</strong></p>
+<p><strong>Q1.</strong> <span class="math inline">\(A\)</span> is <span class="math inline">\(3 \times 2\)</span> and <span class="math inline">\(B\)</span> is <span class="math inline">\(2 \times 4\)</span>. The product <span class="math inline">\(AB\)</span> has <input class='webex-solveme nospaces' size='1' data-answer='["3"]'/> rows and <input class='webex-solveme nospaces' size='1' data-answer='["4"]'/> columns. Is <span class="math inline">\(BA\)</span> defined? <select class='webex-select'><option value='blank'></option><option value=''>yes</option><option value='answer'>no</option></select></p>
+<p><strong>Q2.</strong> For <span class="math inline">\(\begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}\begin{pmatrix} 1 &amp; 0 \\ 2 &amp; 1 \end{pmatrix}\)</span>, the top-left entry is <input class='webex-solveme nospaces' size='1' data-answer='["4"]'/> and the bottom-left entry is <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/></p>
+<p><strong>Q3.</strong> Which of the following is <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 \\ 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 3 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>?</p>
+<ol style="list-style-type: upper-alpha">
+<li><span class="math inline">\(\begin{pmatrix} 3 &amp; 2 \\ 0 &amp; 2 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 5 &amp; 5 \\ 1 &amp; 2 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 3 &amp; 7 \\ 1 &amp; 4 \end{pmatrix}\)</span><br />
+</li>
+<li><span class="math inline">\(\begin{pmatrix} 4 &amp; 3 \\ 1 &amp; 3 \end{pmatrix}\)</span></li>
+</ol>
+<p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value='answer'>B</option><option value=''>C</option><option value=''>D</option></select></p>
+<p><strong>Q4.</strong> Which statement about <span class="math inline">\(2 \times 2\)</span> matrices is true? <select class='webex-select'><option value='blank'></option><option value=''>AB and BA are always equal</option><option value='answer'>AB and BA are usually different, though some pairs are equal</option><option value=''>AB and BA are never equal</option><option value=''>AB is found by multiplying entries in matching positions</option></select></p>
+<p><strong>Q5.</strong> A transition matrix is <span class="math inline">\(P = \begin{pmatrix} 0.9 &amp; 0.3 \\ 0.1 &amp; 0.7 \end{pmatrix}\)</span> (columns: from <span class="math inline">\(X\)</span>, from <span class="math inline">\(Y\)</span>) and today's shares are <span class="math inline">\(\begin{pmatrix} 0.5 \\ 0.5 \end{pmatrix}\)</span>. Next month, brand <span class="math inline">\(X\)</span>'s share is <input class='webex-solveme nospaces' size='3' data-answer='["0.6",".6"]'/></p>
+<p><strong>Q6.</strong> Costs are <span class="math inline">\(\mathbf{c} = \begin{pmatrix} 10 &amp; 2 \end{pmatrix}\)</span> (£ per hour, £ per kg) and per-unit resource use is <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 3 \\ 4 &amp; 2 \end{pmatrix}\)</span> (rows: hours, kg; columns: products 1, 2). The cost of one unit of product 2, in pounds, is <input class='webex-solveme nospaces' size='2' data-answer='["34"]'/></p>
+</div>
+<div class="webex-solution">
+<button>
+Show solutions
+</button>
+<p><strong>Q1.</strong> <span class="math inline">\((3 \times 2)(2 \times 4)\)</span>: inner 2s match, outer numbers give <span class="math inline">\(3 \times 4\)</span>. <span class="math inline">\(BA\)</span> is <span class="math inline">\((2 \times 4)(3 \times 2)\)</span> and <span class="math inline">\(4 \ne 3\)</span>, so it is undefined.</p>
+<p><strong>Q2.</strong> Top-left: row 1 times column 1 <span class="math inline">\(= 2(1) + 1(2) = 4\)</span>. Bottom-left: row 2 times column 1 <span class="math inline">\(= 1(1) + 3(2) = 7\)</span>. The full product is <span class="math inline">\(\begin{pmatrix} 4 &amp; 1 \\ 7 &amp; 3 \end{pmatrix}\)</span>.</p>
+<p><strong>Q3.</strong> (B). Row 1: <span class="math inline">\(1(3) + 2(1) = 5\)</span> and <span class="math inline">\(1(1) + 2(2) = 5\)</span>; row 2: <span class="math inline">\(0(3) + 1(1) = 1\)</span> and <span class="math inline">\(0(1) + 1(2) = 2\)</span>. Trap (A) multiplies entries in matching positions. Trap (C) is the product in the <em>other</em> order, <span class="math inline">\(BA\)</span>. Trap (D) adds matching entries.</p>
+<p><strong>Q4.</strong> Usually different, though some pairs are equal — for example, any matrix commutes with <span class="math inline">\(I\)</span>, and <span class="math inline">\(S\)</span> and <span class="math inline">\(R\)</span> in the practice exercises commute. You can never assume it.</p>
+<p><strong>Q5.</strong> Top entry of <span class="math inline">\(P\mathbf{s}_0\)</span>: <span class="math inline">\(0.9(0.5) + 0.3(0.5) = 0.45 + 0.15 = 0.6\)</span>.</p>
+<p><strong>Q6.</strong> <span class="math inline">\(\mathbf{c}A = \begin{pmatrix} 10(1) + 2(4) &amp; 10(3) + 2(2) \end{pmatrix} = \begin{pmatrix} 18 &amp; 34 \end{pmatrix}\)</span>, so product 2 costs £34 per unit.</p>
+</div>
+<p><strong>Why this matters:</strong> Matrix multiplication is how quantitative Management Science chains processes together. Markov chains forecast market shares, customer churn and machine breakdowns through powers <span class="math inline">\(P^n\)</span>; input–output models of whole economies ask how much each industry must produce, using products of an industry-to-industry matrix; network analysis counts routes and connections through powers of an adjacency matrix; and regression, which you'll meet in statistics, is written compactly as a chain of matrix products. First-year linear algebra builds on exactly the rule you've just learned — row of the first, column of the second, order matters.</p>
 </div>
 </div>
-<div id="end-of-chapter-quiz-8" class="section level2 hasAnchor" number="10.7">
-<h2><span class="header-section-number">10.7</span> End of chapter quiz<a href="vectors.html#end-of-chapter-quiz-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="end-of-chapter-quiz-8" class="section level2 hasAnchor" number="10.9">
+<h2><span class="header-section-number">10.9</span> End of chapter quiz<a href="vectors.html#end-of-chapter-quiz-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="webex-check webex-box">
 <p><strong>Q1.</strong> <span class="math inline">\(A\)</span> is a <span class="math inline">\(3 \times 2\)</span> matrix, <span class="math inline">\(B\)</span> is a <span class="math inline">\(2 \times 3\)</span> matrix and <span class="math inline">\(\mathbf{v}\)</span> is a 2-component vector. Is <span class="math inline">\(A + B\)</span> defined? <select class='webex-select'><option value='blank'></option><option value=''>yes</option><option value='answer'>no</option></select> Is <span class="math inline">\(A\mathbf{v}\)</span> defined? <select class='webex-select'><option value='blank'></option><option value='answer'>yes</option><option value=''>no</option></select> If it is, the number of components of <span class="math inline">\(A\mathbf{v}\)</span> is <input class='webex-solveme nospaces' size='1' data-answer='["3"]'/></p>
 <p><strong>Q2.</strong> For <span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span> and <span class="math inline">\(B = \begin{pmatrix} 0 &amp; 1 \\ 2 &amp; -1 \end{pmatrix}\)</span>, in the matrix <span class="math inline">\(A + 2B\)</span> the top-right entry is <input class='webex-solveme nospaces' size='1' data-answer='["4"]'/> and the bottom-left entry is <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/></p>
@@ -899,6 +1281,8 @@ Figure 10.2: One matrix, every vector moved: v = (3, 2) under the identity, a st
 <p>Answer: <select class='webex-select'><option value='blank'></option><option value=''>A</option><option value=''>B</option><option value='answer'>C</option><option value=''>D</option></select></p>
 <p><strong>Q4.</strong> In the product <span class="math inline">\(\begin{pmatrix} 1 &amp; 0 &amp; 2 \\ 2 &amp; 1 &amp; 1 \end{pmatrix}\begin{pmatrix} 3 \\ 1 \\ 2 \end{pmatrix}\)</span>, the top component is <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/> and the bottom component is <input class='webex-solveme nospaces' size='1' data-answer='["9"]'/></p>
 <p><strong>Q5.</strong> The matrix <span class="math inline">\(\begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span> sends <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> to <span class="math inline">\(\begin{pmatrix} -2 \\ 3 \end{pmatrix}\)</span>. As a transformation of the plane it is <select class='webex-select'><option value='blank'></option><option value=''>a rotation by 90 degrees anticlockwise</option><option value=''>a reflection in the x-axis</option><option value='answer'>a reflection in the y-axis</option><option value=''>a stretch of every vector by the same factor</option></select></p>
+<p><strong>Q6.</strong> Find <span class="math inline">\(\begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 4 \\ 5 \\ 1 \end{pmatrix}\)</span>: <input class='webex-solveme nospaces' size='1' data-answer='["6"]'/></p>
+<p><strong>Q7.</strong> In the product <span class="math inline">\(\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 0 \end{pmatrix}\begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 4 \end{pmatrix}\)</span>, the top-right entry is <input class='webex-solveme nospaces' size='1' data-answer='["9"]'/> and the bottom-left entry is <input class='webex-solveme nospaces' size='1' data-answer='["6"]'/></p>
 </div>
 <div class="webex-solution">
 <button>
@@ -909,30 +1293,40 @@ Show solutions
 <p><strong>Q3.</strong> (C). Rows times the column: top <span class="math inline">\(= 2(3) + 1(2) = 8\)</span>; bottom <span class="math inline">\(= 3(3) + (-1)(2) = 7\)</span>. Trap (A) pairs the vector with the <em>columns</em> of the matrix instead of the rows. Trap (B) multiplies entries sitting in matching positions — <span class="math inline">\(A\mathbf{v}\)</span> is row-times-column sums, not a componentwise product. Trap (D) drops the minus sign in the bottom row.</p>
 <p><strong>Q4.</strong> Top <span class="math inline">\(= 1(3) + 0(1) + 2(2) = 7\)</span>; bottom <span class="math inline">\(= 2(3) + 1(1) + 1(2) = 9\)</span>. Size check first: <span class="math inline">\(2 \times 3\)</span> times a 3-vector ✓, giving a 2-vector.</p>
 <p><strong>Q5.</strong> A reflection in the <span class="math inline">\(y\)</span>-axis: the <span class="math inline">\(x\)</span>-component flips sign and the <span class="math inline">\(y\)</span>-component is untouched, so every vector jumps to its mirror image across the vertical axis. It can't be the rotation — that matrix is <span class="math inline">\(\begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\)</span>, which sends <span class="math inline">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> to <span class="math inline">\(\begin{pmatrix} -3 \\ 2 \end{pmatrix}\)</span> instead. Quick test with the "east" vector: <span class="math inline">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} -1 \\ 0 \end{pmatrix}\)</span> — east becomes west, exactly a <span class="math inline">\(y\)</span>-axis mirror.</p>
+<p><strong>Q6.</strong> <span class="math inline">\(2(4) + (-1)(5) + 3(1) = 8 - 5 + 3 = 6\)</span>. One number, not a vector.</p>
+<p><strong>Q7.</strong> Top-right is row 1 times column 2: <span class="math inline">\(1(1) + 2(4) = 9\)</span>. Bottom-left is row 2 times column 1: <span class="math inline">\(3(2) + 0(1) = 6\)</span>. The full product is <span class="math inline">\(\begin{pmatrix} 4 &amp; 9 \\ 6 &amp; 3 \end{pmatrix}\)</span>.</p>
 </div>
-<p><strong>Why this matters:</strong> Matrices are the workhorse of quantitative Management Science. Linear programming stores its constraints in a matrix; input–output economics is matrix–vector multiplication; Markov chains model shifting market shares by repeatedly multiplying by a <em>transition matrix</em>; regression and machine learning are matrix computations end to end. First-year linear algebra will add matrix×matrix products, inverses and more — but the grammar (sizes, rows-times-columns, matrices as transformations) is what you've just learned, and it doesn't change.</p>
+<p><strong>Why this matters:</strong> Matrices are the workhorse of quantitative Management Science. Linear programming stores its constraints in a matrix; input–output economics is matrix–vector multiplication; Markov chains model shifting market shares by repeatedly multiplying by a <em>transition matrix</em>; regression and machine learning are matrix computations end to end. First-year linear algebra will add inverses, determinants and more — but the grammar (sizes, rows-times-columns, order matters, matrices as transformations) is what you've just learned, and it doesn't change.</p>
 </div>
-<div id="chapter-summary-and-the-end-of-the-course" class="section level2 hasAnchor" number="10.8">
-<h2><span class="header-section-number">10.8</span> Chapter summary — and the end of the course<a href="vectors.html#chapter-summary-and-the-end-of-the-course" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="chapter-summary-and-the-end-of-the-course" class="section level2 hasAnchor" number="10.10">
+<h2><span class="header-section-number">10.10</span> Chapter summary — and the end of the course<a href="vectors.html#chapter-summary-and-the-end-of-the-course" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You should now be able to:</p>
 <ul>
 <li>work with 2D and 3D vectors in component form, computing magnitudes, directions and unit vectors;</li>
 <li>add and scale vectors, recognise parallel vectors, and build linear combinations;</li>
 <li>use position vectors for points, displacements, midpoints and distances;</li>
 <li>treat data records as vectors, measuring similarity by distance and typicality by centroids;</li>
-<li>state matrix sizes, add and scale matrices, multiply a matrix by a vector, and interpret matrices as geometric transformations and as resource-requirement tables.</li>
+<li>compute dot products, use them to find angles and test for perpendicularity, and interpret them as revenues, costs and similarity scores;</li>
+<li>state matrix sizes, add and scale matrices, multiply a matrix by a vector, and interpret matrices as geometric transformations and as resource-requirement tables;</li>
+<li>multiply matrices using "row of the first, column of the second", check when a product is defined, remember that order matters, and use products to combine transformations, cost production plans and forecast market shares.</li>
 </ul>
-<p>And that closes the bridging course. Look back at how far the ten chapters reach: you can build and criticise models (Chapters 2–6), optimise them (Chapter 7), total and solve them (Chapter 8), approximate what can't be solved exactly (Chapter 9), and organise many-variable information (this chapter). Every quantitative module in your Management Science degree — economics, operations, statistics, finance, analytics — starts from exactly these foundations. Arrive confident: you've already met the ideas; university will make them bigger, not stranger.</p>
+<p>And that closes the bridging course. Look back at how far the ten chapters reach: you can build and criticise models (Chapters 2–6), optimise them (Chapter 7), total and solve them (Chapter 8), approximate what can't be solved exactly (Chapter 9), and organise and combine many-variable information (this chapter). Every quantitative module in your Management Science degree — economics, operations, statistics, finance, analytics — starts from exactly these foundations. Arrive confident: you've already met the ideas; university will make them bigger, not stranger.</p>
 <p><strong>Self-check quiz:</strong> Insert a final end-of-course diagnostic sampling all ten chapters, with feedback pointing students to the chapters most worth a second pass before term begins.</p>
 </div>
-<div id="vectors-answers" class="section level2 hasAnchor" number="10.9">
-<h2><span class="header-section-number">10.9</span> Answers to practice exercises<a href="vectors.html#vectors-answers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="vectors-answers" class="section level2 hasAnchor" number="10.11">
+<h2><span class="header-section-number">10.11</span> Answers to practice exercises<a href="vectors.html#vectors-answers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>2D vectors:</strong> 1. Magnitude 13; direction <span class="math inline">\(\tan^{-1}(12/5) \approx 67.4°\)</span>. 2. Magnitude 10; third quadrant: direction <span class="math inline">\(180° + \tan^{-1}(8/6) \approx 233.1°\)</span> (equivalently <span class="math inline">\(-126.9°\)</span>). 3. Resultant <span class="math inline">\(\begin{pmatrix} 6 \\ 2 \end{pmatrix}\)</span>, magnitude <span class="math inline">\(\sqrt{40} \approx 6.32\)</span> km; distance cycled <span class="math inline">\(\sqrt{13} + \sqrt{17} \approx 7.73\)</span> km.</p>
 <p><strong>3D vectors:</strong> 1. <span class="math inline">\(\sqrt{4 + 36 + 9} = 7\)</span>. 2. Magnitude 5, so <span class="math inline">\(\begin{pmatrix} 0 \\ 3/5 \\ 4/5 \end{pmatrix}\)</span>. 3. Distances to <span class="math inline">\((5,4,4)\)</span>: A gives <span class="math inline">\(\sqrt{0 + 1 + 4} = \sqrt{5} \approx 2.24\)</span>; B gives <span class="math inline">\(\sqrt{1 + 0 + 1} = \sqrt{2} \approx 1.41\)</span> — B is the closer match.</p>
 <p><strong>Vector operations:</strong> 1. <span class="math inline">\(\mathbf{a} + 2\mathbf{b} = \begin{pmatrix} 6 \\ 8 \end{pmatrix}\)</span>; <span class="math inline">\(\mathbf{a} - \mathbf{b} = \begin{pmatrix} 3 \\ -7 \end{pmatrix}\)</span> with magnitude <span class="math inline">\(\sqrt{58} \approx 7.62\)</span>. 2. <span class="math inline">\(\tfrac{t}{2} = \tfrac{6}{3}\)</span>, so <span class="math inline">\(t = 4\)</span>. 3. <span class="math inline">\(8\begin{pmatrix} 2 \\ 5 \end{pmatrix} + 4\begin{pmatrix} 3 \\ 1 \end{pmatrix} = \begin{pmatrix} 28 \\ 44 \end{pmatrix}\)</span>: 28 hours and 44 kg.</p>
 <p><strong>Position vectors:</strong> 1. <span class="math inline">\(\overrightarrow{AB} = \begin{pmatrix} 5 \\ 12 \end{pmatrix}\)</span>, distance 13. 2. <span class="math inline">\((2, 1)\)</span>. 3. From <span class="math inline">\((3,3)\)</span>: <span class="math inline">\(\sqrt{9+1} + \sqrt{4+9} + \sqrt{9+16} = \sqrt{10} + \sqrt{13} + 5 \approx 11.77\)</span>. From <span class="math inline">\((4,4)\)</span>: <span class="math inline">\(\sqrt{16+0} + \sqrt{1+16} + \sqrt{4+9} = 4 + \sqrt{17} + \sqrt{13} \approx 11.73\)</span>. <span class="math inline">\((4, 4)\)</span> is (very slightly) better.</p>
 <p><strong>Vectors as data:</strong> 1. <span class="math inline">\(\sqrt{9 + 16 + 1} = \sqrt{26} \approx 5.10\)</span>. 2. Centroid <span class="math inline">\((31, 46)\)</span>: the "typical branch" takes about £31k on weekdays and £46k at weekends. 3. Distances to <span class="math inline">\((6,6,6)\)</span>: <span class="math inline">\(\sqrt{1 + 1 + 0} = \sqrt{2} \approx 1.41\)</span> vs <span class="math inline">\(\sqrt{4 + 9 + 1} = \sqrt{14} \approx 3.74\)</span>: <span class="math inline">\((5, 7, 6)\)</span> is the nearer match.</p>
 <p><strong>Matrices:</strong> 1. <span class="math inline">\(A + B\)</span> is defined (<span class="math inline">\(2 \times 3\)</span>); <span class="math inline">\(A + C\)</span> is not (sizes differ); <span class="math inline">\(C\mathbf{v}\)</span> is defined (<span class="math inline">\(3 \times 2\)</span> times a 2-vector gives a 3-vector). 2. <span class="math inline">\(\begin{pmatrix} 4 &amp; 1 \\ 4 &amp; -1 \end{pmatrix}\)</span>. 3. <span class="math inline">\(\begin{pmatrix} 1(2) + 2(5) \\ 3(2) - 1(5) \end{pmatrix} = \begin{pmatrix} 12 \\ 1 \end{pmatrix}\)</span>. 4. <span class="math inline">\(\begin{pmatrix} 2 \\ 0 \end{pmatrix} \mapsto \begin{pmatrix} 0 \\ 2 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 0 \\ 3 \end{pmatrix} \mapsto \begin{pmatrix} -3 \\ 0 \end{pmatrix}\)</span>: every vector turns 90° anticlockwise (lengths unchanged) — a rotation. 5. <span class="math inline">\(A\mathbf{q} = \begin{pmatrix} 2(8) + 3(4) \\ 5(8) + 1(4) \end{pmatrix} = \begin{pmatrix} 28 \\ 44 \end{pmatrix}\)</span>: 28 hours (within 30 ✓) and 44 kg (within 45 ✓) — feasible.</p>
+<p><strong>Dot product (computing):</strong> 1. <span class="math inline">\(15 - 8 = 7\)</span>. 2. <span class="math inline">\(6 - 5 - 4 = -3\)</span>; negative, so the angle between the vectors is obtuse. 3. Revenue <span class="math inline">\(480 + 150 + 180 = 810\)</span>, i.e. £810; cost <span class="math inline">\(135 + 24 + 72 = 231\)</span>, i.e. £231; profit £579. Check: <span class="math inline">\((2.30, 2.10, 2.40) \cdot (150, 60, 45) = 345 + 126 + 108 = 579\)</span> ✓. 4. <span class="math inline">\(0.5(6) + 0.3(10) + 0.2(-2) = 5.6\)</span>, so the portfolio returns 5.6%.</p>
+<p><strong>Dot product (angles):</strong> 1. Dot product <span class="math inline">\(2 + 3 = 5\)</span>; magnitudes <span class="math inline">\(\sqrt{5}\)</span> and <span class="math inline">\(\sqrt{10}\)</span>; <span class="math inline">\(\cos\theta = \frac{5}{\sqrt{50}} = \frac{1}{\sqrt{2}}\)</span>, so <span class="math inline">\(\theta = 45°\)</span>. 2. <span class="math inline">\(4 - 6 + 2 = 0\)</span> ✓. 3. <span class="math inline">\(3k + 2k - 4 = 0\)</span>, so <span class="math inline">\(k = 0.8\)</span>. 4. Distances: <span class="math inline">\(|\mathbf{u} - \mathbf{v}| = \sqrt{25 + 1 + 4} = \sqrt{30} \approx 5.48\)</span> and <span class="math inline">\(|\mathbf{u} - \mathbf{w}| = \sqrt{1 + 4 + 4} = 3\)</span>, so <span class="math inline">\(\mathbf{w}\)</span> is closer. Cosines: <span class="math inline">\(\mathbf{v} = \frac{1}{2}\mathbf{u}\)</span>, so <span class="math inline">\(\cos\theta = 1\)</span>; <span class="math inline">\(\cos\theta_{uw} = \frac{106}{\sqrt{120}\sqrt{101}} \approx 0.96\)</span>, so <span class="math inline">\(\mathbf{v}\)</span> is more similar. <span class="math inline">\(\mathbf{v}\)</span> has exactly <span class="math inline">\(\mathbf{u}\)</span>'s spending <em>mix</em> at half the level; <span class="math inline">\(\mathbf{w}\)</span> spends at a similar <em>level</em> with a slightly different mix.</p>
+<p><strong>Matrix multiplication (Step 1):</strong> 1. <span class="math inline">\(6 - 5 = 1\)</span>. 2. <span class="math inline">\(8 + 0 + 6 = 14\)</span>. 3. <span class="math inline">\(80 + 90 + 50 = 220\)</span>, i.e. £220.</p>
+<p><strong>Matrix multiplication (Step 3):</strong> 1. <span class="math inline">\(AB = \begin{pmatrix} 4 &amp; 7 \\ 6 &amp; -3 \end{pmatrix}\)</span>. 2. <span class="math inline">\(BA = \begin{pmatrix} 2 &amp; 13 \\ 4 &amp; -1 \end{pmatrix} \ne AB\)</span>. 3. <span class="math inline">\(C^2 = \begin{pmatrix} 1 &amp; 2 \\ 0 &amp; 1 \end{pmatrix}\)</span>, <span class="math inline">\(C^3 = \begin{pmatrix} 1 &amp; 3 \\ 0 &amp; 1 \end{pmatrix}\)</span>, so <span class="math inline">\(C^{10} = \begin{pmatrix} 1 &amp; 10 \\ 0 &amp; 1 \end{pmatrix}\)</span>. 4. <span class="math inline">\(a = 2\)</span>, <span class="math inline">\(b = -1\)</span>: multiplying on the left by <span class="math inline">\(\begin{pmatrix} a &amp; 0 \\ 0 &amp; b \end{pmatrix}\)</span> scales row 1 by <span class="math inline">\(a\)</span> and row 2 by <span class="math inline">\(b\)</span>.</p>
+<p><strong>Matrix multiplication (Step 4):</strong> 1. <span class="math inline">\(AB\)</span> is <span class="math inline">\(2 \times 3\)</span>; <span class="math inline">\(BA\)</span> is undefined (<span class="math inline">\(3 \ne 2\)</span>); <span class="math inline">\(BC\)</span> is <span class="math inline">\(3 \times 1\)</span>; <span class="math inline">\(CD\)</span> is <span class="math inline">\(3 \times 2\)</span>; <span class="math inline">\(DA\)</span> is <span class="math inline">\(1 \times 3\)</span>. 2. <span class="math inline">\(\begin{pmatrix} 2 &amp; 3 \\ 3 &amp; 1 \end{pmatrix}\)</span>. 3. <span class="math inline">\(\begin{pmatrix} 5 &amp; 8 \end{pmatrix}\)</span>. The reverse product is <span class="math inline">\((2 \times 2)(1 \times 2)\)</span>; the inner numbers <span class="math inline">\(2 \ne 1\)</span>, so it is undefined.</p>
+<p><strong>Matrix multiplication in action:</strong> 1. <span class="math inline">\(SR = RS = \begin{pmatrix} 0 &amp; -2 \\ 2 &amp; 0 \end{pmatrix}\)</span>. <span class="math inline">\(S\)</span> doubles every length without changing directions and <span class="math inline">\(R\)</span> turns every vector without changing lengths, so the two effects don't interfere: either order gives "turn 90° and double". 2. <span class="math inline">\(\mathbf{c}A = \begin{pmatrix} 20(2) + 3(5) &amp; 20(3) + 3(1) \end{pmatrix} = \begin{pmatrix} 55 &amp; 63 \end{pmatrix}\)</span>: each unit of <span class="math inline">\(X\)</span> costs £55 and each unit of <span class="math inline">\(Y\)</span> costs £63. Plan cost: <span class="math inline">\((\mathbf{c}A)\mathbf{q} = 440 + 252 = 692\)</span>, or <span class="math inline">\(\mathbf{c}(A\mathbf{q}) = \begin{pmatrix} 20 &amp; 3 \end{pmatrix}\begin{pmatrix} 28 \\ 44 \end{pmatrix} = 560 + 132 = 692\)</span> — £692 either way. 3. <span class="math inline">\(\mathbf{s}_1 = \begin{pmatrix} 0.5 \\ 0.5 \end{pmatrix}\)</span>, <span class="math inline">\(\mathbf{s}_2 = \begin{pmatrix} 0.45 \\ 0.55 \end{pmatrix}\)</span>, <span class="math inline">\(P^2 = \begin{pmatrix} 0.55 &amp; 0.30 \\ 0.45 &amp; 0.70 \end{pmatrix}\)</span>, and <span class="math inline">\(P^2\mathbf{s}_0 = \begin{pmatrix} 0.33 + 0.12 \\ 0.27 + 0.28 \end{pmatrix} = \begin{pmatrix} 0.45 \\ 0.55 \end{pmatrix}\)</span> ✓. 4. <span class="math inline">\(N^2 = \begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 1 \\ 1 &amp; 0 &amp; 1 \end{pmatrix}\)</span>. Row <span class="math inline">\(i\)</span> times column <span class="math inline">\(j\)</span> adds up one term per intermediate depot <span class="math inline">\(k\)</span>, and each term (route <span class="math inline">\(i \to k\)</span>) × (route <span class="math inline">\(k \to j\)</span>) equals 1 only when both legs exist — so the sum counts two-leg routes. From depot 2 back to depot 2: <span class="math inline">\(2 \to 1 \to 2\)</span> and <span class="math inline">\(2 \to 3 \to 2\)</span>.</p>
 
 </div>
 </div>
